@@ -1,0 +1,28 @@
+{
+  "name": "algorithms",
+  "description": "algorithm practice",
+  "version": "0.0.0",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha -w",
+    "twin": "node ./node_modules/mocha/bin/mocha -w"
+  },
+  "dependencies": {
+    "chai": "^3.5.0",
+    "debug": "~2.6.0",
+    "ejs": "~2.5.5",
+    "eslint-plugin-react": "^7.0.1",
+    "express": "~4.14.1",
+    "mocha": "^3.2.0",
+    "morgan": "~1.7.0",
+    "serve-favicon": "~2.3.2",
+    "stylus": "0.54.5",
+    "webpack": "^2.2.1",
+    "webpack-node-externals": "^1.5.4",
+    "webpack-shell-plugin": "^0.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-google": "^0.8.0",
+    "eslint-plugin-import": "^2.3.0"
+  }
+}
