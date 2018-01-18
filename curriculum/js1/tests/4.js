@@ -2,9 +2,9 @@ const expect = require('chai').expect;
 let solution = require('../4').solution;
 
 describe('print string x number of times', () => {
-  it('should repeat string 2 times', () => {
-    const result = solution(2, 'hello');
-    expect(result).to.equal('hellohello');
+  it('should repeat empty string 2 times', () => {
+    const result = solution(2, '');
+    expect(result).to.equal('');
   });
   it('should repeat string 3 times', () => {
     const result = solution(3, 'hello');
