@@ -7,15 +7,15 @@ describe('print string x number of times', () => {
     expect(result).to.equal('');
   });
   it('should repeat string 3 times', () => {
-    const result = solution(3, 'hello');
-    expect(result).to.equal('hellohellohello');
+    const result = solution(3, 'joe');
+    expect(result).to.equal('joejoejoe');
   });
   it('should repeat string 4 times', () => {
-    const result = solution(4,'hello');
-    expect(result).to.equal('hellohellohellohello');
+    const result = solution(4,'julie');
+    expect(result).to.equal('juliejuliejuliejulie');
   });
   it('should repeat string 5 times', () => {
-    const result = solution(5, 'hello');
-    expect(result).to.equal('hellohellohellohellohello');
+    const result = solution(5, 'olaf');
+    expect(result).to.equal('olafolafolafolafolaf');
   });
 })
