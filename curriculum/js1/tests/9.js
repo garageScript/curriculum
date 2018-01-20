@@ -1,34 +1,21 @@
 const expect = require('chai').expect;
-const solution = require('../9').solution;
+let solution = require('../9').solution;
 
-describe('check if number x is prime', () => {
-  it('2 should be prime', () => {
-    const result = solution(2);
-    expect(result).to.equal(true);
-  });
-  it('3 should be prime', () => {
-    const result = solution(3);
-    expect(result).to.equal(true);
-  });
-  it('1 should not be prime', () => {
+describe('find next multiple of 7', () => {
+  it('next multiple should be 7', () => {
     const result = solution(1);
-    expect(result).to.equal(false);
+    expect(result).to.equal(7);
   });
-  it('7 should be prime', () => {
-    const result = solution(7);
-    expect(result).to.equal(true);
+  it('next multiple should be 21', () => {
+    const result = solution(14);
+    expect(result).to.equal(21);
   });
-  it('12 should not be prime', () => {
-    const result = solution(12);
-    expect(result).to.equal(false);
+  it('next multiple should be 28', () => {
+    const result = solution(21);
+    expect(result).to.equal(28);
   });
-  it('1223 should be prime', () => {
-    const result = solution(1223);
-    expect(result).to.equal(true);
-  });
-  it('1226 should not be prime', () => {
-    const result = solution(1226);
-    expect(result).to.equal(false);
+  it('next multiple should be 35', () => {
+    const result = solution(28);
+    expect(result).to.equal(35);
   });
 });
-

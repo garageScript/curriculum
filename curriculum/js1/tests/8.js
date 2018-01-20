@@ -1,21 +1,21 @@
 const expect = require('chai').expect;
 const solution = require('../8').solution;
 
-describe('sum divisors of number x', () => {
-  it('should sum divisors of 6', () => {
-    const result = solution(6);
+describe('find greatest common denominator of two positive integers', () => {
+  it('15 should be the gcd', () => {
+    const result = solution(30, 45);
+    expect(result).to.equal(15);
+  });
+  it('1 should be gcd', () => {
+    const result = solution(30, 43);
+    expect(result).to.equal(1);
+  });
+  it('10 should be gcd', () => {
+    const result = solution(10, 10);
+    expect(result).to.equal(10);
+  });
+  it('5 should be gcd', () => {
+    const result = solution(15, 5);
     expect(result).to.equal(5);
-  });
-  it('should sum divisors of 9', () => {
-    const result = solution(9);
-    expect(result).to.equal(3);
-  });
-  it('should sum divisors of 15', () => {
-    const result = solution(15);
-    expect(result).to.equal(8);
-  });
-  it('should sum divisors of 20', () => {
-    const result = solution(20);
-    expect(result).to.equal(21);
   });
 });
