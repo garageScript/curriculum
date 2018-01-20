@@ -4,7 +4,7 @@
  *     and then execute the function again after b seconds
  * @param {number} a
  * @param {number} b
- * @param {function} b
+ * @param {function} c
  */
 
 const solution = (a, b, c) => {
