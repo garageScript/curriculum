@@ -1,16 +1,17 @@
 /**
- * 2 Timeouts: takes in 2 numbers (a,b) and a function,
- *     execute the function after a seconds,
- *     and then execute the function again after b seconds
- * @param {number} a
- * @param {number} b
- * @param {function} c
+ * Replicate Array.prototype.forEach and call it gsForEach
+ *   ForEach takes in a function, and that function is
+ *   called for every element in the array along
+ *   with the index.
+ *   https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
  */
 
-const solution = (a, b, c) => {
+const solution = () => {
+  Array.prototype.gsForEach = function () {
+    // To get the actual array, use this
+  };
 };
 
 module.exports = {
   solution,
 };
-

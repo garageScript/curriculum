@@ -1,12 +1,13 @@
 /**
- * Greatest Common Denominator - returns greatest common denominator
- * @param {number} a
- * @param {number} b
- * @returns {number}
+ * Replicate Array.prototype.map function and call it gsMap
+ * @returns {[]}
  */
 
-const solution = (a, b) => {
-  return 0;
+const solution = () => {
+  Array.prototype.gsMap = function () {
+    // To get the actual array, use this
+    return [];
+  };
 };
 
 module.exports = {
