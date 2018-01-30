@@ -1,11 +1,12 @@
 /**
- * isPrime - returns if number is prime
- *    Prime: numbers can only be divided by 1 and itself
- * @param {number} a
- * @returns {boolean}
+ *  Takes in an array and a number,
+ *    return the number of elements that matches the number
+ * @param {array} a
+ * @param {number} b
+ * @returns {array}
  */
 
-const solution = (a) => {
+const solution = (a, b) => {
   return 0;
 };
 

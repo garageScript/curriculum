@@ -1,11 +1,10 @@
 /**
- * Call X - takes in a number X and a function,
- *    Call the function X number of times
- * @param {number} a
- * @param {function} b
+ * Given an array, return the largest element
+ * @param {array} a
+ * @returns {number}
  */
 
-const solution = (a, b) => {
+const solution = (a) => {
   return 0;
 };
 
