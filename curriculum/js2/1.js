@@ -6,10 +6,7 @@
  */
 
 const solution = (a) => {
-  return a.map( e => {
-    if (e <= 5) return 0;
-    return e;
-  });
+  return [];
 };
 
 module.exports = {
