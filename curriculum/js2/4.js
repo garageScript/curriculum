@@ -1,12 +1,13 @@
 /**
- * Create a jssSum() function for Arrays
- *   that returns the sum of all elements in the array.
+ * Given an array, return the sum of all values
+ * @param {array} a
  * @returns {number}
  */
 
-Array.prototype.jssSum = function() {
+const solution = (a) => {
+  return 0;
 };
 
 module.exports = {
-  Array,
+  solution,
 };
