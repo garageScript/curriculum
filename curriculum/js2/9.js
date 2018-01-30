@@ -1,11 +1,13 @@
 /**
- * Find next multiple of 7: returns the next number that is divisible by 7
- * @param {number} a
- * @returns {number}
+ * Replicate Array.prototype.reduce and call it gsReduce
+ * @returns {[]}
  */
 
-const solution = (a) => {
-  return 0;
+const solution = () => {
+  Array.prototype.gsReduce = function () {
+    // To get the actual array, use this
+    return [];
+  };
 };
 
 module.exports = {
