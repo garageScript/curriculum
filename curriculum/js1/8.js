@@ -6,10 +6,10 @@
  */
 
 const solution = (a, b, ans=1,i=1) => {
-  
-    if(i>b || i>a) return ans; 
+
+  if(i>b || i>a) return ans; 
   if(a%i==0 && b%i==0)ans = i;
-return solution(a, b, ans, i+1);
+  return solution(a, b, ans, i+1);
 }
 module.exports = {
   solution,
