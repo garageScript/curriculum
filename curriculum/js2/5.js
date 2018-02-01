@@ -5,7 +5,8 @@
  */
 
 const solution = (a) => {
-  return 0;
+  if(a.length == 0) return ''; 
+  return Math.max(...a);
 };
 
 module.exports = {
