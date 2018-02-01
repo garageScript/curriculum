@@ -14,8 +14,8 @@ describe('change all non prime elements of array to 1', () => {
     const result = solution([3,13]);
     expect(result).to.deep.equal([3,13]);
   });
-  it('should return [3,1,-5] when input is [3,8,-5]', () => {
-    const result = solution([3,8,-5]);
-    expect(result).to.deep.equal([3,1,-5]);
+  it('should return [3,1,5] when input is [3,8,5]', () => {
+    const result = solution([3,8,5]);
+    expect(result).to.deep.equal([3,1,5]);
   });
 });
