@@ -1,4 +1,7 @@
-/*
+/* 
+ * @param {object}
+ * @param {function}
+ * @returns {object}
  * filter - takes in an object and a function. Return a new object
  * with key/value if the function returns true. 
  * Example: 
