@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-const solution = require('../sol').solution;
+const solution = require('../4').solution;
 
 describe('take in target number and array, return true if two numbers in array add up to the target, ', () => {
   it('should return base case [],0', () => {
