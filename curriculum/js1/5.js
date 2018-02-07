@@ -6,6 +6,9 @@
  */
 
 const solution = (a, b) => {
+  for (let i = 0; a > i; i++) {
+   b();
+  }
   return 0;
 };
 
