@@ -4,8 +4,14 @@
  * @returns {number}
  */
 
-const solution = (a) => {
-  return 0;
+const solution = (num,output=0)=>{
+  if(num%7==0){
+    output= num+7;
+    return output;
+  };
+  factor = Math.ceil(num/7);
+  output = factor*7;
+  return output;
 };
 
 module.exports = {
