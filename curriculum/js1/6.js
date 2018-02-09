@@ -6,7 +6,13 @@
  */
 
 const solution = (a) => {
-  return 0;
+  var sumOfDivisor = 0;
+  for(let i=2;i<a;i++){
+    if(a%i==0){
+      sumOfDivisor+=i;
+    }
+  }
+  return sumOfDivisor;
 };
 
 module.exports = {

@@ -1,0 +1,48 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'run',
+1 verbose cli   'test',
+1 verbose cli   'js1/tests/1.js' ]
+2 info using npm@3.10.10
+3 info using node@v6.11.3
+4 verbose run-script [ 'pretest', 'test', 'posttest' ]
+5 info lifecycle algorithms@0.0.0~pretest: algorithms@0.0.0
+6 silly lifecycle algorithms@0.0.0~pretest: no script for pretest, continuing
+7 info lifecycle algorithms@0.0.0~test: algorithms@0.0.0
+8 verbose lifecycle algorithms@0.0.0~test: unsafe-perm in lifecycle true
+9 verbose lifecycle algorithms@0.0.0~test: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/Ace/Desktop/meetUp_FCC/curriculum/node_modules/.bin:/Users/Ace/Anaconda241/anaconda/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/usr/local/mysql/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/openafs/bin:/opt/openafs/sbin:/opt/X11/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Library/TeX/texbin:/Users/Ace/Anaconda241/anaconda/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/usr/local/mysql/bin
+10 verbose lifecycle algorithms@0.0.0~test: CWD: /Users/Ace/Desktop/meetUp_FCC/curriculum
+11 silly lifecycle algorithms@0.0.0~test: Args: [ '-c', './node_modules/mocha/bin/mocha -w "js1/tests/1.js"' ]
+12 info lifecycle algorithms@0.0.0~test: Failed to exec test script
+13 verbose stack Error: algorithms@0.0.0 test: `./node_modules/mocha/bin/mocha -w "js1/tests/1.js"`
+13 verbose stack spawn ENOENT
+13 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:33:16)
+13 verbose stack     at emitTwo (events.js:106:13)
+13 verbose stack     at ChildProcess.emit (events.js:191:7)
+13 verbose stack     at maybeClose (internal/child_process.js:920:16)
+13 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:230:5)
+14 verbose pkgid algorithms@0.0.0
+15 verbose cwd /Users/Ace/Desktop/meetUp_FCC/curriculum/curriculum
+16 error Darwin 16.7.0
+17 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "run" "test" "js1/tests/1.js"
+18 error node v6.11.3
+19 error npm  v3.10.10
+20 error file sh
+21 error code ELIFECYCLE
+22 error errno ENOENT
+23 error syscall spawn
+24 error algorithms@0.0.0 test: `./node_modules/mocha/bin/mocha -w "js1/tests/1.js"`
+24 error spawn ENOENT
+25 error Failed at the algorithms@0.0.0 test script './node_modules/mocha/bin/mocha -w "js1/tests/1.js"'.
+25 error Make sure you have the latest version of node.js and npm installed.
+25 error If you do, this is most likely a problem with the algorithms package,
+25 error not with npm itself.
+25 error Tell the author that this fails on your system:
+25 error     ./node_modules/mocha/bin/mocha -w "js1/tests/1.js"
+25 error You can get information on how to open an issue for this project with:
+25 error     npm bugs algorithms
+25 error Or if that isn't available, you can get their info via:
+25 error     npm owner ls algorithms
+25 error There is likely additional logging output above.
+26 verbose exit [ 1, true ]
