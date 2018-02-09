@@ -7,7 +7,16 @@
  */
 
 const solution = (a, b) => {
-  return 0;
+  if (a == 1) {
+    return b;
+  }
+
+  if (a == 0) {
+    return '';
+  }
+
+  let new_string = b + solution(a - 1, b);
+  return new_string;
 };
 
 module.exports = {
