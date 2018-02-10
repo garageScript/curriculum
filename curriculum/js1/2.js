@@ -7,10 +7,9 @@
  */
 
 const solution = (a, b, c) => {
-  var max=larger(larger(a,b),c)
-  return max;
+  return larger(larger(a,b),c);
 };
-function larger(a,b){
+const larger = (a,b) => {
   if(a>=b){
     return a
   }
