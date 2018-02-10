@@ -14,11 +14,9 @@ const solution = (a, b = 'hello') => {
     return '';
   }
 
-  let new_string = b + solution(a - 1, b);
+  let new_string = solution(a - 1, b + 'hello');
   return new_string;
 };
-
-console.log(solution(1));
 
 module.exports = {
   solution,
