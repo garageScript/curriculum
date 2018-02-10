@@ -7,8 +7,15 @@
  */
 
 const solution = (a, b, c) => {
-  return 0;
+  var max=larger(larger(a,b),c)
+  return max;
 };
+function larger(a,b){
+  if(a>=b){
+    return a
+  }
+  return b
+}
 
 module.exports = {
   solution,
