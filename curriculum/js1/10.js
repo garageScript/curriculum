@@ -7,16 +7,12 @@
  * @param {function} c
  */
 
-const solution = (a, b, c, completed = false) => {
+const solution = (a, b, c) => {
   setTimeout(() => {
     c();
-    if (completed) {
-      return null;
-    } else {
-      a = b;
-      completed = true;
-    }
-    solution(a, b, c);
+    setTimeout(() => {
+      c();
+    }, b);
   }, a);
 };
 
