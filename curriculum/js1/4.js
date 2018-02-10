@@ -7,8 +7,14 @@
  */
 
 const solution = (a, b) => {
-  return 0;
+  let result = '';
+  for (let i = 0; i < a; i++) {
+    result = result + b;
+  }
+  return result;
 };
+
+console.log(solution(3, 'kona'));
 
 module.exports = {
   solution,

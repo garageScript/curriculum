@@ -6,7 +6,13 @@
  */
 
 const solution = (a) => {
-  return 0;
+  let sum = 0;
+  for (let i = 0; a > i; i++) {
+    if (a%i === 0) {
+      sum = i + sum 
+    }
+  }
+  return sum;
 };
 
 module.exports = {
