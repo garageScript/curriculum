@@ -6,12 +6,9 @@
  * @returns {string}
  */
 
-const solution = (n, str,result="") => {
-  if(n<=0){
-    return result
-  }else{
-    return solution(n-1,str,result+str)
-  }
+const solution = (n, str, result="") => {
+  if(n<=0) return result;
+  return solution(n-1, str, result+str);
 };
 
 module.exports = {
