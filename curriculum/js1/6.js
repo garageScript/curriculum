@@ -5,8 +5,10 @@
  * @returns {number}
  */
 
-const solution = (a) => {
-  return 0;
+const solution = (a, curr=2, sumOfDivisor=0) => {
+  if (curr>=a) return sumOfDivisor;
+  if (a%curr==0) sumOfDivisor+=curr;
+  return solution(a,curr+1,sumOfDivisor);
 };
 
 module.exports = {
