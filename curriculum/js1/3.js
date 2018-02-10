@@ -5,13 +5,9 @@
  * @returns {string}
  */
 
-const solution = (a, b = 'hello') => {
-  if (a == 1) {
-    return b;
-  }
-
+const solution = (a, b = '') => {
   if (a == 0) {
-    return '';
+    return b;
   }
 
   return solution(a - 1, b + 'hello');
