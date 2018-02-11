@@ -7,8 +7,8 @@
  */
 
 const solution = (a, b, c) => {
-  return 0;
-};
+  return ( (a > b) ? ( (a > c) ? a : c ) : ( (b > c) ? b : c ) );
+}
 
 module.exports = {
   solution,
