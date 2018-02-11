@@ -6,8 +6,13 @@
  * @returns {string}
  */
 
-const solution = (a, b) => {
-  return 0;
+const solution = (x, string = "") => {
+   if (1 < x) {
+       x -= 1;
+       return solution(x, string) + string;
+    }   
+    return string;
+
 };
 
 module.exports = {
