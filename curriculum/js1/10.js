@@ -7,10 +7,13 @@
  * @param {function} c
  */
 
-const solution = (a, b, c) => {
+const solution = (a, b, c) => { //can use ...arr,c and pop delays from arr
+  setTimeout(() => {
+    c();
+    setTimeout(c, b * 1000)
+  }, a * 1000);
 };
 
 module.exports = {
   solution,
 };
-
