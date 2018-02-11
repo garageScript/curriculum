@@ -8,11 +8,11 @@
 const solution = (a, sum = 0, orig = a) => {
   n = a - 1;
   if (n === 2) {
-    if (orig % 2 == 0) {
-      return 2 + sum;
-    } else {
-      return 0 + sum;
+    let final_sum = 0;
+    if (orig % 2 === 0) {
+      final_sum = 2;
     }
+    return final_sum + sum;
   }
 
   if (orig % n === 0) {
