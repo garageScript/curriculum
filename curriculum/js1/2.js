@@ -7,8 +7,14 @@
  */
 
 const solution = (a, b, c) => {
-  return 0;
+  return larger(larger(a,b),c);
 };
+const larger = (a,b) => {
+  if(a>=b){
+    return a
+  }
+  return b
+}
 
 module.exports = {
   solution,
