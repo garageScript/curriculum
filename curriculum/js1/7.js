@@ -12,6 +12,10 @@ const solution = (a, orig = a) => {
     return true;
   }
 
+  if (a < 1) {
+    return false;
+  }
+
   if (orig % a == 0) {
     return false;
   }
