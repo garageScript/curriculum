@@ -6,17 +6,12 @@
  * @returns {string}
  */
 
-const solution = (a, b) => {
+const solution = (a, b = '', c = b) => {
   if (a == 1) {
     return b;
   }
 
-  if (a == 0) {
-    return '';
-  }
-
-  let new_string = b + solution(a - 1, b);
-  return new_string;
+  return solution(a - 1, b + c, c);
 };
 
 module.exports = {
