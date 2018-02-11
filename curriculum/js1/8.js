@@ -5,8 +5,10 @@
  * @returns {number}
  */
 
-const solution = (a, b) => {
-  return 0;
+const solution = (num1, num2, min = Math.min(num1, num2)) => {
+  if (min === 1) return 1;
+  if (num1 % min === 0 && num2 % min === 0) return min;
+  return solution(num1, num2, min - 1);
 };
 
 module.exports = {
