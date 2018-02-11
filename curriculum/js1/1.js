@@ -5,9 +5,7 @@
  * @returns {boolean}
  */
 
-const solution = (a, b) => {
-  return 0;
-};
+const solution = (a, b) => a + b;
 
 module.exports = {
   solution,
