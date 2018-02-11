@@ -5,8 +5,9 @@
  * @returns {boolean}
  */
 
-const solution = (a) => {
-  return 0;
+const solution = (num, halfNum = Math.floor(num/2)) => {
+  if(!(num % halfNum)) return halfNum === 1;
+  return solution(num, halfNum - 1);
 };
 
 module.exports = {
