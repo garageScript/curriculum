@@ -5,8 +5,10 @@
  * @returns {number}
  */
 
-const solution = (a, b, min = b) => {
-  min = Math.min(a, b, min);
+const solution = (a, b, min = '') => {
+  if (!min) {
+    min = Math.min(a, b);
+  }
 
   if (min == 0) {
     return null;
@@ -18,8 +20,6 @@ const solution = (a, b, min = b) => {
 
   return solution(a, b, min - 1);
 };
-
-console.log(solution(6, 15));
 
 module.exports = {
   solution,
