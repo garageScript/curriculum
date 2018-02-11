@@ -5,20 +5,20 @@
  * @returns {number}
  */
 
-const solution = (a, orig = a) => {
+const solution = (a, sum = 0, orig = a) => {
   n = a - 1;
   if (n === 2) {
     if (orig % 2 == 0) {
-      return 2;
+      return 2 + sum;
     } else {
-      return 0;
+      return 0 + sum;
     }
   }
 
   if (orig % n === 0) {
-    return n + solution(n, orig);
+    return solution(n, sum + n, orig);
   } else {
-    return 0 + solution(n, orig);
+    return solution(n, sum, orig);
   }
 };
 
