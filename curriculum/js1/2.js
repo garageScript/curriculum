@@ -6,9 +6,9 @@
  * @returns {boolean}
  */
 
-const solution = (a, b, c) => {
-  return 0;
-};
+const solution = (num1, num2, num3) => {
+  return ( (num1 > num2) ? ( (num1 > num3) ? num1 : num3 ) : ( (num2 > num3) ? num2 : num3 ) );
+}
 
 module.exports = {
   solution,
