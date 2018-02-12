@@ -5,9 +5,12 @@
  * @returns {string}
  */
 
-const solution = (a, b) => {
-  return 0;
-};
+const solution = (numOfTimes, counter = 0, string = '') => {
+      if (numOfTimes === counter)
+    return string;
+  string = 'hello' + string;
+      return solution(numOfTimes, counter + 1, string);
+}
 
 module.exports = {
   solution,
