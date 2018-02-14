@@ -8,13 +8,7 @@
 const solution = (a, orig = a) => {
   a = a - 1;
 
-  if (a == 1) {
-    return true;
-  }
-
-  if (a < 1) {
-    return false;
-  }
+  if (a <= 1) return a === 1;
 
   if (orig % a == 0) {
     return false;
