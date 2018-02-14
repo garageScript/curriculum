@@ -5,11 +5,7 @@
  * @returns {number}
  */
 
-const solution = (a, b, min = '') => {
-  if (!min) {
-    min = Math.min(a, b);
-  }
-
+const solution = (a, b, min = Math.min(a, b)) => {
   if (min == 0) {
     return null;
   }
