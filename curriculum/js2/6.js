@@ -4,8 +4,16 @@
  * @returns {array}
  */
 
-const solution = (a) => {
-  return [];
+const solution = (a, idx = 0, largerThanFive = []) => {
+  if (idx === a.length) {
+    return largerThanFive;
+  }
+
+  if (a[idx] > 5) {
+    largerThanFive.push(a[idx]);
+  }
+
+  return solution(a, idx + 1, largerThanFive);
 };
 
 module.exports = {
