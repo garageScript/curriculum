@@ -4,7 +4,7 @@
  */
 
 const solution = () => {
-  Array.prototype.gsMap = function () {
+  Array.prototype.gsMap = function() {
     // To get the actual array, use this
     return [];
   };
