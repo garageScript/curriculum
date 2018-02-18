@@ -5,16 +5,8 @@
  * @returns {number}
  */
 
-const solution = (a, sum = 0, num = 2) => {
-  if (num >= a) {
-    return sum;
-  }
-
-  if (a % num === 0) {
-    return solution(a, sum + num, num + 1);
-  } else {
-    return solution(a, sum, num + 1);
-  }
+const solution = (a) => {
+  return 0;
 };
 
 module.exports = {
