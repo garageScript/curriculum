@@ -7,8 +7,16 @@
  */
 
 const solution = () => {
-  Array.prototype.gsForEach = function() {
-    // To get the actual array, use this
+  Array.prototype.gsForEach = function(callback) {
+    return (function gsForEach(arr, idx, callback) {
+      if (idx === arr.length) {
+        return;
+      }
+
+      callback(arr[idx], idx, arr);
+
+      return gsForEach(arr, idx + 1, callback);
+    })(this, 0, callback);
   };
 };
 
