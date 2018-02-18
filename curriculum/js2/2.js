@@ -5,8 +5,16 @@
  * @returns {array}
  */
 
-const solution = (a) => {
-  return [];
+const solution = (a, idx = 0) => {
+  if (idx == a.length) {
+    return a;
+  }
+
+  if (Math.abs(a[idx]) % 2 === 1) {
+    a[idx] = 0;
+  }
+
+  return solution(a, idx + 1);
 };
 
 module.exports = {
