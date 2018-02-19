@@ -6,7 +6,17 @@
  */
 
 const solution = (a) => {
-  return 0;
+  if(a < 2){
+    return false;
+  }
+  else{
+    for(let i=2; i<a; i++){
+      if(a%i == 0){
+        return false;
+      }
+    }
+  }
+  return true;
 };
 
 module.exports = {

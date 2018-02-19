@@ -6,7 +6,18 @@
  */
 
 const solution = (a, b) => {
-  return 0;
+  if(b === undefined){
+    b = "";
+  }
+  if(a == 0){
+    return b;
+  }
+  else{
+    a = a-1;
+    b = b + "hello";
+    return  solution(a, b);
+  }
+
 };
 
 module.exports = {
