@@ -5,9 +5,10 @@
  */
 
 const solution = (a) => {
-  return 0;
-};
-
+   if(a%7===0)
+    return (Math.ceil(a/7)+1)*7;
+  return  (Math.ceil(a/7))*7;
+ };
 module.exports = {
   solution,
 };
