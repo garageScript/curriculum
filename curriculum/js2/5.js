@@ -6,7 +6,7 @@
 
 const solution = (a, idx = 1, largest = a[0]) => {
   if (idx >= a.length) {
-    return a.length === 0 ? '' : largest;
+    return a.length === 0 ? 0 : largest;
   }
 
   if (a[idx] > largest) {
