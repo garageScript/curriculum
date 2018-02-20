@@ -5,6 +5,8 @@
  * @returns {array}
  */
 
+let isPrime = require('../js1/7.js').solution;
+
 const solution = (a, idx = 0) => {
   if (idx === a.length) {
     return a;
@@ -17,19 +19,6 @@ const solution = (a, idx = 0) => {
   return solution(a, idx + 1);
 };
 
-const isPrime = (num, val = 2) => {
-  if (val >= num) {
-    return !(num <= 1);
-  }
-
-  if (num % val === 0) {
-    return false;
-  }
-
-  return isPrime(num, val + 1);
-};
-
 module.exports = {
   solution,
-  isPrime,
 };
