@@ -8,6 +8,8 @@
  */
 
 const solution = (a, b, c) => {
+  const timeout1 = global.setTimeout(c, a * 1000);
+  const timeout2 = global.setTimeout(c, (a + b) * 1000);
 };
 
 module.exports = {
