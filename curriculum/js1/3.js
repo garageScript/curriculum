@@ -1,13 +1,13 @@
 /**
  * Say Hello - takes in a number x
  *     return string with “hello” repeated x times.
- * @param {number} a
+ * @param {number} count
  * @returns {string}
  */
 
-const solution = (count, i = 0, result = '') => {
-  if (i === count) return result;
-  return solution(count, i + 1, result + 'hello');
+const solution = (count, result = '') => {
+  if (count === 0) return result;
+  return solution(count - 1, result + 'hello');
 };
 
 module.exports = {
