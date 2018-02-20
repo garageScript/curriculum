@@ -11,12 +11,6 @@ const solution = () => {
   };
 };
 
-solution();
-const myArr = [1, 2, 3];
-
-const result = myArr.gsMap((element) => element * 3);
-console.log(result);
-
 module.exports = {
   solution,
 };
