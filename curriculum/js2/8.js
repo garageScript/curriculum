@@ -4,16 +4,9 @@
  */
 
 const solution = () => {
-  Array.prototype.gsMap = function(callback) {
-    return (function gsMap(arr, callback, idx, result) {
-      if (idx == arr.length) {
-        return result;
-      }
-
-      result.push(callback(arr[idx]));
-
-      return gsMap(arr, callback, idx + 1, result);
-    })(this, callback, 0, []);
+  Array.prototype.gsMap = function(cb, result = []) {
+    if (result.length === this.length) return result;
+    result.push(cb(this[result.length]));
   };
 };
 
