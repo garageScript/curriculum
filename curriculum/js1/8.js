@@ -6,7 +6,21 @@
  */
 
 const solution = (a, b) => {
-  return 0;
+  var denominator = 1;
+  var temp;
+  if(a > b){
+    temp = a;
+  }else{
+    temp = b;
+  }
+  for(var i=1; i<=temp; i++){
+    if(a%i == 0 && b%i == 0){
+      if(denominator < i){
+        denominator = i;
+      }
+    }
+  }
+  return denominator;
 };
 
 module.exports = {
