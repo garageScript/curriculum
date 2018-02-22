@@ -5,7 +5,7 @@
  * @returns {array}
  */
 
-let isPrime = require('../js1/7.js').solution;
+const isPrime = require('../js1/7.js').solution;
 
 const solution = (a, idx = 0) => {
   if (idx === a.length) {
