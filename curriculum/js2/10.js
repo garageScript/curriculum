@@ -7,7 +7,7 @@
  */
 
 const solution = () => {
-  Array.prototype.gsForEach = function(callback, idx = 0, arr = this) {
+  Array.prototype.gsForEach = function (callback, idx = 0) {
     if (idx == this.length) return;
     callback(this[idx], idx);
     return this.gsForEach(callback, idx + 1);
