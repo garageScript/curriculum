@@ -5,7 +5,7 @@
  */
 
 const solution = (a) => {
-  return 0;
+  return a.reduce((acc, x) => acc + x, 0);
 };
 
 module.exports = {
