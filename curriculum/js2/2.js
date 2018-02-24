@@ -6,7 +6,7 @@
  */
 
 const solution = (a) => {
-  return [];
+  return a.map(x => x % 2 ? 0 : x);
 };
 
 module.exports = {
