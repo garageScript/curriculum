@@ -1,5 +1,5 @@
 /**
- * Given an array, return an array of numbers larger than 5
+ * Given an array, return a new array of numbers larger than 5
  * @param {array} a
  * @returns {array}
  */
