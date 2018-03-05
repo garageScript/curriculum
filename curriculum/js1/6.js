@@ -5,10 +5,13 @@
  * @returns {number}
  */
 
-const solution = (a) => {
-  return 0;
-};
-
+const solution = (x, sum=0, i=2) => {
+  if(i >= x) return sum;
+  if (x%i === 0){
+    sum=sum+i;
+  }
+  return solution(x,sum,i+1);
+}
 module.exports = {
   solution,
 };
