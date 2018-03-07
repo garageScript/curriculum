@@ -6,8 +6,8 @@
  * @returns {boolean}
  */
 
-const solution = (a, b, c) => {
-  return 0;
+const solution = (...args) => {
+  return Math.max(...args);;
 };
 
 module.exports = {
