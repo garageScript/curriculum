@@ -7,7 +7,7 @@
  */
 
 const solution = (...args) => {
-  return Math.max(...args);;
+  return Math.max(...args);
 };
 
 module.exports = {
