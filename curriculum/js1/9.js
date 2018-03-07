@@ -4,8 +4,9 @@
  * @returns {number}
  */
 
-const solution = (a) => {
-  return 0;
+const solution = (a, next=a+1) => {
+  if (next%7===0) return next;
+  return solution(a,next+1);
 };
 
 module.exports = {
