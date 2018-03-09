@@ -1,5 +1,5 @@
 /**
- * Greatest Common Denominator - returns greatest common denominator
+ * Greatest Common Divisor - returns greatest common divisor
  * @param {number} a
  * @param {number} b
  * @returns {number}
