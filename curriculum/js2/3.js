@@ -5,12 +5,12 @@
  * @returns {array}
  */
 
-isPrime=require("../js1/7.js").solution;
+const isPrime = require("../js1/7.js").solution;
 
-const solution = (a,idx=0,res=[]) => {
-  if(idx===a.length) return res;
-  res[idx]=isPrime(Math.abs(a[idx]))?a[idx]:1;
-  return solution(a,idx+1,res);
+const solution = (a, idx = 0, res = []) => {
+  if (idx === a.length) return res;
+  res[idx] = isPrime(Math.abs(a[idx])) ? a[idx] : 1;
+  return solution(a, idx + 1, res);
 };
 
 module.exports = {
