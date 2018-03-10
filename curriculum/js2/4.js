@@ -4,9 +4,9 @@
  * @returns {number}
  */
 
-const solution = (a,idx=0,sum=0) => {
-  if(idx===a.length) return sum;
-  return solution(a,idx+1,sum+a[idx]);
+const solution = (a, idx = 0, sum = 0) => {
+  if (idx === a.length) return sum;
+  return solution(a, idx + 1, sum + a[idx]);
 };
 
 module.exports = {
