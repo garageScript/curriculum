@@ -5,16 +5,12 @@
  * @returns {array}
  */
 
-const solution = (a) => {
-  return a.map(x => isPrime(x) ? x : 1);
-};
+isPrime=require("../js1/7.js").solution;
 
-const isPrime = (num, curr = 2) => {
-  num = Math.abs(num);
-  if (num <= 1) return false;
-  if (curr >= num) return true;
-  if (num % curr == 0) return false;
-  return isPrime(num, curr + 1);
+const solution = (a,idx=0,res=[]) => {
+  if(idx===a.length) return res;
+  res[idx]=isPrime(Math.abs(a[idx]))?a[idx]:1;
+  return solution(a,idx+1,res);
 };
 
 module.exports = {
