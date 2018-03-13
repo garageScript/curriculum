@@ -12,7 +12,7 @@
     "ejs": "~2.5.5",
     "eslint-plugin-react": "^7.0.1",
     "express": "~4.14.1",
-    "mocha": "^3.2.0",
+    "mocha": "^3.5.3",
     "morgan": "~1.7.0",
     "serve-favicon": "~2.3.2",
     "stylus": "0.54.5",
