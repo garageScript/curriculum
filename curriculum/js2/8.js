@@ -4,13 +4,10 @@
  */
 
 const solution = () => {
-  Array.prototype.gsMap = function (callback) {
-    const gsMap = (arr, callback, idx = 0, res = Array(arr.length)) => {
-      if (arr.length == idx) return res;
-      res[idx] = callback(arr[idx]);
-      return gsMap(arr, callback, idx + 1, res);
-    };
-    return gsMap(this, callback);
+  Array.prototype.gsMap = function (callback, arr = this, idx = 0, res = Array(this.length)) {
+    if (arr.length == idx) return res;
+    res[idx] = callback(arr[idx]);
+    return Array.prototype.gsMap(callback, arr, idx + 1, res);
   };
 };
 
