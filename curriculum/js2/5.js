@@ -4,11 +4,9 @@
  * @returns {number}
  */
 
-const solution = (a) => {
-  if(!a.length) return null;
-  var max=a[0]
-  a.forEach(x=>{if(x>max) max=x;})
-  return max;
+const solution=(a)=>{
+  if (a.length==0) return null;
+  return a.reduce((max, x) => x > max ? x : max, a[0])
 };
 
 module.exports = {
