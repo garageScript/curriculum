@@ -1,3 +1,7 @@
 # node.js
 #
 node_modules/
+*.swp
+*.swo
+*.swn
+*.swm
