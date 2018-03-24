@@ -6,7 +6,11 @@
  */
 
 const solution = (a, b) => {
-  return 0;
+  (function looper(count = 0) {
+    if (count === a) return;
+    b();
+    looper(count + 1);
+  })();
 };
 
 module.exports = {
