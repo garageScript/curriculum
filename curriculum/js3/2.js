@@ -4,8 +4,13 @@
  * @param return {number}
  */
 
-const solution = (arr)=>{
-  return 0;
+const solution = (arr) => {
+  let hashCount = {};
+  arr.forEach(num => {
+    hashCount[num] = hashCount[num] ? hashCount[num] += 1 : 1;
+  });
+  return Object.entries(hashCount).reduce((max, next) =>
+    max[1] > next[1] ? max : next)[0];
 }
 
 module.exports = {

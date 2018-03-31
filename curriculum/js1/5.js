@@ -5,8 +5,10 @@
  * @param {function} b
  */
 
-const solution = (a, b) => {
-  return 0;
+const solution = (n, func) => {
+  if(n<=0) return;
+  func();
+  solution(n-1,func);
 };
 
 module.exports = {
