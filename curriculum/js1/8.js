@@ -5,10 +5,13 @@
  * @returns {number}
  */
 
-const solution = (a, b) => {
-  return 0;
+const solution = (a, b, count = a) => {
+  if (a % count === 0 && b % count === 0) {
+    return count;
+  };
+  count = count - 1;
+  return solution(a, b, count);
 };
-
 module.exports = {
   solution,
 };
