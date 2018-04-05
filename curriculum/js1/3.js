@@ -7,8 +7,14 @@
  * @returns {string}
  */
 
-const solution= (x) => {
-  return 'hello'.repeat(x);
+const solution = (num) => {
+  if (num === 0) {
+    return '';
+  }
+  if (num === 1) {
+    return 'hello';
+  }
+  return 'hello' + solution(num-1);
 };
 module.exports = {
   solution,
