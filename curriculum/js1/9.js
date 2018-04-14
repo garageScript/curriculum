@@ -4,10 +4,13 @@
  * @returns {number}
  */
 
-const solution = (a) => {
-  return 0;
+const solution = (a, c = a + 1) => {
+  if (c % 7 === 0) {
+    return c;
+  }
+  c = c + 1;
+  return solution(a, c);
 };
-
 module.exports = {
   solution,
 };
