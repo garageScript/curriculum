@@ -5,8 +5,14 @@
  * @returns {string}
  */
 
-const solution = (a, b) => {
-  return 0;
+const solution = (a, i = 0, holder = []) => {
+ if (i === a) {
+   return holder.join('');
+ } else {
+   i = i + 1;
+   holder.push('hello');
+ }
+  return solution(a, i, holder);
 };
 
 module.exports = {
