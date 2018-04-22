@@ -6,8 +6,19 @@
  * @returns {array}
  */
 
+const bft = (cur=[], next=[], result=[]) => {
+  if (!cur.length && !next.length) return result;
+  if (!cur.length) {
+    result.push([]);
+    return bft(next, [], result);
+  }
+  const n = cur.shift();
+  result[result.length-1].push(n.v);
+  return bft(cur, next.concat(n.children), result);
+};
+
 const solution = (n)=>{
-  return [];
+  return bft([], [n]);
 };
 
 module.exports = {
