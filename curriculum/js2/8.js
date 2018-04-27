@@ -3,10 +3,11 @@
  * @returns {[]}
  */
 
-const solution = () => {
-  Array.prototype.gsMap = function () {
-    // To get the actual array, use this
-    return [];
+const solution = (arr = [], func, newarr = [], i = 0) => {
+  Array.prototype.gsMap = (element, index) => {
+    if (arr.length === i) return newarr;
+    newarr[i].push(func(arr[i]));
+    return solution(arr, func, newarr, i + 1);
   };
 };
 
