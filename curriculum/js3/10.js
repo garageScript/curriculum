@@ -6,6 +6,9 @@
  * @returns {array}
  */
 
+// This problem is pretty hard, you just have
+// to understand whats going on and look at it over
+// and over again until you can write it out yourself
 const bft = (cur=[], next=[], result=[]) => {
   if (!cur.length && !next.length) return result;
   if (!cur.length) {
