@@ -14,7 +14,7 @@ const solution = (a, b) => {
   }
   return result;
 }
-  return printString();
+  return printString(a, b);
 };
 
 module.exports = {
