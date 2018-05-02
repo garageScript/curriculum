@@ -13,7 +13,7 @@ const solution = (a) => {
         }
         return result;
     };
-    return sayHello();
+    return sayHello(a);
 };
 
 module.exports = {
