@@ -6,7 +6,12 @@
  */
 
 const solution = (a, b) => {
-  return 0;
+    const callX = (num, cb) => {
+        for(let i=0; i<num; i++){
+            cb();
+        }
+    }
+    return callX(a, b);
 };
 
 module.exports = {
