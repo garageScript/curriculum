@@ -6,7 +6,10 @@
  */
 
 const solution = (a) => {
-  return 0;
+    const isPrime = (num) => {
+        for(let i=0;i<num; )
+    }
+    return isPrime(a);
 };
 
 module.exports = {
