@@ -5,3 +5,5 @@ node_modules/
 *.swo
 *.swn
 *.swm
+**.swp
+**.swo
