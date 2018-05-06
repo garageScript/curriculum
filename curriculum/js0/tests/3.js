@@ -1,21 +1,21 @@
 const expect = require('chai').expect;
-let solution = require('../5').solution;
+let solution = require('../3').solution;
 
-describe('max 3', () => {
-  it('should find the max of 3 numbers', () => {
-    const result = solution(6,6,7);
-    expect(result).to.equal(7);
+describe('greater than 5', () => {
+  it('should return false for negative number', () => {
+    const result = solution(-5);
+    expect(result).to.equal(false);
   });
-  it('should find the max of 3 negative numbers', () => {
-    const result = solution(-2,-3, -9);
-    expect(result).to.equal(-2);
+  it('should return false for 5', () => {
+    const result = solution(5);
+    expect(result).to.equal(false);
   });
-  it('should find the max with positive n negatives', () => {
-    const result = solution(-2,-2,9);
-    expect(result).to.equal(9);
+  it('should return false 0', () => {
+    const result = solution(0);
+    expect(result).to.equal(false);
   });
-  it('should find the max where max is first parametr', () => {
-    const result = solution(3, 2,1);
-    expect(result).to.equal(3);
+  it('should return true for big numbers', () => {
+    const result = solution(6);
+    expect(result).to.equal(true);
   });
 });
