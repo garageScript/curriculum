@@ -1,21 +1,21 @@
 const expect = require('chai').expect;
-let solution = require('../9').solution;
+const solution = require('../9').solution;
 
-describe('find next multiple of 7', () => {
-  it('next multiple should be 7', () => {
-    const result = solution(1);
-    expect(result).to.equal(7);
+describe('Return function that returns sum when it is called', () => {
+  it('should add 6, 6 and then 12 correctly', () => {
+    const result = solution(6, 6);
+    expect(result(12)).to.equal(24);
   });
-  it('next multiple should be 21', () => {
-    const result = solution(14);
-    expect(result).to.equal(21);
+  it('should add 1, 2 and then 3 correctly', () => {
+    const result = solution(1, 2);
+    expect(result(3)).to.equal(6);
   });
-  it('next multiple should be 28', () => {
-    const result = solution(21);
-    expect(result).to.equal(28);
+  it('should add -2, -2 and then -4 correctly', () => {
+    const result = solution(-2, -2);
+    expect(result(-4)).to.equal(-8);
   });
-  it('next multiple should be 35', () => {
-    const result = solution(28);
-    expect(result).to.equal(35);
+  it('should add -3, 3 and then 0 correctly', () => {
+    const result = solution(-3, 3);
+    expect(result(0)).to.equal(0);
   });
 });
