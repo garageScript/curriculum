@@ -1,21 +1,21 @@
 const expect = require('chai').expect;
-let solution = require('../3').solution;
+let solution = require('../5').solution;
 
-describe('repeat string hello x times', () => {
-  it('should repeat string hello 0 times', () => {
-    const result = solution(0);
-    expect(result).to.equal('');
+describe('max 3', () => {
+  it('should find the max of 3 numbers', () => {
+    const result = solution(6,6,7);
+    expect(result).to.equal(7);
   });
-  it('should repeat string hello 3 times', () => {
-    const result = solution(3);
-    expect(result).to.equal('hellohellohello');
+  it('should find the max of 3 negative numbers', () => {
+    const result = solution(-2,-3, -9);
+    expect(result).to.equal(-2);
   });
-  it('should repeat string hello 4 times', () => {
-    const result = solution(4);
-    expect(result).to.equal('hellohellohellohello');
+  it('should find the max with positive n negatives', () => {
+    const result = solution(-2,-2,9);
+    expect(result).to.equal(9);
   });
-  it('should repeat string hello 5 times', () => {
-    const result = solution(5);
-    expect(result).to.equal('hellohellohellohellohello');
+  it('should find the max where max is first parametr', () => {
+    const result = solution(3, 2,1);
+    expect(result).to.equal(3);
   });
-})
+});
