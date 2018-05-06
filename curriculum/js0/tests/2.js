@@ -1,21 +1,21 @@
 const expect = require('chai').expect;
-let solution = require('../2').solution;
+const solution = require('../2').solution;
 
-describe('max 3', () => {
-  it('should find the max of 3 numbers', () => {
-    const result = solution(6,6,7);
-    expect(result).to.equal(7);
+describe('sum of 3 numbers', () => {
+  it('should add 3 same numbers correctly', () => {
+    const result = solution(6, 6, 6);
+    expect(result).to.equal(18);
   });
-  it('should find the max of 3 negative numbers', () => {
-    const result = solution(-2,-3, -9);
-    expect(result).to.equal(-2);
+  it('should add 3 different numbers correctly', () => {
+    const result = solution(1, 2, 30);
+    expect(result).to.equal(33);
   });
-  it('should find the max with positive n negatives', () => {
-    const result = solution(-2,-2,9);
-    expect(result).to.equal(9);
+  it('should add 3 negative numbers correctly', () => {
+    const result = solution(-2, -2, -5);
+    expect(result).to.equal(-9);
   });
-  it('should find the max where max is first parametr', () => {
-    const result = solution(3, 2,1);
-    expect(result).to.equal(3);
+  it('should add 3 numbers of different signs correctly', () => {
+    const result = solution(-3, 3, -1);
+    expect(result).to.equal(-1);
   });
 });
