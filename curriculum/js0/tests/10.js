@@ -1,34 +1,21 @@
 const expect = require('chai').expect;
-let solution = require('../10').solution;
+const solution = require('../10').solution;
 
-describe('Set 2 timeouts', function() {
-  it('should set 2 timeouts of different value', function(done) {
-    let counter = 0;
-    let errorMessage = '';
-    solution(20, 30, () => {
-      counter += 1;
-    });
-    setTimeout(() => {
-      if (counter) {
-        errorMessage = 'Input function is called too early';
-      }
-    }, 15);
-    setTimeout(() => {
-      if (counter !== 1) {
-        errorMessage = `Input function is called too quickly, or not at all: ${counter}`;
-      }
-    }, 25);
-    setTimeout(() => {
-      if (counter !== 1) {
-        errorMessage = `Input function is called too quickly, or not at all: ${counter}`;
-      }
-    }, 35);
-    setTimeout(() => {
-      if (counter !== 2) {
-        errorMessage = `Input function is called too quickly, or not at all: ${counter}`;
-      }
-      if (errorMessage) return done(new Error(errorMessage));
-      return done();
-    }, 55);
+describe('2 Functions', function() {
+  it('should return 12', function() {
+    const result = solution(() => 6, () => 6);
+    expect(result).to.equal(12);
+  });
+  it('should add 2 different numbers correctly', () => {
+    const result = solution(() => 1, () => 2);
+    expect(result).to.equal(3);
+  });
+  it('should add 2 negative numbers correctly', () => {
+    const result = solution(() => -2, () => -2);
+    expect(result).to.equal(-4);
+  });
+  it('should add 2 numbers of different signs correctly', () => {
+    const result = solution(() => -3, () => 3);
+    expect(result).to.equal(0);
   });
 });
