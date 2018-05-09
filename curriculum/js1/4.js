@@ -7,7 +7,14 @@
  */
 
 const solution = (a, b) => {
-  return 0;
+  const printString = (num, str) => {
+  let result="";
+  for(let i=1; i<=num; i++){
+    result+=str;
+  }
+  return result;
+}
+  return printString(a, b);
 };
 
 module.exports = {

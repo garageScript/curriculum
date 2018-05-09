@@ -1,0 +1,10 @@
+"Line #1" //testing Vim file. What can I do with this thingiep:~$ openvt -c vt7 examples.desktop
+openvt: vt7: Illegal vt number
+llip:~$ openvt -c vt7 examples.desktop
+openvt: vt7: Illegal vt number
+llip:~$ openvt -c vt7 examples.desktop
+openvt: vt7: Illegal vt number
+llip:~$ openvt -c vt7 examplrs.desktop
+openvt: vt7: Illegal vt number
+peoprfnva
+jffopfrr

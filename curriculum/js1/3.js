@@ -5,8 +5,15 @@
  * @returns {string}
  */
 
-const solution = (a, b) => {
-  return 0;
+const solution = (a) => {
+    let result="";
+    const sayHello = (x) => {
+        for(let i = 1; i<=x; i++){
+          result+="hello";
+        }
+        return result;
+    };
+    return sayHello(a);
 };
 
 module.exports = {
