@@ -27,11 +27,8 @@ describe('Set 2 timeouts', function() {
       if (counter !== 2) {
         errorMessage = `Input function is called too quickly, or not at all: ${counter}`;
       }
+      if (errorMessage) return done(new Error(errorMessage));
+      return done();
     }, 55);
-      if (!errorMessage) {
-        done();
-      } else {
-        done(new Error(errorMessage));
-      }
   });
 });

@@ -1,12 +1,13 @@
 /**
- * Takes in 2 numbers, returns their sum
+ * Takes in 3 numbers, returns their sum
  * @param {number} a
  * @param {number} b
+ * @param {number} c
  * @returns {number}
  */
 
-const solution = (a, b) => {
-  return a + b;
+const solution = (a, b, c) => {
+  return 0;
 };
 
 module.exports = {

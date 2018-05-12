@@ -18,6 +18,10 @@ describe('check if number x is prime', () => {
     const result = solution(7);
     expect(result).to.equal(true);
   });
+  it('9 should not be prime', () => {
+    const result = solution(9);
+    expect(result).to.equal(false);
+  });
   it('12 should not be prime', () => {
     const result = solution(12);
     expect(result).to.equal(false);

@@ -1,5 +1,5 @@
 /**
- * Given an array, return an array of the same length
+ * Given an array, return the same array
  *   where all odd elements are changed to 0
  * @param {array} a
  * @returns {array}
