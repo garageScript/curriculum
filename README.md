@@ -4,7 +4,7 @@
 
 ***step1***: Clone the (llipio/algorithms) repository locally
 
-***step2***: To install all of the dependencies, run `npm install`
+***step2***: To install all of the dependencies, run `yarn`
 
 ***step3***: Pick an issue that you would like to work on
 
