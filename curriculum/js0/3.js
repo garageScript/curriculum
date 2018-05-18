@@ -9,7 +9,7 @@ const solution = (a) => {
     return true;
   };
   return false;
-}
+};
 module.exports = {
   solution,
 };
