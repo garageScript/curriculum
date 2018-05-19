@@ -1,21 +1,21 @@
 const expect = require('chai').expect;
 let solution = require('../3').solution;
 
-describe('repeat string hello x times', () => {
-  it('should repeat string hello 0 times', () => {
-    const result = solution(0);
-    expect(result).to.equal('');
+describe('greater than 5', () => {
+  it('should return false for negative number', () => {
+    const result = solution(-5);
+    expect(result).to.equal(false);
   });
-  it('should repeat string hello 3 times', () => {
-    const result = solution(3);
-    expect(result).to.equal('hellohellohello');
-  });
-  it('should repeat string hello 4 times', () => {
-    const result = solution(4);
-    expect(result).to.equal('hellohellohellohello');
-  });
-  it('should repeat string hello 5 times', () => {
+  it('should return false for 5', () => {
     const result = solution(5);
-    expect(result).to.equal('hellohellohellohellohello');
+    expect(result).to.equal(false);
   });
-})
+  it('should return false 0', () => {
+    const result = solution(0);
+    expect(result).to.equal(false);
+  });
+  it('should return true for big numbers', () => {
+    const result = solution(6);
+    expect(result).to.equal(true);
+  });
+});

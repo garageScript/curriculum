@@ -1,21 +1,21 @@
 const expect = require('chai').expect;
-let solution = require('../4').solution;
+const solution = require('../4').solution;
 
-describe('print string x number of times', () => {
-  it('should repeat empty string 2 times', () => {
-    const result = solution(2, '');
-    expect(result).to.equal('');
+describe('max 3', () => {
+  it('should find the max of 2 numbers', () => {
+    const result = solution(6, 7);
+    expect(result).to.equal(7);
   });
-  it('should repeat string 3 times', () => {
-    const result = solution(3, 'joe');
-    expect(result).to.equal('joejoejoe');
+  it('should find the max of 2 negative numbers', () => {
+    const result = solution(-2, -9);
+    expect(result).to.equal(-2);
   });
-  it('should repeat string 4 times', () => {
-    const result = solution(4,'julie');
-    expect(result).to.equal('juliejuliejuliejulie');
+  it('should find the max with positive n negatives', () => {
+    const result = solution(-2, 9);
+    expect(result).to.equal(9);
   });
-  it('should repeat string 5 times', () => {
-    const result = solution(5, 'olaf');
-    expect(result).to.equal('olafolafolafolafolaf');
+  it('should find the max where max is first parametr', () => {
+    const result = solution(3, 2);
+    expect(result).to.equal(3);
   });
-})
+});

@@ -1,38 +1,21 @@
 const expect = require('chai').expect;
 const solution = require('../7').solution;
 
-describe('check if number x is prime', () => {
-  it('2 should be prime', () => {
-    const result = solution(2);
-    expect(result).to.equal(true);
-  });
-  it('3 should be prime', () => {
-    const result = solution(3);
-    expect(result).to.equal(true);
-  });
-  it('1 should not be prime', () => {
-    const result = solution(1);
+describe('Sum greater than 10', () => {
+  it('should return false when input is -21, 0', () => {
+    const result = solution(-21, 0);
     expect(result).to.equal(false);
   });
-  it('7 should be prime', () => {
-    const result = solution(7);
+  it('should return false when input is -21, -20', () => {
+    const result = solution(-21, -20);
+    expect(result).to.equal(false);
+  });
+  it('should return false when input is 0, 5', () => {
+    const result = solution(0, 5);
+    expect(result).to.equal(false);
+  });
+  it('should return true when input is 6, 5', () => {
+    const result = solution(6, 5);
     expect(result).to.equal(true);
-  });
-  it('9 should not be prime', () => {
-    const result = solution(9);
-    expect(result).to.equal(false);
-  });
-  it('12 should not be prime', () => {
-    const result = solution(12);
-    expect(result).to.equal(false);
-  });
-  it('1223 should be prime', () => {
-    const result = solution(1223);
-    expect(result).to.equal(true);
-  });
-  it('1226 should not be prime', () => {
-    const result = solution(1226);
-    expect(result).to.equal(false);
   });
 });
-
