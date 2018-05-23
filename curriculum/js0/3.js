@@ -5,7 +5,10 @@
  */
 
 const solution = (a) => {
+  if (a > 5) {
   return true;
+  }
+return false;
 };
 
 module.exports = {
