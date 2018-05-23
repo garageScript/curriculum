@@ -9,8 +9,7 @@ const solution = (num,i=0, newStr="") => {
   if(i==num){
     return newStr;
   }
-  newStr=newStr+"hello ";
-  return solution( num,i+1, newStr);
+  return solution( num,i+1, newStr+"hello");
 };
 
 module.exports = {
