@@ -5,9 +5,14 @@
  * @param {function} b
  * @param {number} c
  */
-
+const a = () => {
+  return a;
+};
+const b = () => {
+  return b;
+};
 const solution = (a, b) => {
-  return 0;
+  return a() + b();
 };
 
 module.exports = {
