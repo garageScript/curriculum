@@ -4,8 +4,8 @@
  * @returns {boolean}
  */
 
-const solution = (a) => {
-  return true;
+const solution = (a) =>{
+  return a>5;
 };
 
 module.exports = {
