@@ -6,7 +6,7 @@
  */
 
 const solution = (a) => {
-  return [];
+  return []
   const solution =(arr,newarr=[],i=0)=>{
     if (arr.length===i){
       return newarr;
