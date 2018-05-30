@@ -6,7 +6,7 @@
 
 const solution = (a, b = 1) => {
   if ((a + b) % 7 === 0) return a + b;
-  return solution(a, b + 1);
+  return solution(a, b + 1); 
 };
 
 module.exports = {
