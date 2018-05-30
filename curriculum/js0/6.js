@@ -7,7 +7,11 @@
  */
 
 const solution = (a, b) => {
-  return true;
+  if (a > b){
+    return true;
+  }else{
+    return false;
+  }
 };
 
 module.exports = {
