@@ -4,9 +4,10 @@
  */
 
 const solution = () => {
-  Array.prototype.gsMap = function () {
-    // To get the actual array, use this
-    return [];
+  Array.prototype.gsMap = function(func, newarr = [], i = 0) {
+    if (this.length === i) return newarr;
+    newarr.push(func(this[i]));
+    return this.gsMap(func, newarr, i + 1);
   };
 };
 
