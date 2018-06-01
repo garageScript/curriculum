@@ -5,7 +5,9 @@
  */
 
 const solution = (a) => {
-  return 0;
+  a++
+  if (a%7===0) return a;
+  return solution (a);
 };
 
 module.exports = {
