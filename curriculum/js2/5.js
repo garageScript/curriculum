@@ -4,8 +4,10 @@
  * @returns {number}
  */
 
-const solution = (a) => {
-  return 0;
+const solution = (a,i=0,largest = '') => {
+  if (i === a.length) return largest;
+  if (a[i] > largest || largest === '') largest = a[i];
+  return solution(a,i+1,largest);
 };
 
 module.exports = {
