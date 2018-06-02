@@ -6,8 +6,11 @@
  * @returns {array}
  */
 
-const solution = (a, b) => {
-  return 0;
+const solution = (a, b, i = 0, ans = 0) => {
+  if (i === a.length) return ans;
+  if (a[i] === b) ans += 1;
+  return solution(a,b,i+1,ans);
+
 };
 
 module.exports = {
