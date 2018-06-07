@@ -6,9 +6,9 @@
  * @returns {function}
  */
 
-const solution = (a, b) => {
-  return () => {
-  };
+const solution = (a, b) =>{
+ return ( ) => {
+  return (a+b)};
 };
 
 module.exports = {
