@@ -7,7 +7,14 @@
  */
 
 const solution = (a, b) => {
-  return 0;
+  const recur = (x, y, z='', counter=0) => {
+    if (x === counter) {
+      return z;
+    }
+    z += y;
+    return recur(x,y,z,counter+1);
+  }
+  return recur(a,b);
 };
 
 module.exports = {
