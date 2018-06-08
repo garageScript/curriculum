@@ -6,14 +6,14 @@
  */
 
 const solution = (a, b) => {
-  const recur = (x=a, counter = 0, b='') => {
+  const recur = (x, counter = 0, b = '') => {
     if (x === counter) {
       return b;
     };
     b += 'hello';
-    recur(x, counter+1, b);
+    return recur(x, counter+1, b);
       };
-  return b;
+  return recur(a);
 };
 
 module.exports = {
