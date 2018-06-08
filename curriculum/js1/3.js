@@ -6,7 +6,14 @@
  */
 
 const solution = (a, b) => {
-  return 0;
+  const recur = (x=a, counter = 0, b='') => {
+    if (x === counter) {
+      return b;
+    };
+    b += 'hello';
+    recur(x, counter+1, b);
+      };
+  return b;
 };
 
 module.exports = {
