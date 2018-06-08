@@ -7,7 +7,7 @@
  */
 
 const solution = (a, b, c) => {
-  return 0;
+  return (a > b) ? a : (b > a) ? b : c;
 };
 
 module.exports = {
