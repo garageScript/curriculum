@@ -5,10 +5,10 @@
  * @returns {array}
  */
 
-const solution = (a) => {
-  return [];
+const solution = a => {
+  return a.map(e => (e % 2 != 0 ? 0 : e));
 };
 
 module.exports = {
-  solution,
+  solution
 };
