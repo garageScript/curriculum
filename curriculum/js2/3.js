@@ -6,8 +6,12 @@
  * @returns {array}
  */
 
-const solution = (a) => {
-  return [];
+isPrime = require('../js1/7.js').solution;
+
+const solution = (a,ind = 0) => {
+  if (ind === a.length) return a;
+  if (!isPrime(a[ind])) a[ind] = 1;
+  return solution(a,ind + 1);
 };
 
 module.exports = {

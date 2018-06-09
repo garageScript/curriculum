@@ -6,7 +6,10 @@
  */
 
 const solution = (a, b) => {
-  return 0;
+
+  if( a === 0 ) { return; }
+  b();
+  return solution(a-1, b);
 };
 
 module.exports = {
