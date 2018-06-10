@@ -1,7 +1,7 @@
 /**
  * 2 Timeouts: takes in 2 numbers (a,b) and a function,
- *     execute the function after a seconds,
- *     and then execute the function again after b seconds
+ *     executes the function after a milliseconds,
+ *     and then executes the function again after b milliseconds
  * @param {number} a
  * @param {number} b
  * @param {function} c
