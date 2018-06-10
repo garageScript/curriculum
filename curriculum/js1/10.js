@@ -1,18 +1,19 @@
 /**
  * 2 Timeouts: takes in 2 numbers (a,b) and a function,
- *     execute the function after a seconds,
- *     and then execute the function again after b seconds
+ *     executes the function after a milliseconds,
+ *     and then executes the function again after b milliseconds
  * @param {number} a
  * @param {number} b
  * @param {function} c
  */
 
 const solution = (a, b, c) => {
-  const timeout1 = global.setTimeout(c, a * 1000);
-  const timeout2 = global.setTimeout(c, (a + b) * 1000);
+  setTimeout(() => {
+    c();
+    setTimeout(c, b);
+  }, a);
 };
 
 module.exports = {
   solution,
 };
-
