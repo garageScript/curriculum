@@ -1,14 +1,21 @@
-# algorithms
+# Curriculum
 
-### Setup
+## Setup
 
-***step1***: Clone the (llipio/algorithms) repository locally
+***1***. Clone the (garageScript/curriculum) repository locally
 
-***step2***: To install all of the dependencies, run `yarn`
+***2***. To install all of the dependencies, run `yarn` in the root curriculum directory
 
-***step3***: Pick an issue that you would like to work on
+## Solve an Exercise
+***1***. Pick an exercise that you would like to work on
 
-***step4***: Create a solution for the problem you want to work only
+***2***. Create a new branch for the exercise solution
 
-***step5***: To test your function, simply run `npm run test curriculum/js1/tests/<test_number>.js`
+***3***. Edit and save the solution file (e.g. `vim curriculum/js1/1.js`)
 
+***4***. Test your solution using the appropriate script in `../tests`
+
+> For example, to test your solution to `curriculum/js1/1.js`, run the following command:
+> ```bash
+> yarn run test curriculum/js1/tests/1.js
+> ```
