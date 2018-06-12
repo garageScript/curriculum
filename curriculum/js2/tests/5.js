@@ -10,7 +10,7 @@ describe('given an array, return the largest element', () => {
     const result = solution([3,-13]);
     expect(result).to.equal(3);
   });
-  it('should return 8 when input is [3,8,-5]', () => {
+  it('should return -3 when input is [-3,-8,-5]', () => {
     const result = solution([-3,-8,-5]);
     expect(result).to.equal(-3);
   });
