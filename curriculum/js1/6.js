@@ -5,8 +5,10 @@
  * @returns {number}
  */
 
-const solution = (a) => {
-  return 0;
+const solution = (a, b = 2, sum = 0) => {
+  if (a < 2 || b === a) return sum;
+  if (a % b === 0) sum += b;
+  return solution(a, b + 1, sum);
 };
 
 module.exports = {
