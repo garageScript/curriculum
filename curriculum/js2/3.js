@@ -1,6 +1,6 @@
 /**
  * Given an array, return the same array
- *   where all elements that are not prime is changed to 1
+ *   where all elements that are not prime are changed to 1
  *   Please reuse your js1 solution
  * @param {array} a
  * @returns {array}
