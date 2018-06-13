@@ -1,7 +1,18 @@
 /*
- * Level BFT - Given a tree, print out an array,
- * each element is an array of nodes at that level
- * Each node has a property v, and children which is an array
+ * Level BFT - Given a tree, return an ordered array of node values.
+ *
+ * Each element of the returned array is an array of node values,
+ * ordered by tree depth.
+ *
+ * For example, given the following tree:
+ *  { v: 7, children: [{ v: 48, children: [] }, { v: 3, children: [] }]}
+ *
+ * The function should return:
+ *  [[7], [48, 3]]
+ *
+ * Each node in the given tree can be assumed to have the following
+ * properties: 'v' (its value), and 'children' (an array of child nodes)
+ *
  * @param {node} n
  * @returns {array}
  */
