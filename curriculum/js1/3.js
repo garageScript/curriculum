@@ -1,11 +1,11 @@
 /**
  * Say Hello - takes in a number x
  *     return string with “hello” repeated x times.
- * @param {number} a
+ * @param {number} x
  * @returns {string}
  */
 
-const solution = (a, b) => {
+const solution = (x) => {
   return 0;
 };
 
