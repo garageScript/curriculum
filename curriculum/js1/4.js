@@ -1,12 +1,12 @@
 /**
- * Print String - takes in a number n and string,
+ * Print String - takes in a number n and string s,
  *     return the string repeated n number of times.
- * @param {number} a
- * @param {string} b
+ * @param {number} n
+ * @param {string} s
  * @returns {string}
  */
 
-const solution = (a, b) => {
+const solution = (n, s) => {
   return 0;
 };
 
