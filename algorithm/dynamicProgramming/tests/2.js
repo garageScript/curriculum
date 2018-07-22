@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-let solution = require('../1').solution;
+let solution = require('../2').solution;
 
 describe('longest increasing sequence', () => {
   it('should return 1 for one case', () => {
@@ -20,6 +20,22 @@ describe('longest increasing sequence', () => {
   });
   it('should return 4 for non-consecutive increasing sequence', () => {
     const result = solution([10, 11, 5, 12, 13]);
+    expect(result).to.equal(4);
+  });
+  it('3, 10, 2, 1, 20 should return 3', () => {
+    const result = solution([3, 10, 2, 1, 20]);
+    expect(result).to.equal(3);
+  });
+  it('3, 2 should return 1', () => {
+    const result = solution([3, 2]);
+    expect(result).to.equal(1);
+  });
+  it('50, 3, 10, 7, 40, 80 should return 4', () => {
+    const result = solution([50, 3, 10, 7, 40, 80]);
+    expect(result).to.equal(4);
+  });
+  it('2, 6, 3, 4, 5 should return 4', () => {
+    const result = solution([2,6,3,4,5]);
     expect(result).to.equal(4);
   });
 });
