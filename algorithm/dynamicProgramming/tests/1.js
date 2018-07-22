@@ -14,4 +14,12 @@ describe('max loot', () => {
     const result = solution([125, 250, 200, 0]);
     expect(result).to.equal(325);
   });
+  it('25, 100, 80, 0 should return 180', () => {
+    const result = solution([25, 100, 80, 0]);
+    expect(result).to.equal(105);
+  });
+  it('100, 50, 0, 55 should return 155', () => {
+    const result = solution([100, 50, 0, 55]);
+    expect(result).to.equal(155);
+  });
 });
