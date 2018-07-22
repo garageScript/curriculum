@@ -8,7 +8,7 @@ describe('longest increasing sequence', () => {
   });
   it('should return 1 for no increasing sequence', () => {
     const result = solution([100, 2]);
-    expect(result).to.equal(300);
+    expect(result).to.equal(1);
   });
   it('should return 2 for consecutive increasing sequence', () => {
     const result = solution([100, 0, 1]);
