@@ -23,7 +23,7 @@
  *
  */
 
-const solution = (wait, onLast, onFirst, interval, timestamps) => {
+const solution = (s1, s2) => {
   return 0;
 };
 
