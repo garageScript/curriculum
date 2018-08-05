@@ -30,7 +30,7 @@
 
 
 const solution = (wait, onLast, onFirst, interval, timestamps) => {
-  return 0;
+  return [];
 };
 
 module.exports = {

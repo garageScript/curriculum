@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-let solution = require('../callbackThrottler').solution;
+const solution = require('../callbackThrottler').solution;
 
 describe('callback throttler', () => {
   it('should satisfy example 1', () => {
