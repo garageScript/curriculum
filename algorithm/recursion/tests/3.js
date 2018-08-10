@@ -1,35 +1,17 @@
 const expect = require('chai').expect;
-const solution = require('../2').solution;
+const solution = require('../4').solution;
 
-describe('max subtree', () => {
+describe('distance between 2 nodes', () => {
   it('should return distance 2 for tree with 3 nodes', () => {
-    const a = {val: 3};
-    const b = {val: 2};
-    const c = {val: 4};
+    const a = {val: 'a'};
+    const b = {val: 'b'};
+    const c = {val: 'c'};
     a.left = b;
     a.right = c;
-    const result = solution(a, b, c);
+    const result = solution(a);
     expect(result).to.equal(2);
   });
-  it('should return distance 1 for tree with 3 nodes, root and right', () => {
-    const a = {val: 3};
-    const b = {val: 2};
-    const c = {val: 4};
-    a.left = b;
-    a.right = c;
-    let result = solution(a, a, c);
-    expect(result).to.equal(1);
-  });
-  it('should return distance 1 for tree with 3 nodes, root and left', () => {
-    const a = {val: 3};
-    const b = {val: 2};
-    const c = {val: 4};
-    a.left = b;
-    a.right = c;
-    const result = solution(a, a, b);
-    expect(result).to.equal(1);
-  });
-  it('should return distance for nodes on left side', () => {
+  it('should return distance 3 for tree with 5 nodes', () => {
     const a = {val: 'a'};
     const b = {val: 'b'};
     const c = {val: 'c'};
@@ -39,71 +21,49 @@ describe('max subtree', () => {
     a.right = c;
     b.left = d;
     b.right = e;
-    const result = solution(a, d, e);
-    expect(result).to.equal(2);
+    const result = solution(a);
+    expect(result).to.equal(3);
   });
-  it('should return distance for nodes on left plus right side', () => {
+  it('should return distance 4 using right child nodes', () => {
     const a = {val: 'a'};
     const b = {val: 'b'};
     const c = {val: 'c'};
     const d = {val: 'd'};
     const e = {val: 'e'};
+    const f = {val: 'f'};
+    const g = {val: 'g'};
+    const h = {val: 'h'};
+    const i = {val: 'i'};
     a.left = b;
     a.right = c;
-    b.left = d;
-    b.right = e;
-    const result = solution(a, d, c);
-    expect(result).to.equal(3);
+    c.left = d;
+    c.right = e;
+    d.left = f;
+    e.left = g;
+    f.left = h;
+    g.right = i;
+    const result = solution(a);
+    expect(result).to.equal(6);
   });
-  it('should return distance for deep tree left and right', () => {
-    const a = {val: 3};
-    const b = {val: 2};
-    const c = {val: 4};
-    const d = {val: 5};
-    const e = {val: 6};
-    const f = {val: 1};
-    const g = {val: 1};
+  it('should return distance 4 using left child nodes', () => {
+    const a = {val: 'a'};
+    const b = {val: 'b'};
+    const c = {val: 'c'};
+    const d = {val: 'd'};
+    const e = {val: 'e'};
+    const f = {val: 'f'};
+    const g = {val: 'g'};
+    const h = {val: 'h'};
+    const i = {val: 'i'};
     a.left = b;
     a.right = c;
     b.left = d;
     b.right = e;
-    c.right = f;
-    c.left = g;
-    const result = solution(a, e, g);
-    expect(result).to.equal(4);
-  });
-  it('should return distance for deep tree left and right', () => {
-    const a = {val: 3};
-    const b = {val: 2};
-    const c = {val: 4};
-    const d = {val: 5};
-    const e = {val: 6};
-    const f = {val: 1};
-    const g = {val: 1};
-    a.left = b;
-    a.right = c;
-    b.left = d;
-    b.right = e;
-    c.right = f;
-    c.left = g;
-    const result = solution(a, b, f);
-    expect(result).to.equal(3);
-  });
-  it('should return distance for deep tree root and right', () => {
-    const a = {val: 3};
-    const b = {val: 2};
-    const c = {val: 4};
-    const d = {val: 5};
-    const e = {val: 6};
-    const f = {val: 1};
-    const g = {val: 1};
-    a.left = b;
-    a.right = c;
-    b.left = d;
-    b.right = e;
-    c.right = f;
-    c.left = g;
-    const result = solution(a, a, g);
-    expect(result).to.equal(2);
+    d.left = f;
+    e.left = g;
+    f.left = h;
+    g.right = i;
+    const result = solution(a);
+    expect(result).to.equal(6);
   });
 });

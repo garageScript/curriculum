@@ -1,13 +1,10 @@
 /**
- * Given a tree node and 2 other nodes in that tree,
- * return the distance between the 2 nodes
+ * Given a tree, return the maximum distance between any 2 nodes
  * @param {node} a
- * @param {node} b
- * @param {node} c
  * @returns {number}
  */
 
-const solution = (n, a, b) => {
+const solution = (n) => {
   return 0;
 };
 

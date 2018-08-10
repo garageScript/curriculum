@@ -1,5 +1,5 @@
 /**
- * Given a tree, return the maximum distance between any 2 nodes
+ * Given a tree, return the maximum depth of the tree
  * @param {node} a
  * @returns {number}
  */
