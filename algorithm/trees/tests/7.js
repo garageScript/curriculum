@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-const solution = require('../deletionDistance').solution;
+const solution = require('../7').solution;
 
 describe('deletionDistance', () => {
   it('should satisfy example 1', () => {

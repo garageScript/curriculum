@@ -1,5 +1,5 @@
 /**
- * Given a node {val: 5}, return value of the sum of values of biggest subtree
+ * Given a tree, find the largest value
  * @param {node} a
  * @returns {number}
  */
