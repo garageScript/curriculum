@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-let solution = require('../2').solution;
+const solution = require('../9').solution;
 
 describe('longest increasing sequence', () => {
   it('should return 1 for one case', () => {

@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-const solution = require('../4').solution;
+const solution = require('../11').solution;
 
 describe('max value', () => {
   it('should return value for one weight', () => {

@@ -1,14 +1,16 @@
 /**
  * FB contract
- * Write a function that counts the number of islands in a matrix.
- * 1 represent land, 0 represent sea.
- * Land elements are connected if they are adjacent up, down, left, right
- * (not diagonal)
- * @param {array} a
- * @returns {number}
+ * Given a matrix that represents an map,
+ * return the number of isolated islands in the map.
+ * The map is represented with 1 for land and 0 for water.
+ * With every value in the matrix as a tile,
+ * a land tile is adjacent if the value top, bottom, left, or right
+ * is also a land tile
+ * @param {array} map
+ * @returns {number} of isolated islands
  */
 
-const solution = (a) => {
+const solution = (map) => {
   return 0;
 };
 

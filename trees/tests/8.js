@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-let solution = require('../1').solution;
+const solution = require('../8').solution;
 
 describe('max loot', () => {
   it('should find max loot of 1 house', () => {
