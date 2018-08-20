@@ -1,13 +1,10 @@
 /**
- * Given a tree node and 2 other nodes in that tree,
- * return the distance between the 2 nodes
+ * Given a binary tree and a node, find the distance to that node.
+ * @param {node} t
  * @param {node} a
- * @param {node} b
- * @param {node} c
  * @returns {number}
  */
-
-const solution = (n, a, b) => {
+const solution = (t, n) => {
   return 0;
 };
 
