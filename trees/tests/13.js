@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-const solution = require('../5').solution;
+const solution = require('../13').solution;
 
 describe('distance between 2 nodes', () => {
   it('should return distance 2 for tree with 3 nodes', () => {

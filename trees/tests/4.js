@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-const solution = require('../13').solution;
+const solution = require('../4').solution;
 
 describe('max subtree', () => {
   it('should return root node value', () => {
