@@ -54,15 +54,17 @@ describe('max fun', () => {
     expect(result).to.equal(13);
   });
   it('should skip some nodes in middle level', () => {
-    const a = {val: 5};
+    const a = {val: 100};
     const b = {val: 6};
     const c = {val: 3};
     const d = {val: 8};
     const e = {val: 3};
     const f = {val: 4};
+    const g = {val: 400};
     a.children = [b, c, d];
     b.children = [e, f];
+    e.children = [g];
     const result = solution(a);
-    expect(result).to.equal(23);
+    expect(result).to.equal(504);
   });
 });
