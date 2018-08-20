@@ -1,63 +1,84 @@
 const expect = require('chai').expect;
 const solution = require('../4').solution;
 
-describe('max subtree', () => {
-  it('should return root node value', () => {
-    const a = {val: 3};
-    const b = {val: 2};
-    const c = {val: 4};
-    const d = {val: 5};
-    const e = {val: 6};
-    const f = {val: 1};
+describe('Distance to a node', () => {
+  it('should return distance 1 for tree with left node', () => {
+    const a = {val: 'a'};
+    const b = {val: 'b'};
     a.left = b;
-    a.right = c;
-    b.left = d;
-    b.right = e;
-    c.right = f;
-    const result = solution(a);
-    expect(result).to.equal(21);
+    const result = solution(a, b);
+    expect(result).to.equal(1);
   });
-  it('should return 1st level left node value', () => {
-    const a = {val: -5};
-    const b = {val: 3};
-    const c = {val: 1};
-    const d = {val: 2};
-    const e = {val: 6};
-    a.left = b;
-    a.right = c;
-    b.left = d;
-    b.right = e;
-    const result = solution(a);
-    expect(result).to.equal(11);
+  it('should return distance 1 for tree with right node', () => {
+    const a = {val: 'a'};
+    const b = {val: 'b'};
+    a.right = b;
+    const result = solution(a, b);
+    expect(result).to.equal(1);
   });
-  it('should return top level right node value', () => {
-    const a = {val: -5};
-    const b = {val: 3};
-    const c = {val: 1};
-    const d = {val: 2};
-    const e = {val: 6};
-    const f = {val: 600};
+  it('should return distance 0 for finding itself', () => {
+    const a = {val: 'a'};
+    const b = {val: 'b'};
+    const c = {val: 'c'};
+    const d = {val: 'd'};
+    const e = {val: 'e'};
     a.left = b;
     a.right = c;
     b.left = d;
     b.right = e;
-    c.right = f;
-    const result = solution(a);
-    expect(result).to.equal(607);
+    const result = solution(a, a);
+    expect(result).to.equal(0);
   });
-  it('should return mid level right node value', () => {
-    const a = {val: -50};
-    const b = {val: 3};
-    const c = {val: 1};
-    const d = {val: 2};
-    const e = {val: 6};
-    const f = {val: 600};
+  it('should return distance 2 using right child nodes', () => {
+    const a = {val: 'a'};
+    const b = {val: 'b'};
+    const c = {val: 'c'};
+    const d = {val: 'd'};
+    const e = {val: 'e'};
+    const f = {val: 'f'};
+    const g = {val: 'g'};
+    const h = {val: 'h'};
+    const i = {val: 'i'};
+    a.left = b;
+    a.right = c;
+    c.left = d;
+    c.right = e;
+    d.left = f;
+    e.left = g;
+    f.left = h;
+    g.right = i;
+    const result = solution(a, e);
+    expect(result).to.equal(2);
+  });
+  it('should return distance 4 using long left child distraction', () => {
+    const a = {val: 'a'};
+    const b = {val: 'b'};
+    const c = {val: 'c'};
+    const d = {val: 'd'};
+    const e = {val: 'e'};
+    const f = {val: 'f'};
+    const g = {val: 'g'};
+    const h = {val: 'h'};
+    const i = {val: 'i'};
+    const j = {val: 'j'};
+    const k = {val: 'k'};
+    const l = {val: 'l'};
+    const m = {val: 'm'};
+    const n = {val: 'n'};
     a.left = b;
     a.right = c;
     b.left = d;
     b.right = e;
-    c.right = f;
-    const result = solution(a);
-    expect(result).to.equal(601);
+    d.left = f;
+    e.left = g;
+    f.left = h;
+    g.right = i;
+    h.left = j;
+    j.left = k;
+    k.left = l;
+    l.left = m;
+    m.left = n;
+    const result = solution(a, i);
+    expect(result).to.equal(4);
   });
 });

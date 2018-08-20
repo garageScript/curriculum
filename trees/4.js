@@ -1,10 +1,10 @@
 /**
- * Given a node {val: 5}, return value of the sum of values of biggest subtree
+ * Given a binary tree and a node, find the distance to that node.
+ * @param {node} t
  * @param {node} a
  * @returns {number}
  */
-
-const solution = (a) => {
+const solution = (t, n) => {
   return 0;
 };
 
