@@ -1,0 +1,9 @@
+Create your files in your public files. Name your files as you wish
+
+Please make sure your server is up and running when you submit and during review,
+ or it will be rejected
+
+To run the server, simply run:
+PORT=XXXX supervisor app.js
+
+Good Luck!
