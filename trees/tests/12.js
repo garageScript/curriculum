@@ -22,9 +22,9 @@ describe('Target sum of subarray', () => {
     const result = solution([1, 0, 1], 2);
     expect(result).to.equal(true);
   });
-  it('should not consider an empty sequence as a valid subarray', () => {
-    const result = solution([1], 0);
-    expect(result).to.equal(false);
+  it('should work with only middle subarray', () => {
+    const result = solution([100, 2, 3, 4, 300], 9);
+    expect(result).to.equal(true);
   });
 });
 

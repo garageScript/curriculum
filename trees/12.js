@@ -11,8 +11,9 @@
  * Output: True
  * Explanation: 4, 6 are adjacent and result to 10
  *
- * Input: [1], 0
+ * Input: [1, -33, 2, 5], 6
  * Output: False
+ * Explanation: no consecutive subarray add up to 6
  */
 
 const solution = (integers, k) => {
