@@ -18,6 +18,10 @@ describe('Target sum of subarray', () => {
     const result = solution([1, -50, 1, 50], 2);
     expect(result).to.equal(true);
   });
+  it('should work for non consecutive numbers', () => {
+    const result = solution([1, 3, 2, 4, 5], 11);
+    expect(result).to.equal(true);
+  });
   it('should work regardless of zeroes', () => {
     const result = solution([1, 0, 1], 2);
     expect(result).to.equal(true);
