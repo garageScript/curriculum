@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 const solution = require('../6').solution;
 
-describe('Fist is bigger', () => {
+describe('First is bigger', () => {
   it('should return false when input is -21, 0', () => {
     const result = solution(-21, 0);
     expect(result).to.equal(false);
