@@ -1,44 +1,43 @@
+const expect = require('chai').expect;
 const sleepSort = require('../8');
 
 describe('Serialize', function() {
-  it('should sort empty array correctly', function(done) {
-    sleepSort([]).then( (a) => {
-      if (JSON.stringify(a) !== JSON.stringify([])) {
-        return done(new Error('Did not sort correctly'));
-      }
-      return done();
-    });
-  });
-
-  it('should make sure sleep sort is used', function(done) {
-    const now = Date.now();
-    sleepSort([9, 8, 7]).then( (a) => {
-      if (Date.now() - now < 9) {
-        return done(new Error('Did not use setTimeout to sleep'));
-      }
-      if (JSON.stringify(a) !== JSON.stringify([])) {
-        return done(new Error('Did not sort correctly'));
-      }
-      return done();
-    });
-  });
-
-  it('should sort an array correctly', function(done) {
-    sleepSort([9, 8, 7]).then( (a) => {
-      if (JSON.stringify(a) !== JSON.stringify([7, 8, 9])) {
-        return done(new Error('Did not sort correctly'));
-      }
-      return done();
-    });
-  });
-
-  it('should sort an array correctly', function(done) {
+  it('should reject an array correctly', function(done) {
     sleepSort([9, 2, 8, 1, 2, 2, 7]).then( (a) => {
-      if (JSON.stringify(a) !== JSON.stringify([1, 2, 2, 2, 7, 8, 9])) {
-        return done(new Error('Did not sort correctly'));
-      }
+      return done(new Error('Should have rejected'));
+    }).catch( () => {
       return done();
     });
+  });
+    it('should sort an array of positive numbers', () => {
+    return sleepSort([3, 4, 5, 6, 7, 1, 2])
+      .then((sorted) => {
+        expect(sorted).to.deep.equal([1, 2, 3, 4, 5, 6, 7]);
+      });
+  });
+
+  it('should reject an array with duplicate numbers', () => {
+    return sleepSort([3, 4, 5, 6, 7, 1, 2, 3])
+      .then((sorted) => {
+        expect(sorted).to.be.undefined;
+      })
+      .catch((err) => {
+        expect(err).to.equal('duplicate value 3 (duplicates not allowed)');
+      });
+  });
+
+  it('should sort an array of negative numbers', () => {
+    return sleepSort([-3, -4, -5, -7])
+      .then((sorted) => {
+        expect(sorted).to.deep.equal([-7, -5, -4, -3]);
+      });
+  });
+
+  it('should sort an array of negative and non-negative numbers', () => {
+    return sleepSort([0, -3, -4, -5, 6, -7, 1, 2])
+      .then((sorted) => {
+        expect(sorted).to.deep.equal([-7, -5, -4, -3, 0, 1, 2, 6]);
+      });
   });
 });
 
