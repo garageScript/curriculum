@@ -1,3 +1,4 @@
+const expect = require('chai').expect;
 const solution = require('../11');
 solution();
 
@@ -31,5 +32,13 @@ describe('resolveAll', () => {
       }
       return done();
     });
+  });
+  it('should reject with first rejection value', () => {
+    const array = [
+      new Promise((res, rej) => rej('1st rejection')),
+      new Promise((res, rej) => rej('2nd rejection')),
+    ];
+    return array.asyncReduce((acc, cv) => acc += cv, 0)
+      .catch((err) => expect(err).to.equal('1st rejection'));
   });
 });
