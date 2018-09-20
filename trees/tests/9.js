@@ -35,7 +35,15 @@ describe('longest increasing sequence', () => {
     expect(result).to.equal(4);
   });
   it('2, 6, 3, 4, 5 should return 4', () => {
-    const result = solution([2,6,3,4,5]);
+    const result = solution([2, 6, 3, 4, 5]);
+    expect(result).to.equal(4);
+  });
+  it('1,2,3,8,9,5,6,7 should return 6', () => {
+    const result = solution([1, 2, 3, 8, 9, 5, 6, 7]);
+    expect(result).to.equal(6);
+  });
+  it('1,8,5,6,7 should return 4', () => {
+    const result = solution([1, 8, 5, 6, 7]);
     expect(result).to.equal(4);
   });
 });
