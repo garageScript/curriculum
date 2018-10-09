@@ -2,10 +2,12 @@ import Stars from './stars';
 import ReactDOM from 'react-dom';
 import React from 'react';
 import Kanban from './kanban';
+import Files from './files';
 
 const App = () => {
   if (window.location.pathname.includes('star')) return <Stars />;
-  return <Kanban />
+  if (window.location.pathname.includes('kanban')) return <Kanban />;
+  return <Files />
 };
 
 ReactDOM.render(

@@ -31,7 +31,7 @@ class Stars extends React.Component {
   constructor(props) {
     super(props); // You must call super whenever you extend
     this.state = {
-      selected: -1,
+      selected: this.props.value > -1 ? this.props.value : -1,
       lock: false
     };
   }
@@ -44,6 +44,7 @@ class Stars extends React.Component {
       selected: +id,
       lock: true
     });
+    this.props.select && this.props.select(+id);
   }
   render() {
     const stars = [0,1,2,3,4].map( i =>

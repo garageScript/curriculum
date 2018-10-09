@@ -10,12 +10,18 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded());
 
 const messages = [];
+const fRating = {};
 
 const server = new ApolloServer({
   typeDefs: gql`
     type Query {
       users: [String]
       messages: [Message]
+      files: [File]
+    }
+    type File {
+      name: String
+      value: String
     }
     type Message {
       name: String
@@ -23,6 +29,7 @@ const server = new ApolloServer({
     }
     type Mutation {
       addMessage(value: String): Message
+      rateFile(file: String, value: Int): File
     }
   `,
   resolvers: {
@@ -35,11 +42,28 @@ const server = new ApolloServer({
         });
       },
       messages: () => messages,
+      files: (_, args, context) => {
+        return new Promise( (s, j) => {
+          fs.readdir(__dirname, (err, files) => {
+            s(files.map( (f) => {
+              const value = +fRating[f] > -1 ? fRating[f] : -1;
+              return {
+                name: f,
+                value,
+              };
+            }));
+          });
+        });
+      },
     },
     Mutation: {
       addMessage: (_, args, context) => {
         const msg = {name: context.req.cookies.name, value: args.value};
         messages.unshift(msg);
+      },
+      rateFile: (_, args, context) => {
+        fRating[args.file] = args.value;
+        return {name: args.file, value: args.value};
       },
     },
   },
