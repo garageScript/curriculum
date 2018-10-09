@@ -58,5 +58,9 @@ app.post('/login', (req, res) => {
   res.redirect('/chat');
 });
 
+app.get('/*', (req, res) => {
+  return res.sendFile(`${__dirname}/public/index.html`);
+});
+
 app.listen(6899); // song.c0d3.com
 
