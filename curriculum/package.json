@@ -1,0 +1,17 @@
+{
+  "name": "curriculum",
+  "version": "1.0.0",
+  "description": "garageScript",
+  "main": "1.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "javascript"
+  ],
+  "author": "Carlos",
+  "license": "ISC"
+}
