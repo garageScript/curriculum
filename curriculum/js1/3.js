@@ -6,7 +6,9 @@
  */
 
 const solution = (a, b) => {
-  return 0;
+  for (var i = 0; i < b; i++) {
+    return a;
+  }
 };
 
 module.exports = {
