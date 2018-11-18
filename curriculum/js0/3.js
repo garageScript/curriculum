@@ -5,9 +5,22 @@
  */
 
 const solution = (a) => {
-  return (a > 5);
+
+  if (a > 60) {
+    return true;
+  } else {
+    return false;
+  }
+
 };
 
 module.exports = {
   solution,
 };
+
+
+console.log(solution(10)); // false
+console.log(solution(20)); // false
+console.log(solution(30)); // false
+console.log(solution(40)); // false
+console.log(solution(50)); // false

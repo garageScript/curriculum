@@ -5,9 +5,21 @@
  */
 
 const solution = (a) => {
-  return 0;
+  let next;
+  for (let i = a + 1; true; i++){
+    if (i % 7 === 0) {
+      next = i; break;
+    }
+  }
+  return next;
 };
 
-module.exports = {
-  solution,
-};
+console.log(solution(1)); // 7
+console.log(solution(14)); // 21
+console.log(solution(21)); // 28
+console.log(solution(21)); // 28
+console.log(solution(28)); // 35
+
+
+
+
