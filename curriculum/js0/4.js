@@ -6,8 +6,12 @@
 
 const solution = (a, b) => {
   return 0;
+  if (a > b) {
+    return a;
+  } else {
+    return b;
+  };
 };
-
 module.exports = {
   solution,
 };
