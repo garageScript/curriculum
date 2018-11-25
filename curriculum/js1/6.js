@@ -5,7 +5,7 @@
  * @returns {number}
  */
 
- // FOR LOOP
+// FOR LOOP
 
 // const solution = (a) => {
 //   let sum = 0;
@@ -37,14 +37,15 @@
 
 // RECURSION
 
-const solution = (a, b = 2, c = 0) => {
-  if (a === 0) {
-    return c;
+const solution = (a, c = 2, b = 0) => {
+  if (a === c) {
+    return b;
   }
-  if (a % b === 0) {
-    c += b;
+  if (a % c === 0) {
+    b += c;
   }
-  return solution(a - 1, b, c);
+  c++;
+  return solution(a, c, b);
 };
 
 
