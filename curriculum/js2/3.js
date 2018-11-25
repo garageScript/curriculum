@@ -58,10 +58,7 @@ const isPrime = (a, c = 2) => {
   // RECURSION 
 
 const solution = (a, b = [], c = 0) => {
-// console.log("a = ", a);
-// console.log("b = ", b);
-// console.log("c = ", c);
-
+  
   if (b.length === a.length) {
     return b;
   }
