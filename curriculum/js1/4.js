@@ -34,16 +34,16 @@
 
 // RECURSION 
 
-const solution = (a, b) => {
-  let str = '';
+const solution = (a, b, c = '') => {
   if (a === 0) {
-    return str;
+    return c;
   }
-  str += b;
-  return solution(a - 1, b);
+  c += b;
+  return solution(a - 1, b, c);
 };
 
-console.log(solution(2, ''));
-console.log(solution(3, 'joe'));
-console.log(solution(4, 'julie'));
-console.log(solution(5, 'olaf'));
+
+console.log(solution(2, '')); // 
+console.log(solution(3, 'joe')); // joejoejoe
+console.log(solution(4, 'julie')); // juliejuliejuliejulie
+console.log(solution(5, 'olaf')); // olafolafolafolafolaf

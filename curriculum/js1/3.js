@@ -5,7 +5,6 @@
  * @returns {string}
  */
 
-
 // FOR LOOP
 
 // const solution = (a, b = '') => {
@@ -34,15 +33,13 @@
 
 // RECURSION 
 
-// const solution = (a, b = '') => {
-//   if (a === 0) {
-//     return b;
-//   }
-//   b += 'hello';
-//   return solution(a - 1, b);
-// };
-
-
+const solution = (a, b = '') => {
+  if (a === 0) {
+    return b;
+  }
+  b += 'hello';
+  return solution(a - 1, b);
+};
 
 console.log(solution(0)); // ''
 console.log(solution(3)); // hellohellohello

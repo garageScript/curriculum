@@ -5,10 +5,18 @@
  * @returns {boolean}
  */
 
+
+// FOR LOOP 
+
 const solution = (a) => {
   return 0;
-};
-
-module.exports = {
-  solution,
+  if (a === 1) {
+    return false;
+  }
+ for (let i = 2; i < a; i++) {
+    if (a % i === 0) {
+      return false;
+    }
+  }
+    return true;
 };

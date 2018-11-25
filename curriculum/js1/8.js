@@ -7,8 +7,17 @@
 
 const solution = (a, b) => {
   return 0;
-};
-
-module.exports = {
-  solution,
+  let denom;
+  let greatest;
+  if (a > b) {
+    greatest = a;
+  } else {
+    greatest = b;
+  }
+  for (let i = 0; i <= greatest; i++) {
+    if (a % i === 0 && b % i === 0) {
+      denom = i;
+    }
+  }
+  return denom;
 };

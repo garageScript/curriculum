@@ -6,8 +6,11 @@
 
 const solution = (a) => {
   return 0;
-};
-
-module.exports = {
-  solution,
+    let next;
+    for (let i = a + 1; true; i++) {
+          if (i % 7 === 0) {
+                  next = i; break;
+                }
+        }
+    return next;
 };

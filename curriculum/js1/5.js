@@ -9,38 +9,45 @@
 // FOR LOOP
 
 //  */
+
 // const solution = (a, b) => {
-//   return 0;
 //   for (let i = 0; i < a; i++) {
 //     b();
-//   };
+//   }
 // };
 
 
 // WHILE LOOP
 
-const solution = (a, b) => {
-  i = 0;
+// const solution = (a, b) => {
+//   i = 0;
 
-  while (i < a) {
-    b()
-    i++;
-  }
-}
-
-
+//   while (i < a) {
+//     b()
+//     i++;
+//   }
+// }
 
 // RECURSION
 
-// const solution = (a, b, c=0) => {
-//   if (a === c) {
-//     return 0;
-//   }
-//   b();
-//   solution(a, b, c+=1);
-// };
-
-
-module.exports = {
-  solution,
+const solution = (a, b) => {
+  if (a === 0) {
+    return;
+  }
+  b();
+  solution(a - 1, b);
 };
+
+function hello() {
+  console.log("Hello World");
+};
+
+function goodbye(){
+  console.log("GoodBye!");
+}
+
+console.log(solution(2, hello()));
+// console.log(solution(3, goodbye()));
+
+hello();
+goodbye();
