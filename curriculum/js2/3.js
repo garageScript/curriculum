@@ -37,6 +37,7 @@ const isPrime = (a, c = 2) => {
 // }
 
 
+
 // WHILE LOOP
 
 // const solution = (a) => {
@@ -55,10 +56,12 @@ const isPrime = (a, c = 2) => {
 // }
 
 
+
+
   // RECURSION 
 
 const solution = (a, b = [], c = 0) => {
-  
+
   if (b.length === a.length) {
     return b;
   }
