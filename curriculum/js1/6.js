@@ -18,23 +18,34 @@
 //   return sum;
 // };
 
-// RECURSION
-
-// const solution = (a, b = 0) => {
-//   if (a === 2) {
-//     return b;
-//   }
-//   if (b % a === 0) {
-//     b += a;
-//     console.log(b);
-//   }
-//   return solution(a - 1, b);
-// };
 
 // WHILE LOOP
 
 // const solution = (a) => {
+//   let i = 2;
+//   let sum = 0;
+
+//   while (i < a) {
+//     if (a % i === 0) {
+//       sum += i;
+//       console.log(sum);
+//     }
+//     i++;
+//   }
+//   return sum;
 // }
+
+// RECURSION
+
+const solution = (a, b = 2, c = 0) => {
+  if (a === 0) {
+    return c;
+  }
+  if (a % b === 0) {
+    c += b;
+  }
+  return solution(a - 1, b, c);
+};
 
 
 console.log(solution(6)); // 5

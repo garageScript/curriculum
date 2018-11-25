@@ -7,7 +7,6 @@
 
 
 // FOR LOOP
-
 //  */
 
 // const solution = (a, b) => {
@@ -38,16 +37,3 @@ const solution = (a, b) => {
   solution(a - 1, b);
 };
 
-function hello() {
-  console.log("Hello World");
-};
-
-function goodbye(){
-  console.log("GoodBye!");
-}
-
-console.log(solution(2, hello()));
-// console.log(solution(3, goodbye()));
-
-hello();
-goodbye();

@@ -9,7 +9,6 @@
 // FOR LOOP 
 
 const solution = (a) => {
-  return 0;
   if (a === 1) {
     return false;
   }
@@ -20,3 +19,16 @@ const solution = (a) => {
   }
     return true;
 };
+
+// RECURSION 
+
+const solution = (a, c = 2) => {
+  if (a === 1 || a % c === 0) {
+    return false;
+  }
+  if (a === c) {
+    return false;
+  }
+  c += 1;
+  return solution(a, c);
+}

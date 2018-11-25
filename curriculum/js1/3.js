@@ -5,6 +5,7 @@
  * @returns {string}
  */
 
+
 // FOR LOOP
 
 // const solution = (a, b = '') => {

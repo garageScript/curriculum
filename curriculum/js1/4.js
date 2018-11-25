@@ -18,7 +18,6 @@
 // };
 
 
-
 // WHILE LOOP 
 
 // const solution = (a, b) => {
