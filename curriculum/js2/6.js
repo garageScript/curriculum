@@ -49,7 +49,7 @@ const solution = (a, b = [], c = 0) => {
   }
   c++;
   return solution(a, b, c);
-}
+};
 
 
 
