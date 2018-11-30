@@ -30,12 +30,8 @@
 // RECURSION 
 
 const sol = (a, b = 0, c = 0) => {
-  if (c === a.length) {
-    return b;
-  }
-  b += a[c];
-  c++;
-  return sol(a, b, c);
+  if (c === a.length) { return b; }
+  return sol(a, b+=a[c], c+1);
 }
 
 console.log(sol([])); // 0

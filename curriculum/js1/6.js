@@ -37,15 +37,10 @@
 
 // RECURSION
 
-const solution = (a, c = 2, b = 0) => {
-  if (a === c) {
-    return b;
-  }
-  if (a % c === 0) {
-    b += c;
-  }
-  c++;
-  return solution(a, c, b);
+const solution = (a, c=2, b=0) => {
+  if (a === c) return b;
+  if (a % c === 0) b += c;
+  return solution(a, c+1, b);
 };
 
 

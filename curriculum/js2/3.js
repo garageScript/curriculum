@@ -1,3 +1,4 @@
+
 /**
  * Given an array, return the same array
  *   where all elements that are not prime are changed to 1
@@ -7,17 +8,10 @@
  */
 
 const isPrime = (a, c = 2) => {
-    if (a === c) {
-      return true
-    };
-    if (a < 2) {
-      return false
-    };
-    if (a % c === 0) {
-      return false
-    };
-    c++;
-    return solution(a, c);
+    if (a === c) { return true };
+    if (a < 2) { return false };
+    if (a % c === 0) { return false };
+    return solution(a, c+1);
   };
 
 
@@ -61,17 +55,13 @@ const isPrime = (a, c = 2) => {
   // RECURSION 
 
 const solution = (a, b = [], c = 0) => {
-
-  if (b.length === a.length) {
-    return b;
-  }
+  if (b.length === a.length) { return b; }
   if (isPrime(a[c])){
     b.push(a[c])
   } else {
     b.push(1);
   }
-  c++;
-  return solution(a, b, c);
+  return solution(a, b, c+1);
 };
 
 console.log(solution([])); // []

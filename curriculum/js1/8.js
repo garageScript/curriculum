@@ -49,11 +49,8 @@
 // RECURSION
 
 const solution = (a, b, c = b) => {
-  if (a % c === 0 && b % c === 0) {
-      return c;
-  }
-  c--;
-  return solution(a, b, c);
+  if (a % c === 0 && b % c === 0) return c;
+  return solution(a, b, c-1);
 }
 
 console.log(solution(30, 45)); // 15

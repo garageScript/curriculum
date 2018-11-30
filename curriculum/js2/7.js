@@ -41,14 +41,9 @@
 // RECURSION
 
 const solution = (a, b, c = 0, d = 0) => {
-  if (c === a.length) {
-    return d;
-  }
-  if (a[c] === b) {
-    d++;
-  }
-  c++;
-  return solution(a, b, c, d);
+  if (c === a.length) { return d; }
+  if (a[c] === b) { d++; }
+  return solution(a, b, c+1, d);
 }
 
 

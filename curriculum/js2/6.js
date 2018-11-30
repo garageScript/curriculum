@@ -41,14 +41,9 @@
 
 
 const solution = (a, b = [], c = 0) => {
-  if (c === a.length) {
-    return b;
-  }
-  if (a[c] > 5) {
-    b.push(a[c]);
-  }
-  c++;
-  return solution(a, b, c);
+  if (c === a.length) { return b; }
+  if (a[c] > 5) { b.push(a[c]); }
+  return solution(a, b, c+1);
 };
 
 

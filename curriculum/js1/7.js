@@ -42,11 +42,10 @@
 // RECURSION 
 
 const solution = (a, c = 2) => {
-  if (a === c) { return true };
-  if (a < 2) { return false };
-  if (a % c === 0) { return false };
-  c++;
-  return solution(a, c);
+  if (a === c) return true ;
+  if (a < 2) return false ;
+  if (a % c === 0) return false ;
+  return solution(a, c+1);
 };
 
 

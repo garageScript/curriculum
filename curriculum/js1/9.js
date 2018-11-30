@@ -29,11 +29,8 @@
 // RECURSION
 
 const solution = (a, b = a + 1) => {
-  if (b % 7 === 0) {
-    return b;
-  }
-  b++;
-  return solution(a, b);
+  if (b % 7 === 0) return b;
+  return solution(a, b+1);
 }
 
 

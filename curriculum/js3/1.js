@@ -6,18 +6,20 @@
 
 // FOR LOOP
 
-const solution = (obj) => {
-  let count = 0;
+// const solution = (obj) => {
+// let count = obj.a;
 
-  for (i in obj) {
-    if (obj[i] > count) {
-      count = obj[i];
-    }
-  }
-  return count;
-}
+//   for (i in obj) {
+//     if (obj[i] > count) {
+//       count = obj[i];
+//     }
+//   }
+//   return count;
+// }
+
 
 // RECURSION 
+
 
 
 console.log(solution({
