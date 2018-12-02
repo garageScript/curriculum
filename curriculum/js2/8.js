@@ -10,28 +10,20 @@ const solution = () => {
   };
 };
 
-module.exports = {
-  solution,
-};
+
+// EXAMPLE MAP
+
+const three = [1, 2, 3];
+const doubled = three.map(function (item) {
+  return item * 2;
+});
+console.log(doubled);  // [2, 4, 6];
+// 1 * 2
+// 2 * 2
+// 3 * 2
+
+
+
 console.log(solution([1, 2, 3])); // [1, 2, 3];
 console.log(solution([])); // []
 console.log(solution([1, 2, 3])); // 6, 7, 8
-
-describe('test gsMap', () => {
-  const cb = (e) => {
-    return e + 5;
-  };
-  it('should return new array', () => {
-    const a = [1, 2, 3];
-    a.gsMap(cb);
-    expect(a).to.deep.equal([1, 2, 3]);
-  });
-  it('should return [] for []', () => {
-    expect([].gsMap()).to.deep.equal([]);
-  });
-  it('should return new array', () => {
-    const a = [1, 2, 3];
-    const c = a.gsMap(cb);
-    expect(c).to.deep.equal([6, 7, 8]);
-  });
-});

@@ -12,6 +12,22 @@ const solution = () => {
   };
 };
 
-module.exports = {
-  solution,
-};
+
+// EXAMPLE FOR EACH
+
+[1, 2, 3].forEach(function (item, index){
+  console.log(item, index);
+}); 
+// 0 1
+// 2 1 
+// 3 2
+
+
+// tests
+
+console.log(solution([1, 2, 3]));
+// 1: 3
+// 2: 4
+// 3: 5
+console.log(solution([1, 2, 3]));
+// 3

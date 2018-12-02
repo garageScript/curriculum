@@ -11,6 +11,15 @@ const solution = () => {
 };
 
 
+// EXAMPLE REDUCE 
+
+const sum = [1, 2, 3].reduce(function (result, item){
+  return result + item;
+}, 0);
+
+console.log(sum); // 6
+
+
 console.log(solution([1, 2, 3])); // 6
 console.log(solution([1, 2, 3])); // 4
 console.log(solution(["one", "two", "three"]));
