@@ -13,10 +13,9 @@ const solution = () => {
 module.exports = {
   solution,
 };
-console.log(solution()); // [1, 2, 3];
-console.log(solution()); // 
-console.log(solution());
-console.log(solution());
+console.log(solution([1, 2, 3])); // [1, 2, 3];
+console.log(solution([])); // []
+console.log(solution([1, 2, 3])); // 6, 7, 8
 
 describe('test gsMap', () => {
   const cb = (e) => {

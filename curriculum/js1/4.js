@@ -37,8 +37,7 @@ const solution = (a, b, c = '') => {
   if (a === 0) {
     return c;
   }
-  c += b;
-  return solution(a - 1, b, c);
+  return solution(a - 1, b, c+=b);
 };
 
 

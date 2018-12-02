@@ -4,7 +4,6 @@
  * @returns {number}
  */
 
-
 // FOR LOOP
 
 // const solution = (a) => {

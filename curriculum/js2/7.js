@@ -6,7 +6,6 @@
  * @returns {array}
  */
 
-
 // FOR LOOP 
 
 // const solution = (a, b) => {
@@ -19,7 +18,6 @@
 //   }
 //   return count;
 // };
-
 
 // WHILE LOOP
 
@@ -35,8 +33,6 @@
 //   }
 //   return count;
 // }
-
-
 
 // RECURSION
 

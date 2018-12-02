@@ -32,7 +32,6 @@
 //   return high;
 // }
 
-
 // RECURSION
 
 const solution = (a, b = a[0], c = 0) => {

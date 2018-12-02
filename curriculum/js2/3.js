@@ -14,7 +14,6 @@ const isPrime = (a, c = 2) => {
     return solution(a, c+1);
   };
 
-
 // FOR LOOP
 
 // const solution = (a) => {
@@ -29,8 +28,6 @@ const isPrime = (a, c = 2) => {
 //   }
 //   return arr;
 // }
-
-
 
 // WHILE LOOP
 
@@ -48,9 +45,6 @@ const isPrime = (a, c = 2) => {
 //   }
 //   return arr;
 // }
-
-
-
 
   // RECURSION 
 

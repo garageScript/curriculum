@@ -20,8 +20,6 @@
 //   return arr;
 // };
 
-
-
 // WHILE LOOP
 
 // const solution = (a) => {
@@ -38,8 +36,6 @@
 //   }
 //   return arr;
 // }
-
-
 
 // RECURSION 
 
