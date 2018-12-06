@@ -6,15 +6,13 @@
 
 // FOR LOOP
 
-const solution = (obj) => {
-let count = obj.a;
-
-  for (i in obj) {
-    if (obj[i] > count) {
-      count = obj[i];
-    }
-  }
-  return count;
+const solution = (obj, i = 0, largest = 0) => {
+  if (i === obj.length) return largest;
+if (obj.i < largest) {
+  largest === obj.i;
+}
+  console.log(obj.i);
+  return solution(obj, i + 1);
 }
 
 
