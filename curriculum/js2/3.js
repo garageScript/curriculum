@@ -7,12 +7,6 @@
  * @returns {array}
  */
 
-const isPrime = (a, c = 2) => {
-    if (a === c) { return true };
-    if (a < 2) { return false };
-    if (a % c === 0) { return false };
-    return solution(a, c+1);
-  };
 
 // FOR LOOP
 

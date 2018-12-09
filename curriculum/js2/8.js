@@ -6,10 +6,9 @@
 const solution = () => {
   Array.prototype.gsMap = function (item) {
     // To get the actual array, use this
-    return item + 5;
+    return 0;
   };
 };
-
 
 // EXAMPLE MAP
 
@@ -21,8 +20,6 @@ console.log(doubled);  // [2, 4, 6];
 // 1 * 2
 // 2 * 2
 // 3 * 2
-
-
 
 console.log(solution([1, 2, 3])); // [1, 2, 3];
 console.log(solution([])); // []
