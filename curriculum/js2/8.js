@@ -21,6 +21,38 @@ console.log(doubled);  // [2, 4, 6];
 // 2 * 2
 // 3 * 2
 
+
+// Map() creates a new array with the results of
+// calling a provided function on every element in
+// the calling array
+
+let cars = ["Toyota", "B.M.W.", "Audi Ford"];
+
+// we will iterate through 
+
+const carsCharsLength = cars.map(car => car.length);
+
+console.log(carsCharsLength);
+
+let carsLength = [];
+
+// FOR LOOP
+
+for (let i = 0; i < cars.length; i++) {
+  carsLength[i] = cars[i].length;
+};
+
+// .MAP() RECURSION
+
+const solution = (cars, i = 0, clength = []) => {
+  if (i === cars.length) {
+    return clength;
+  }
+  clength[i] = cars[i].length
+  return solution(cars, i + 1, clength);
+}
+
+
 console.log(solution([1, 2, 3])); // [1, 2, 3];
 console.log(solution([])); // []
 console.log(solution([1, 2, 3])); // 6, 7, 8
