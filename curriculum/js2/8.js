@@ -19,7 +19,7 @@ const doubled = three.map(function (item) {
 console.log(doubled);  // [2, 4, 6];
 // 1 * 2
 // 2 * 2
-// 3 * 2
+// 
 
 
 // Map() creates a new array with the results of
