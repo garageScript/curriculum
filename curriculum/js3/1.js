@@ -6,13 +6,15 @@
 
 // FOR LOOP
 
-const solution = (obj, i = 0, largest = 0) => {
-  if (i === obj.length) return largest;
-if (obj.i < largest) {
-  largest === obj.i;
-}
-  console.log(obj.i);
-  return solution(obj, i + 1);
+const solution = (obj) => {
+  let max = -100;
+
+  for (let k in obj) {
+    if (obj[k] > max) {
+      max = obj[k];
+    }
+  }
+  return max;
 }
 
 
