@@ -3,7 +3,7 @@
   "description": "algorithm practice",
   "version": "0.0.0",
   "scripts": {
-    "test": "jest -o",
+    "test": "jest -o --watch",
     "twin": "node ./node_modules/mocha/bin/mocha -w"
   },
   "dependencies": {
