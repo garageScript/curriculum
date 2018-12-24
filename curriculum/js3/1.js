@@ -6,27 +6,16 @@
 
 // FOR LOOP
 
-// const solution = (obj) => {
-//   let max = -100;
-
-//   for (let k in obj) {
-//     if (obj[k] > max) {
-//       max = obj[k];
-//     }
-//   }
-//   return max;
-// }
-
-
-// RECURSION 
-
 const solution = (obj, max = -100) => {
+
   for (let k in obj) {
-    if (obj[k] > max) { max = obj[k]; }
-    return solution(obj[k], max);
+    if (obj[k] > max) {
+      max = obj[k];
+    }
   }
   return max;
 }
+
 
 
 
