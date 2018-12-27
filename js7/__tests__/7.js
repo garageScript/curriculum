@@ -16,9 +16,6 @@ describe('Serialize', function() {
       if (Date.now() - now < 9) {
         return done(new Error('Did not use setTimeout to sleep'));
       }
-      if (JSON.stringify(a) !== JSON.stringify([])) {
-        return done(new Error('Did not sort correctly'));
-      }
       return done();
     });
   });
