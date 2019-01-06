@@ -3,34 +3,70 @@
  * @returns {[]}
  */
 
-var array = [4,5,6,7,8];
-var singleVal = 0;
-var singleVal = array.reduce(function(ac, currentVal) {
-  return ac + currentVal;
-}, 0);
 
-console.log(singleVal);
+
+
+function gsforeach(cb) {
+  for (let i = 0; i < this.length; i++)
+    cb(this[i], i);
+}
+
+/*
+const gsforeach = ((cb,i=0) => {
+  if (i === this.length-1) return;
+  cb(this[i],i);
+  gsforeach(cb,i+1);
+})
+*/
+
+Array.prototype.gsForEach = gsforeach;
+
+
+const cb = ((el, idx) => console.log(`a[${idx}] = ${el}`));
+
+//solution();
+const a = [5, 4, 3, 2, 1];
+
+function test(a) {
+  //a.gsForEach.bind(a);
+  a.gsForEach(cb);
+}
+
+
+test(a);
+~
+
+
+
+
+// var array = [4,5,6,7,8];
+// var singleVal = 0;
+// var singleVal = array.reduce(function(ac, currentVal) {
+//   return ac + currentVal;
+// }, 0);
+
+// console.log(singleVal);
 
 // console.log([1, 2, 3].reduce((ac, cv) => ac + cv)); // 6
 
-var array = [4,5,6,7,8];
-var singleVal2 = 0;
-for(var i = 0; i < array.length; i++){
-  singleVal2 += array[i];
-}
+// var array = [4,5,6,7,8];
+// var singleVal2 = 0;
+// for(var i = 0; i < array.length; i++){
+//   singleVal2 += array[i];
+// }
 
-console.log(singleVal2)
+// console.log(singleVal2)
 
-const solution = () => {
-  Array.prototype.gsReduce = function(fn, ac = 0, cv, ci = 0, arr) {
-    if (ci === this.length) return ac; // ????????
-    for (var i = 0; i < this.length; i++) {
-      ac += fn(this[ci]);
-      ci += 1;
-    }
-    return this.gsReduce(fn, ac, cv, ci + 1, arr);
-  };
-};
+// const solution = () => {
+//   Array.prototype.gsReduce = function(fn, ac = 0, cv, ci = 0, arr) {
+//     if (ci === this.length) return ac; // ????????
+//     for (var i = 0; i < this.length; i++) {
+//       ac += fn(this[ci]);
+//       ci += 1;
+//     }
+//     return this.gsReduce(fn, ac, cv, ci + 1, arr);
+//   };
+// };
 
 // const solution = () => {
 //   Array.prototype.gsReduce = function(ac = 0, cv = 0, ci = 0, arr) {
@@ -40,9 +76,9 @@ const solution = () => {
 //     return this.gsReduce(ac, cv + 1, ci + 1, arr);
 //   };
 
-solution();
+// solution();
 
-[1, 2, 3].gsReduce((ac, cv) => ac + cv);
+// [1, 2, 3].gsReduce((ac, cv) => ac + cv);
 
 
 
