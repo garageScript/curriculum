@@ -5,8 +5,8 @@
 const solution = () => {
   Array.prototype.gsMap = function(fn, newItems = [], i = 0) {
     // To get the actual array, use this
-    if (i === this.length) return newItems;
-    let mapped = fn(this[i]);
+    if (newItems.length === this.length) return newItems;
+    const mapped = fn(this[newItems.length]);
     newItems.push(mapped);
     return this.gsMap(fn, newItems, i + 1);
   }
