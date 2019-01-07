@@ -3,27 +3,6 @@
  * @returns {[]}
  */
 
-
-
-
-function gsforeach(cb) {
-  for (let i = 0; i < this.length; i++)
-    cb(this[i], i);
-}
-
-/*
-const gsforeach = ((cb,i=0) => {
-  if (i === this.length-1) return;
-  cb(this[i],i);
-  gsforeach(cb,i+1);
-})
-*/
-
-Array.prototype.gsForEach = gsforeach;
-
-
-const cb = ((el, idx) => console.log(`a[${idx}] = ${el}`));
-
 //solution();
 const a = [5, 4, 3, 2, 1];
 
@@ -34,10 +13,6 @@ function test(a) {
 
 
 test(a);
-~
-
-
-
 
 // var array = [4,5,6,7,8];
 // var singleVal = 0;

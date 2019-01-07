@@ -6,6 +6,26 @@
  *   https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
  */
 
+function gsforeach(cb) {
+  for (let i = 0; i < this.length; i++)
+    cb(this[i], i);
+}
+
+ /*
+const gsforeach = ((cb,i=0) => {
+  if (i === this.length-1) return;
+  cb(this[i],i);
+  gsforeach(cb,i+1);
+})
+ */
+
+Array.prototype.gsForEach = gsforeach;
+
+
+const cb = ((el, idx) => console.log(`a[${idx}] = ${el}`));
+
+
+
 const solution = () => {
   Array.prototype.gsForEach = function () {
     // To get the actual array, use this
