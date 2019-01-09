@@ -8,9 +8,9 @@
  */
 
 const solution = (a, target) => {
-  return true;
-};
+  return true
+}
 
 module.exports = {
-  solution,
-};
+  solution
+}
