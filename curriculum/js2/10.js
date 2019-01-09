@@ -6,10 +6,19 @@
  *   https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
  */
 
-function gsforeach(cb) {
-  for (let i = 0; i < this.length; i++)
-    cb(this[i], i);
-}
+
+
+
+// TODO: MASTER CHEN'S SOLUTION
+
+// function gsforeach(cb) {
+//   for (let i = 0; i < this.length; i++)
+//     cb(this[i], i);
+// }
+
+// console.log(gsforeach([1, 2, 3, 4, 5]));
+// console.log(gsforeach([6, 7, 8, 9, 10]));
+
 
  /*
 const gsforeach = ((cb,i=0) => {
@@ -19,16 +28,21 @@ const gsforeach = ((cb,i=0) => {
 })
  */
 
-Array.prototype.gsForEach = gsforeach;
+// Array.prototype.gsForEach = gsforeach;
 
 
-const cb = ((el, idx) => console.log(`a[${idx}] = ${el}`));
+// const cb = ((el, idx) => console.log(`a[${idx}] = ${el}`));
 
 
 
 const solution = () => {
-  Array.prototype.gsForEach = function () {
+  Array.prototype.gsForEach = function (fn, element, index) {
     // To get the actual array, use this
+    if (index === this.length) return total;
+
+    total = fn(element, index);
+
+    return this.gsForEach(fn, element, index);
   };
 };
 

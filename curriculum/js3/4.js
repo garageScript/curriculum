@@ -6,6 +6,9 @@
  * @returns {boolean}
  */
 
+
+// FOR LOOP
+
 const solution = (a, b) => {
   for (let i = 0; i < a.length; i++) {
     for (let j = i + 1; j < a.length; j++) {
@@ -27,9 +30,13 @@ const solution = (a, b) => {
 //   return solution(a, b, i + 1, j + 1);
 // };
 
-module.exports = {
-  solution,
-};
+
+
+// RECURISON
+
+const solution (a, b) => {
+
+}
 
 
 console.log(solution([], 0)) // false

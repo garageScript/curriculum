@@ -6,18 +6,28 @@
 
 // FOR LOOP
 
-const solution = (obj, max = -100) => {
+// const solution = (obj, max = -100) => {
 
-  for (let k in obj) {
-    if (obj[k] > max) {
-      max = obj[k];
-    }
+//   for (let k in obj) {
+//     if (obj[k] > max) {
+//       max = obj[k];
+//     }
+//   }
+//   return max;
+// }
+
+// RECURSION 
+
+const solution = (obj, max = -100, i = 0) => {
+  if (i === Object.keys(obj).length) return max;
+
+
+
+  if (max < Object.values(obj)[i]) {
+    max = Object.values(obj)[i]
   }
-  return max;
+  return solution(obj, max, i + 1)
 }
-
-
-
 
 console.log(solution({
           a: 1,
@@ -26,6 +36,17 @@ console.log(solution({
           d: 4,
           e: 5
         })); // 5
+
+        const obj2 = {
+          a: 1,
+            b: 2,
+            c: 3,
+            d: 4,
+            e: 5
+        }
+
+console.log("Object keys = ", Object.keys(obj2));
+console.log("Object values = ", Object.values(obj2));
 
 console.log(solution({
           a: 10,

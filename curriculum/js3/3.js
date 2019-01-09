@@ -4,7 +4,7 @@
  * @return {array} b
  */
 
-const solution = (a)=>{
+const solution = (a)=> {
   return b;
 }
 
