@@ -24,10 +24,11 @@ const gsforeach = ((cb,i=0) => {
 })
  */
 
-const items = [1, 2, 3];
-const copy = [];
 
 //  FOR LOOP
+
+// const items = [1, 2, 3];
+// const copy = [];
 
 // for (let i = 0; i < items.length; i++) {
   // console.log(items[i], i);

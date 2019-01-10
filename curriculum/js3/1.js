@@ -21,8 +21,6 @@
 const solution = (obj, max = -100, i = 0) => {
   if (i === Object.keys(obj).length) return max;
 
-
-
   if (max < Object.values(obj)[i]) {
     max = Object.values(obj)[i]
   }
