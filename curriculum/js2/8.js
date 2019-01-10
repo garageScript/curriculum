@@ -37,7 +37,7 @@ solution();
 arr = [1, 2, 3];
 
 console.log(arr.map(x => x * 2));
-console.log(arr.gsMap(x => x * 2));
+console.log(arr.gsMap(x => x * 2)); // 
 
 // for (var i = 0; i < arr.length; i++) {
 //   holder = []
