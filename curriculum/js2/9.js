@@ -29,7 +29,6 @@ solution();
 console.log([10, 20, 30, 40, 50].reduce((ac, item) => ac += item));
 console.log(" ");
 
-
 console.log(" ");
 console.log([10, 20, 30, 40, 50].gsReduce((ac, item) => ac += item));
 console.log(" ");
