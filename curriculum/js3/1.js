@@ -43,9 +43,6 @@ console.log(solution({
             e: 5
         }
 
-console.log("Object keys = ", Object.keys(obj2));
-console.log("Object values = ", Object.values(obj2));
-
 console.log(solution({
           a: 10,
           b: 5,
