@@ -8,9 +8,7 @@
 
 // const solution = (arr) => {
 //   let obj = {};
-
 //   for (var i = 0; i < arr.length; i++) {
-
 //     if ((obj[arr[i]])) {
 //       obj[arr[i]]++;
 //     } else {
@@ -41,9 +39,9 @@ const solution = (arr, i = 0, obj = {}) => {
     obj[arr[i]] = 1;
   }
 
-console.log("arr = ", arr);
-console.log("obj = ", obj);
-console.log("i = ", i);
+  console.log("arr = ", arr);
+  console.log("obj = ", obj);
+  console.log("i = ", i);
 
   return solution(arr, i + 1, obj);
 }
