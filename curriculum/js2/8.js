@@ -3,18 +3,18 @@
 //  * @returns {[]}
 //  */
 const solution = () => {
-  Array.prototype.gsMap = function(fn, newItems = [], i = 0) {
+  Array.prototype.gsMap = function(fn, newItems = []) {
     // set deafult newItems to and empty array
     // set index to 0
     if (newItems.length === this.length) return newItems;
     // if newItems array is the length of the original array
     // return newItems
     // 
-    newItems.push(fn(this[newItems.length], i));
+    newItems.push(fn(this[newItems.length]));
     // pass the function onto the element in the item
     // push the mutated element onto the array
 
-    return this.gsMap(fn, newItems, i + 1);
+    return this.gsMap(fn, newItems);
     // pass the recursive call while indexing by 1
   }
 };

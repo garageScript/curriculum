@@ -6,34 +6,6 @@
  *   https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
  */
 
-// TODO: MASTER CHEN'S SOLUTION
-
-// function gsforeach(cb) {
-//   for (let i = 0; i < this.length; i++)
-//     cb(this[i], i);
-// }
-
-// console.log(gsforeach([1, 2, 3, 4, 5]));
-// console.log(gsforeach([6, 7, 8, 9, 10]));
-
- /*
-const gsforeach = ((cb,i=0) => {
-  if (i === this.length-1) return;
-  cb(this[i],i);
-  gsforeach(cb,i+1);
-})
- */
-
-
-//  FOR LOOP
-
-// const items = [1, 2, 3];
-// const copy = [];
-
-// for (let i = 0; i < items.length; i++) {
-  // console.log(items[i], i);
-// }
-
 // RECURSION 
 
 const solution = () => {
