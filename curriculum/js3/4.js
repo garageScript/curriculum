@@ -30,7 +30,7 @@ const solution = (a, b) => {
 
 // RECURISON
 
-const solution (a, b) => {
+const solution = (a, b) => {
 
 }
 

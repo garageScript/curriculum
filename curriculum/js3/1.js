@@ -7,7 +7,6 @@
 // FOR LOOP
 
 // const solution = (obj, max = -100) => {
-
 //   for (let k in obj) {
 //     if (obj[k] > max) {
 //       max = obj[k];
@@ -41,7 +40,7 @@ console.log(solution({
             c: 3,
             d: 4,
             e: 5
-        }
+        } // 5
 
 console.log(solution({
           a: 10,
