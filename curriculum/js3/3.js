@@ -7,7 +7,3 @@
 const solution = (a)=> {
   return b;
 }
-
-module.exports = {
-  solution
-}

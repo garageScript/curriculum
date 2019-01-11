@@ -6,7 +6,6 @@
  * @returns {boolean}
  */
 
-
 // FOR LOOP
 
 const solution = (a, b) => {
@@ -20,7 +19,6 @@ const solution = (a, b) => {
   return false;
 }
 
-
 // const solution = (a, b, i = 0, j = 0) => {
 //   if (a[i] + a[j] === b) return true;
 //   console.log(a[i]);
@@ -30,14 +28,11 @@ const solution = (a, b) => {
 //   return solution(a, b, i + 1, j + 1);
 // };
 
-
-
 // RECURISON
 
 const solution (a, b) => {
 
 }
-
 
 console.log(solution([], 0)) // false
 console.log(solution([1, 4, 3, 2], 6)) // true
