@@ -6,7 +6,7 @@
 
 // FOR LOOP
 
-// const solution = (obj, max = -100) => {
+// const solution = (obj, max = -100) => 
 //   for (let k in obj) {
 //     if (obj[k] > max) {
 //       max = obj[k];
