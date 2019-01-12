@@ -4,23 +4,10 @@
  */
 const solution = () => {
   // fn = (accumulator, item, index) => accumulator
-  Array.prototype.gsReduce = function (fn, accumulator = 0, item, index = 0, remainingItems = this) {
-    // set the default accumulator to 0
-    // deafult index to 0
-    // default remaining items to this
-  item = remainingItems.shift();
-  // pop off the first element in the array
-  accumulator = fn(accumulator, item, index)
-  // pass fn or function onto the accumulator, item and index
-
-  if (remainingItems.length === 0)  {
-    // if the remaining items array doesn't have any elements in it
-      return accumulator;
-      // return accumulator
-    }
-
-    return this.gsReduce(fn, accumulator, item, index + 1, remainingItems);
-    // pass the recursive call while indexing index
+Array.prototype.gsReduce = function (fn, accumulator = 0, i = 0) {
+  if (i === this.length) return accumulator;
+  accumulator = fn(accumulator, this[i], i, this)
+  return this.gsReduce(fn, accumulator, i + 1);
   }
 };
 

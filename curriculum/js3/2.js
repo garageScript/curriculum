@@ -26,26 +26,17 @@
 
 // RECURSION 
 
-const solution = (arr, i = 0, obj = {}) => {
-  if (i === arr.length) { 
-  max = Math.max.apply(null, Object.values(obj));
-  // console.log("​Math.max.apply(null, Object.values(obj)", Math.max.apply(null, Object.values(obj))
-  return Object.values(obj).indexOf(max);
+const solution = (arr, i = 0, obj = {}, max = arr[0]) => {
+
+  if (i === arr.length) return max;
+  obj[arr[i]] = (obj[arr[i]] || 0) + 1;
+
+  if (obj[max] < obj[arr[i]]) {
+    max = arr[i]
   }
 
-  if (obj[arr[i]]) {
-    obj[arr[i]]++;
-  } else {
-    obj[arr[i]] = 1;
-  }
-
-  console.log("arr = ", arr);
-  console.log("obj = ", obj);
-  console.log("i = ", i);
-
-  return solution(arr, i + 1, obj);
+  return solution(arr, i + 1, obj, max);
 }
-
 console.log(solution([1, 2, 2, 3, 4, 4, 4])); // 4
 console.log("----");
 console.log(solution([-1, -1, -1, 2, 2, 5, 5])); // -1

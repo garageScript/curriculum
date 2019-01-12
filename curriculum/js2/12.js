@@ -8,22 +8,10 @@ console.log("​[1, 20, 300].filter(x => x > 6);", [1, 20, 300].filter(x => x > 
 // 300
 
 const solution = () => {
-    Array.prototype.gsFilter = function(fn, item, filtered = [], index = 0, remainingItems = this) {
-// set the default function to fn
-// created the filtered array
-// set index to 0
-// set remaining items to this
-        if (remainingItems.length === 0) return filtered;
-// if the remainingItems array is empty return the filtered array
-        item = remainingItems.shift();
-// set item to the next element that is shifted off of the array
-        if (fn(item)) {
-            filtered.push(item);
-        }
-// if function call on item is true
-// push the item into the filtered array
-        return this.gsFilter(fn, item, filtered, index + 1, remainingItems);
-// recursive call
+    Array.prototype.gsFilter = function (fn, i = 0, filtered = []) {
+        if (i === this.length) return filtered;
+        if (fn(this[i], i, this)) filtered.push(this[i]);
+        return this.gsFilter(fn, i + 1, filtered);
     }
 }
 

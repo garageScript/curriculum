@@ -9,22 +9,47 @@
 // RECURSION 
 
 const solution = () => {
-  Array.prototype.gsForEach = function (fn, element = this[0], index = 0) {
-    // To get the actual array, use this
-    // set default element to this[0]
-    // set index to 0
-    if (index === this.length) return element;
-    // if index equals this.length reutrn element
-
-    element = fn(this[index], index);
-    // element equals the function wrapped around this[index], index
-
-    return this.gsForEach(fn, element, index + 1);
-    // recursive call indexing by 1
+Array.prototype.gsForEach = function (fn, i = 0) {
+  if (i === this.length) return;
+  fn(this[i], i, this)
+  return this.gsForEach(fn, i + 1);
   };
 };
 
 solution();
+
+// console.log([1, 2, 3].gsForEach());
+// 1: 3
+// 2: 4
+// 3: 5
+
+// console.log([1, 2, 3].gsForEach(x => x += 1)) // 3
+
+// describe('test gsForEach', () => {
+//   it('should mutate an empty object using curr. value, index, and a property of "this" array', () => {
+//     const o = {};
+//     const cb = (cv, i, ar) => {
+//       o[cv] = i + ar.length;
+//     };
+//   it('should increment a value', () => {
+//     let o = 0;
+//     const cb = () => {
+//       o += 1;
+//     };
+//     [1, 2, 3].gsForEach(cb);
+//     expect(o).to.equal(3);
+//   });
+// });
+
+const cb = () => {
+  let o = 0;
+  o += 1;
+};
+
+console.log([1, 2, 3].forEach(cb));
+
+
+
 
 // EXAMPLE FOR EACH
 
@@ -34,6 +59,6 @@ solution();
 // 0 1
 // 2 1 
 // 3 2
-[1, 2, 3].gsForEach(function (element, index) {
-  console.log(element, index);
-});
+// [1, 2, 3].gsForEach(function (element, index) {
+  // console.log(element, index);
+// });
