@@ -2,11 +2,6 @@
  * Replicate Array.prototype.filter and call it gsFilter
  * @returns {[]}
  */
-[1, 20, 300].filter(x => x > 6);
-console.log("​[1, 20, 300].filter(x => x > 6);", [1, 20, 300].filter(x => x > 6));
-// 20
-// 300
-
 const solution = () => {
     Array.prototype.gsFilter = function (fn, i = 0, filtered = []) {
         if (i === this.length) return filtered;

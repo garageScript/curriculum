@@ -8,6 +8,9 @@
 
 const solution = (a, b) => {
   return (c) => {
+    console.log(a);
+    console.log(b);
+    console.log(c);
     return a + b + c;
   };
 };
