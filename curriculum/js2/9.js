@@ -2,6 +2,8 @@
  * Replicate Array.prototype.reduce and call it gsReduce
  * @returns {[]}
  */
+
+
 const solution = () => {
   // fn = (accumulator, item, index) => accumulator
 Array.prototype.gsReduce = function (fn, accumulator = 0, i = 0) {
