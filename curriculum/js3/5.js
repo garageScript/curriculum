@@ -5,7 +5,7 @@
  * @return {nothing}
  **/
 
-const solution = (a,b)=>{
+const solution = (a, b) =>{
   return;
 }
 
