@@ -16,6 +16,7 @@ Array.prototype.gsForEach = function (fn, i = 0) {
   };
 };
 
+
 solution();
 
 // console.log([1, 2, 3].gsForEach());

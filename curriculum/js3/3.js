@@ -4,18 +4,27 @@
  * @return {array} b
  */
 
-// FOR LOOP
+// The 4th test is wrong, it should only return [100]th
 
-const solution = (a) => {
-  return b;
+const solution = (arr, index = 0, obj = {}) => {
+  // just use Object.keys => returns the keys of the object
+  if (index === arr.length) {
+
+    let result = Object.keys(obj);
+    let letterArray = result.filter((key) => obj[key] > 1);
+    let result_arr = letterArray.map((stringNum) => parseInt(stringNum))
+    return result_arr;
+  }
+
+  if (obj[arr[index]] === undefined) {
+    obj[arr[index]] = 1
+  } else {
+    obj[arr[index]]++
+  }
+
+  return solution(arr, index + 1, obj);
 }
 
-
-// RECURSION 
-
-// const solution = (a)=> {
-//   return b;
-// }
 
 console.log(solution([1, 2, 2, 3, 4, 4, 4])); // [2, 4]
 console.log("----");

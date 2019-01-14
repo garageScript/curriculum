@@ -10,8 +10,6 @@ Array.prototype.gsMap = function (fn, newItems = [], i = 0) {
 }
 };
 
-
-
 solution();
 
 // let arr = [1, 2, 3]

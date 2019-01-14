@@ -4,16 +4,23 @@
 
 // Examples:
 
-const solution = (a, accumlator = 0, i = a.length - 1) => {
-    // console.log(a);
-    if (i === 0) return a;
-    if (a[i] <= 0) {
-        a[i] = 1
-    } else if (a[i] > 1) {
-        a[0] = a[i];
+const solution = (array, index = array.length - 1, accumulator = []) => {
+
+    let sum = array.reduce((ac, item) => ac += item)
+
+    if ((array.length - 1) === accumulator.length) {
+        accumulator.unshift(sum - (accumulator.length)) // then unshift sum
+        return accumulator; // return 
     }
-    return solution(a, accumlator, i - 1);
+
+    accumulator.unshift(1);
+    // first you distribute 1 in elements at index 1 to arr.length
+    // decrement a
+    // put the remainder at index 0
+
+    return solution(array, index - 1, accumulator);
 };
+
 
 console.log(solution([0, 0, 3])); // returns [1,1,1]
 console.log(solution([0, 1, 3])); // returns [2,1,1]
