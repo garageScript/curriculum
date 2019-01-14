@@ -7,13 +7,17 @@
 
 // You can use helper functions like:
 //     Object.keys, Object.values, or Object.entries
+
+
 const solution = () => {
-  Object.prototype.gsForEach = function () {
-    // To get the actual object, use this
-  };
-};
+  Object.prototype.forEach = function(fun, keys = Object.keys(this), values = Object.values(this), entries = Object.entries(this), i = 0) {
+    if (i === entries.length) return;
+    fun(entries[i][1], entries[i][0], keys[i][1], keys[i][0], values[i][1], values[i][0]);
+    return this.forEach(fun, keys, values, entries, i + 1);
+  }
+}
 
-
+solution();
 
 obj1 = {};
 obj2 = {
@@ -27,9 +31,9 @@ obj2 = {
 
 // should mutate an empty object using each key-value pair in "this" object
 
-console.log(solution(obj1)); // 
+console.log(obj1.forEach((x, i) => console.log(x, i))); // 
 console.log("----");
-console.log(solution(obj2)); // fozzy: 2, chef: 7, animal: 1
+console.log(obj2.forEach((x, i) => console.log(x, i))); // fozzy: 2, chef: 7, animal: 1
 console.log("----");
 
 
