@@ -18,6 +18,11 @@ describe('find minimum value in rotated sorted array', () => {
     expect(result).to.equal(1)
   })
 
+  it('[4,5,6,7,0,1,2] should return 0', () => {
+    const result = solution([4, 5, 6, 7, 0, 1, 2])
+    expect(result).to.equal(0)
+  })
+
   it('[3, 4, 5, 1, 2] should return 1', () => {
     const result = solution([3, 4, 5, 1, 2])
     expect(result).to.equal(1)
