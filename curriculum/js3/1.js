@@ -17,8 +17,9 @@
 
 // RECURSION 
 
-const solution = (obj, max = -100, i = 0) => {
+const solution = (obj, max, i = 0) => {
   if (i === Object.keys(obj).length) return max;
+  if (i === 0) max = obj[Object.keys(obj)[i]];
 
   if (max < Object.values(obj)[i]) {
     max = Object.values(obj)[i]
@@ -33,14 +34,6 @@ console.log(solution({
           d: 4,
           e: 5
         })); // 5
-
-        const obj2 = {
-          a: 1,
-            b: 2,
-            c: 3,
-            d: 4,
-            e: 5
-        } // 5
 
 console.log(solution({
           a: 10,
