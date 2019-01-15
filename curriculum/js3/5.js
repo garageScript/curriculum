@@ -5,45 +5,17 @@
  * @return {nothing}
  **/
 
-const solution = (a, b, i = 0, keys = Object.keys(a), values = Object.values(a)) => {
-    if (i === keys.length) return;
-    console.log(keys);
-    console.log(values);
+solution = (a, b, i = 0, entries = Object.entries(a)) => {
+  if (i === entries.length) return;
+  b(entries[i][0], entries[i][1]);
+  // entries = [ ['k1', 1], ['k2', 2], ['k3', 3]] 
+  return solution(a, b, i + 1, entries);
+};
 
-    b(keys, values);
+obj = {
+  k1: 1,
+  k2: 2,
+  k3: 3
+};
 
-    return (a, b, i + 1, keys, values);
-  }
-
-solution();
-
-const sum = (key, value) => {
-  const count = key += value;
-  return count;
-}
-
-console.log(solution({}, sum)); // ''
-console.log(solution({1 : 1, 2 : 2, 3 : 3}, sum));
-// 1 : 1
-// 2 : 2
-// 3 : 3
-
-// describe('takes in object, function and calls function until there is no more key/value', () => {
-//       it('should return base case', () => {
-//         let count = '';
-//         const result = solution({}, (key, value) => {
-//           count += `Key/Value Pair = ${key}:${value}\n`;
-//         });
-//         expect(count).to.equal('')
-//       });
-//       it('should return Key/Value Pair = 1:1,2:2,3:3 for input {1:1,2:2,3:3},funct', () => {
-//         let count = '';
-//         const result = solution({
-//           1: 1,
-//           2: 2,
-//           3: 3
-//         }, (key, value) => {
-//           count += `Key/Value Pair = ${key}:${value}\n`;
-//         });
-    // expect(count).to.equal(`Key/Value Pair = 1:1\nKey/Value Pair = 2:2\nKey/Value Pair = 3:3\n`)
-// });
+solution(obj, console.log);
