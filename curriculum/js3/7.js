@@ -14,9 +14,24 @@
  * @returns {number}
 */
 
-const solution = (a)=>{
-  return 0;
+a = { v: 2 };
+b = { v: 3 };
+c = { v: 1 };
+a.next = b;
+b.next = c;
+
+const solution = (a, max = 0) => {
+
+  if (!a.next) return max;
+  console.log(max);
+  console.log(a);
+
+  if (max < a.v ) { max = a.v; }
+
+    solution(a.next);
 };
+
+console.log(solution(a));
 
 // describe('return the greatest value in the given linked list', () => {
 //       it('should return the value of the first node when there is only 1 node', () => {
@@ -55,22 +70,22 @@ const solution = (a)=>{
 //       it('should return the value of the second to last node', () => {
 //         const obj1 = {
 //           v: 1
-        };
-        const obj2 = {
-          v: 2
-        };
-        const obj3 = {
-          v: 3
-        };
-        const obj4 = {
-          v: 5
-        };
-        const obj5 = {
-          v: 4
-        };
-        obj1.next = obj2;
-        obj2.next = obj3;
-        obj3.next = obj4;
-        obj4.next = obj5;
-        expect(solution(obj1)).to.equal(obj4.v);
-      });
+      //   };
+      //   const obj2 = {
+      //     v: 2
+      //   };
+      //   const obj3 = {
+      //     v: 3
+      //   };
+      //   const obj4 = {
+      //     v: 5
+      //   };
+      //   const obj5 = {
+      //     v: 4
+      //   };
+      //   obj1.next = obj2;
+      //   obj2.next = obj3;
+      //   obj3.next = obj4;
+      //   obj4.next = obj5;
+      //   expect(solution(obj1)).to.equal(obj4.v);
+      // });
