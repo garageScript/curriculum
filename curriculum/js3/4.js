@@ -8,11 +8,11 @@
 
 // RECURISON
 
-const solution = (a, b) => {
+// const solution = (a, b) => {
 
-}
+// }
 
-console.log(solution([], 0)) // false
-console.log(solution([1, 4, 3, 2], 6)) // true
-console.log(solution([-1,-3,-4], -2)); // false
-console.log(solution([0,0,0], 0)); // true
+// console.log(solution([], 0)) // false
+// console.log(solution([1, 4, 3, 2], 6)) // true
+// console.log(solution([-1,-3,-4], -2)); // false
+// console.log(solution([0,0,0], 0)); // true
