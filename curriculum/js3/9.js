@@ -13,10 +13,20 @@
  * @returns {object}
 */
 
+a = { v: 2 };
+b = { v: 3 };
+c = { v: 1 };
+a.children = [b, c]
+
+
+
 // Hint: BFS or DFS from the teaching doc
 const solution = (a)=>{
   return a;
 };
+
+console.log(solution(a, 3));
+// output: b
 
 // describe('Return node of a tree', () => {
 //       it('should handle base case of one node and matching value', () => {

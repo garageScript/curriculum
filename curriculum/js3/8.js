@@ -16,9 +16,23 @@
  * @returns {boolean}
 */
 
-const solution = (a) => {
-  return true;
+a = { v: 2 };
+b = { v: 3 };
+c = { v: 1 };
+
+a.next = b;
+b.next = c;
+c.next = a;
+
+
+const solution = (a, i = 0) => {
+  // if (a.next) return true;
+  // if (!a.next) return false;
+  if (a.next !== a.next) return false
+  solution(a.next, i + 1);
 };
+
+console.log(solution(a));
 
 // describe('circular linked list', () => {
 //   it('should return false for one node that is not circular', () => {
