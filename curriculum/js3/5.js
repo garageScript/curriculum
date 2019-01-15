@@ -4,7 +4,6 @@
  * @param {function} b
  * @return {nothing}
  **/
-
 solution = (a, b, i = 0, entries = Object.entries(a)) => {
   if (i === entries.length) return;
   b(entries[i][0], entries[i][1]);
