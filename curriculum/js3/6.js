@@ -9,9 +9,27 @@
  * @returns {object} c
 */
 
-const solution = (a, b)=>{
-  return c;
+//input: 
+obj = {
+  5: 'blah blah',
+  name: 'ho',
+  zolo: '4thech'
 };
+
+
+//output: 
+// { 5: 'blah blah', zolo: '4thech' }
+
+const solution = (a, b, i = 0, entries = Object.entries(a), c) => {
+  if (entries.length < 1) return {};
+  if (i === entries.length) return c;
+
+  if(b(entries[i][0], entries[i][1])) c = (entries[i][0], entries[i][1]);
+
+  return solution(a, b, i + 1, entries);
+};
+
+solution(obj, ((k, v) => console.log( v.length > 3)));
 
 // describe('filter an object if the condition is true', () => {
 //       it('should return base case', () => {

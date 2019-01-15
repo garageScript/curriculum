@@ -23,7 +23,6 @@ Object.prototype.forEach = function (fun, i = 0, entries = Object.entries(this))
   return this.forEach(fun, i + 1);
 }
 
-
 solution();
 
 obj1 = {};

@@ -16,7 +16,7 @@
  * @returns {boolean}
 */
 
-const solution = (a)=>{
+const solution = (a) => {
   return true;
 };
 
