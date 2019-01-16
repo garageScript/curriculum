@@ -1,4 +1,3 @@
-
 /**
  * Given an array, return the same array
  *   where all elements that are not prime are changed to 1
@@ -7,7 +6,8 @@
  * @returns {array}
  */
 
-const prime = require('../js1/7.js');
+const isPrime = require('../js1/7.js').solution;
+// const prime = require('../7.js');
 
 // FOR LOOP
 

@@ -89,3 +89,6 @@ console.log(solution(a, 3));
 //         expect(result).to.deep.equal(e);
 //       });
 
+module.exports = {
+  solution,
+};

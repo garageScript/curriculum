@@ -10,12 +10,12 @@ describe('js1/2.js max 3', () => {
     const result = solution(-2,-3, -9);
     expect(result).to.equal(-2);
   });
-  it('should find the max with positive n negatives', () => {
-    const result = solution(-2,-2,9);
+  it('should find the max with positive and negatives', () => {
+    const result = solution(-2,-2, 9);
     expect(result).to.equal(9);
   });
-  it('should find the max where max is first parametr', () => {
-    const result = solution(3, 2,1);
+  it('should find the max where max is first parameter', () => {
+    const result = solution(3, 2, 1);
     expect(result).to.equal(3);
   });
 });

@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 const solution = require('../10').solution;
 
-// solution();
+solution();
 
 describe('js2/10.js test gsForEach', () => {
   it('should mutate an empty object using curr. value, index, and a property of "this" array', () => {

@@ -16,11 +16,6 @@ const solution = () => {
   };
 };
 
-const cb = () => {
-  let o = 0;
-  o += 1;
-};
-
 module.exports = {
   solution,
 };
