@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 const solution = require('../7').solution;
 
-describe('check if number x is prime', () => {
+describe('js1/7.js check if number x is prime', () => {
   it('2 should be prime', () => {
     const result = solution(2);
     expect(result).to.equal(true);

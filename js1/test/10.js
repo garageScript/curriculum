@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 let solution = require('../10').solution;
 
-describe('Set 2 timeouts', function() {
+describe('js1/10.js Set 2 timeouts', function() {
   it('should set 2 timeouts of different value', function(done) {
     let counter = 0;
     let errorMessage = '';

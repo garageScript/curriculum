@@ -16,19 +16,10 @@ const solution = () => {
   };
 };
 
-// console.log([1, 2, 3].gsForEach());
-// 1: 3
-// 2: 4
-// 3: 5
-
-// console.log([1, 2, 3].gsForEach(x => x += 1)) // 3
-
 const cb = () => {
   let o = 0;
   o += 1;
 };
-
-// console.log([1, 2, 3].forEach(cb));
 
 module.exports = {
   solution,

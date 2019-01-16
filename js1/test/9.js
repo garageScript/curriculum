@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 let solution = require('../9').solution;
 
-describe('find next multiple of 7', () => {
+describe('js1/9.js find next multiple of 7', () => {
   it('next multiple should be 7', () => {
     const result = solution(1);
     expect(result).to.equal(7);

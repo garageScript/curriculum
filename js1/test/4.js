@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 let solution = require('../4').solution;
 
-describe('print string x number of times', () => {
+describe('js1/4.js print string x number of times', () => {
   it('should repeat empty string 2 times', () => {
     const result = solution(2, '');
     expect(result).to.equal('');

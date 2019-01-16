@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 const solution = require('../7').solution;
 
-describe('given an array and number, return number of elements in array that match the number', () => {
+describe('js2/7.js given an array and number, return number of elements in array that match the number', () => {
   it('should return 3 when input is [3,3,3,4,5,6],3', () => {
     const result = solution([3,3,3,4,5,6],3);
     expect(result).to.equal(3);

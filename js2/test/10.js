@@ -3,7 +3,7 @@ const solution = require('../10').solution;
 
 // solution();
 
-describe('test gsForEach', () => {
+describe('js2/10.js test gsForEach', () => {
   it('should mutate an empty object using curr. value, index, and a property of "this" array', () => {
     const o = {};
     const cb = (cv, i, ar) => {

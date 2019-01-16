@@ -33,12 +33,6 @@ const solution = (a, b = a + 1) => {
   return solution(a, b+1);
 }
 
-
-// console.log(solution(1)); // 7
-// console.log(solution(14)); // 21
-// console.log(solution(21)); // 28
-// console.log(solution(28)); // 35
-
 module.exports = {
   solution,
 };

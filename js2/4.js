@@ -33,11 +33,6 @@ const solution = (a, b = 0, c = 0) => {
   return solution(a, b+=a[c], c+1);
 }
 
-// console.log(sol([])); // 0
-// console.log(sol([6, 7])); // 13
-// console.log(sol([3, -13])); // -10
-// console.log(sol([3, 8, -5])); // 6
-
 module.exports = {
   solution,
 };

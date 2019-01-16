@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 const solution = require('../8').solution;
 
-describe('find greatest common denominator of two positive integers', () => {
+describe('js1/8.js find greatest common denominator of two positive integers', () => {
   it('15 should be the gcd', () => {
     const result = solution(30, 45);
     expect(result).to.equal(15);

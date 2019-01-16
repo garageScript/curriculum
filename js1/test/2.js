@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 let solution = require('../2').solution;
 
-describe('max 3', () => {
+describe('js1/2.js max 3', () => {
   it('should find the max of 3 numbers', () => {
     const result = solution(6,6,7);
     expect(result).to.equal(7);

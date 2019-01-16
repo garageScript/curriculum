@@ -2,7 +2,7 @@ const expect = require('chai').expect;
 const solution = require('../9').solution;
 solution();
 
-describe('test gsReduce', () => {
+describe('js2/9.js test gsReduce', () => {
   it('should reduce [1,2,3] to 6', () => {
     const cb = (ac, cv) => {
       return ac + cv;

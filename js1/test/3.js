@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 let solution = require('../3').solution;
 
-describe('repeat string hello x times', () => {
+describe('js1/3.js repeat string hello x times', () => {
   it('should repeat string hello 0 times', () => {
     const result = solution(0);
     expect(result).to.equal('');

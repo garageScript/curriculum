@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 const solution = require('../4').solution;
 
-describe('given an array, return the sum of all the values', () => {
+describe('js2/4.js given an array, return the sum of all the values', () => {
   it('should handle base case of []', () => {
     const result = solution([]);
     expect(result).to.equal(0);

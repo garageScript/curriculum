@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 const solution = require('../3').solution;
 
-describe('change all non prime elements of array to 1', () => {
+describe('js2/3.js change all non prime elements of array to 1', () => {
   it('should handle base case of []', () => {
     const result = solution([]);
     expect(result).to.deep.equal([]);

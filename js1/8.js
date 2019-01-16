@@ -53,14 +53,6 @@ const solution = (a, b, c = b) => {
   return solution(a, b, c-1);
 }
 
-// console.log(solution(30, 45)); // 15
-// console.log("----");
-// console.log(solution(30, 43)); // 1
-// console.log("----");
-// console.log(solution(10, 10)); // 10
-// console.log("----");
-// console.log(solution(15, 5)); // 5
-
 module.exports = {
   solution,
 };

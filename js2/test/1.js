@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 let solution = require('../1').solution;
 
-describe('all elements <= 5 is changed to 0', () => {
+describe('js2/1.js all elements <= 5 is changed to 0', () => {
   it('should handle base case of []', () => {
     const result = solution([]);
     expect(result).to.deep.equal([]);

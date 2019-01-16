@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 const solution = require('../6').solution;
 
-describe('sum divisors of number x', () => {
+describe('js1/6.js sum divisors of number x', () => {
   it('should sum divisors of 6', () => {
     const result = solution(6);
     expect(result).to.equal(5);

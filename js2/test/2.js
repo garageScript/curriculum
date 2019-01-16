@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 let solution = require('../2').solution;
 
-describe('change all odd elements of array to 0', () => {
+describe('js2/2.js change all odd elements of array to 0', () => {
   it('should handle base case of []', () => {
     const result = solution([]);
     expect(result).to.deep.equal([]);

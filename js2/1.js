@@ -47,11 +47,6 @@ const solution = (a, b = 0, c = []) => {
   return solution(a, b+1, c);
 };
 
-// console.log(solution([])); // []
-// console.log(solution([6, 7])); // [6, 7] 
-// console.log(solution([3, 4])); // [0, 0]
-// console.log(solution([3, 8, -5])); // [0, 8, 0]
-
 module.exports = {
   solution,
 };

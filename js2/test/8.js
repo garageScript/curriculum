@@ -2,7 +2,7 @@ const expect = require('chai').expect;
 const solution = require('../8').solution;
 solution();
 
-describe('test gsMap', () => {
+describe('js2/8.js test gsMap', () => {
   const cb = (e) => {
     return e + 5;
   };

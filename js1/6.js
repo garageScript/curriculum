@@ -43,15 +43,6 @@ const solution = (a, c=2, b=0) => {
   return solution(a, c+1, b);
 };
 
-
-console.log(solution(6)); // 5
-console.log("-----");
-console.log(solution(9)); // 3
-console.log("-----");
-console.log(solution(15)); // 8
-console.log("-----");
-console.log(solution(20)); // 21
-
 module.exports = {
   solution,
 };

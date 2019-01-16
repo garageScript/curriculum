@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 const solution = require('../5').solution;
 
-describe('given an array, return the largest element', () => {
+describe('js2/5.js given an array, return the largest element', () => {
   it('should return 7 when input is [6,7]', () => {
     const result = solution([6,7]);
     expect(result).to.equal(7);

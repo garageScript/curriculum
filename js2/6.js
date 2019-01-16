@@ -41,9 +41,6 @@ const solution = (a, b = [], c = 0) => {
   return solution(a, b, c+1);
 };
 
-
-
-console.log(solution([])); // []
-console.log(solution([6, 7])); // [6, 7]
-console.log(solution([3, 4])); // []
-console.log(solution([3, 8, -5])); // [8]
+module.exports = {
+  solution,
+};

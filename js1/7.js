@@ -48,24 +48,6 @@ const solution = (a, c = 2) => {
   return solution(a, c+1);
 };
 
-
-// console.log("----");
-// console.log(solution(2)); // true
-// console.log("----");
-// console.log(solution(3)); // true
-// console.log("----");
-// console.log(solution(1)); // false
-// console.log("----");
-// console.log(solution(7)); // true
-// console.log("----");
-// console.log(solution(9)); // false
-// console.log("----");
-// console.log(solution(12)); // false
-// console.log("----");
-// console.log(solution(1223)); // true
-// console.log("----");
-// console.log(solution(1226)); // false
-
 module.exports = {
   solution,
 };
