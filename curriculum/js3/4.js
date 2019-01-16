@@ -22,14 +22,20 @@
 //     return false;
 // }
 
+
+
 // RECURSION
 
-const solution = (a, b, i = 0, j = i + 1) => {
-if (i === a.length || a.length < 1) return false;
-    
-    if ((a[i] + a[j]) === b)  return true; 
+const solution = (a, b, i = 0, obj ={}) => {
+    if (i === a.length) return false;
 
-    return solution(a, b, i + 1, j)
+    const compliment = b - a[i];
+
+    if (obj[compliment]) return true;
+
+    obj[a[i]] = 1; 
+    
+    return solution(a, b, i + 1, obj);
 }
 
 console.log(solution([], 0)) // false
