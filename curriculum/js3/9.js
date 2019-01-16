@@ -21,7 +21,7 @@ a.children = [b, c]
 
 
 // Hint: BFS or DFS from the teaching doc
-const solution = (a)=>{
+const solution = (a) => {
   return a;
 };
 

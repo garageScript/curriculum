@@ -31,7 +31,16 @@ const bft = (cur=[], next=[], result=[]) => {
   return bft(cur, next.concat(n.children), result);
 };
 
-
+console.log(bft({
+  v: 7,
+  children: [{
+    v: 48,
+    children: []
+  }, {
+    v: 3,
+    children: []
+  }]
+}))
 
 const solution = (n)=>{
   return bft([], [n]);
