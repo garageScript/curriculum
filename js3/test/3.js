@@ -19,4 +19,3 @@ describe('js3/3.js takes in an array of numbers, returns an array of duplicates'
     expect(result).to.have.all.members([0, 10, 20, 100]);
   });
 });
-

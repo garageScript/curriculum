@@ -1,5 +1,6 @@
 const expect = require('chai').expect;
 const solution = require('../6').solution;
+solution();
 
 describe('js3/6.js filter an object if the condition is true', () => {
   it('should return base case', () =>{
