@@ -3,7 +3,6 @@
  * @returns {[]}
  */
 
-
 const solution = () => {
     Array.prototype.gsFilter = function (fn, i = 0, filtered = []) {
         if (i === this.length) return filtered;
