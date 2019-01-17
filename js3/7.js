@@ -22,15 +22,9 @@ b.next = c;
 
 const solution = (a, max = 0) => {
   if (!a.next) return max;
-  console.log(max);
-  console.log(a);
-
   if (max < a.v ) { max = a.v; }
-
   solution(a.next);
 };
-
-console.log(solution(a));
 
 module.exports = {
   solution,

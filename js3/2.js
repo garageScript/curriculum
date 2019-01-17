@@ -37,12 +37,6 @@ const solution = (arr, i = 0, obj = {}, max = arr[0]) => {
 
   return solution(arr, i + 1, obj, max);
 }
-console.log(solution([1, 2, 2, 3, 4, 4, 4])); // 4
-console.log("----");
-console.log(solution([-1, -1, -1, 2, 2, 5, 5])); // -1
-console.log("----");
-console.log(solution([0, 0, 1, 2, 4, 0])); // 0
-console.log("----");
-console.log(solution([0, 10, 10, 10, 20, 20, 20, 20, 0, 100, 100])); // 20
-console.log("----");
-console.log(solution([4, 1, 4, 2, 2, 3, 4])); // 4
+module.exports = {
+  solution,
+};

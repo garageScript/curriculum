@@ -1,11 +1,11 @@
 const expect = require('chai').expect;
-const solution = require('../10').solution;
+const solution = require('../9').solution;
 
-describe('given an array, return an array of children', () => {
-  it('should handle base case of one node', () => {
+describe('js3/9.js Return node of a tree', () => {
+  it('should handle base case of one node and matching value', () => {
     const a = {v: 1, children: []};
-    const result = solution(a);
-    expect(result).to.deep.equal([[1]]);
+    const result = solution(a, 1);
+    expect(result).to.deep.equal(a);
   });
   it('should handle case with 2 levels', () => {
     const a = {v: 1, children: []};
@@ -13,8 +13,8 @@ describe('given an array, return an array of children', () => {
     const c = {v: 3, children: []};
     const d = {v: 4, children: []};
     a.children = [b, c, d];
-    const result = solution(a);
-    expect(result).to.deep.equal([[1], [2, 3, 4]]);
+    const result = solution(a, 2);
+    expect(result).to.deep.equal(b);
   });
   it('should handle case with 3 levels', () => {
     const a = {v: 1, children: []};
@@ -25,9 +25,7 @@ describe('given an array, return an array of children', () => {
     const f = {v: 6, children: []};
     a.children = [b, c, d];
     c.children = [e, f];
-    const result = solution(a);
-    expect(result).to.deep.equal([[1], [2, 3, 4], [5, 6]]);
+    const result = solution(a, 5);
+    expect(result).to.deep.equal(e);
   });
 });
-
-

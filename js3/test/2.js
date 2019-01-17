@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 const solution = require('../2').solution;
 
-describe('takes in an array of numbers, find the most common', () => {
+describe('js3/2.js takes in an array of numbers, find the most common', () => {
   it('should return number 4', () => {
     const result = solution([1,2,2,3,4,4,4]);
     expect(result).to.equal(4);

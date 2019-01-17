@@ -27,30 +27,6 @@ const solution = (obj, max, i = 0) => {
   return solution(obj, max, i + 1)
 }
 
-console.log(solution({
-          a: 1,
-          b: 2,
-          c: 3,
-          d: 4,
-          e: 5
-        })); // 5
-
-console.log(solution({
-          a: 10,
-          b: 5,
-          c: 3,
-          d: 6
-        })); // 10
-
-console.log(solution({
-          a: -10,
-          b: -20,
-          c: -30,
-          d: -40
-        })); // -10
-
-console.log(solution({
-          a: 0,
-          b: 0,
-          c: 0
-        })); // 0
+module.exports = {
+  solution,
+};

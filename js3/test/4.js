@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 const solution = require('../4').solution;
 
-describe('take in target number and array, return true if two numbers in array add up to the target, ', () => {
+describe('js3/4.js take in target number and array, return true if two numbers in array add up to the target, ', () => {
   it('should return base case [],0', () => {
     const result = solution([],0);
     expect(result).to.equal(false);

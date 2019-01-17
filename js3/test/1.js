@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 let solution = require('../1').solution;
 
-describe('given object of values, return largest value', () => {
+describe('js3/1.js given object of values, return largest value', () => {
   it('should return the largest value 5', () => {
     const result = solution({a:1,b:2,c:3,d:4,e:5});
     expect(result).to.equal(5);

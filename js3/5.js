@@ -11,11 +11,6 @@ solution = (a, b, i = 0, entries = Object.entries(a)) => {
   return solution(a, b, i + 1, entries);
 };
 
-
-obj = {
-  k1: 1,
-  k2: 2,
-  k3: 3
+module.exports = {
+  solution,
 };
-
-solution(obj, console.log);

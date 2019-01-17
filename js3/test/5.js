@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 const solution = require('../5').solution;
 
-describe('takes in object, function and calls function until there is no more key/value', () => {
+describe('js3/5.js takes in object, function and calls function until there is no more key/value', () => {
   it('should return base case', () => {
     let count = '';
     const result = solution({},(key, value)=>{count+=`Key/Value Pair = ${key}:${value}\n`;});

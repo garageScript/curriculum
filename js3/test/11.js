@@ -2,7 +2,7 @@ const expect = require('chai').expect;
 const solution = require('../11').solution;
 solution();
 
-describe('test Object.prototype.gsForEach', () => {
+describe('js3/11.js test Object.prototype.gsForEach', () => {
   it('should mutate an empty object using each key-value pair in "this" object', () => {
     const o1 = {};
     const cb = (k, v) => {

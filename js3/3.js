@@ -15,15 +15,9 @@ const solution = (arr, index = 0, obj = {}) => {
   obj[arr[index]] = (obj[arr[index]] || 0) + 1;
   return solution(arr, index + 1, obj);
 }
-
-
-console.log(solution([1, 2, 2, 3, 4, 4, 4])); // [2, 4]
-console.log("----");
-console.log(solution([-1, -1, -1, 2, 2, 5, 5])); // [2, 5, -1];
-console.log("----");
-console.log(solution([0, 0, 1, 2, 4, 0])); // [0]
-console.log("----");
-console.log(solution([0, 100, 20, 100])); // [100];
+module.exports = {
+  solution,
+};
 
 // const solution = (arr, index = 0, obj = {}) => {
 // just use Object.keys => returns the keys of the object

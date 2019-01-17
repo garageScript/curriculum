@@ -28,11 +28,10 @@ c.next = a;
 const solution = (a, i = 0) => {
   // if (a.next) return true;
   // if (!a.next) return false;
-  if (a.next !== a.next) return false
-  solution(a.next, i + 1);
+  // if (a.next !== a.next) return false
+  // solution(a.next, i + 1);
 };
 
-console.log(solution(a));
 
 module.exports = {
   solution,

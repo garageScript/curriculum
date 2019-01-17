@@ -1,8 +1,8 @@
 const expect = require('chai').expect;
 const solution = require('../7').solution;
 
-describe('return the greatest value in the given linked list', () => {
-   it('should return the value of the first node when there is only 1 node', () =>{
+describe('js3/7.js return the greatest value in the given linked list', () => {
+  it('should return the value of the first node when there is only 1 node', () =>{
     const obja = { v: 5 };
     expect(solution(obja)).to.equal(obja.v);
   });

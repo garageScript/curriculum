@@ -38,10 +38,6 @@ const solution = (a, b, i = 0, obj ={}) => {
     return solution(a, b, i + 1, obj);
 }
 
-console.log(solution([], 0)) // false
-console.log("----");
-console.log(solution([1, 4, 3, 2], 6)) // true
-console.log("----");
-console.log(solution([-1,-3,-4], -2)); // false
-console.log("----");
-console.log(solution([0,0,0], 0)); // true
+module.exports = {
+    solution,
+};
