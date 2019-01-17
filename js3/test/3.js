@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 const solution = require('../3').solution;
 
-describe('js3/3.js takes in an array of numbers, returns an array of duplicates', () => {
+describe('js3/3.js returns an array of duplicates', () => {
   it('should return array of all duplicates [2,4]', () => {
     const result = solution([1, 2, 2, 3, 4, 4, 4]);
     expect(result).to.have.all.members([2, 4]);
