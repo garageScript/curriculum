@@ -19,3 +19,4 @@
 > ```bash
 > yarn run test curriculum/js1/tests/1.js
 > ```
+to run locally: npx mocha js0/test
