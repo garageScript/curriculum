@@ -15,31 +15,50 @@ Examples:
 
   Input: '22'
   Output: '0'
-  22 -> 4 -> 16 -> 37 -> 58 -> 164 -> 53 ...  // '22 is not a happy number
+  22 -> 8 -> 64 -> 52 -> 29 -> 85 -> 89 ...  // '22 is not a happy number
 
 */
+
+/**
+ * To run the given default code:
+ *
+ * 1. create and save a file with numbers on each line. lets call it inputTest.
+ * 2. use inputTest to test your solution by running: `node 8.js < inputTest` in terminal
+ */
 
 process.stdin.resume()
 process.stdin.setEncoding('utf8')
 
-var stdin = ''
+let stdin = ''
 process.stdin.on('data', function (chunk) {
   stdin += chunk
 }).on('end', function () {
-  var lines = stdin.trim().split('\n')
+  const lines = stdin.trim().split('\n')
 
-  for (var i = 0; i < lines.length; i++) {
-    const res = solution(lines[i])
-    process.stdout.write(String(res))
-  }
+  lines.forEach(n => {
+    let res = solution(n)
+    process.stdout.write(res)
+  })
 })
 
-const solution = (num, h = {}) => {
-  const res = num.split('').map(n => Math.pow(parseInt(n), 2)).reduce((acc, cur) => acc + cur, 0)
-  if (h[res]) return '0'
-  if (res === 1) return '1'
-  h[res] = h[res] || true
-  return solution(String(res), h)
+const map = {}
+const solution = (n, result = {}) => {
+  if (n === '1') {
+    result.value = true
+    return '1'
+  }
+
+  if (!map[n]) {
+    map[n] = result
+    const nVal = n.split('').reduce((acc, v) => acc + parseInt(v) * parseInt(v), 0)
+    return solution(`${nVal}`, result)
+  }
+  if (map[n].value) {
+    result.value = true
+    return '1'
+  }
+  result.value = false
+  return '0'
 }
 
 module.exports = {
