@@ -16,9 +16,9 @@
  * @returns {boolean}
 */
 
-a = { v: 2 };
-b = { v: 3 };
-c = { v: 1 };
+a = {v: 2};
+b = {v: 3};
+c = {v: 1};
 
 a.next = b;
 b.next = c;
