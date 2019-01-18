@@ -4,7 +4,6 @@ const solution = require('../6').solution;
 describe('js3/6.js filter an object if the condition is true', () => {
   it('should return base case', () => {
     const obja = {};
-
     const result = solution(obja, (k, v) => {
       return v.length > 3;
     });
@@ -30,7 +29,6 @@ describe('js3/6.js filter an object if the condition is true', () => {
       name: 'ho',
       zolo: '4thech',
     };
-
     const result = solution(obja, (k, v) => {
       return v.length > 7;
     });

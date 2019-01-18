@@ -14,7 +14,7 @@ describe('js3/5.js calls function until there is no more key/value', () => {
     const result = solution({
       1: 1,
       2: 2,
-      3: 3
+      3: 3,
     }, (key, value) => {
       count += `Key/Value Pair = ${key}:${value}\n`;
     });
