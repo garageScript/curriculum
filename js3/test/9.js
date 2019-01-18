@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 const solution = require('../9').solution;
 
-describe('Return node of a tree', () => {
+describe('js3/9.js Return node of a tree', () => {
   it('should handle base case of one node and matching value', () => {
     const a = {
       v: 1,

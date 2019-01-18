@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 const solution = require('../10').solution;
 
-describe('given an array, return an array of children', () => {
+describe('js3/10.js given an array, return an array of children', () => {
   it('should handle base case of one node', () => {
     const a = {
       v: 1,

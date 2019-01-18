@@ -13,12 +13,10 @@
  * @returns {object}
 */
 
-a = { v: 2 };
-b = { v: 3 };
-c = { v: 1 };
-a.children = [b, c]
-
-
+a = {v: 2};
+b = {v: 3};
+c = {v: 1};
+a.children = [b, c];
 
 // Hint: BFS or DFS from the teaching doc
 const solution = (a) => {
