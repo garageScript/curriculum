@@ -4,11 +4,11 @@
  * @param {function} b
  * @return {nothing}
  **/
-solution = (a, b, i = 0, entries = Object.entries(a)) => {
-  if (i === entries.length) return;
-  b(entries[i][0], entries[i][1]);
-  // entries = [ ['k1', 1], ['k2', 2], ['k3', 3]] 
-  return solution(a, b, i + 1, entries);
+
+const solution = (a, b, index = 0, entries = Object.entries(a)) => {
+  if (index === entries.length) return;
+  b(entries[index][0], entries[index][1]);
+  return solution(a, b, index + 1, entries);
 };
 
 module.exports = {
