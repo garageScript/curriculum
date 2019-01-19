@@ -19,32 +19,7 @@ const solution = () => {
   };
 };
 
-    // if (i === entries.length) return entries;
-    // fun(entries[i][0], entries[i][1]);
-
-    // return solution(fun, i + 1);
-
-// const obj1 = {
-//   5: 'blah',
-//   name: 'ho',
-//   zolo: '4thech',
-// };
-
-// console.log(Object.entries(obj1));
-// console.log(Object.entries(obj1[1][0]));
-// console.log(Object.entries(obj2)[0][0]);
-
-// const obj2 = {};
-// console.log(Object.entries(obj2));
-
 // solution();
-
-// console.log(obj1.gsFilter((k, v) => v.length > 3));
-// // output: {5:'blah blah', zolo:'4thech'}
-// console.log(obj2.gsFilter((k, v) => v.length > 3));
-// // {}
-// console.log(obj1.gsFilter((k, v) => v.length > 7));
-// // output: {5:'blah blah'}
 
 module.exports = {
   solution,
