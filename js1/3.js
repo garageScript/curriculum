@@ -34,7 +34,7 @@
 // RECURSION 
 
 const solution = (a, b = '') => {
-  if (a === 0) return b;
+  return b if a === 0;
   b += 'hello';
   return solution(a - 1, b);
 };

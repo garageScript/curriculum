@@ -7,8 +7,8 @@
  */
 
 const solution = (a, b, c) => {
-  if (a > b && a > c)  return a;
-  if (b > c && b > a)  return b;
+  if (a > b && a > c) return a;
+  if (b > c && b > a) return b;
   return c;
 };
 
