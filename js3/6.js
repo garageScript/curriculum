@@ -10,12 +10,14 @@
 */
 
 const solution = () => {
-  Object.prototype.gsFilter = function(fun, i = 0, entries = Object.entries(this)){
+  Object.prototype.gsFilter = function(fun, i = 0, entries = Object.entries(this), obj = {}) {
     if (i === entries.length) return entries;
+    let keys = entries[i][0];
+    let values = entries[i][1];
 
-    entries = fun(entries[i][0], entries[i][1]);
+    obj.push(fun(keys, values, i, this));
 
-    return this.gsFilter(fun, i + 1, entries);
+    return this.gsFilter(fun, i + 1, entries, obj);
   };
 };
 
