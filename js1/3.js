@@ -34,13 +34,13 @@
 // RECURSION 
 
 const solution = (a, b = '') => {
-  if (a === 0) {
-    return b;
-  }
+  if (a === 0) return b;
   b += 'hello';
   return solution(a - 1, b);
 };
 
-module.exports = {
-  solution,
-};
+console.log(solution(6));
+
+// module.exports = {
+//   solution,
+// };
