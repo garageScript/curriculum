@@ -21,26 +21,7 @@
  *
  */
 const solution = (a, b) => {
-  return a.map((s, i) => {
-    if (s.length !== b[i].length) {
-      return -1
-    } else {
-      const hashA = buildHash(s)
-      return countDiff(b[i], hashA)
-    }
-  })
-}
-
-const countDiff = (str, hash, i = 0) => {
-  if (i === str.length) return Object.values(hash).reduce((a, c) => a + c, 0)
-  if (hash[str[i]]) hash[str[i]] -= 1
-  return countDiff(str, hash, i + 1)
-}
-
-const buildHash = (str, i = 0, h = {}) => {
-  if (i === str.length) return h
-  h[str[i]] = (h[str[i]] || 0) + 1
-  return buildHash(str, i + 1, h)
+  return 0
 }
 
 module.exports = {
