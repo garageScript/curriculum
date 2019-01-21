@@ -38,4 +38,3 @@ describe('js3/6.js filter an object if the condition is true', () => {
     });
   });
 });
-console.log("Hello World!");

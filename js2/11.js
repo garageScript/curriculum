@@ -14,11 +14,11 @@ const solution = (array, accumulator = 0, index = array.length - 1) => {
     if (array[index] != 1) {
         accumulator += array[index];
         array[index] = 1;
-        accumulator -= 1
+        accumulator -= 1;
     }
 
     return solution(array, accumulator, index - 1);
-}
+};
 
 module.exports = {
     solution,

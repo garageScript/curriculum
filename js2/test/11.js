@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 const solution = require('../11').solution;
 
-describe('redistribute', () => {
+describe('js2/11.js redistribute', () => {
     it('should handle base case of []', () => {
         const result = solution([]);
         expect(result).to.deep.equal([]);

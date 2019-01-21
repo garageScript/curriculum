@@ -7,21 +7,22 @@
  * @param {object} a
  * @param {function} b
  * @returns {object} c
-*/
+ */
 
-const solution = () => {
-  Object.prototype.gsFilter = function(fun, i = 0, entries = Object.entries(this), obj = {}) {
-    if (i === entries.length) return entries;
-    let keys = entries[i][0];
-    let values = entries[i][1];
 
-    obj.push(fun(keys, values, i, this));
+const solution = (a, fun, obj = {}, i = 0) => {
+  a = Object.entries(a);
+  console.log('i =', i);
 
-    return this.gsFilter(fun, i + 1, entries, obj);
-  };
+  if (i === a.length) return obj;
+
+  obj.k = a[i][0];
+  obj.v = a[i][1];
+  fun(obj.k, obj.v);
+
+  return solution(a, fun, obj, i + 1);
 };
 
-// solution();
 
 module.exports = {
   solution,
