@@ -34,31 +34,11 @@ process.stdin.on('data', function (chunk) {
   stdin += chunk
 }).on('end', function () {
   const lines = stdin.trim().split('\n')
-
-  lines.forEach(n => {
-    let res = solution(n)
-    process.stdout.write(res)
-  })
+  process.stdout.write(lines)
 })
 
-const map = {}
-const solution = (n, result = {}) => {
-  if (n === '1') {
-    result.value = true
-    return '1'
-  }
-
-  if (!map[n]) {
-    map[n] = result
-    const nVal = n.split('').reduce((acc, v) => acc + parseInt(v) * parseInt(v), 0)
-    return solution(`${nVal}`, result)
-  }
-  if (map[n].value) {
-    result.value = true
-    return '1'
-  }
-  result.value = false
-  return '0'
+const solution = (str) => {
+  return 0
 }
 
 module.exports = {
