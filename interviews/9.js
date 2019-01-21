@@ -21,16 +21,14 @@
  *
  */
 const solution = (a, b) => {
-  const res = []
-  a.forEach((s, i) => {
+  return a.map((s, i) => {
     if (s.length !== b[i].length) {
-      res.push(-1)
+      return -1
     } else {
       const hashA = buildHash(s)
-      res.push(countDiff(b[i], hashA))
+      return countDiff(b[i], hashA)
     }
   })
-  return res
 }
 
 const countDiff = (str, hash, i = 0) => {
