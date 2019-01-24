@@ -12,7 +12,9 @@
 const solution = (a, fun, obj = {}, i = 0) => {
   if (i === Object.entries(a).length) return obj;
   const k = Object.keys(a)[i];
-  const v = Object.values(a)[i];
+  const v = a[k]; // accessing the array directly is faster
+  // than converting it to an array of values
+
   if (fun(k, v))obj[k] = v;
   return solution(a, fun, obj, i + 1);
 };
