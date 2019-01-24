@@ -1,5 +1,4 @@
-/*
- * isCircular - Takes in the first node of a
+/* isCircular - Takes in the first node of a
  *     linked list, return if the linked-list
  *     loops into itself
  * Example:

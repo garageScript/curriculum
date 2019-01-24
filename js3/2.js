@@ -36,7 +36,8 @@ const solution = (arr, i = 0, obj = {}, max = arr[0]) => {
   }
 
   return solution(arr, i + 1, obj, max);
-}
+};
+
 module.exports = {
   solution,
 };

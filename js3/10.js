@@ -35,12 +35,12 @@ console.log(bft({
   v: 7,
   children: [{
     v: 48,
-    children: []
+    children: [],
   }, {
     v: 3,
-    children: []
-  }]
-}))
+    children: [],
+  }],
+}));
 
 const solution = (n)=>{
   return bft([], [n]);

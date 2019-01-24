@@ -1,5 +1,4 @@
-/*
- * findNum - Takes in the root node of a tree and
+/* findNum - Takes in the root node of a tree and
  *     a number, return a node with the same value
  * Example:
  * input:
