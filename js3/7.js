@@ -22,17 +22,7 @@ b.next = c;
 // {v: 2, next : {v: 3, next : {v: 1} } }
 
 const solution = (node, obj = {}, num = 0) => {
-  console.log("node =", node);
-  console.log("num = ", num);
-  
-  k = Object.keys(node);
-  v = Object.values(node);
-  console.log("k =", k);
-  console.log("v =", v);
 
-  if (!node.next) return num;
-
-  return solution(node, obj, num);
 };
 
 module.exports = {
