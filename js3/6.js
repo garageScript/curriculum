@@ -9,7 +9,6 @@
  * @returns {object} c
  */
 
-
 const solution = (a, fun, obj = {}, i = 0) => {
   if (i === Object.entries(a).length) return obj;
   const k = Object.keys(a)[i];
