@@ -23,12 +23,16 @@ a.next = b;
 b.next = c;
 c.next = a;
 
+// const solution = (node, v = node.v) => {
+//   if (!node.next) return v;
+//   if (v < node.v) v = node.v;;
+//   return solution(node = node.next, v);
+// };
 
-const solution = (a, i = 0) => {
-  // if (a.next) return true;
-  // if (!a.next) return false;
-  // if (a.next !== a.next) return false
-  // solution(a.next, i + 1);
+const solution = (node, i = 0) => {
+  if (i === 3000) return true;
+  if (!node.next) return false;
+  return solution(node = node.next, i + 1);
 };
 
 
