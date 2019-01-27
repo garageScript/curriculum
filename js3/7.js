@@ -23,12 +23,13 @@ b.next = c;
 
 const solution = (node, v = node.v) => {
   // if (!node.next) return v;
-  if (!node.next) return v;
+  if (v < node.v) v = node.v;
+  if (!node.next) { return v; }
   console.log("node =", node);
   console.log("node.v =", node.v);
   console.log("v =", v);
 
-  if (v < node.v) v = node.v;
+  // if (v < node.v) v = node.v;
   node = node.next;
   return solution(node, v);
 };
