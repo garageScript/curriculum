@@ -26,10 +26,14 @@ const solution = (node, largest = 0) => {
     console.log("node.left =", node.left);
     console.log("node.right =", node.right);
 
-    if (node.val > largest) largest = node.val;
-    if (!node.left || !node.right) return largest;
-    node = (node.left || node.right);
-    return solution(node, largest);
+    if (!node.left && !node.right) return largest;
+
+    if (!node.val > largest) largest = node.val;
+    solution(node.left);
+    // if (!node) return largest;
+        solution(node.right);
+    // node = (node.left || node.right);
+    // return solution(node, largest);
 };
 
 module.exports = {
