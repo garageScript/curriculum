@@ -1,9 +1,11 @@
 /* Given a binary tree, find the largest value
-Example:
+* @param {object} a
+* @returns {number}
+
+Example Tree:
         (30)
         / \
     (50)   (40)
-    tree
 
 const a = {
     val: 30,
@@ -14,6 +16,22 @@ const a = {
         val: 50
     }
 };
-solution(a); 
+solution(a)
 should return 50 */
 
+const solution = (node, largest = 0) => {
+    console.log("node =", node);
+    console.log("largest =", largest);
+    console.log("node.val =", node.val);
+    console.log("node.left =", node.left);
+    console.log("node.right =", node.right);
+
+    if (node.val > largest) largest = node.val;
+    if (!node.left || !node.right) return largest;
+    node = (node.left || node.right);
+    return solution(node, largest);
+};
+
+module.exports = {
+    solution,
+};
