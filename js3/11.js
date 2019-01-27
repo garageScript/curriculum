@@ -25,12 +25,12 @@ const solution = () => {
 };
 
 
-obj1 = {};
-obj2 = {
-    fozzy: "waka waka",
-      chef: "erf dee flip dee bork, bork, bork",
-      animal: "Ah-nee-maaal!"
-}
+// obj1 = {};
+// obj2 = {
+//     fozzy: "waka waka",
+//       chef: "erf dee flip dee bork, bork, bork",
+//       animal: "Ah-nee-maaal!"
+// }
 
 // should mutate an empty object using each key-value pair in "this" object
 

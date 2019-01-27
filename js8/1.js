@@ -21,20 +21,12 @@ should return 50 */
 
 const solution = (node) => {
     console.log("node =", node);
-    // console.log("largest =", largest);
-    // console.log("node.val =", node.val);
-    console.log("node.left =", node.left);
-    console.log("node.right =", node.right);
-
-    // if (!node.left && !node.right) return largest;
-
-    // if (!node.val > largest) largest = node.val;
-    solution(node.left);
-    // if (!node) return largest;
-    console.log("node =", node);
-        solution(node.right);
-    // node = (node.left || node.right);
-    // return solution(node, largest);
+    // break;
+    // console.log("node.left =", node.left);
+    // console.log("node.right =", node.right);
+    // solution(node.left);
+    // console.log("node =", node);
+    // solution(node.right);
 };
 
 module.exports = {
