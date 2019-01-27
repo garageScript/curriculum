@@ -32,7 +32,8 @@ c.next = a;
 const solution = (node, i = 0) => {
   if (i === 3000) return true;
   if (!node.next) return false;
-  return solution(node = node.next, i + 1);
+  node = node.next;
+  return solution(node, i + 1);
 };
 
 

@@ -22,13 +22,15 @@ b.next = c;
 // {v: 2, next : {v: 3, next : {v: 1} } }
 
 const solution = (node, v = node.v) => {
+  // if (!node.next) return v;
   if (!node.next) return v;
   console.log("node =", node);
   console.log("node.v =", node.v);
+  console.log("v =", v);
 
-  if (v < node.v) v = node.v; ;
-  console.log("v = ", v);
-  return solution(node = node.next, v);
+  if (v < node.v) v = node.v;
+  node = node.next;
+  return solution(node, v);
 };
 
 module.exports = {
