@@ -19,14 +19,14 @@ const a = {
 solution(a)
 should return 50 */
 
-const solution = (node) => {
-    console.log("node =", node);
-    // break;
-    // console.log("node.left =", node.left);
-    // console.log("node.right =", node.right);
-    // solution(node.left);
-    // console.log("node =", node);
-    // solution(node.right);
+const solution = (node, v = node.val) => {
+    if (!node.v) return v;
+
+    if (v < node.v) v = node.v;
+
+        solution(node.left);
+
+        solution(node.right);
 };
 
 module.exports = {
