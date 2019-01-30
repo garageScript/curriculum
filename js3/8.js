@@ -29,11 +29,10 @@ c.next = a;
 //   return solution(node = node.next, v);
 // };
 
-const solution = (node, i = 0) => {
-  if (i === 3000) return true;
-  if (!node.next) return false;
-  node = node.next;
-  return solution(node, i + 1);
+const solution = (a, slower=a, faster=a.next) => {
+  if (!faster || !faster.next.next) return false;
+  if (faster === slower || faster.next === slower) return true;
+  return solution(a, slower.next, faster.next.next);
 };
 
 
