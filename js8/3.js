@@ -28,4 +28,8 @@ const a = {
     }
 };
 solution(a); // should return 2
-/*
+*/
+
+module.exports = {
+    solution,
+};

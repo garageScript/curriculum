@@ -10,3 +10,7 @@ solution("dit", "nit"); //returns 210 because 'd' (100) and 'n' (110) is deleted
 Hint To get the sum of ascii value of a string, do 
 "string".split('').reduce((acc, c) => acc + c.charCodeAt(0), 0)
 */
+
+module.exports = {
+    solution,
+};

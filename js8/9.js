@@ -7,3 +7,7 @@ solution([1, 3, 2]) // returns 2
 
 solution([3, 1, 10, 5, 20]) // returns 3
 */
+
+module.exports = {
+    solution,
+};

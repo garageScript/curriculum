@@ -18,3 +18,7 @@ Input: integers = [1, -33, 2, 5], k = 6
 Output: false
 Explanation: no subarray adds up to 6
 */
+
+module.exports = {
+    solution,
+};

@@ -7,3 +7,7 @@ if you steal from the house of index n, you cannot steal from index n - 1, and n
 solution([1000, 2000, 1001]) // returns 2001
 solution([1000, 5000, 3000]) // returns 5000
 */
+
+module.exports = {
+    solution,
+};

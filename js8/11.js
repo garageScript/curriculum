@@ -6,3 +6,7 @@ for a specific value
 solution([4, 5], 9) // returns 9
 solution([4], 9) // returns 8
 */
+
+module.exports = {
+    solution,
+};

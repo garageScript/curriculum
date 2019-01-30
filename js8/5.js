@@ -12,3 +12,7 @@ const b = {};
 a.left = b;
 solution(a, b) // should return 1
 */
+
+module.exports = {
+    solution,
+};

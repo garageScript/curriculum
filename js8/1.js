@@ -21,12 +21,9 @@ should return 50 */
 
 const solution = (node, v = node.val) => {
     if (!node.v) return v;
-
+    solution(node.left);
     if (v < node.v) v = node.v;
-
-        solution(node.left);
-
-        solution(node.right);
+    solution(node.right);
 };
 
 module.exports = {

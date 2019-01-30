@@ -8,12 +8,15 @@ function, you need to restart the test every time you change the file.
 // write your code here!
 const solution = () => {
 // global clear all timeout:
-        cat = () => {
+            cat = () => {
+            let id = window.setTimeout(function() {}, 0);
+
+            while (id--) {
+                window.clearTimeout(id);
+            }
     };
 };
 
-// module.exports = {
-//     solution,
-// };
-
-module.exports = solution;
+module.exports = {
+    solution,
+};
