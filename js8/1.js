@@ -6,26 +6,37 @@ Example Tree:
         (30)
         / \
     (50)   (40)
-
+*/
 const a = {
     val: 30,
     right: {
-        val: 40
+        val: 40,
     },
     left: {
-        val: 50
-    }
-};
-solution(a)
-should return 50 */
-
-const solution = (node, v = node.val) => {
-    if (!node.v) return v;
-    solution(node.left);
-    if (v < node.v) v = node.v;
-    solution(node.right);
+        val: 50,
+    },
 };
 
-module.exports = {
-    solution,
+// LINKS NODES
+// let a = {val: 30};
+// let b = {val: 40};
+// let c = {val: 50};
+
+// a.left = c;
+// a.right = b;
+
+const dfs = (node, largest = -1000) => {
+    if (!node) return largest;
+    console.log("node =", node);
+    console.log("largest =", largest);
+    if (largest < node.val) largest = node.val;
+    dfs(node.left);
+    console.log("node.val =", node.val);
+    dfs(node.right);
 };
+
+console.log(dfs(a));
+
+// module.exports = {
+//     solution,
+// };
