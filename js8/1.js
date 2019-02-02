@@ -17,26 +17,20 @@ const a = {
     },
 };
 
-// LINKS NODES
-// let a = {val: 30};
-// let b = {val: 40};
-// let c = {val: 50};
-
-// a.left = c;
-// a.right = b;
-
-const dfs = (node, largest = -1000) => {
+const solution = (node, largest = -1000) => {
     if (!node) return largest;
     console.log("node =", node);
+
     console.log("largest =", largest);
-    if (largest < node.val) largest = node.val;
-    dfs(node.left);
+    solution(node.left);
+    
     console.log("node.val =", node.val);
-    dfs(node.right);
+    if (largest < node.val) largest = node.val;
+    solution(node.right);
 };
 
-console.log(dfs(a));
+console.log(solution(a));
 
-// module.exports = {
-//     solution,
-// };
+module.exports = {
+    solution,
+};
