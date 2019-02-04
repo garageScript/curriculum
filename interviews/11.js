@@ -1,6 +1,9 @@
 /* Build a function that normalizes the given data structure below. Normalize function should return an array
  * of objects of value properties in the correct order. If children array has objects, function should
  * extract those values as well.
+ *
+ * @params{Array}
+ * @returns{Array}
 
 const example = [
   {
@@ -34,11 +37,8 @@ cosnole.log(result) -> [  {"value":"value1"},
                           {"value":"value4"},
                           {"value":"value5"}  ];
 */
-const solution = (arr, i = 0, res = []) => {
-  if (i >= arr.length) return res
-  if (arr[i].value) res.push({ 'value': arr[i].value })
-  if (arr[i].children && arr[i].children.length > 0) solution(arr[i].children, 0, res)
-  return solution(arr, i + 1, res)
+const solution = (arr) => {
+  return []
 }
 
 module.exports = {
