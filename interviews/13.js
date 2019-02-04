@@ -7,16 +7,20 @@
  *
  * Write a function and use regular expression to find whether the cookie string is valid. Return true if cookie string is valid, false if cookie string is not valid.
  *
+ * const example = "johndoe123=johnpassword; helloworld=helloworldpwd; foobar=foobarpwd"
+ * const result = solution(example)
+ * console.log(result) -> true
+ *
+ * const example2 = "appleseed=matrix123; ssur=usa; android=phone;"
+ * const result2 = solution(example2)
+ * console.log(result2) -> false
+ *
  * @params{String}
  * @returns{Boolean}
 */
 
 const solution = (str) => {
-  const reWithSemi = /\w+=\w+[;]$/
-  const reWithoutSemi = /\w+=\w+[^;]$/
-  str = str.split(' ')
-  const last = str.pop()
-  return !!((str.every(s => reWithSemi.test(s)) && reWithoutSemi.test(last)))
+  return 0
 }
 
 module.exports = {
