@@ -10,8 +10,12 @@
  *
  * Write a function using Regex that returns an array of Booleans. True for each valid match and False for each incorrect match.
  *
+ * const example = [ 'julia@c0d3.com', 'julia_@c0d3.com', 'julia_0@c0d3.com', 'julia0_@c0d3.com', 'julia@gmail.com' ]
+ * const result = solution(example)
+ * console.log(result) -> [true, true, true, false, false]
+ *
  * @params{Array}
- * @returns{Boolean}
+ * @returns{Array}
  */
 
 const solution = (arr) => {
