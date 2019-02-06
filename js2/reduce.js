@@ -1,5 +1,5 @@
 // the global variable
-var watchList = [{
+let watchList = [{
         "Title": "Inception",
         "Year": "2010",
         "Rated": "PG-13",
@@ -19,7 +19,7 @@ var watchList = [{
         "imdbVotes": "1,446,708",
         "imdbID": "tt1375666",
         "Type": "movie",
-        "Response": "True"
+        "Response": "True",
     },
     {
         "Title": "Interstellar",
@@ -113,7 +113,10 @@ var watchList = [{
 
 // Add your code below this line
 
-let averageRating = watchList.filter(x => x.Director === "Christopher Nolan").map(x => Number(x.imdbRating)).reduce((x1, x2) => x1 + x2) / watchList.filter(x => x.Director === "Christopher Nolan").length;
+let averageRating = watchList.filter(x => x.Director === "Christopher Nolan")
+    .map(x => Number(x.imdbRating))
+    .reduce((x1, x2) => x1 + x2) / watchList
+    .filter(x => x.Director === "Christopher Nolan").length;
 
 // Add your code above this line
 
