@@ -8,34 +8,38 @@ Example Tree:
     (50)   (40)
 */
 const a = {
-    val: 30,
-    right: {
-        val: 40,
-    },
-    left: {
-        val: 50,
-    },
+  val: 30,
+  right: {
+    val: 40,
+  },
+  left: {
+    val: 50,
+  },
 };
 
-const solution = (node, largest = -1000) => {
-    if (!node) return largest;
-    // node = node.right;
-    // solution(node.right);
-    solution(node.right, largest);
-    if (largest < node.val)  {
-        largest = node.val; 
-    }
-    solution(node.left, largest);
+const dfs = (node, arr = []) => {
+  if (node) {
+    dfs(node.left);
+    arr.push(node.val);
+    dfs(node.right);
+  }
+};
 
-    console.log("node = ", node);
-    console.log("node.val =", node.val);
-    console.log("largest =", largest);
-    console.log("----");
+const solution = (n) => {
+  let num = -1000;
+  const arr = [];
+  arr.push(dfs(n, arr));
+  for (var i = 0; i < arr.length; i++) {
+    console.log(arr);
+    if (num < arr[i]) {
+      num = arr[i];
+    }
+  }
+  return num;
 };
 
 console.log(solution(a));
 
 module.exports = {
-    solution,
+  solution,
 };
-

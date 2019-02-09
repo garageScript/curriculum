@@ -5,11 +5,10 @@
 
 
 const solution = () => {
-  // fn = (accumulator, item, index) => accumulator
-Array.prototype.gsReduce = function (fn, accumulator = 0, i = 0) {
-  if (i === this.length) return accumulator;
-  accumulator = fn(accumulator, this[i], i, this)
-  return this.gsReduce(fn, accumulator, i + 1);
+  Array.prototype.gsReduce = function (fn, accumulator = 0, i = 0) {
+    if (i === this.length) return accumulator;
+    accumulator = fn(accumulator, this[i], i, this)
+    return this.gsReduce(fn, accumulator, i + 1);
   }
 };
 

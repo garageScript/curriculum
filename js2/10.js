@@ -6,12 +6,10 @@
  *   https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
  */
 
-// RECURSION 
-
 const solution = () => {
-  Array.prototype.gsForEach = function (fn, i = 0) {
+  Array.prototype.gsForEach = function(fn, i = 0) {
     if (i === this.length) return;
-    fn(this[i], i, this)
+    fn(this[i], i, this);
     return this.gsForEach(fn, i + 1);
   };
 };

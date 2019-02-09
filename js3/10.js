@@ -43,7 +43,7 @@ console.log(bft({
   }],
 }));
 
-const solution = (n)=>{
+const solution = (n) => {
   return bft([], [n]);
 };
 
