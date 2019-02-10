@@ -18,28 +18,16 @@ const a = {
   },
 };
 
-const dfs = (node, arr = []) => {
-  if (node) {
-    dfs(node.left);
-    arr.push(node.val);
-    dfs(node.right);
-  }
-  return arr;
+const dfs = (node) => {
+  if (!node) return;
+  dfs(node.left);
+  console.log("node.val = ", node.val);
+  dfs(node.right);
 };
 
-const solution = (n) => {
-  let num = -1000;
-  const arr = [];
-  // arr.push(dfs(n, arr));
-  for (let i = 0; i < arr.length; i++) {
-    if (dfs(n, arr)) {
-    console.log(arr);
-    if (num < arr[i]) {
-      num = arr[i];
-      }
-    }
-  }
-  return num;
+const solution = (n, num = -1000) => {
+  console.log("dfs(n) =", dfs(n));
+  return dfs(n);
 };
 
 console.log(solution(a));
