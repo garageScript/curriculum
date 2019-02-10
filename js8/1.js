@@ -6,6 +6,7 @@ Example Tree:
         (30)
         / \
     (50)   (40)
+    returns 50
 */
 
 const a = {
@@ -18,16 +19,22 @@ const a = {
   },
 };
 
-const dfs = (node) => {
-  if (!node) return;
-  dfs(node.left);
-  console.log("node.val = ", node.val);
-  dfs(node.right);
-};
+// const dfs = (node) => {
+//   if (!node) return;
+//   dfs(node.left);
+//   console.log('node.val =', node.val);
+//   dfs(node.right);
+// };
 
-const solution = (n, num = -1000) => {
-  console.log("dfs(n) =", dfs(n));
-  return dfs(n);
+// console.log(dfs(a));
+
+const solution = (node, largest = -1000) => {
+  if (!node) return largest;
+  solution(node.left);
+  if (Math.round(node.val) > largest) largest = Math.round(node.val);
+  console.log('node.val =', node.val);
+  console.log('largest =', largest);
+  solution(node.right);
 };
 
 console.log(solution(a));

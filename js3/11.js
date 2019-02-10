@@ -8,14 +8,6 @@
 // You can use helper functions like:
 //     Object.keys, Object.values, or Object.entries
 
-
-// const solution = () => {
-//   Object.prototype.forEach = function(fun, keys = Object.keys(this), values = Object.values(this), entries = Object.entries(this), i = 0) {
-//     if (i === entries.length) return;
-//     fun(entries[i][1], entries[i][0], keys[i][1], keys[i][0], values[i][1], values[i][0]);
-//     return this.forEach(fun, keys, values, entries, i + 1);
-//   }
-// }
 const solution = () => {
   Object.prototype.forEach = function (fun, i = 0, entries = Object.entries(this)) {
     if (i === entries.length) return;
@@ -23,7 +15,6 @@ const solution = () => {
     return this.forEach(fun, i + 1);
   }
 };
-
 
 // obj1 = {};
 // obj2 = {

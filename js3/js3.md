@@ -1,11 +1,9 @@
-
 Objects: Just like array, but there are labels on the lockers!
 
 const a = { name: ‘song’ };
 a[‘name’] ?
 a[‘age’]  = 56;  
 a?
-
 
 a = {name: ‘ming’, joe: ‘awesome’};
 b = a;
@@ -63,7 +61,7 @@ d?
 
 Trees: Object with a property (children), that is an array of objects.
      A		      	a
-    /|\    	 	 / \
+    /|\    	 	   / \
    B c D		  	b   c	
  /      \
 e        f
@@ -71,8 +69,6 @@ e        f
 normal (left):
 A = {value: 15, children: [b,c, d]}
 B = {value: 12, children: [e]}
-
-What is e set to?
 
 Binary (right):
 A = {value: 15, children: [b,c] }
@@ -83,7 +79,9 @@ dfs = (n, c=[]) => {
   c = c.concat(n.children || [ ]);
   return dfs(c.pop(), c);
 }
-what is dfs(a) given the tree above? -> Assume a.v is “a”, b.v is “b”, c.v is “c”, etc.
+
+what is dfs(a) given the tree above? ->
+Assume a.v is “a”, b.v is “b”, c.v is “c”, etc.
 Change to BFS
 
 Test (to make sure they really knows their stuff)
