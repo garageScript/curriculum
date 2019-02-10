@@ -7,6 +7,7 @@ Example Tree:
         / \
     (50)   (40)
 */
+
 const a = {
   val: 30,
   right: {
@@ -23,16 +24,19 @@ const dfs = (node, arr = []) => {
     arr.push(node.val);
     dfs(node.right);
   }
+  return arr;
 };
 
 const solution = (n) => {
   let num = -1000;
   const arr = [];
-  arr.push(dfs(n, arr));
-  for (var i = 0; i < arr.length; i++) {
+  // arr.push(dfs(n, arr));
+  for (let i = 0; i < arr.length; i++) {
+    if (dfs(n, arr)) {
     console.log(arr);
     if (num < arr[i]) {
       num = arr[i];
+      }
     }
   }
   return num;
