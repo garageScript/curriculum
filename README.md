@@ -30,5 +30,5 @@ how to run locally with mocha:
 
 Cd into curriculum then copy and execute:
 $ npx mocha js0/test
-or test a single file
+(or test a single file)
 $ npx mocha js0/test/1.js
