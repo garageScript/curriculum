@@ -31,7 +31,7 @@ const a = {
 const solution = (node, largest = -1000) => {
   if (!node) return largest;
   solution(node.left);
-  if (Math.round(node.val) > largest) largest = Math.round(node.val);
+  if (node.val > largest) largest = this.val;
   console.log('node.val =', node.val);
   console.log('largest =', largest);
   solution(node.right);
