@@ -19,4 +19,16 @@
 > ```bash
 > yarn run test curriculum/js1/tests/1.js
 > ```
-to run locally: npx mocha js0/test
+
+how to run locally with mocha:
+
+1.  rename the file to test
+2. npm i
+3. npm i -D chai
+4. npm i -D mocha
+5. Npx mocha
+
+Cd into curriculum then copy and execute:
+$ npx mocha js0/test
+or test a single file
+$ npx mocha js0/test/1.js
