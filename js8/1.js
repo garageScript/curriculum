@@ -27,8 +27,8 @@ const dfs = (node, array) => {
 };
 
 const solution = (node, i = 0, holder = [], largest = -1000) => {
-  if(i === holder.length) return largest;
-  node = dfs(node);
+  if (i === holder.length) return largest;
+  node = dfs(node, holder);
   if (holder[i] > largest) largest = holder[i];
   return solution(node, i + 1, holder, largest);
 };
