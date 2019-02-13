@@ -19,14 +19,15 @@ tree1
 const a = (above tree);
 solution(a); // should return 0 */
 
-const solution = (node, v = node.val, count = 0) => {
-   console.log("node =", node);
-   console.log("v =", v);
-   if (!node.v) return v;
-   if (v < node.v) v = node.v;
-   solution(node.left);
-   if (v < node.v) v = node.v;
-   solution(node.right);
+const solution = (node, holder) => {
+  node = bft(node, holder);
+  console.log(node)
+};
+
+const bft = (node, array = []) => {
+  if (!node) return array;
+  array = array.concat(node.children || []);
+  return bft(c.shift(), array);
 };
 
 module.exports = {
