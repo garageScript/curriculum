@@ -19,19 +19,24 @@ const a = {
   },
 };
 
-const dfs = (node, array) => {
-   if (!node) return;
+const solution = (node, i = 0, holder = [], largest = -1000) => {
+  node = dfs(node, holder);
+  console.log("node = ", node);
+  console.log("holder = ", holder);
+  console.log("i = ", i);
+  if (i === holder.length) return largest;
+  if (holder[i] > largest) largest = holder[i];
+  return solution(node, i + 1, holder, largest);
+};
+
+const dfs = (node, array = []) => {
+   if (!node) return array;
    dfs(node.left);
    array.push(node.val);
    dfs(node.right);
 };
 
-const solution = (node, i = 0, holder = [], largest = -1000) => {
-  if (i === holder.length) return largest;
-  node = dfs(node, holder);
-  if (holder[i] > largest) largest = holder[i];
-  return solution(node, i + 1, holder, largest);
-};
+
 
 console.log(solution(a));
 
