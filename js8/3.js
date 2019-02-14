@@ -1,4 +1,4 @@
-/* Given a binary tree,
+// Given a binary tree,
 return the maximum distance between any 2 nodes
 Examples:
 
