@@ -19,21 +19,17 @@ const a = {
   },
 };
 
-const solution = (node, i = 0, holder = [], largest = -1000) => {
-  node = dfs(node, holder);
-  console.log("node = ", node);
-  console.log("holder = ", holder);
-  console.log("i = ", i);
-  if (i === holder.length) return largest;
-  if (holder[i] > largest) largest = holder[i];
-  return solution(node, i + 1, holder, largest);
+
+const solution = (node, holder = []) => {
+  dfs(node, holder);
+  return Math.max.apply(Math, holder);
 };
 
 const dfs = (node, array = []) => {
    if (!node) return array;
-   dfs(node.left);
+   dfs(node.left, array);
    array.push(node.val);
-   dfs(node.right);
+   dfs(node.right, array);
 };
 
 
