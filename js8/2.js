@@ -41,7 +41,7 @@ const a = {
 console.log("a = ", a);
 
 const solution = (node, count = 0) => {
-  if (!node.left || !node.right) return count;
+  if ((!node.left) || !(node.right)) return count;
   
   solution(node.left, count + 1);
 
