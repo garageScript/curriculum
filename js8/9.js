@@ -9,10 +9,10 @@ solution([3, 1, 10, 5, 20]) // returns 3
 */
 
 const solution = (array, i = 0, count = 0) => {
-  if (array.length < 2) return 1;
+  if (array.length <= 2) return 1;
   if (i === array.length) return count;
 
-  if (array[i] > array[i + 1]) count = 0;
+  if (array[i] > array[i + 1]) count = 0 ;
   if (array[i] < array[i] + 1) count += 1;
 
   return solution(array, i + 1, count);
