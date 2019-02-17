@@ -19,15 +19,10 @@ const a = {
   },
 };
 
-
-const solution = (node, holder = []) => {
+const solution = (node) => {
   if (!node || (!node.left || !node.right)) return 0;
   return Math.max(solution(node.left) + 1, solution(node.right) + 1);
 };
-
-
-
-console.log(solution(a));
 
 module.exports = {
   solution,

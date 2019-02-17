@@ -1,6 +1,4 @@
-/*
-
-Given a binary tree, find the maximum depth
+/* Given a binary tree, find the maximum depth
 Examples:
 
     tree1
