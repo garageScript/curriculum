@@ -40,19 +40,9 @@ const a = {
 
 console.log("a = ", a);
 
-const solution = (node, count = 0) => {
-  maxCount = 0;
-  maxCount = dfs(node, maxCount);
-  return maxCount;
-};
-
-const dfs = (node, maxCount) => {
-  if (!node) return maxCount;
-  console.log("left =", node.left, "level =", maxCount, "right=", node.right);
-  maxCount++;
-  max1 = dfs(node.left, maxCount);
-  max2 = dfs(node.right, maxCount);
-  return Math.max(max1, max2);
+const solution = (node) => {
+  if (!node || (!node.left && !node.right)) return 0;
+  return Math.max(solution(node.left) + 1, solution(node.right) + 1);
 };
 
 

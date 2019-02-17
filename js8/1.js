@@ -21,15 +21,8 @@ const a = {
 
 
 const solution = (node, holder = []) => {
-  dfs(node, holder);
-  return Math.max.apply(Math, holder);
-};
-
-const dfs = (node, array = []) => {
-   if (!node) return array;
-   dfs(node.left, array);
-   array.push(node.val);
-   dfs(node.right, array);
+  if (!node || (!node.left || !node.right)) return 0;
+  return Math.max(solution(node.left) + 1, solution(node.right) + 1);
 };
 
 

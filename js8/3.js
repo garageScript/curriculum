@@ -1,4 +1,4 @@
-// Given a binary tree,
+/* Given a binary tree,
 return the maximum distance between any 2 nodes
 Examples:
 
@@ -29,6 +29,11 @@ const a = {
 };
 solution(a); // should return 2
 */
+
+const solution = (node) => {
+  if (!node || (!node.right && !node.left)) return 0;
+  return Math.max((solution(node.left) + 1) + (solution(node.right) + 1), solution(node.left), solution(node.right))
+};
 
 module.exports = {
     solution,
