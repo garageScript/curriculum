@@ -181,3 +181,45 @@ git reset --hard HEAD 
 6. Note: you will be prompted to choose the exact lesson and challenge you are currently submitting. 
 7. Go back to your student page/teacher page, refresh it and see the solution you just submitted! :) 
 8. Git branch to check which branch you are on. Git status to see which files have been modified/added/ready to be committed 
+
+
+----------------- VIM COMMANDS CONT. --------------------
+
+2 modes: edit mode & command mode
+  from command mode -> edit mode: i(insert) or a(append)
+  from edit mode -> command mode: <esc>
+
+commands:
+========
+
+/* delete item(s) */
+x - delete a char
+3x - delete 3 char
+dw - delete a word
+3dw - delete 3 word
+dd - delete a line
+3dd - delete 3 lines
+
+/* search */
+/abc - search for abc 
+       hit 'n' for next occurance
+       hit 'N' for previous occurance
+
+/* copy */
+yy - copy one line
+3yy - copy 3 lines
+
+/* named yank buffer */
+"m yy - yank one line into buffer named 'm' 
+"n yy - yank one line into buffer named 'n' 
+"x 3yy - yank three lines into buffer named 'x' 
+
+/* paste */
+p - paste below the current line
+P - paste above the current line
+"m p - paste from buffer named 'm' below the current line
+"n P - paste from buffer named 'n' above the current line
+
+/* set/unset the line number */
+:set number     -> or shorthand  :se nu
+:set nonumber   -> or shorthand  :se nonu
