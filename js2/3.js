@@ -7,7 +7,6 @@
  */
 
 const isPrime = require('../js1/7.js').solution;
-// const prime = require('../7.js');
 
 // FOR LOOP
 
