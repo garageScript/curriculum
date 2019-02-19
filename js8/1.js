@@ -21,7 +21,7 @@ const a = {
 
 const solution = (node) => {
   if (!node || (!node.left || !node.right)) return 0;
-  return Math.max(solution(node.left) + 1, solution(node.right) + 1);
+  return Math.max(solution(node.left) + 1 || solution(node.right) + 1);
 };
 
 module.exports = {
