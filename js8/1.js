@@ -20,8 +20,10 @@ const a = {
 };
 
 const solution = (node) => {
-  if (!node || (!node.left || !node.right)) return 0;
-  return Math.max(solution(node.left) + 1 || solution(node.right) + 1);
+  if (!node) return -Infinity;
+  console.log(Infinity);
+  console.log(-Infinity);
+  return Math.max(solution(node.left), node.v, solution(node.right));
 };
 
 module.exports = {
