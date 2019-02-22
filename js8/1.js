@@ -21,8 +21,6 @@ const a = {
 
 const solution = (node) => {
   if (!node) return -Infinity;
-  console.log(Infinity);
-  console.log(-Infinity);
   return Math.max(solution(node.left), node.v, solution(node.right));
 };
 
