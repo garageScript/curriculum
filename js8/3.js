@@ -32,7 +32,11 @@ solution(a); // should return 2
 
 const solution = (node) => {
   if (!node || (!node.right && !node.left)) return 0;
-  return Math.max((solution(node.left) + 1) + (solution(node.right) + 1), solution(node.left), solution(node.right))
+  
+  const left = node.left ? solution(node.left) + 1 : 0
+  const right = node.right ? solution(node.right) + 1 : 0
+
+  return Math.max(left + right, solution(node.left), solution(node.right));
 };
 
 module.exports = {
