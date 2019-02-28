@@ -35,10 +35,10 @@
 // RECURSION
 
 
-const solution = (a, b = [], c = 0) => {
-  if (c === a.length) { return b; }
-  if (a[c] > 5) { b.push(a[c]); }
-  return solution(a, b, c+1);
+const solution = (a, i = 0, newArr = []) => {
+  if (i === a.length) return newArr;
+  if (a[i] > 5) newArr.push(a[i]);
+  return solution(a, i + 1, newArr);
 };
 
 module.exports = {

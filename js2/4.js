@@ -28,9 +28,9 @@
 
 // RECURSION 
 
-const solution = (a, b = 0, c = 0) => {
-  if (c === a.length) { return b; }
-  return solution(a, b+=a[c], c+1);
+const solution = (a, i = 0, sum = 0) => {
+  if (i === a.length) { return sum; }
+  return solution(a, i + 1, sum+=a[i]);
 }
 
 module.exports = {
