@@ -7,7 +7,7 @@
  * @param {function} c
  */
 
-let solution = (a, b, c) => {
+const solution = (a, b, c) => {
   setTimeout(() => {
     c();
     setTimeout(c, b);
