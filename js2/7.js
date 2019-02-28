@@ -36,10 +36,10 @@
 
 // RECURSION
 
-const solution = (a, b, c = 0, d = 0) => {
-  if (c === a.length) { return d; }
-  if (a[c] === b) { d++; }
-  return solution(a, b, c+1, d);
+const solution = (a, b, i = 0, count = 0) => {
+  if (i === a.length) return count;
+  if (a[i] === b) count++;
+  return solution(a, b, i+1, count);
 }
 
 module.exports = {
