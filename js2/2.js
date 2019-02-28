@@ -38,14 +38,11 @@
 
 // RECURSION
 
-const solution = (a, b = 0, c = []) => {
-  if (b === a.length) { return c; }
-  if (a[b] % 2 !== 0) {
-    c.push(0)
-  } else {
-    c.push(a[b]);
-  }
-  return solution(a, b+1, c);
+const solution = (a, i = 0) => {
+  if (i === a.length) return a;
+  if (a[i] % 2 !== 0) a[i] = 0;
+  return solution(a, i + 1);
+
 }
 
 module.exports = {
