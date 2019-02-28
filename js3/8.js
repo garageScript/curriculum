@@ -23,12 +23,6 @@ a.next = b;
 b.next = c;
 c.next = a;
 
-// const solution = (node, v = node.v) => {
-//   if (!node.next) return v;
-//   if (v < node.v) v = node.v;;
-//   return solution(node = node.next, v);
-// };
-
 const solution = (a, slower=a, faster=a.next) => {
   if (!faster || !faster.next.next) return false;
   if (faster === slower || faster.next === slower) return true;

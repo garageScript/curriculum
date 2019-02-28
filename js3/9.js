@@ -18,10 +18,18 @@ c = {v: 1};
 a.children = [b, c];
 
 // Hint: BFS or DFS from the teaching doc
-const solution = (n, c =[]) => {
-  if (!n) return n;
-  c = c.concat(n.children || []);
-  return solution(c.shift(), c);
+const solution = (n, value, c =[]) => {
+  if (!n.children) return;
+  if (n.v = value) return n.v;
+  
+  console.log("n = ", n);
+  console.log("value = ", value);
+  
+  console.log("c =", c);
+  console.log("n.children = ", n.children);
+  
+  console.log("----");
+  return solution(n.children, value, c);
 };
 
 module.exports = {
