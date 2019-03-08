@@ -30,7 +30,6 @@ const solution = (obj, max, i = 0) => {
 */
 
 // ONE LINE
-
 const solution = (obj) => {
   return Math.max(...Object.values(obj));
 }

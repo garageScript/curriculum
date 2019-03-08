@@ -9,8 +9,7 @@ const solution = (arr, index = 0, obj = {}) => {
   if (index === arr.length) {
     const result = Object.keys(obj);
     const letterArray = result.filter((key) => obj[key] > 1);
-    const resultArr = letterArray.map((stringNum) => parseInt(stringNum));
-    return resultArr;
+    return letterArray.map((stringNum) => parseInt(stringNum));
   }
 
   obj[arr[index]] = (obj[arr[index]] || 0) + 1;
