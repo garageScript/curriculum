@@ -1,14 +1,13 @@
 /**
- * Takes in 2 numbers, returns their sum
+ * takes in a number and returns a function that will output the next number every time it is called
  * @param {number} a
- * @param {number} b
- * @returns {number}
+ * @returns {function}
  */
 
-const solution = (a, b) => {
-  return 0;
-};
+const solution = (a) => {
+  return () => {}
+}
 
 module.exports = {
-  solution,
-};
+  solution
+}

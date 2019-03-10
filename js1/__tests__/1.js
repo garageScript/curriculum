@@ -1,21 +1,25 @@
-const expect = require('chai').expect;
-let solution = require('../1').solution;
+/* global describe it should */
 
-describe('sum of 2 numbers', () => {
-  it('should add 2 same numbers correctly', () => {
-    const result = solution(6,6);
-    expect(result).to.equal(12);
-  });
-  it('should add 2 different numbers correctly', () => {
-    const result = solution(1,2);
-    expect(result).to.equal(3);
-  });
-  it('should add 2 negative numbers correctly', () => {
-    const result = solution(-2,-2);
-    expect(result).to.equal(-4);
-  });
-  it('should add 2 numbers of different signs correctly', () => {
-    const result = solution(-3, 3);
-    expect(result).to.equal(0);
-  });
-});
+const expect = require('chai').expect
+let solution = require('../1').solution
+
+describe('closure 1', () => {
+  it('should return next positive number', () => {
+    const func = solution(0)
+    expect(func()).to.equal(1)
+    expect(func()).to.equal(2)
+    expect(func()).to.equal(3)
+  })
+  it('should return next positive number starting from 11', () => {
+    const func = solution(11)
+    expect(func()).to.equal(12)
+    expect(func()).to.equal(13)
+    expect(func()).to.equal(14)
+  })
+  it('should return next negative number', () => {
+    const func = solution(-5)
+    expect(func()).to.equal(-4)
+    expect(func()).to.equal(-3)
+    expect(func()).to.equal(-2)
+  })
+})
