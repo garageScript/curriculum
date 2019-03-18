@@ -2,13 +2,14 @@
 // Write a script that console.logs all the users inside the
 // /home folder that is not you. Use fs.readdir and read /home directory.
 
-
 const express = require('express')
-  const app = express()
-  const path = require('path')
-
-  app.get('/', function (res, req) {
-    res.sendFile(path.join(__dirname + '/index.html'))
+const app = express()
+const fs = require('fs')
+const printNames = (err, data) => {
+// my username === 'greenc'
+  if (x !== 'greenc') {
+    console.log(x)
+    }
   })
-
-app.listen(9645)
+}
+fs.readdir('/home', printNames)
