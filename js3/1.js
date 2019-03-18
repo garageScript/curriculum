@@ -17,23 +17,22 @@
 
 // RECURSION 
 
-/*
 const solution = (obj, max, i = 0) => {
   if (i === Object.keys(obj).length) return max;
-  if (i === 0) max = obj[Object.keys(obj)[i]];
+  if (i === 0) { max = obj[Object.keys(obj)[i]] };
+console.log("obj[Object.keys(obj)[i]", obj[Object.keys(obj)[i]);
 
   if (max < Object.values(obj)[i]) {
     max = Object.values(obj)[i]
   }
   return solution(obj, max, i + 1)
 }
-*/
-
+/*
 // ONE LINE
 const solution = (obj) => {
   return Math.max(...Object.values(obj));
 }
-
+*/
 module.exports = {
   solution,
 };
