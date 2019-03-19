@@ -39,10 +39,9 @@
 // RECURSION
 
 const solution = (a, i = 0) => {
-  if (i === a.length) return a;
-  if (a[i] % 2 !== 0) a[i] = 0;
-  return solution(a, i + 1);
-
+  if (i === a.length) return a
+  if (a[i] % 2 !== 0) { a[i] = 0 }
+  return solution(a, i + 1)
 }
 
 module.exports = {

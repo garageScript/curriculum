@@ -42,15 +42,11 @@ const isPrime = require('../js1/7.js').solution;
 
   // RECURSION 
 
-const solution = (a, b = [], c = 0) => {
-  if (b.length === a.length) { return b; }
-  if (isPrime(a[c])){
-    b.push(a[c])
-  } else {
-    b.push(1);
-  }
-  return solution(a, b, c+1);
-};
+const solution = (a, i = 0) => {
+  if (i === a.length) return a
+  if (!isPrime(a[i])) { a[i] = 1 }
+  return solution(a, i + 1)
+}
 
 module.exports = {
   solution,
