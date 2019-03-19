@@ -3,3 +3,17 @@
 
 // fs.writeFile('fileName', 'fileData', () => {});
 
+const fs = require('fs')
+
+fs.readdir('/home', (err, data) => {
+  const readNames = data.reduce((acc, curr) => {
+    if (acc !== 'greenc') {
+      acc += curr + '\n'
+    }
+    return acc
+  })
+  fs.writeFile('users.txt', readNames, (err) => {
+    if (err) throw err
+    console.log('I hope this works!')
+  })
+})
