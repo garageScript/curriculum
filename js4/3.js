@@ -6,10 +6,12 @@
 const express = require('express')
 const app = express()
 
-app.get('/hello', function (req, res) {
-  res.send('./index.html')
+app.get('/hello', (req, res) => {
+  res.send(`
+  <h1 style="color:red">Hello C0d3.com!</h1>
+  <input></input>
+  <submit></submit>
+  `)
 })
 
-// test.llip.life Port: 9645
-// https://test.llip.life/
 app.listen(9645)
