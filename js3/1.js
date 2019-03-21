@@ -17,18 +17,13 @@
 
 // RECURSION 
 
-const solution = (obj, max, i = 0) => {
-  if (i === Object.keys(obj).length) return max;
-  if (i === 0) { max = obj[Object.keys(obj)[i]] };
-// song told me to put this line in ^^^ I still have no idea what it does
-// I guess it works tho!
-console.log("obj[Object.keys(obj)[i]", obj[Object.keys(obj)[i]);
-
-  if (max < Object.values(obj)[i]) {
-    max = Object.values(obj)[i]
-  }
-  return solution(obj, max, i + 1)
+const solution = (obj, i = 0, largest = -Infinity) => {
+  if (i === Object.values(obj).length) return largest
+  if (largest < Object.values(obj)[i]) { largest = Object.values(obj)[i] }
+  return solution(obj, i + 1, largest)
 }
+
+
 /*
 // ONE LINE
 const solution = (obj) => {
