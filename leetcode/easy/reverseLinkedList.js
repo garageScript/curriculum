@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/reverse-linked-list/
+
 /* 
 Reverse a singly linked list.
 
@@ -22,9 +24,19 @@ A linked list can be reversed either iteratively or recursively. Could you imple
  * @return {ListNode}
  */
 
+// a -> b -> c
+a = {v: 2};
+b = {v: 3};
+c = {v: 1};
+a.next = b;
+b.next = c;
+
+
 var reverseList = function(head, arr = []) {
     if (!head) return arr;
     reverseList(head.next);
     arr.push(this.val);
     return reverseList(head, arr)
 };
+
+console.log(reverseList(a)) // c -> b -> a

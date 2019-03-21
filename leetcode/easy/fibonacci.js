@@ -1,3 +1,5 @@
+// SOLVED
+
 // https://leetcode.com/problems/fibonacci-number/
 
 /* The Fibonacci numbers, commonly denoted F(n)
