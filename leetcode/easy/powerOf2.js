@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/power-of-two/
 // check if a number is a power of 2
 
 const powerOf2 = (n) => {
