@@ -1,21 +1,33 @@
-const expect = require('chai').expect;
-let solution = require('../2').solution;
+/* global describe it should */
 
-describe('js1/2.js max 3', () => {
-  it('should find the max of 3 numbers', () => {
-    const result = solution(6,6,7);
-    expect(result).to.equal(7);
-  });
-  it('should find the max of 3 negative numbers', () => {
-    const result = solution(-2,-3, -9);
-    expect(result).to.equal(-2);
-  });
-  it('should find the max with positive and negatives', () => {
-    const result = solution(-2,-2, 9);
-    expect(result).to.equal(9);
-  });
-  it('should find the max where max is first parameter', () => {
-    const result = solution(3, 2, 1);
-    expect(result).to.equal(3);
-  });
-});
+const expect = require('chai').expect
+let solution = require('../2').solution
+
+const z = () => {
+  return 5
+}
+
+describe('closure 1', () => {
+  it('should call function 0 times', () => {
+    const func = solution(0, z)
+    expect(func()).to.equal(null)
+    expect(func()).to.equal(null)
+    expect(func()).to.equal(null)
+  })
+  it('should call function 1 time, and null afterwards', () => {
+    const func = solution(1, z)
+    expect(func()).to.equal(5)
+    expect(func()).to.equal(null)
+    expect(func()).to.equal(null)
+  })
+  it('should call function 3 times, and null after wards', () => {
+    const func = solution(3, z)
+    expect(func()).to.equal(5)
+    expect(func()).to.equal(5)
+    expect(func()).to.equal(5)
+    expect(func()).to.equal(null)
+    expect(func()).to.equal(null)
+    expect(func()).to.equal(null)
+    expect(func()).to.equal(null)
+  })
+})

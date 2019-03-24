@@ -22,20 +22,22 @@
 //     return false;
 // }
 
-
-
 // RECURSION
 
-const solution = (a, b, i = 0, obj ={}) => {
-    if (i === a.length) return false;
+const solution = (arr, num, i = 0, obj ={}) => {
+    if (i === arr.length) return false;
 
-    const compliment = b - a[i];
-
-    if (obj[compliment]) return true;
-
-    obj[a[i]] = 1; 
+    const compliment = num - arr[i];
+    // rather than use another for loop, subtract the num
+    // from the current element in the array and
+    // check the object for that value
     
-    return solution(a, b, i + 1, obj);
+    if (obj[compliment]) return true;
+    // if the object contains compliment element return true
+    // otherwise the object doesn't contain the current element
+    // minus the num variable
+    obj[arr[i]] = 1; 
+    return solution(arr, num, i + 1, obj);
 }
 
 module.exports = {

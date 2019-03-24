@@ -1,17 +1,18 @@
-/**
- * Takes in 3 numbers, return the largest
- * @param {number} a
- * @param {number} b
- * @param {number} c
- * @returns {number}
+ /**  
+ * Write a function that takes in a number (X) and a function (A),
+and returns a function (B). Whenever the function (B) is called (up to X times), 
+the result of function (A) is returned .
+After that, null will be returned whenever the function (B) is called.               
+ * @param {number} a                                                                                                                     
+ * @param {function} b                                                                                                                   
+ * @returns {function}                                                                                                                   
  */
 
-const solution = (a, b, c) => {
-  if (a > b && a > c) return a;
-  if (b > a && b > c) return b;
-  return c;
-};
+const solution = (num, func) => {
+    return () => {
+  }
+}
 
-module.exports = {
-  solution,
-};
+ module.exports = {
+   solution
+}
