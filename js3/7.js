@@ -21,10 +21,10 @@ b.next = c;
 
 // {v: 2, next : {v: 3, next : {v: 1} } }
 
-const solution = (node, v = node.v) => {
-  if (!node) return v;
-  if (node.v > v) v = node.v;
-  return solution(node.next, v);
+const solution = (node, greatest = -Infinity) => {
+  if (!node) return greatest;
+  if (greatest < node.v) greatest = node.v;
+  return solution(node.next, greatest);
 };
 
 module.exports = {

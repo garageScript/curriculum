@@ -23,7 +23,7 @@ a.next = b;
 b.next = c;
 c.next = a;
 
-const solution = (a, slower=a, faster=a.next) => {
+const solution = (node, slower = node, faster = node.next) => {
   if (!faster || !faster.next.next) return false;
   if (faster === slower || faster.next === slower) return true;
   return solution(a, slower.next, faster.next.next);
