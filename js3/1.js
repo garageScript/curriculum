@@ -23,7 +23,6 @@ const solution = (obj, i = 0, largest = -Infinity) => {
   return solution(obj, i + 1, largest)
 }
 
-
 /*
 // ONE LINE
 const solution = (obj) => {
