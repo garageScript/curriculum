@@ -10,7 +10,9 @@ After that, null will be returned whenever the function (B) is called.
 
 const solution = (num, func) => {
     return () => {
+    return num -= 1
   }
+  return null
 }
 
  module.exports = {
