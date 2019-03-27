@@ -7,7 +7,7 @@ const z = () => {
   return 5
 }
 
-describe('closure 1', () => {
+describe('closure 2', () => {
   it('should call function 0 times', () => {
     const func = solution(0, z)
     expect(func()).to.equal(null)
