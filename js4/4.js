@@ -1,19 +1,19 @@
 const express = require('express')
-const app = express()
 const fs = require('fs')
-
-app.get('/hello', (req, res) => {
-  fs.readdir('/home', (err, data) => {
-    const users = data.reduce((acc, curr) => {
-      if (curr !== 'greenc') {
-        acc += curr + '<br>'
-      }
-      return acc
-    })
-    res.send(`
-<h3>${users}</h3>  
-  `)
+const app = express()
+let users = ''
+fs.readdir('/home', (err, data) => {
+  if (err) throw err
+  users = data.reduce((acc, curr) => {
+    if (curr !== 'greenc') {
+      acc += `<h3>${curr}</h3>`
+    }
+    return acc
   })
 })
-
-app.listen(6666)
+app.get('/', (req, res) => {
+  res.send(`${users}`)
+})
+app.listen(9645, function () {
+  console.log('Listening on port 9645...')
+})

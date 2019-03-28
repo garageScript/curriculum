@@ -6,11 +6,14 @@
 const express = require('express')
 const app = express()
 
- app.get('/hello', (req, res) => { 
-   res.send(`
-     <h1 style="color:red">Hello C0d3!</h1> 
-     <input placeholder="Enter here"></input>  
-     <button onclick="alert('Good Job!')">Submit</button>
-  `) 
- })
- app.listen(6666)
+app.get('/hello', function (req, res) {
+  res.send(`
+    <h1 style="color:red">Welcome to c0d3.garagescript.org!</h1><br>
+  <input placeholder="Enter Name"></input><br>
+  <button onclick=alert("Checking to see if this work!")>Submit</button>
+  `)
+})
+
+app.listen(6666, function () {
+  console.log('server started on port 6666...')
+})
