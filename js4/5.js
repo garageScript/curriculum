@@ -1,15 +1,19 @@
 const express = require('express')
 const app = express()
 const messages = []
-
-app.get('/', (req, res) => {
+app.get('/newMessage?', (req, res) => {
   messages.push(req.query.name)
 })
-
 app.get('/messages', (req, res) => {
   res.json(messages)
-}) 
-
-app.listen(9645, () => {
-  console.log('Listening on port 9645...')
+})
+app.get('/', (req, res) => {
+  res.send(`
+  <h1 style="color:green">Welcome!</h1>
+  <input placeholder="Enter name"></input><br>
+  <button onclick="alert('Thanks for that!')">Submit</button>
+  `)
+})
+app.listen(6666, () => {
+  console.log('Listening on port 6666...')
 })
