@@ -27,10 +27,16 @@
 // }
 
 // RECURSION
-
+/*
 const solution = (a, b = a + 1) => {
   if (b % 7 === 0) return b;
   return solution(a, b+1);
+} */
+
+// ALTERNATIVE
+const solution = (a) => {
+const dividend = Math.floor(a/7)
+return dividend * 7 + 7
 }
 
 module.exports = {
