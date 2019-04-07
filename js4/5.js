@@ -1,7 +1,8 @@
 const express = require('express')
 const app = express()
 const messages = []
-app.get('/newMessage?', (req, res) => {
+app.get('/newMessage', (req, res) => {
+  res.send(`<h1 stlye="color:blue">New Message Page!</h1>`)
   messages.push(req.query.name)
 })
 app.get('/messages', (req, res) => {
