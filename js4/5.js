@@ -1,13 +1,18 @@
 const express = require('express')
 const app = express()
 const messages = []
+
 app.get('/newMessage', (req, res) => {
+  const name = req.query.name
+  const message = req.query.message
   res.send(`<h1 stlye="color:blue">New Message Page!</h1>`)
-  messages.push(req.query.name)
+  messages.push({ name, message })
 })
+
 app.get('/messages', (req, res) => {
   res.json(messages)
 })
+
 app.get('/', (req, res) => {
   res.send(`
   <h1 style="color:green">Welcome!</h1>
@@ -15,6 +20,7 @@ app.get('/', (req, res) => {
   <button onclick="alert('Thanks for that!')">Submit</button>
   `)
 })
+
 app.listen(6666, () => {
   console.log('Listening on port 6666...')
 })
