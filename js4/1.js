@@ -8,8 +8,8 @@ fs.readdir('/home', (err, data) => {
   if (err) throw err
   data.forEach((x) => {
   // my username === 'greenc'
-  if (x !== 'greenc') {
-    console.log(x)
+  x !== 'greenc')
+    console.log(x);
     }
   })
 })
