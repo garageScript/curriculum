@@ -1,20 +1,20 @@
 JS0 - Foundations of JavaScript
 
 Why are we learning JS? 
-Only language that lets you do everything - Build web/mobile apps, image processing, scripting, Machine Learning, etc.
+Only language that lets you do everything - Build web/mobile apps,
+image processing, scripting, Machine Learning, etc.
 
-Foundation: (ask theseu over and over again)
+Foundation: (ask these over and over again)
 = left stores right. 
 a = 5
 a?
 
 Primitive data(don’t worry about it): 
 Six Primitive Types:
+
 Number
 Primitive data(don’t worry about it): 
-
-
-Stringer ur not String
+String
 Boolean
 Null
 Undefined
@@ -29,7 +29,7 @@ c = a+b ?r
 d = c % 3     // 15 - 3 -3 -3y ... (use subtraction to explain mod)
 d?
 d = c % 7
-d? Hey   What’s try thyyntg
+d?
 
 strings - text. Without quotes, it’ll be treated like a variable!
 a = “hello”
@@ -134,41 +134,69 @@ b = a(9,2)
 b?
 
 Setup (after teaching): 
+
 First Time Setting Up:
+
 Sign up for an account in https://c0d3.com
+
 Access our remote server:
+
 Mac: open the terminal to and type (ssh username@c0d3.com, password is the same as your GS account password).
-Windows: download the chrome shell app (https://chrome.google.com/webstore/detail/secure-shell-app/pnhechapfaindjhompbnflcldabbghjo?hl=en) and do the asame as previous step
+
+Windows: download the chrome shell app
+(https://chrome.google.com/webstore/detail/secure-shell-app/pnhechapfaindjhompbnflcldabbghjo?hl=en)
+and do the asame as previous step
+
 Once you’ve accessed our remote server, run the following commands (in purple):
 git clone /home/Shared/curriculum gives you a copy of our curriculum folder
+
 Explain: ls, cd  
+
 yarn installs a few libraries you need in order to run our tests
+
 Explain git (version control)
 multiple versions of the same file
 when something breaks, you can go back to older version
+
 master - Perfect code
-git checkout -b branchName creates a new branch off of master (you are expected to create a new branch off of master for every single Pull Request you make)
+
+git checkout -b branchName creates a new branch off of master
+(you are expected to create a new branch off of master for every single Pull Request you make)
+
 Vim - text editor
+
 normal vs insert
+
 ctrl f -> js01
+
 9gg (vertical)
+
 f; (horizontal)
+
 i to go into insert mode
+
 :w to save or write
+
 :q to quit
+
 Or ZZ to save following with quit
+
 Run test, submit
+
 Yarn test
-0git status lets you see the file path/name you just changed
+
+git status lets you see the file path/name you just changed
+
 git add filePath gets the file you just changed ready to be save
+
 git commit -m “solves problem 1” gives the file you’re about to save a label (this label describes the change you just made)
+
 submit
+
 Note: you will be prompted to choose the exact lesson and challenge you are currently submitting.
+
 Go back to your student page/teacher page, refresh it and see the solution you just submitted! :)
 Git branch to check which branch you are on. Git status to see which files have been modified/added/ready to be committed
 Next problem
 Explain branching
-git checkout master, checkou
-t new branch, repeat step 5
-
-	
+git checkout master, checkout new branch, repeat step 5

@@ -123,10 +123,7 @@ b?
 b = [7,8,2].guess();
 b?
 
-
-
-
-
+======================================================================
 
 Download the zip file and work through the exercises:
 https://github.com/garageScript/curriculum/tree/master/curriculum/js2
@@ -135,23 +132,21 @@ Feel Free to use the code editor of your choice!
 Atom: https://atom.io/
 Visual Studio Code: https://code.visualstudio.com/download
 
-
 Exercises:
-1. Use Map:
-
+Use Map:
 
 http://jsstation.llip.life/questions/-KzurbVLccH1B648Ub0b
 http://jsstation.llip.life/questions/-KzuuLAUoXbCN0b10rjL
 http://jsstation.llip.life/questions/-KzuwX1bWh2mMtCStAst
 
-2. Use reduce to get:
+Use reduce to get:
 
 http://jsstation.llip.life/questions/-Kzuy6maKG8hjzCTD59b
 http://jsstation.llip.life/questions/-Kzuyfj1vE7hlP68W2Pk
 http://jsstation.llip.life/questions/-Kzv-UDXSKl28HhcNNr2
 http://jsstation.llip.life/questions/-Kzv0zlK0vUSGYTYmJSF
 
-3. Do not use helper libraries
+Do not use helper libraries
 http://jsstation.llip.life/questions/-Kzv4EemttP5_BQt5avX
 http://jsstation.llip.life/questions/-Kzv9ocQ_2Ncni8ivZ_F
 http://jsstation.llip.life/questions/-KzvC6u7eQwVDYtI963w
@@ -159,19 +154,19 @@ http://jsstation.llip.life/questions/-KzvC6u7eQwVDYtI963w
 
 More Problems!
 Reverse: http://jsstation.comllip.life/questions/-KzviDeoa2zdzL7hcQAi
-8. (removeExtra) - http://jsstation.comllip.life/questions/-KzvkzzXoYoApBtT5V0G
-3. (countx) -  http://jsstation.comllip.life/questions/-KzvmYCo0jv6MeUO_Ux_
-5. (concat) - http://jsstation.comllip.life/questions/-KzvoCSoSjUe54_ANguf
-9. (remxtra) - http://jsstation.comllip.life/questions/-Kzvymv1QKDlsgvJCVv8
-7. (maxArrArr) - http://jsstation.comllip.life/questions/-Kzw-EL5QNEB-qzv5wPA
+(removeExtra) - http://jsstation.comllip.life/questions/-KzvkzzXoYoApBtT5V0G
+(countx) -  http://jsstation.comllip.life/questions/-KzvmYCo0jv6MeUO_Ux_
+(concat) - http://jsstation.comllip.life/questions/-KzvoCSoSjUe54_ANguf
+(remxtra) - http://jsstation.comllip.life/questions/-Kzvymv1QKDlsgvJCVv8
+(maxArrArr) - http://jsstation.comllip.life/questions/-Kzw-EL5QNEB-qzv5wPA
 
 Not map reduce
-17. (arrayOfPrime) - Return array of all prime numbers from 0 to x.
-4. (isInArr) - Takes in 2 arrays, returns true if any element in 2nd array shows up in 1st array
+(arrayOfPrime) - Return array of all prime numbers from 0 to x.
+(isInArr) - Takes in 2 arrays, returns true if any element in 2nd array shows up in 1st array
 http://jsstation.comllip.life/questions/-KybSMC713LtuDv8UcIN
-16. (sleepSort) - Takes in an array and a function, call the function once with sorted array
-10. (compare2) - Takes in 2 arrays, return if both are equal
+(sleepSort) - Takes in an array and a function, call the function once with sorted array
+(compare2) - Takes in 2 arrays, return if both are equal
 
 Strings
-1. (strHas) - Takes in a string and a character, return if the string has the character
-2. (kebabCase) - Takes in a string, return kebab case (hint: use .toLowerCase() function)
+(strHas) - Takes in a string and a character, return if the string has the character
+(kebabCase) - Takes in a string, return kebab case (hint: use .toLowerCase() function)
