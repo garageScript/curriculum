@@ -1,14 +1,15 @@
 /**
- * Takes in 2 numbers, return true if their sum is greater than 10
+ * Write a function called solution that
+ * Takes in 2 numbers, return if their sum is greater than 10
  * @param {number} a
  * @param {number} b
  * @returns {boolean}
  */
 
 const solution = (a, b) => {
-  return true;
-};
+  return true
+}
 
 module.exports = {
-  solution,
-};
+  solution
+}

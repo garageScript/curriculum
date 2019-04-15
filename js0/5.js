@@ -1,4 +1,5 @@
 /**
+ * Write a function called solution that
  * Takes in 3 numbers, return the largest
  * @param {number} a
  * @param {number} b
@@ -7,9 +8,9 @@
  */
 
 const solution = (a, b, c) => {
-  return 0;
-};
+  return 0
+}
 
 module.exports = {
-  solution,
-};
+  solution
+}

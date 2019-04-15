@@ -1,5 +1,6 @@
 /**
- * Takes in 2 numbers, return true if the
+ * Write a function called solution that
+ * Takes in 2 numbers, return if the
  *    first number is greater than the second
  * @param {number} a
  * @param {number} b
@@ -7,9 +8,9 @@
  */
 
 const solution = (a, b) => {
-  return true;
-};
+  return true
+}
 
 module.exports = {
-  solution,
-};
+  solution
+}

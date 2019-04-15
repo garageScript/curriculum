@@ -12,5 +12,5 @@ const solution = (a, b, c) => {
 }
 
 module.exports = {
-  solution,
+  solution
 }
