@@ -7,7 +7,7 @@
  * @returns {number}
  */
 
-const solution = (inp, letter) => {
+const solution = (inp, letter, counter = 0, i = 0) => {
   return 0
 }
 

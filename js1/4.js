@@ -8,7 +8,7 @@
  * @returns null
  */
 
-const solution = (fun) => {
+const solution = (fun, i = 0) => {
 }
 
 module.exports = {

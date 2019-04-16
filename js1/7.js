@@ -8,7 +8,7 @@
  * @returns {boolean}
  */
 
-const solution = (inp, letter) => {
+const solution = (inp, letter, i = 0) => {
   return true
 }
 

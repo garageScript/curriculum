@@ -8,7 +8,7 @@
  * @returns {string}
  */
 
-const solution = (a, fun) => {
+const solution = (a, fun, result = '', i = 0) => {
   return ''
 }
 

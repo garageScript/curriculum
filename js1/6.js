@@ -7,7 +7,7 @@
  * @returns {boolean}
  */
 
-const solution = (a) => {
+const solution = (a, i = 2) => {
   return true
 }
 
