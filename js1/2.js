@@ -7,11 +7,11 @@
  * When the returned function is called input number of times,
  *   it will return null
  * @param {number} a
- * @param {function} b
+ * @param {function} fun
  * @returns {function}
  */
 
-const solution = (a, b) => {
+const solution = (a, fun) => {
   return () => { }
 }
 
