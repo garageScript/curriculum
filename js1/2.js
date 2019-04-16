@@ -12,8 +12,7 @@
  */
 
 const solution = (a, b) => {
-  return () => {
-  }
+  return () => { }
 }
 
 module.exports = {

@@ -9,7 +9,7 @@
  */
 
 const solution = (a, fun) => {
-  return ""
+  return ''
 }
 
 module.exports = {
