@@ -1,14 +1,16 @@
 /**
- * Say Hello - takes in a number x
- *     return string with “hello” repeated x times.
+ * Write a function called solution that
+ *   takes in 2 parameters, a number n and string,
+ *   and returns the string repeated n number of times
  * @param {number} a
+ * @param {string} b
  * @returns {string}
  */
 
 const solution = (a, b) => {
-  return 0;
-};
+  return ''
+}
 
 module.exports = {
-  solution,
-};
+  solution
+}
