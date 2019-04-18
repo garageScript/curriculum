@@ -39,12 +39,11 @@
 
 // RECURSION 
 
-/*
 const solution = (a, i = 0) => {
   if (i === a.length) return a
   if (a[i] <= 5) { a[i] = 0 }
   return solution(a, i + 1);
-}; */
+};
 
 // ALTERNATIVE
 
