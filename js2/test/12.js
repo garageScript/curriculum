@@ -4,19 +4,19 @@ solution();
 
 describe('js2/12.js test gsFilter', () => {
     const cb = (e) => {
-        return e > 2;
+        return e.length > 4;
     };
-    it('should filter a new array', () => {
-        const a = [1, 2, 3, 4, 5];
-        a.gsReduce(cb);
-        expect(a).to.deep.equal([3, 4, 5]);
+    it('should reduce an array', () => {
+        const a = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present']
+        a.gsFilter(cb);
+        expect(a).to.deep.equal([ 'spray', 'limit', 'elite', 'exuberant', 'destruction', 'present' ])
     });
-    it('should filter [] for []', () => {
-        expect([].gsMap()).to.deep.equal([]);
+    it('should reduce [] for []', () => {
+        expect([].gsFilter()).to.deep.equal([]);
     });
-    it('should filter a new array', () => {
-        const a = [0, 2, 4, 6];
-        const c = a.gsMap(cb);
-        expect(c).to.deep.equal([4, 6]);
+    it('should reduce a array', () => {
+        const a = ['this', 'is', 'a', 'very', 'extravagant', 'sentence']
+        const c = a.gsFilter(cb);
+        expect(c).to.deep.equal(['extravagant', 'sentence']);
     });
 });
