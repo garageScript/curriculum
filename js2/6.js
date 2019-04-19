@@ -6,7 +6,6 @@
  */
 
 const solution = (a) => {
-  return []
 }
 
 module.exports = {
