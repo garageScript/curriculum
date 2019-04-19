@@ -1,13 +1,13 @@
 /**
- * Given an array, return a new array of numbers larger than 5
+ * Write a function called solution that
+ *   that takes in an array of functions and a number,
+ *     and calls each function input milliseconds after another
  * @param {array} a
- * @returns {array}
  */
 
 const solution = (a) => {
-  return [];
-};
+}
 
 module.exports = {
-  solution,
-};
+  solution
+}
