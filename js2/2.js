@@ -1,14 +1,16 @@
 /**
- * Given an array, return the same array
- *   where all odd elements are changed to 0
- * @param {array} a
+ * Write a function called solution that
+ *   Takes in a function and returns an array.
+ *
+ * As long as the input function returns false, array keeps growing with the index.
+ * @param {function} fun
  * @returns {array}
  */
 
-const solution = (a) => {
-  return [];
-};
+const solution = (fun) => {
+  return []
+}
 
 module.exports = {
-  solution,
-};
+  solution
+}

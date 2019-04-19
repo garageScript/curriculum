@@ -1,14 +1,15 @@
 /**
- * Given an array, redistribute values greater than 1 to previous elements
- * that are 0 and change it to 1. All remainders will accumulate at index 0.
- * @param {array} a
- * @returns {array}
+ * Replicate Array.prototype.forEach and call it cFind
+ * Documentation:
+ *     https://www.w3schools.com/jsref/jsref_find.asp
  */
 
-const solution = (a) => {
-  return [];
-};
+const solution = () => {
+  Array.prototype.cFind = function () {
+    return 0
+  }
+}
 
 module.exports = {
-  solution,
-};
+  solution
+}

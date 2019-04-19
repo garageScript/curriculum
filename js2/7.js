@@ -1,15 +1,15 @@
 /**
- *  Takes in an array and a number,
- *    return the number of elements that matches the number
- * @param {array} a
- * @param {number} b
- * @returns {array}
+ * Replicate Array.prototype.forEach and call it cForEach
+ * Documentation:
+ *     https://www.w3schools.com/jsref/jsref_forEach.asp
  */
 
-const solution = (a, b) => {
-  return 0;
-};
+const solution = () => {
+  Array.prototype.cForEach = function () {
+    return 0
+  }
+}
 
 module.exports = {
-  solution,
-};
+  solution
+}
