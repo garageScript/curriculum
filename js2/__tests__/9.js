@@ -5,6 +5,13 @@ const solution = require('../9').solution
 solution()
 
 describe('test cReduce', () => {
+  it('should run callback with 4 parameters', () => {
+    let callbacks;
+    [9].cReduce((acc, e, i, arr) => {
+      callbacks = [acc, e, i, arr]
+    }, 8)
+    expect(callbacks).to.deep.equal([8, 9, 0, [9]])
+  })
   it('should reduce [1,2,3] to 6', () => {
     const cb = (ac, cv) => {
       return ac + cv

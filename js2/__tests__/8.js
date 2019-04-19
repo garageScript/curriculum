@@ -8,6 +8,13 @@ describe('test gsMap', () => {
   const cb = (e, i) => {
     return e + i + 1
   }
+  it('should run callback with 3 parameters', () => {
+    let callbacks;
+    [9].cMap((e, i, arr) => {
+      callbacks = [e, i, arr]
+    })
+    expect(callbacks).to.deep.equal([9, 0, [9]])
+  })
   it('should not change original array', () => {
     const a = [1, 2, 3]
     a.cMap(cb)

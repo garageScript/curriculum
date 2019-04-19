@@ -5,6 +5,13 @@ const solution = require('../7').solution
 solution()
 
 describe('cForEach', () => {
+  it('should run callback with 3 parameters', () => {
+    let callbacks;
+    [9].cForEach((e, i, arr) => {
+      callbacks = [e, i, arr]
+    })
+    expect(callbacks).to.deep.equal([9, 0, [9]])
+  })
   it('should not run callback for empty array', () => {
     let counter = 0;
     [].cForEach(() => {
