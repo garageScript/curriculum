@@ -3,7 +3,7 @@
 const expect = require('chai').expect
 let solution = require('../1').solution
 
-describe('Generate 1D', () => {
+describe('Generate 1D array', () => {
   it('should generate 1d array with 0 values', () => {
     const result = solution(0)
     expect(result).to.deep.equal([])
