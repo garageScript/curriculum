@@ -7,7 +7,7 @@
  * @returns {string}
  */
 
-const solution = (a, b) => {
+const solution = (a, b, result = '') => {
   return ''
 }
 
