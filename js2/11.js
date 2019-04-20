@@ -8,7 +8,6 @@
 
 const solution = () => {
   Array.prototype.dangerousMap = function (cb) {
-    return 0
   }
 }
 
