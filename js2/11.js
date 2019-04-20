@@ -3,6 +3,7 @@
  *   the same functionality as Map, except that
  *   after calling the function 3 times, calling
  *   it again will cause the array to become empty
+ * Hint: Splice could help you remove elements
  */
 
 const solution = () => {
