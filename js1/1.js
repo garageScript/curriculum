@@ -5,7 +5,8 @@
  */
 
 const solution = (a) => {
-  return () => {}
+  return () => {a = a+1;
+    return a;}
 }
 
 module.exports = {
