@@ -1,5 +1,5 @@
 /**
- * Replicate Array.prototype.forEach and call it cReduce
+ * Replicate Array.prototype.reduce and call it cReduce
  * Documentation:
  *     Replicate Array.prototype.reduce and call it cReduce
  */

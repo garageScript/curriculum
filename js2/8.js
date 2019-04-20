@@ -5,7 +5,7 @@
  */
 
 const solution = () => {
-  Array.prototype.cMap = function () {
+  Array.prototype.cMap = function (cb) {
     return 0
   }
 }

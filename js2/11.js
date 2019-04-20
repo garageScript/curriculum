@@ -1,11 +1,12 @@
 /**
- * Replicate Array.prototype.forEach and call it cFind
- * Documentation:
- *     https://www.w3schools.com/jsref/jsref_find.asp
+ * Creates Array.prototype.dangerousMap that has
+ *   the same functionality as Map, except that
+ *   after calling the function 3 times, calling
+ *   it again will cause the array to become empty
  */
 
 const solution = () => {
-  Array.prototype.cFind = function () {
+  Array.prototype.dangerousMap = function (cb) {
     return 0
   }
 }
