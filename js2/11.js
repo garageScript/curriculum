@@ -1,13 +1,11 @@
 /**
- * Creates Array.prototype.dangerousMap that has
- *   the same functionality as Map, except that
- *   after calling the function 3 times, calling
- *   it again will cause the array to become empty
- * Hint: Splice could help you remove elements
+ * Creates Array.prototype.cFind that has the same functionality as find
+ *   If nothing was found, return undefined (which should be default
+ *   https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
  */
 
 const solution = () => {
-  Array.prototype.dangerousMap = function (cb) {
+  Array.prototype.cFind = function (cb) {
   }
 }
 
