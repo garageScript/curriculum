@@ -32,11 +32,9 @@
 
 // RECURSION 
 
-const solution = (a, b, c = '') => {
-  if (a === 0) {
-    return c;
-  }
-  return solution(a - 1, b, c+=b);
+const solution = (num, str) => {
+  if (num === 0) return ""
+  return str + solution(num - 1, str);
 };
 
 module.exports = {
