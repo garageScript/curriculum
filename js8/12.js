@@ -19,6 +19,8 @@ Output: false
 Explanation: no subarray adds up to 6
 */
 
+const solution = () =>{}
+
 module.exports = {
     solution,
 };

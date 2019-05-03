@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 const solution = require('../8').solution;
 
-describe('max loot', () => {
+describe('8.js max loot', () => {
     it('should find max loot of 1 house', () => {
         const result = solution([100]);
         expect(result).to.equal(100);

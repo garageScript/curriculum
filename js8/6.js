@@ -9,6 +9,8 @@ If an employee goes to a party, his direct manager will not go to party.
 Find the max fun of the party.
 */
 
+const solution = () => {}
+
 module.exports = {
     solution,
 };

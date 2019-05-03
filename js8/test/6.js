@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 const solution = require('../6').solution;
 
-describe('max fun', () => {
+describe('6.js max fun', () => {
     it('should return root node in 3 node tree', () => {
         const a = {
             val: 30

@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 const solution = require('../10').solution;
 
-describe('min coin', () => {
+describe('10.js min coin', () => {
     it('should return value for one coin', () => {
         const result = solution([], 40);
         expect(result).to.equal(40);

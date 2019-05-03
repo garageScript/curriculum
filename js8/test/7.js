@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 const solution = require('../7').solution;
 
-describe('deletionDistance', () => {
+describe('7.js deletionDistance', () => {
     it('should satisfy example 1', () => {
         const result = solution('cat', 'at');
         expect(result).to.equal(99);

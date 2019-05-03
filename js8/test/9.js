@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 const solution = require('../9').solution;
 
-describe('longest increasing sequence', () => {
+describe('9.js longest increasing sequence', () => {
     it('should return 1 for one case', () => {
         const result = solution([100]);
         expect(result).to.equal(1);

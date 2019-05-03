@@ -34,6 +34,7 @@
 
 const solution = (num, str) => {
   if (num === 0) return ""
+  console.log(str.repeat(num))
   return str + solution(num - 1, str);
 };
 

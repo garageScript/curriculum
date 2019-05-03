@@ -11,6 +11,10 @@ Hint To get the sum of ascii value of a string, do
 "string".split('').reduce((acc, c) => acc + c.charCodeAt(0), 0)
 */
 
+const solution = () => {
+
+}
+
 module.exports = {
     solution,
 };

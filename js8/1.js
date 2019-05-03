@@ -19,10 +19,12 @@ const a = {
   },
 };
 
-const solution = (node) => {
-  if (!node) return -Infinity
-  return Math.max(solution(node.left), node.v, solution(node.right))
-};
+const solution = node => {
+  if (!node) return -Infinity;
+  return Math.max(solution(node.left), node.val, solution(node.right))
+}
+
+console.log(solution(a), 50)
 
 module.exports = {
   solution,

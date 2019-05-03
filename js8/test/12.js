@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 const solution = require('../12').solution;
 
-describe('Target sum of subarray', () => {
+describe('12.js Target sum of subarray', () => {
     it('should calculate a subarray', () => {
         const result = solution([1, 3, 4, 6, 8], 10);
         expect(result).to.equal(true);

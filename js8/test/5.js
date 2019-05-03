@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 const solution = require('../5').solution;
 
-describe('Distance to a node', () => {
+describe('5.js Distance to a node', () => {
     it('should return distance 1 for tree with left node', () => {
         const a = {
             val: 'a'

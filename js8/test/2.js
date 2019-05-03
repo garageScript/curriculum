@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 const solution = require('../2').solution;
 
-describe('max depth', () => {
+describe('2.js max depth', () => {
     it('should return distance 0 for tree with 1 node', () => {
         const a = {
             val: 'a'

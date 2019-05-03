@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 const solution = require('../1').solution;
 
-describe('max value', () => {
+describe('1.js max value', () => {
     it('should return root node', () => {
         const a = {
             val: 30

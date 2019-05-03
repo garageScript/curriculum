@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 const solution = require('../3').solution;
 
-describe('max distance between 2 nodes', () => {
+describe('3.js max distance between 2 nodes', () => {
     it('should return distance 2 for tree with 3 nodes', () => {
         const a = {
             val: 'a'

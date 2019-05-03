@@ -13,6 +13,8 @@ a.left = b;
 solution(a, b) // should return 1
 */
 
+const solution = () => {}
+
 module.exports = {
     solution,
 };

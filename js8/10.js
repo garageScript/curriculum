@@ -10,6 +10,10 @@ solution([], 40) // return 40
 solution([4, 5], 8) // return 2
 */
 
+const solution = () => {
+
+}
+
 module.exports = {
-    solution,
+  solution,
 };

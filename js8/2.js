@@ -18,7 +18,6 @@ const a = (above tree);
 solution(a); // should return 0 */
 
 const a = {
-
   val: 30,
   right: {
 
@@ -36,13 +35,12 @@ const a = {
   },
 };
 
-console.log("a = ", a);
-
 const solution = (node) => {
   if (!node || (!node.left && !node.right)) return 0;
   return Math.max(solution(node.left) + 1, solution(node.right) + 1);
 };
 
+console.log(solution(a), 2)
 
 module.exports = {
    solution,

@@ -39,6 +39,8 @@ const solution = (a, b = '') => {
   return solution(a - 1, b);
 };
 
+console.log("hello".repeat(6));
+
 console.log(solution(6));
 
 module.exports = {

@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 const solution = require('../11').solution;
 
-describe('max value', () => {
+describe('11.js max value', () => {
     it('should return value for one weight', () => {
         const result = solution([1], 40);
         expect(result).to.equal(40);
