@@ -7,12 +7,11 @@
  * @returns {string}
  */
 
-const solution = (a, c = '') => {
+const solution = (a, b, c = '') => {
   if (a === 0) {
     return c
   }
-  console.log(c)
-  return solution(a - 1, c + 'hello')
+  return solution(a - 1 , b ,  c + b)
 }
 
 module.exports = {
