@@ -3,7 +3,7 @@
   "description": "algorithm practice",
   "version": "0.0.0",
   "scripts": {
-    "test": "jest -o --watch",
+    "test": "./node_modules/jest/bin/jest.js -o --watch",
     "twin": "node ./node_modules/mocha/bin/mocha -w"
   },
   "dependencies": {
@@ -12,6 +12,7 @@
     "ejs": "~2.5.5",
     "eslint-plugin-react": "^7.0.1",
     "express": "~4.14.1",
+    "jest": "^24.7.1",
     "mocha": "^3.2.0",
     "morgan": "~1.7.0",
     "serve-favicon": "~2.3.2",

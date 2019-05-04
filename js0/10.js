@@ -1,4 +1,5 @@
 /**
+ * Write a function called solution that
  * Takes in 2 functions, returns
  *   the sum of the result of calling the 2 functions
  * @param {function} a
@@ -7,9 +8,9 @@
  */
 
 const solution = (a, b) => {
-  return a() + b();
-};
+  return a() + b()
+}
 
 module.exports = {
-  solution,
-};
+  solution
+}

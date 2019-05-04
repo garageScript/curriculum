@@ -1,15 +1,16 @@
 /**
- * Print String - takes in a number n and string,
- *     return the string repeated n number of times.
- * @param {number} a
- * @param {string} b
- * @returns {string}
+ * Write a function called solution that
+ *   takes in a function.
+ * The input function will be called with increasing
+ *    numbers starting from 0 until the input function
+ *    returns false
+ * @param {function} fun
+ * @returns null
  */
 
-const solution = (a, b) => {
-  return 0;
-};
+const solution = (fun, i = 0) => {
+}
 
 module.exports = {
-  solution,
-};
+  solution
+}

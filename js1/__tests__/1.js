@@ -1,4 +1,4 @@
-/* global describe it should */
+/* global describe it */
 
 const expect = require('chai').expect
 let solution = require('../1').solution

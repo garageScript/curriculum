@@ -1,15 +1,20 @@
-/* jjjjjjjjjkjkk*
- * Write a function that takes in a number (X) and a function (A), and returns a function (B). Whenever the function (B) is called (up to X times), the result of function (A) is returned . After that, null will be returned whenever the function (B) is called.
+/**
+ * Write a function called solution that
+ *   takes in 2 parameters, a number and a function,
+ *   and returns a function.
+ * When the returned function is called,
+ *   it will return whatever the input function returns
+ * When the returned function is called input number of times,
+ *   it will return null
  * @param {number} a
- * @param {function} b
+ * @param {function} fun
  * @returns {function}
  */
 
 const solution = (a, b) => {
-  
   return () => {
     if (a === 0) return null
-    a --
+    a--
     return b()
   }
 }
