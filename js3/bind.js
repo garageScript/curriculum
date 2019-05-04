@@ -11,7 +11,8 @@ var module = {
 };
 
 var unboundGetX = module.getX;
-console.log(unboundGetX()); // The function gets invoked at the global scope
+console.log(unboundGetX());
+// The function gets invoked at the global scope
 // expected output: undefined
 
 var boundGetX = unboundGetX.bind(module);
@@ -19,7 +20,7 @@ console.log(boundGetX());
 // expected output: 42
 
 
-Function.prototype.bind = function(content){
+Function.prototype.gsBind = function(content){
  // solution
 }
 
@@ -32,9 +33,8 @@ var testFunc = function(age){
 }
 
 var testFuncInContext = testFunc.bind(person, 26);
-console.log( testFuncInContext(80) ); // 'William is 26 years old'
-
-
+console.log( testFuncInContext(80) );
+// 'William is 26 years old'
 
 const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 

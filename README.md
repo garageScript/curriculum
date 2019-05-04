@@ -2,10 +2,21 @@
 
 GarageScript 2.0
 
-Contribute:
-
-js2/bind.js
+Future Contributions:
+----------------
 js2/12.js // gsFilter
+----------------
+js3/freeze.js
+js3/bind.js
+
+
+
+
+
+
+
+
+
 
 
 tmux kill-session
