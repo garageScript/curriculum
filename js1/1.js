@@ -1,5 +1,8 @@
 /**
- * takes in a number and returns a function that will output the next number every time it is called
+ * Write a function called solution that
+ *   takes in a number and returns a function.
+ * When the returned function is called, the next incremental number
+ *   is returned
  * @param {number} a
  * @returns {function}
  */

@@ -1,14 +1,15 @@
 /**
- * Call X - takes in a number X and a function,
- *    Call the function X number of times
+ * Write a function called solution that
+ *   takes in 2 parameters, a number and a function,
+ *   runs the input function input number of times
  * @param {number} a
- * @param {function} b
+ * @param {function} fun
+ * @returns null
  */
 
-const solution = (a, b) => {
-  return 0;
-};
+const solution = (a, fun) => {
+}
 
 module.exports = {
-  solution,
-};
+  solution
+}

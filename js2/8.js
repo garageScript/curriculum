@@ -1,15 +1,15 @@
 /**
- * Replicate Array.prototype.map function and call it gsMap
- * @returns {[]}
+ * Replicate Array.prototype.map function and call it cMap
+ * Documentation:
+ *     https://www.w3schools.com/jsref/jsref_map.asp
  */
 
 const solution = () => {
-  Array.prototype.gsMap = function () {
-    // To get the actual array, use this
-    return [];
-  };
-};
+  Array.prototype.cMap = function (cb) {
+    return 0
+  }
+}
 
 module.exports = {
-  solution,
-};
+  solution
+}
