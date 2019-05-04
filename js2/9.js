@@ -1,15 +1,15 @@
 /**
- * Replicate Array.prototype.reduce and call it gsReduce
- * @returns {[]}
+ * Replicate Array.prototype.reduce and call it cReduce
+ * Documentation:
+ *     Replicate Array.prototype.reduce and call it cReduce
  */
 
 const solution = () => {
-  Array.prototype.gsReduce = function () {
-    // To get the actual array, use this
-    return [];
-  };
-};
+  Array.prototype.cReduce = function () {
+    return 0
+  }
+}
 
 module.exports = {
-  solution,
-};
+  solution
+}

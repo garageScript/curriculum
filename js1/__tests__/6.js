@@ -1,21 +1,38 @@
-const expect = require('chai').expect;
-const solution = require('../6').solution;
+/* global describe it */
+const expect = require('chai').expect
+const solution = require('../6').solution
 
-describe('sum divisors of number x', () => {
-  it('should sum divisors of 6', () => {
-    const result = solution(6);
-    expect(result).to.equal(5);
-  });
-  it('should sum divisors of 9', () => {
-    const result = solution(9);
-    expect(result).to.equal(3);
-  });
-  it('should sum divisors of 15', () => {
-    const result = solution(15);
-    expect(result).to.equal(8);
-  });
-  it('should sum divisors of 20', () => {
-    const result = solution(20);
-    expect(result).to.equal(21);
-  });
-});
+describe('check if number x is prime', () => {
+  it('2 should be prime', () => {
+    const result = solution(2)
+    expect(result).to.equal(true)
+  })
+  it('3 should be prime', () => {
+    const result = solution(3)
+    expect(result).to.equal(true)
+  })
+  it('1 should not be prime', () => {
+    const result = solution(1)
+    expect(result).to.equal(false)
+  })
+  it('7 should be prime', () => {
+    const result = solution(7)
+    expect(result).to.equal(true)
+  })
+  it('9 should not be prime', () => {
+    const result = solution(9)
+    expect(result).to.equal(false)
+  })
+  it('12 should not be prime', () => {
+    const result = solution(12)
+    expect(result).to.equal(false)
+  })
+  it('1223 should be prime', () => {
+    const result = solution(1223)
+    expect(result).to.equal(true)
+  })
+  it('1226 should not be prime', () => {
+    const result = solution(1226)
+    expect(result).to.equal(false)
+  })
+})

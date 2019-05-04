@@ -1,14 +1,16 @@
 /**
- * getDivisors - takes in a number and returns sum
- *   of all the divisors (except 1 or itself)
+ * Write a function called solution that
+ *   takes in a number
+ *   and returns true if the number is a prime number
+ *   false otherwise
  * @param {number} a
- * @returns {number}
+ * @returns {boolean}
  */
 
-const solution = (a) => {
-  return 0;
-};
+const solution = (a, i = 2) => {
+  return true
+}
 
 module.exports = {
-  solution,
-};
+  solution
+}

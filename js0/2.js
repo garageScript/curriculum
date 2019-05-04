@@ -1,5 +1,6 @@
 /**
- * Takes in 3 numbers, returns their sum
+ * Write a function called solution that
+ *   takes in 3 numbers and returns the sum of the 3 input parameters
  * @param {number} a
  * @param {number} b
  * @param {number} c
@@ -7,9 +8,9 @@
  */
 
 const solution = (a, b, c) => {
-  return a + b + c;
-};
+  return a + b + c
+}
 
 module.exports = {
-  solution,
-};
+  solution
+}
