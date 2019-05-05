@@ -7,7 +7,12 @@
  * @returns {boolean}
  */
 
-const solution = (a, i = 2) => {
+const solution = (a, i = 2) => 
+{ 
+  if(a === 1) return false
+  for (i = 2; i < a; i++) {
+    if(a % i === 0) return false
+  }
   return true
 }
 
