@@ -9,8 +9,11 @@
  */
 
 const solution = (inp, letter, i = 0) => {
-  return inp.indexOf(letter) !== -1
-}
+  if (!inp) return false 
+  if (inp[i] === letter) return true
+  if (i === inp.length -1) return false
+  return solution(inp,letter, i + 1)
+} 
 
 module.exports = {
   solution
