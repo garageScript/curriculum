@@ -9,7 +9,7 @@
  */
 
 const solution = (inp, letter, i = 0) => {
-  return true
+  return inp.indexOf(letter) !== -1
 }
 
 module.exports = {
