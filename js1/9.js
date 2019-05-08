@@ -8,8 +8,10 @@
  * @returns {string}
  */
 
-const solution = (a, fun, result = '', i = 0) => {
-  return ''
+const solution = (a, fun, res = '', i = 0) => {
+  if (i===a.length) return res
+  res += fun(a[i])
+  return solution(a,fun,res,i+1) 
 }
 
 module.exports = {
