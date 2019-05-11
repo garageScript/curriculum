@@ -18,7 +18,12 @@
  */
 
 const solution = (a, fun) => {
-  return () => { }
+  i = -1
+  return () => {
+    i += 1
+    if (i === a.length) i = 0
+    return fun(a[i])
+  }
 }
 
 module.exports = {
