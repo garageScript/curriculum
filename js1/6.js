@@ -9,10 +9,10 @@
 
 const solution = (a, i = 2) => {
   if (a === 2) return true
-  if (a ===1 || a % i === 0 ) return false
-  if (i === a -1 ) return true
-  return solution(a,i + 1)
-} 
+  if (a === 1 || a % i === 0) return false
+  if (i === a - 1) return true
+  return solution(a, i + 1)
+}
 
 module.exports = {
   solution
