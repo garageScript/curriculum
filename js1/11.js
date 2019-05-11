@@ -10,7 +10,10 @@
  */
 
 const solution = (a, fun) => {
-  return () => { }
+  return () => {
+    if (a < 0) a = 0
+    return setTimeout(fun, a)
+  }
 }
 
 module.exports = {
