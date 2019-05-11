@@ -7,8 +7,7 @@
  * @returns {boolean}
  */
 
-const solution = (a, i = 2) => 
-{
+const solution = (a, i = 2) => {
   if (a === 2) return true
   if (a ===1 || a % i === 0 ) return false
   if (i === a -1 ) return true
