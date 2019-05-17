@@ -27,25 +27,52 @@ node3.right = node5;
    (9)  (20)
 */
 
-function BSTIterator(node) {
-} 
 
+// Utilzie a stack data structure
+// Push and pop off the stack to get the nodes
 
-const next = (node) => {
-  if (!node) return
-  next(node.left);
-  console.log(node.val)
-}
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
+ */
 
-console.log(next(node1))
+/**
+ * @param {TreeNode} node 
+ */
 
-/*
-BSTIterator.prototype.next = function () {
-  if (!node) return;
-  BSTIterator(node.left)
-}*/
+const stack = [];
 
-BSTIterator.prototype.hasNext = function () {} 
+var BSTIterator = function(node) {
+
+};
+
+/**
+ * @return the next smallest number
+ * @return {number}
+ */
+
+BSTIterator.prototype.next = function() {
+    
+};
+
+/**
+ * @return whether we have a next smallest number
+ * @return {boolean}
+ */
+
+BSTIterator.prototype.hasNext = function() {
+  return (stack.length === 0)    
+};
+
+/** 
+ * Your BSTIterator object will be instantiated and called as such:
+ * var obj = new BSTIterator(root)
+ * var param_1 = obj.next()
+ * var param_2 = obj.hasNext()
+ */
 
 let iterator = new BSTIterator(root);
 
@@ -58,6 +85,3 @@ iterator.next();    // return 15
 iterator.hasNext(); // return true
 iterator.next();    // return 20
 iterator.hasNext(); // return false
-
-// Utilzie a stack data structure
-// Push and pop off the stack to get the nodes
