@@ -6,11 +6,8 @@
 
 // Brute Force
 const solution = (a, b) => {
-  if (a > b) {
-    return a;
-  } else {
-    return b;
-  };
+  if (a > b) return a;
+  return b;
 };
 
 /*

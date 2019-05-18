@@ -1,21 +1,23 @@
-const expect = require('chai').expect;
-let solution = require('../3').solution;
+/* global describe it */
 
-describe('js1/3.js repeat string hello x times', () => {
-  it('should repeat string hello 0 times', () => {
-    const result = solution(0);
-    expect(result).to.equal('');
-  });
-  it('should repeat string hello 3 times', () => {
-    const result = solution(3);
-    expect(result).to.equal('hellohellohello');
-  });
-  it('should repeat string hello 4 times', () => {
-    const result = solution(4);
-    expect(result).to.equal('hellohellohellohello');
-  });
-  it('should repeat string hello 5 times', () => {
-    const result = solution(5);
-    expect(result).to.equal('hellohellohellohellohello');
-  });
+const expect = require('chai').expect
+let solution = require('../3').solution
+
+describe('js1/3.js print string x number of times', () => {
+  it('should repeat empty string 2 times', () => {
+    const result = solution(2, '')
+    expect(result).to.equal('')
+  })
+  it('should repeat string 3 times', () => {
+    const result = solution(3, 'joe')
+    expect(result).to.equal('joejoejoe')
+  })
+  it('should repeat string 4 times', () => {
+    const result = solution(4, 'julie')
+    expect(result).to.equal('juliejuliejuliejulie')
+  })
+  it('should repeat string 5 times', () => {
+    const result = solution(5, 'olaf')
+    expect(result).to.equal('olafolafolafolafolaf')
+  })
 })

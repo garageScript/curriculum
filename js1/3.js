@@ -1,43 +1,44 @@
 /**
- * Say Hello - takes in a number x
- *     return string with “hello” repeated x times.
+Write a function called solution that
+takes in 2 parameters, a number n and string,
+and returns the string repeated n number of times
+
  * @param {number} a
+ * @param {string} b
  * @returns {string}
  */
 
+
 // FOR LOOP
 
-// const solution = (a, b = '') => {
-//   if (a === 0) {
-//     return '';
-//   }
-//   for (var i = 0; i < a; i++) {
-//     b += 'hello';
-//   }
-//   return b;
-// };
-
+const solution = (a, b, result = '') => {
+   if (a < 1) { return ''; }
+   for (var i = 0; i < a; i++) {
+     result += b;
+   }
+   return result;
+};
 
 
 // WHILE LOOP
-
-// const solution = (a, b = '') => {
-//   i = 0;
-//     while (i < a) {
-//       b += 'hello';
-//       i++;
-//     }
-//   return b;
-// }
+/*
+const solution = (a, b = '') => {
+   i = 0;
+     while (i < a) {
+       b += 'hello';
+       i++;
+     }
+   return b;
+} */
 
 
 // RECURSION 
+/*
+const solution = (a, b, result = '') => {
+  if (a === 0) return result;
 
-const solution = (a, b = '') => {
-  if (a === 0) return b;
-  b += 'hello';
-  return solution(a - 1, b);
-};
+  return solution(a - 1, b, result += b)
+}*/
 
 console.log("hello".repeat(6));
 

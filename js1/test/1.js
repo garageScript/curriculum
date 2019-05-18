@@ -1,7 +1,7 @@
 const expect = require('chai').expect
 let solution = require('../1').solution
 
-describe('closure 1', () => {
+describe('js1/1.js closure 1', () => {
   it('should return next positive number', () => {
     const func = solution(0)
     expect(func()).to.equal(1)

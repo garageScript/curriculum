@@ -1,21 +1,22 @@
-const expect = require('chai').expect;
-let solution = require('../4').solution;
+/* global describe it */
+const expect = require('chai').expect
+let solution = require('../4').solution
 
-describe('js1/4.js print string x number of times', () => {
-  it('should repeat empty string 2 times', () => {
-    const result = solution(2, '');
-    expect(result).to.equal('');
-  });
-  it('should repeat string 3 times', () => {
-    const result = solution(3, 'joe');
-    expect(result).to.equal('joejoejoe');
-  });
-  it('should repeat string 4 times', () => {
-    const result = solution(4,'julie');
-    expect(result).to.equal('juliejuliejuliejulie');
-  });
-  it('should repeat string 5 times', () => {
-    const result = solution(5, 'olaf');
-    expect(result).to.equal('olafolafolafolafolaf');
-  });
+describe('js1/4.js call with increasing numbers', () => {
+  it('should call function only once', () => {
+    let calls = []
+    solution((e) => {
+      calls.push(e)
+      return false
+    })
+    expect(calls).to.deep.equal([0])
+  })
+  it('should call function 6 times', () => {
+    let calls = []
+    solution((e) => {
+      calls.push(e)
+      return e < 5
+    })
+    expect(calls).to.deep.equal([0, 1, 2, 3, 4, 5])
+  })
 })
