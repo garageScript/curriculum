@@ -1,48 +1,19 @@
 /**
- * getDivisors - takes in a number and returns sum
- *   of all the divisors (except 1 or itself)
+ * Write a function called solution that
+ *   takes in a number
+ *   and returns true if the number is a prime number
+ *   false otherwise
  * @param {number} a
- * @returns {number}
+ * @returns {boolean}
  */
 
-// FOR LOOP
-
-// const solution = (a) => {
-//   let sum = 0;
-//   for (let i = 2; i < a; i++) {
-//     if (a % i === 0) {
-//       sum += i;
-//       console.log(sum);
-//     }
-//   }
-//   return sum;
-// };
-
-
-// WHILE LOOP
-
-// const solution = (a) => {
-//   let i = 2;
-//   let sum = 0;
-
-//   while (i < a) {
-//     if (a % i === 0) {
-//       sum += i;
-//       console.log(sum);
-//     }
-//     i++;
-//   }
-//   return sum;
-// }
-
-// RECURSION
-
-const solution = (a, c=2, b=0) => {
-  if (a === c) return b;
-  if (a % c === 0) b += c;
-  return solution(a, c+1, b);
-};
+const solution = (a, i = 2) => {
+  if (a < 2) return false
+  if (a === i) return true
+  if (a % i === 0) return false
+  return solution(a, i + 1)
+}
 
 module.exports = {
-  solution,
-};
+  solution
+}

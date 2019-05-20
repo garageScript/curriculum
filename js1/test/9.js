@@ -1,21 +1,26 @@
-const expect = require('chai').expect;
-let solution = require('../9').solution;
+/* global describe it */
+const expect = require('chai').expect
+let solution = require('../9').solution
 
-describe('js1/9.js find next multiple of 7', () => {
-  it('next multiple should be 7', () => {
-    const result = solution(1);
-    expect(result).to.equal(7);
-  });
-  it('next multiple should be 21', () => {
-    const result = solution(14);
-    expect(result).to.equal(21);
-  });
-  it('next multiple should be 28', () => {
-    const result = solution(21);
-    expect(result).to.equal(28);
-  });
-  it('next multiple should be 35', () => {
-    const result = solution(28);
-    expect(result).to.equal(35);
-  });
-});
+describe('js1/9.js combined function', () => {
+  it('should return empty string if fun return empty', () => {
+    const fun = (e) => ''
+    const result = solution('hello', fun)
+    expect(result).to.equal('')
+  })
+  it('should return empty string if input is ""', () => {
+    const fun = (e) => 'hi'
+    const result = solution('', fun)
+    expect(result).to.equal('')
+  })
+  it('should convert every letter to a', () => {
+    const fun = (e) => 'a'
+    const result = solution('function', fun)
+    expect(result).to.equal('aaaaaaaa')
+  })
+  it('should add 1 to every letter', () => {
+    const fun = (e) => e + '1'
+    const result = solution('apl', fun)
+    expect(result).to.equal('a1p1l1')
+  })
+})

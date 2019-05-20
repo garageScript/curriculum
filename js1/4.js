@@ -9,7 +9,8 @@
  */
 
 const solution = (fun, i = 0) => {
-
+  if (!fun(i)) return false
+  return solution(fun, i + 1)
 }
 
 module.exports = {

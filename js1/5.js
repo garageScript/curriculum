@@ -5,34 +5,28 @@
  * @param {function} b
  */
 
-
+/*
 // FOR LOOP
-//  */
-
-// const solution = (a, b) => {
-//   for (let i = 0; i < a; i++) {
-//     b();
-//   }
-// };
+const solution = (a, b) => {
+  for (let i = 0; i < a; i++) {
+    b();
+  }
+};
 
 
 // WHILE LOOP
+const solution = (a, b) => {
+   i = 0;
 
-// const solution = (a, b) => {
-//   i = 0;
-
-//   while (i < a) {
-//     b()
-//     i++;
-//   }
-// }
+   while (i < a) {
+     b()
+     i++;
+ }
+} */
 
 // RECURSION
-
 const solution = (a, b) => {
-  if (a === 0) {
-    return;
-  }
+  if (a === 0)  return;
   b();
   solution(a - 1, b);
 };

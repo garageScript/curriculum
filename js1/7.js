@@ -1,53 +1,40 @@
 /**
- * isPrime - returns if number is prime
- *    Prime: numbers can only be divided by 1 and itself
- * @param {number} a
+ * Write a function called solution that
+ *   takes in 2 parameters, a string and a letter,
+ *   returns true if the letter exist in the string,
+ *   false otherwise
+ * @param {string} inp
+ * @param {string} letter
  * @returns {boolean}
  */
 
-// FOR LOOP 
+// For Loop
+/*const solution = (str, letter) => {
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === letter) {
+      return true;
+    }
+  }  
+  return false;
+}*/
 
-// const solution = (a) => {
-//   if (a === 1) {
-//     return false;
-//   }
-//   for (let i = 2; i < a; i++) {
-//     if (a % i === 0) {
-//       return false;
-//     }
-//   }
-//     return true;
-// };
+// While Loop
+/*const solution = (str, letter, i = 0) => {
+  while (i < str.length) {
+    if (str[i] === letter) {
+      return true
+    }
+  i++;
+  }
+  return false
+}*/
 
-
-// WHILE LOOP
-
-// const solution = (a) => {
-//   i = 2;
-
-// if (a < 2) {
-//   return false;
-// }
-//   while (i < a){
-//     if (a % i === 0) {
-//       return false;
-//     }
-//     i++;
-//   }
-//   return true;
-// }
-
-
-
-// RECURSION 
-
-const solution = (a, c = 2) => {
-  if (a === c) return true ;
-  if (a < 2) return false ;
-  if (a % c === 0) return false ;
-  return solution(a, c+1);
-};
+const solution = (str, letter, i = 0) => {
+  if (i === str.length) return false
+  if (str[i] === letter) return true
+  return solution(str, letter, i + 1)
+}
 
 module.exports = {
-  solution,
-};
+  solution
+}

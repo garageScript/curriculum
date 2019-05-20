@@ -1,44 +1,19 @@
 /**
- * Find next multiple of 7: returns the next number that is divisible by 7
- * @param {number} a
- * @returns {number}
+ * Write a function called solution that
+ *   takes in 2 parameters, a string and a function,
+ *   returns the combined result of the function being called
+ *     with every letter in the string
+ * @param {string} str
+ * @param {function} fun
+ * @returns {string}
  */
 
-// FOR LOOP
-
-// const solution = (a) => {
-//     for (let i = a + 1; true; i++) {
-//           if (i % 7 === 0) {
-//                   return i;
-//                 }
-//         }
-// };
-
-// WHILE LOOP
-
-// const solution = (a) => {
-//   i = a + 1;
-//   while (true) {
-//     if (i % 7 === 0) {
-//       return i;
-//     }
-//     i++;
-//   }
-// }
-
-// RECURSION
-/*
-const solution = (a, b = a + 1) => {
-  if (b % 7 === 0) return b;
-  return solution(a, b+1);
-} */
-
-// ALTERNATIVE
-const solution = (a) => {
-const dividend = Math.floor(a/7)
-return dividend * 7 + 7
+const solution = (str, fun, result = '', i = 0) => {
+  if (i === str.length) return result
+  result += (fun(str[i]))
+  return solution(str, fun, result, i + 1)
 }
 
 module.exports = {
-  solution,
-};
+  solution
+}

@@ -2,7 +2,7 @@
 const expect = require('chai').expect
 const solution = require('../8').solution
 
-describe('check if character exist in string', () => {
+describe('js1/8.js check if character exist in string', () => {
   it('should find one match', () => {
     const result = solution('abc', 'a')
     expect(result).to.equal(1)

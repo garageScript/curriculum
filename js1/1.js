@@ -8,9 +8,13 @@ const a = solution(5); // a is a function
 // a() returns 7
 */
 
+// bad practice
+// return a += 1
+
 const solution = (a) => {
   return () => {
-    return a += 1
+    a += 1 
+    return a;
   }
 }
 

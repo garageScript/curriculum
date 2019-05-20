@@ -10,26 +10,26 @@ and returns the string repeated n number of times
 
 
 // FOR LOOP
-
+/*
 const solution = (a, b, result = '') => {
    if (a < 1) { return ''; }
    for (var i = 0; i < a; i++) {
      result += b;
    }
    return result;
-};
+};*/
 
 
 // WHILE LOOP
-/*
-const solution = (a, b = '') => {
+
+const solution = (a, b, result = '') => {
    i = 0;
      while (i < a) {
-       b += 'hello';
+       result += b;
        i++;
      }
-   return b;
-} */
+   return result;
+} 
 
 
 // RECURSION 

@@ -1,38 +1,22 @@
-const expect = require('chai').expect;
-const solution = require('../7').solution;
+/* global describe it */
+const expect = require('chai').expect
+const solution = require('../7').solution
 
-describe('js1/7.js check if number x is prime', () => {
-  it('2 should be prime', () => {
-    const result = solution(2);
-    expect(result).to.equal(true);
-  });
-  it('3 should be prime', () => {
-    const result = solution(3);
-    expect(result).to.equal(true);
-  });
-  it('1 should not be prime', () => {
-    const result = solution(1);
-    expect(result).to.equal(false);
-  });
-  it('7 should be prime', () => {
-    const result = solution(7);
-    expect(result).to.equal(true);
-  });
-  it('9 should not be prime', () => {
-    const result = solution(9);
-    expect(result).to.equal(false);
-  });
-  it('12 should not be prime', () => {
-    const result = solution(12);
-    expect(result).to.equal(false);
-  });
-  it('1223 should be prime', () => {
-    const result = solution(1223);
-    expect(result).to.equal(true);
-  });
-  it('1226 should not be prime', () => {
-    const result = solution(1226);
-    expect(result).to.equal(false);
-  });
-});
-
+describe('js1/7.js check if character exist in string', () => {
+  it('should return true for "abc", "a"', () => {
+    const result = solution('abc', 'a')
+    expect(result).to.equal(true)
+  })
+  it('should return false for "abc", "d"', () => {
+    const result = solution('abc', 'd')
+    expect(result).to.equal(false)
+  })
+  it('should return true for "abc", "b"', () => {
+    const result = solution('abc', 'b')
+    expect(result).to.equal(true)
+  })
+  it('should return false for "", "a"', () => {
+    const result = solution('', 'a')
+    expect(result).to.equal(false)
+  })
+})
