@@ -15,10 +15,13 @@
  * @param {string} str
  * @param {function} fun
  * @returns {function}
- */
+*/
 
-const solution = (str, fun) => {
-  return () => { }
+const solution = (str, fun, i = 0) => {
+  return () => {
+  fun(str[i])
+  }
+  return solution(str, fun, i + 1)
 }
 
 module.exports = {

@@ -4,32 +4,9 @@ GarageScript 2.0
 
 Future Contributions:
 ----------------
-js2/12.js // gsFilter
-----------------
-The filter() method creates a new array with all
-elements that pass the test implemented by the provided function.
-
-callback
-
-Function is a predicate, to test each element of the array.
-Return true to keep the element, false otherwise.
-It accepts three arguments:
-
-element
-The current element being processed in the array.
-
-index (Optional)
-The index of the current element being processed in the array.
-
-array (Optional)
-The array filter was called upon.
-
-thisArg (Optional)
-value to use as this when executing callback.
-----------------
-js3/freeze.js // gsFreeze
+js3/freeze.js // cFreeze
 ---------------------
-js3/bind.js // gsBind
+js3/bind.js // cBind
 --------------------
 Write a polyfill for the .bind() function in Javascript.
 
