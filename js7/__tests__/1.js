@@ -2,7 +2,7 @@ const solution = require('../1.js');
 const oldTimeout = setTimeout;
 solution();
 
-describe('sum of 2 numbers', function() {
+describe('cleartimeouts', function() {
   it('should handle setTimeouts normally', function (done) {
     let start = Date.now();
     let end = Date.now();
