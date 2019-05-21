@@ -1,19 +1,15 @@
 /**
- * Replicate Array.prototype.forEach and call it gsForEach
- *   ForEach takes in a function, and that function is
- *   called for every element in the array along
- *   with the index.
- *   https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+ * Replicate Array.prototype.filter and call it cFilter
+ * Documentation:
+ *     https://www.w3schools.com/jsref/jsref_filter.asp
  */
 
 const solution = () => {
-  Array.prototype.gsForEach = function(fn, i = 0) {
-    if (i === this.length) return;
-    fn(this[i], i, this);
-    return this.gsForEach(fn, i + 1);
-  };
-};
+  Array.prototype.cFilter = function () {
+    return 0
+  }
+}
 
 module.exports = {
-  solution,
-};
+  solution
+}

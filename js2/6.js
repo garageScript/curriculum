@@ -1,46 +1,14 @@
 /**
- * Given an array, return a new array of numbers larger than 5
+ * Write a function called solution that
+ *   that takes in an array of functions and a number,
+ *     and calls each function input milliseconds after another
  * @param {array} a
- * @returns {array}
+ * @param {number} t
  */
 
-// FOR LOOP
-
-// const solution = (a) => {
-//   let arr = [];
-
-//   for (let i = 0; i < a.length; i++) {
-//     if (a[i] > 5) {
-//       arr.push(a[i]);
-//     }
-//   }
-//   return arr;
-// };  
-
-// WHILE LOOP
-
-// const solution = (a) => {
-//   let arr = [];
-//   let i = 0;
-
-//   while(i < a.length) {
-//     if (a[i] > 5){
-//       arr.push(a[i]);
-//     }
-//     i++;
-//   }
-//   return arr;
-// }
-
-// RECURSION
-
-
-const solution = (a, i = 0, newArr = []) => {
-  if (i === a.length) return newArr;
-  if (a[i] > 5) newArr.push(a[i]);
-  return solution(a, i + 1, newArr);
-};
+const solution = (a, t) => {
+}
 
 module.exports = {
-  solution,
-};
+  solution
+}

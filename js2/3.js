@@ -1,53 +1,19 @@
 /**
- * Given an array, return the same array
- *   where all elements that are not prime are changed to 1
- *   Please reuse your js1 solution
- * @param {array} a
+ * Write a function called solution that
+ *   Takes in 2 numbers and
+ *   returns an array with the length equal to the first input number.
+ *     Every element in the returned array is an array,
+ *        with length equal to  the second input number.
+ *     All values in the array is 0.
+ * @param {number} row
+ * @param {number} col
  * @returns {array}
  */
 
-const isPrime = require('../js1/7.js').solution;
-
-// FOR LOOP
-
-// const solution = (a) => {
-// let arr = [];
-
-//   for (var i = 0; i < a.length; i++) {
-//     if (isPrime(a[i])){
-//       arr.push(a[i]);
-//     } else {
-//       arr.push(1);
-//     }
-//   }
-//   return arr;
-// }
-
-// WHILE LOOP
-
-// const solution = (a) => {
-//   let arr = [];
-//   let i = 0;
-
-//   while (i < a.length) {
-//     if (isPrime(a[i])) {
-//       arr.push(a[i]);
-//     } else {
-//       arr.push(1);
-//     }
-//     i++;
-//   }
-//   return arr;
-// }
-
-  // RECURSION 
-
-const solution = (a, i = 0) => {
-  if (i === a.length) return a
-  if (!isPrime(a[i])) { a[i] = 1 }
-  return solution(a, i + 1)
+const solution = (row, col) => {
+  return []
 }
 
 module.exports = {
-  solution,
-};
+  solution
+}

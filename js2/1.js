@@ -1,52 +1,41 @@
 /**
- * Given an array, return the same array where
- *   all elements <= 5 are changed to 0
- * @param {array} a
+ * Write a function called solution that
+ *   Takes in a number
+ *   returns an array with the length equal to the input number
+ *
+ * Every element in the array must numbered with the correct index:
+ *   0,1,2,3,4...
+ * @param {number} a
  * @returns {array}
- */
+*/
 
-// FOR LOOP
+// for loop
+/*const solution = (a, arr = []) => {
+  for (let i = 0; i < a; i++) {
+    arr.push(i)
+  }
+  return arr;
+}*/
 
-// const solution = (a) => {
-//   let arr = [];
+// while loop
+/*const solution = (a) => {
+  let i = 0;
+  let newArr = [];
 
-//   for (var i = 0; i < a.length; i++) {
-//     if (a[i] <= 5){
-//       arr.push(0)
-//     } else {
-//       arr.push(a[i]);
-//     }
-//   }
-//   return arr;
-// };
+  while (i < a) {
+    newArr.push(i)
+  i++;
+  }
+  return newArr
+}*/
 
-// WHILE LOOP
-
-// const solution = (a) => {
-//   let arr = [];
-//   i = 0;
-
-//   while (i < a.length) {
-//     if (a[i] <= 5) {
-//       arr.push(0);
-//     } else {
-//       arr.push(a[i]);
-//     }
-//     i++;
-//   }
-//   return arr;
-// }
-
-// RECURSION 
-
-const solution = (a, i = 0) => {
-  if (i === a.length) return a
-  if (a[i] <= 5) { a[i] = 0 }
-  return solution(a, i + 1);
-};
-
-// ALTERNATIVE
+// Recursion
+const solution = (a, i = 0, arr = []) => {
+  if (i === a) return arr;
+  arr.push(i)
+  return solution(a, i + 1, arr)
+}
 
 module.exports = {
-  solution,
-};
+  solution
+}

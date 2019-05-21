@@ -1,21 +1,32 @@
-const expect = require('chai').expect;
-const solution = require('../6').solution;
+/* global describe it */
+const solution = require('../6').solution
 
-describe('js2/6.js add all elements > 5 to array', () => {
-  it('should handle base case of []', () => {
-    const result = solution([]);
-    expect(result).to.deep.equal([]);
-  });
-  it('should return [6,7] when input is [6,7]', () => {
-    const result = solution([6,7]);
-    expect(result).to.deep.equal([6,7]);
-  });
-  it('should return [] when input is [3,4]', () => {
-    const result = solution([3,4]);
-    expect(result).to.deep.equal([]);
-  });
-  it('should return [8] when input is [3,8,-5]', () => {
-    const result = solution([3,8,-5]);
-    expect(result).to.deep.equal([8]);
-  });
-});
+describe('js2/6.js Sequenced Call', function () {
+  it('should call 4 functions, 30ms after each run', function (done) {
+    let counter = 0
+    const fun = () => {
+      counter += 1
+    }
+    const arr = [fun, fun]
+
+    const time = 50
+    solution(arr, time)
+
+    let errorMessage = ''
+    arr.forEach((_, i) => {
+      const value = i + 1
+      // Correct
+      setTimeout(() => {
+        if (counter !== value) {
+          errorMessage = `Input function is called too early. expected ${value} calls but receieived ${counter}`
+        }
+        if (value === arr.length) {
+          if (errorMessage) {
+            return done(new Error(errorMessage))
+          }
+          return done()
+        }
+      }, (i + 1) * time + time / 2)
+    })
+  })
+})

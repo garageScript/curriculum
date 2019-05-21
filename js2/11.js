@@ -1,24 +1,14 @@
-// Given an array, redistribute values greater than 1 to
-// previous elements that are 0 and change it to 1.
-// All remainders will accumulate at index 0.
+/**
+ * Creates Array.prototype.cFind that has the same functionality as find
+ *   If nothing was found, return undefined (which should be default
+ *   https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
+ */
 
-const solution = (array, accumulator = 0, index = array.length - 1) => {
-  if (array.length < 1) return [];
-
-  if (index === 0) {
-    array[0] += accumulator;
-    return array;
+const solution = () => {
+  Array.prototype.cFind = function (cb) {
   }
-
-  if (array[index] != 1) {
-    accumulator += array[index];
-    array[index] = 1;
-    accumulator -= 1;
-  }
-
-  return solution(array, accumulator, index - 1);
-};
+}
 
 module.exports = {
-    solution,
-};
+  solution
+}
