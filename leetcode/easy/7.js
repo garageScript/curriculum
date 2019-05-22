@@ -28,15 +28,37 @@ your function returns 0 when the reversed integer overflows.
  * @return {number}
  */
 
-var reverse = function(x) {
+/*var reverse = function(x) {
     var rev = x.toString().split('').reverse('').join('') 
     if (x < 0) {
     return -Math.abs(rev) 
     } else {
     return rev
   }
-};
+};*/
 
-console.log(reverse(123)) // 321
-console.log(reverse(-123)) // -321
-console.log(reverse(120)) // 021
+var reverse = function(x) {
+  let result = 0;
+  let absX = Math.abs(x)
+
+  while(absX) {
+    result = result * 10 + absX % 10
+    absX = Math.floor(absX / 10)	  
+  }
+
+  if (Math.abs(result) > 999999999) return 0
+	
+  if (x < 0) {
+    return -1 * result
+  } else {
+    return result
+  }
+
+}
+
+console.log(reverse(1), 1) // 1
+console.log(reverse(123), 321) // 321
+console.log(reverse(-123), -321) // -321
+console.log(reverse(120), 021) // 021
+console.log(reverse(1534236469), 0) // 0
+console.log(reverse(-2147483412), -2147483412) //-2143847412
