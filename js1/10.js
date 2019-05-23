@@ -17,12 +17,16 @@
  * @returns {function}
 */
 
-const solution = (str, fun, i = 0) => {
-  return () => {
-  fun(str[i])
+const solution = (string, callBack) => {
+  let tracker = '';
+  let i = 0;
+
+  return () => { 
+      if (i === string.length) i = 0;
+      callBack(string[i])
+      i = i + 1	    
   }
-  return solution(str, fun, i + 1)
-}
+}	
 
 module.exports = {
   solution
