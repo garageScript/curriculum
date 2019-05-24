@@ -18,7 +18,6 @@
 */
 
 const solution = (string, callBack) => {
-  let tracker = '';
   let i = 0;
 
   return () => { 
