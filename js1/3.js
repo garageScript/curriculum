@@ -7,6 +7,7 @@
  * @returns {string}
  */
 
+<<<<<<< HEAD
 const solution = (a, b, c = '') => {
   if (a === 0) {
     return c

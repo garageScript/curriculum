@@ -10,7 +10,13 @@
  */
 
 const solution = (a) => {
-  return []
+  i = 0;
+  arr = [];
+  while(i <= a - 1){
+    arr.push(i);
+    i++;
+  }
+  return arr;
 }
 
 module.exports = {
