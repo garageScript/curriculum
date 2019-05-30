@@ -25,19 +25,18 @@ const solution = (a, b, result = '') => {
        i++;
      }
    return result;
-} 
+} */
 
 // RECURSION 
 const solution = (a, b, result = '') => {
   if (a === 0) return result;
-
   return solution(a - 1, b, result += b)
-} */
+}
 
 // Built in JS function
-console.log("hello".repeat(6));
+//console.log("hello".repeat(6));
 
-console.log(solution(6));
+//console.log(solution(6));
 
 module.exports = {
   solution,

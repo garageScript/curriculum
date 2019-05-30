@@ -10,6 +10,16 @@
  */
 
 const solution = (a, fun) => {
+  let num = fun();
+console.log("num =", num)
+//  setTimeout(fun, a)
+console.log("a =", a)
+//  setTimeout(fun, num)
+console.log("fun = ()", fun())
+
+  setTimeout(function () {
+    setTimeout(fun, a)
+  }, num)
 }
 
 module.exports = {
