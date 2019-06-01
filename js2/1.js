@@ -9,17 +9,12 @@
  * @returns {array}
  */
 
-const solution = (a) => {
-  i = 0;
-  arr = [];
-  while(i <= a - 1){
-    arr.push(i);
-    i++;
-  }
-  return arr;
+const solution = (a, i = 0, arr = []) => {
+  if (i === a) return arr
+  arr.push(i)
+  return solution(a, i + 1, arr)
 }
 
 module.exports = {
   solution
 }
-
