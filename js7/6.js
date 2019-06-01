@@ -35,16 +35,6 @@ console.log(isPrime(7), true) // true
 console.log(isPrime(5), true) // true 
 console.log(isPrime(10), false) // false 
 
-const primeNums = (n, i = 2, newArr = []) => {
-  if (i === n) return newArr;
-  if (isPrime(i)) {newArr.push(i)}
-  return primeNums(n, i + 1, newArr)
-}
-
-console.log(primeNums(10)) // [3, 5, 7, 9]
-console.log(primeNums(15)) // [3, 5, 7, 9, 11, 13]
-console.log(primeNums(20)) // [3, 5, 7, 9, 11, 13, 15, 17, 19]
-
 const solution = (a = 2) => {
   return () => {
   a += 1
@@ -53,14 +43,13 @@ const solution = (a = 2) => {
   };
 };
 
-console.log("-------")
+/*console.log("-------")
 const getNextPrime = solution(4);
 console.log(getNextPrime(), 5)
 console.log("-------")
 console.log(getNextPrime(), 7)
-//const c = getNextPrime(); // c will be 11
 console.log(getNextPrime(), 11)
-
+*/
 module.exports = {
     solution,
 };
