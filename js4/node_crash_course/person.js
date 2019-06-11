@@ -1,5 +1,10 @@
+console.log("__dirname =>", "\n", __dirname)
 
-console.log(__dirname, __filename)
+console.log(" ")
+
+console.log("__filename =>","\n",  __filename)
+
+console.log(" ")
 
 class Person {
   constructor(name, age) {
