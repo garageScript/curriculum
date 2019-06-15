@@ -21,7 +21,7 @@ you are guaranteed that there will always be only one unique minimum window in S
  * @param {string} s
  * @param {string} t
  * @return {string}
- */
+**/
 
 var minWindow = function(s, t) {
 

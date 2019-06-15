@@ -22,7 +22,7 @@ app.get('/api/courses', (req, res) => {
 })
 
 app.post('/api/courses', (req, res) => {
-  const { error } = validateCOurse(req.body);
+  const { error } = validateCourse(req.body);
   if (error) {
     res.status(400).send(error.details[0].message)
     return;
