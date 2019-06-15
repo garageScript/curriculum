@@ -32,6 +32,31 @@ Merged tree:
 Note: The merging process must start from the root nodes of both trees.
 */
 
+// Tree1
+const a = {val: 1}
+const b = {val: 3}
+const c = {val: 2}
+const d = {val: 5}
+
+a.left = b;
+a.right = c;
+
+b.left = d;
+
+
+// Tree 2
+const e = {val: 2}
+const f = {val: 1}
+const g = {val: 3}
+const h = {val: 4}
+const j = {val: 7}
+
+e.left = f;
+e.right = g;
+
+f.right = h;
+g.right = j;
+
 /**
  * Definition for a binary tree node.
  * function TreeNode(val) {
@@ -49,4 +74,9 @@ var mergeTrees = function(t1, t2) {
 
 };
 
-
+console.log(mergeTrees(a, e))
+console.log(`3 \n
+	    / \ \n
+	   4   5 \n
+	  / \   \ \n
+	 5   4   7`)
