@@ -5,8 +5,12 @@ describe('js1/12.js call twice', function () {
   it('should set 2 timeouts of different value', function (done) {
     let errorMessage = ''
     let counter = 0
+  
+  console.log("counter =", counter)
+
     solution(50, () => {
       counter += 1
+  console.log("counter =", counter)
       return 80
     })
     // counter should be 1 after 50, then 2 after 80
