@@ -1,7 +1,7 @@
 TUTORIALS
 
-node_crash_course
 => https://www.youtube.com/watch?v=fBNz5xF-Kx4
+(node_crash_course)
 
 nodeJS_for_beginners
 => https://www.youtube.com/watch?v=TlB_eWDSMt4
@@ -13,3 +13,4 @@ RESTFUL_express_node
 
 Travesty_ExpressJS
 => https://www.youtube.com/watch?v=L72fhGm1tfE
+(express_crash_course)
