@@ -4,10 +4,17 @@ GarageScript 2.0
 
 Future Contributions:
 ----------------
+module 10 Graphs
+----------------
+module 11 maps/weakmaps
+----------------
+module 12 sets/weaksets
+---------------
 js3/freeze.js // cFreeze
 ---------------------
 js3/bind.js // cBind
 --------------------
+
 Write a polyfill for the .bind() function in Javascript.
 
 The following is the bind function definition from the Mozilla Developer Network (MDN) web docs.
@@ -55,4 +62,3 @@ var testFuncInContext = testFunc.bind(person, 26);
 console.log( testFuncInContext() ); // William is 26 years old. Unused input is undefined.
 
 console.log( testFuncInContext(80) ); // William is 26 years old. Unused input is 80
---------------------
