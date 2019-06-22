@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/two-sum/
 // SOLVED
 
 /* https://leetcode.com/problems/two-sum/
@@ -19,22 +20,19 @@ return [0, 1].
  * @return {number[]}
  */
 
+/*
 var twoSum = function(nums, target) {
-    for (var i = 0; i < nums.length; i++) {
-        for (var j = i + 1; j < nums.length; j++) {
-            if ((nums[i] + nums[j]) === target) {
-                return [i, j];
-            }
-        }
+  for (var i = 0; i < nums.length; i++) {
+    for (var j = i + 1; j < nums.length; j++) {
+      if (nums[i] + nums[j] === target) {
+        return [i, j];
+      }
     }
-};
-
-console.log(twoSum([2, 7, 11, 15]));
-// [0, 1]
+  }
+};*/
 
 
 // UTILIZING A HASH TABLE
-/*
 const twoSum = (nums, target) => {
 const map = {};
 const len = nums.length;
@@ -45,4 +43,9 @@ for (let i = 1; i < len; i++) {
      map[target-n] = i;
  }
 }
-*/
+
+const input1 = [-2,1,-3,4,-1,2,1,-5,4]
+const input2 = [2,7,11,15]
+
+console.log(twoSum(input1, 6), [3, 5])
+console.log(twoSum(input2, 9), [0, 1])
