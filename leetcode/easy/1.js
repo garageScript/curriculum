@@ -21,6 +21,11 @@ return [0, 1].
  */
 
 /*
+Runtime: 120 ms, faster than 34.97% of JavaScript online submissions for Two Sum.
+Memory Usage: 34.7 MB, less than 59.41% of JavaScript online submissions for Two Sum.
+*/
+
+/*
 var twoSum = function(nums, target) {
   for (var i = 0; i < nums.length; i++) {
     for (var j = i + 1; j < nums.length; j++) {
@@ -31,6 +36,10 @@ var twoSum = function(nums, target) {
   }
 };*/
 
+/*
+Runtime: 52 ms, faster than 96.76% of JavaScript online submissions for Two Sum.
+Memory Usage: 34.4 MB, less than 91.94% of JavaScript online submissions for Two Sum.
+*/
 
 // UTILIZING A HASH TABLE
 const twoSum = (nums, target) => {
