@@ -26,3 +26,9 @@ you are guaranteed that there will always be only one unique minimum window in S
 var minWindow = function(s, t) {
 
 };
+
+const str1 = "ADOBECODEBANC"
+const str2 = "ABC"
+
+console.log(minWindow(str1, str2), "BANC")
+// Output "BANC"

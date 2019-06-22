@@ -47,3 +47,5 @@ var canIWin = function(maxChoosableInteger, desiredTotal) {
 };
 
 console.log(canIWin(10, 11), false)
+console.log(canIWin(4, 6), true)
+
