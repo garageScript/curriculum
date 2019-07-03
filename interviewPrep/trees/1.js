@@ -4,8 +4,11 @@
  * Each node sa 2 keys: v and next
  */
 
-const solution = (obj) => {
-  return obj
+const solution = (obj, val) => {
+  if (!obj) return 0
+  const left = solution(obj.left, val)
+  const right = solution(obj.right, val)
+  return left + right + (obj.v === val ? 1 : 0)
 }
 
 module.exports = {
