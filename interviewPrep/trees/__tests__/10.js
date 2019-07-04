@@ -1,7 +1,7 @@
 /* global describe, it */
 
 const expect = require('chai').expect
-let solution = require('../1').solution
+let solution = require('../10').solution
 
 const a = { v: 5 }
 const b = { v: 6 }
@@ -15,7 +15,7 @@ b.left = d
 b.right = e
 c.left = f
 
-describe('clone a linked list', () => {
+describe('Tree obj to server', () => {
   it('should return 2', () => {
     const result = solution(a, 8)
     expect(result).to.equal(2)
