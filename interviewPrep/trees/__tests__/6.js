@@ -1,7 +1,7 @@
 /* global describe, it */
 
 const expect = require('chai').expect
-let solution = require('../1').solution
+let solution = require('../6').solution
 
 const a = { v: 5 }
 const b = { v: 6 }
@@ -15,17 +15,9 @@ b.left = d
 b.right = e
 c.left = f
 
-describe('clone a linked list', () => {
-  it('should return 2', () => {
-    const result = solution(a, 8)
-    expect(result).to.equal(2)
-  })
-  it('should return 0', () => {
-    const result = solution(a, 12)
-    expect(result).to.equal(0)
-  })
-  it('should return 1', () => {
-    const result = solution(a, 5)
-    expect(result).to.equal(1)
+describe('Change all left-most nodes to number', () => {
+  it('should return {val: 5, left: {val:1, left: {val:1}, right: {val:8}}, right: {val: 7, left: {val:9}}}', () => {
+    const result = solution(a, 1)
+    expect(a).to.deep.equal({ val: 5, left: { val: 1, left: { val: 1 }, right: { val: 8 } }, right: { val: 7, left: { val: 9 } } })
   })
 })
