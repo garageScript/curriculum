@@ -1,7 +1,7 @@
 /* global describe, it */
 
 const expect = require('chai').expect
-let solution = require('../1').solution
+let solution = require('../9').solution
 
 const a = { v: 5 }
 const b = { v: 6 }
