@@ -1,31 +1,42 @@
 /* global describe, it */
 
 const expect = require('chai').expect
-let solution = require('../1').solution
+let solution = require('../3').solution
 
-const a = { v: 5 }
-const b = { v: 6 }
-const c = { v: 7 }
-const d = { v: 8 }
-const e = { v: 8 }
-const f = { v: 9 }
+const a = { val: 5 }
+const b = { val: 6 }
+const c = { val: 7 }
+const d = { val: 8 }
+const e = { val: 8 }
+const f = { val: 9 }
 a.left = b
 a.right = c
 b.left = d
 b.right = e
 c.left = f
 
-describe('clone a linked list', () => {
+describe('Takes in a root node and function', () => {
   it('should return 2', () => {
-    const result = solution(a, 8)
-    expect(result).to.equal(2)
-  })
-  it('should return 0', () => {
-    const result = solution(a, 12)
-    expect(result).to.equal(0)
-  })
-  it('should return 1', () => {
-    const result = solution(a, 5)
-    expect(result).to.equal(1)
+    const result = solution(a, (val) => {
+      return 5
+    })
+    expect(a).to.deep.equal({
+      val: 5,
+      left: {
+        val: 5,
+        left: {
+          val: 5
+        },
+        right: {
+          val: 5
+        }
+      },
+      right: {
+        val: 5,
+        left: {
+          val: 5
+        }
+      }
+    })
   })
 })
