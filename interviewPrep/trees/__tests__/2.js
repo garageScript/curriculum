@@ -26,6 +26,9 @@ describe('All nodes larger than value', () => {
   })
   it('should return [{val:5}, {val:6}, {val:7}, {val:8}, {val: 8}, {val: 9}]', () => {
     const result = solution(a, 4)
-    expect(result).to.deep.equal([a, b, c, d, e, f])
+    const sortedResult = result.sort((a,b) => a.v-b.v)
+    const sortedArr = [a, b, c, d, e, f].sort((a,b) => a.v-b.v)
+
+    expect(sortedResult).to.deep.equal(sortedArr)
   })
 })
