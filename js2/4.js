@@ -1,5 +1,4 @@
-/**
- * Write a function called solution that
+/* Write a function called solution that
  *   Takes in 2 parameters: an array of numbers and a function
  *   and returns a function
  *
@@ -13,11 +12,22 @@
  * @param {array} a
  * @param {function} cb
  * @returns {function}
- */
-
+ *
 const solution = (a, cb) => {
   return () => {}
+}*/
+
+// FOR LOOP
+const solution = (a, cb) => {
+  for (let i = 0; i < a.length; i++) {
+  return {cb(a[i])} 
+  }
 }
+
+// WHILE LOOP
+/*const solution = (a, cb) => {}*/
+// RECURSION
+/*const solution = (a, cb) => {}*/
 
 module.exports = {
   solution

@@ -5,8 +5,10 @@
  */
 
 const solution = () => {
-  Array.prototype.cReduce = function () {
-    return 0
+  Array.prototype.cReduce = function(fn, acc=0, i = 0) {
+    if (i === this.length) return acc;
+    acc = fn(acc, this[i], i, this)
+    return this.cReduce(fn, acc, i + 1)
   }
 }
 
