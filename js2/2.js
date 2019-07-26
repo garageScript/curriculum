@@ -6,13 +6,39 @@
  *   array keeps growing with the correspending index value
  * @param {function} fun
  * @returns {array}
- */
 
-const solution = (fun, i = 0, arr = []) => {
-  if (!fun() !== false) return arr;
-  if (fun() === false) {arr.push(i)}
+const solution = (fun) => {
+  return []
+} */
 
-  return solution(fun, i + 1)
+
+// FOR LOOP
+/*const solution = (fun) => {
+  let newArr = [];
+
+  for (let i = 0; true; i++) {
+    if (fun(i) === true) return newArr;
+    if (fun(i) === false) {newArr.push(i)}
+  }
+}*/
+
+// WHILE LOOP
+/*const solution = (fun) => {
+  let newArr = [];
+  let i = 0;
+  
+  while(true) {
+    if (fun(i) === true) return newArr;
+    if (fun(i) === false) {newArr.push(i)}
+  i++
+  }
+}*/
+
+// RECURSION
+const solution = (fun, i = 0, newArr = []) => {
+  if (fun(i) === true) return newArr;
+  if (fun(i) === false) {newArr.push(i)}
+  return solution(fun, i + 1, newArr)
 }
 
 module.exports = {
