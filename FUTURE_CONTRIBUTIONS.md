@@ -10,7 +10,43 @@ Future Contributions:
 module 3 functions/objects
 ---------------
 
+function Person(first, last, age) {
+  this.first = first;
+  this.last = last;
+  this.age = age;
+}
 
+function SuperHero1(first, last, age, name, powers) {
+  // Batman
+  Person.call(this, first, last, age)
+  this.name = name;
+  this.powers = powers;
+}
+
+function SuperHero2(first, last, age, name, powers) {
+  // Superman
+  Person.bind(this)
+  this.name = name;
+  this.powers = powers;
+}
+
+function SuperHero3(first, last, age, name, powers) {
+  // WonderWoman
+  Person.apply(this)
+  this.name = name;
+  this.powers = powers;
+}
+
+var Jason = new Person('Jason', 'Hopf', 25)
+
+var Batman = new SuperHero1('Bruce', 'Wayne', 30, 'Batman', ['Rich', 'Intelligence'])
+var Superman = new SuperHero2('Kal', 'El', 32, 'Superman', ['flight', 'super strength'])
+var WonderWoman = new SuperHero3('Princess', 'Diana', 28, 'WonderWoman', ['lasso of truth'])
+
+console.log(Jason)
+console.log(Batman)
+console.log(Superman)
+console.log(WonderWoman)
 
 
 Object.prototype.cFreeze = function() {
