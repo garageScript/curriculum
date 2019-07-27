@@ -29,12 +29,11 @@ solution([func,func,func], 300)
 }*/
 
 // RECURSION
-/*
 const solution = (a, t, i = 0) => {
   if (i === a.length) return;
   setTimeout(a[i], t)
   return solution(a, t, i + 1)
-}*/
+}
 
 module.exports = {
   solution
