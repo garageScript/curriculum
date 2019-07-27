@@ -1,5 +1,4 @@
-/**
-Write a function called solution that takes in 2 parameters,
+/* Write a function called solution that takes in 2 parameters,
 a number and a function.
 
 1) solution should execute the input function 
@@ -9,7 +8,7 @@ after first input parameter milliseconds.
 2) The input function should be run again after waiting the
 returned number of seconds
 
-solution(1800, () => {
+solution2(1800, () => {
   // This function will be run 1800ms after solution is called,
   //   and after that, it will be run after another 3600ms
   console.log('hello')
@@ -21,14 +20,25 @@ solution(1800, () => {
  * @returns null
 **/
 
+/*const solution2 = (1800, () => {
+  // This function will be run 1800ms after solution is called,
+  //   and after that, it will be run after another 3600ms
+  console.log('hello')
+  return 3600
+})*/
+
 const solution = (a, fun) => {
-
-setTimeout(function() {
-  fun()
-}, setTimeout(fun, a))
-
-  return null;
+  console.log('a ', a)
+  // grabs 1800 ms
+  setTimeout(() => {
+    const value = fun()
+    // grabs 3600 ms
+    console.log('value ', value)
+    setTimeout(fun, value)
+  }, a)
 }
+
+console.log(solution(solution2))
 
 module.exports = {
   solution
