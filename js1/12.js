@@ -28,17 +28,13 @@ solution2(1800, () => {
 })*/
 
 const solution = (a, fun) => {
-  console.log('a ', a)
-  // grabs 1800 ms
+  // a grabs 1800 ms
   setTimeout(() => {
     const value = fun()
-    // grabs 3600 ms
-    console.log('value ', value)
+    // value grabs 3600 ms
     setTimeout(fun, value)
   }, a)
 }
-
-console.log(solution(solution2))
 
 module.exports = {
   solution
