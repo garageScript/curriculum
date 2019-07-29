@@ -16,13 +16,14 @@ solution([func,func,func], 300)
 */
 
 const solution = (a, t, i = 0) => {
-  if (i === a.length) return
-  setTimeout(a[i], t)
-  return solution(a, t, i + 1)
+  if (i >= a.length) {
+    return
+  }
+  setTimeout(() => {
+    a[i]()
+    solution(a, t, i + 1)
+  }, t)
 }
-
-/*const solution = (a, t) => {
-}*/
 
 module.exports = {
   solution

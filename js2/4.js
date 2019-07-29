@@ -1,7 +1,6 @@
 /* Write a function called solution that
  *   Takes in 2 parameters: an array of numbers and a function
  *   and returns a function
- *
  * When the returned function is called for the first time,
  *     the input function will be called with the first element of the array.
  * When the returned function is called for the second time,
@@ -41,9 +40,13 @@ const solution = (a, cb) => {
 * @returns {function} */
 
 const solution = (a, cb, i = 0) => {
-  if (i === a.length) return;
   return () => {
     cb(a[i])
+    if (i < a.length - 1) {
+      i += 1
+    } else {
+      i = 0
+    }
   } 
 }
 
