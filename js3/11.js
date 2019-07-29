@@ -9,10 +9,10 @@
 //     Object.keys, Object.values, or Object.entries
 
 const solution = () => {
-  Object.prototype.forEach = function (fun, i = 0, entries = Object.entries(this)) {
+  Object.prototype.gsForEach = function (fun, i = 0, entries = Object.entries(this)) {
     if (i === entries.length) return;
-    fun(entries[i][1], entries[i][0]);
-    return this.forEach(fun, i + 1);
+    fun(entries[i][0], entries[i][1]);
+    return this.gsForEach(fun, i + 1, entries);
   }
 };
 
