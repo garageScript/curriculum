@@ -10,14 +10,21 @@
  * @returns {array}
  */
 
-const solution = (row, col, arr = [], i = 0) => {
-  // if (row === 0) return arr
-  if (row === i) return arr
-  // console.log(i)
-  s = new Array(col).fill(0)
-  arr.push(s)
+const solution = (row, col, arr = [], i = 0, j = 0) => {
+  if (row == 0 && col == 0) return arr
 
-  return solution(row, col, arr, i + 1)
+  if (row - 1 === i && col === j) return arr
+
+  else if (j === 0) {
+    arr.push([])
+    arr[i].push(0)
+    return solution(row, col, arr, i, j + 1)
+  } else if (j < col) {
+    arr[i].push(0)
+    return solution(row, col, arr, i, j + 1)
+  } else {
+    return solution(row, col, arr, i + 1, 0)
+  }
 }
 
 module.exports = {
