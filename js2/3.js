@@ -10,21 +10,18 @@
  * @returns {array}
  */
 
-const solution = (row, col, arr = [], i = 0, j = 0) => {
-  if (row == 0 && col == 0) return arr
+const solution = (row, col, arr = [], rowIndex = 0, columnIndex = 0) => {
+  if (rowIndex >= row) return arr
 
-  if (row - 1 === i && col === j) return arr
-
-  else if (j === 0) {
+  else if (columnIndex >= col) {
+    if (row - 1 === rowIndex) {
+      return solution(row, col, arr, rowIndex + 1, 0)
+    }
     arr.push([])
-    arr[i].push(0)
-    return solution(row, col, arr, i, j + 1)
-  } else if (j < col) {
-    arr[i].push(0)
-    return solution(row, col, arr, i, j + 1)
-  } else {
-    return solution(row, col, arr, i + 1, 0)
+    return solution(row, col, arr, rowIndex + 1, 0)
   }
+  (columnIndex === 0 && rowIndex === 0) ? arr.push([0]) : arr[rowIndex].push(0)
+  return solution(row, col, arr, rowIndex, columnIndex + 1)
 }
 
 module.exports = {
