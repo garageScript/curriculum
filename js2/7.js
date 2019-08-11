@@ -5,8 +5,12 @@
  */
 
 const solution = () => {
-  Array.prototype.cForEach = function (cb) {
-    return 0
+  Array.prototype.cForEach = function (cb, i = 0) {
+    if (i === this.length) {
+      return
+    }
+    setTimeout(cb(this[i]), 10)
+    return this.cForEach(cb, i + 1)
   }
 }
 
