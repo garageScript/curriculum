@@ -7,7 +7,6 @@
  */
 
 const solution = (a, t) => {
-
 }
 
 module.exports = {
