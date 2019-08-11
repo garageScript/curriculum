@@ -16,7 +16,13 @@
  */
 
 const solution = (a, cb, i = 0) => {
-  return () => {}
+  return () => {
+    i += 1
+    console.log(i)
+    if (i === a.length + 1) i = 1
+    // i = (i - 1) % a.length
+    return cb(a[i - 1])
+  }
 }
 
 module.exports = {

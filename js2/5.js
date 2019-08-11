@@ -7,6 +7,7 @@
  */
 
 const solution = (a, t) => {
+   a.forEach(item => { setTimeout(item, t) })
 }
 
 module.exports = {
