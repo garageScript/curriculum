@@ -12,7 +12,6 @@
 
 const solution = (row, col, arr = [], rowIndex = 0, columnIndex = 0) => {
   if (rowIndex >= row) return arr
-
   if (columnIndex === 0) {
     arr.push([])
   }
