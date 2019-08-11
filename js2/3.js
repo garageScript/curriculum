@@ -11,17 +11,7 @@
  */
 
 const solution = (row, col, arr = [], rowIndex = 0, columnIndex = 0) => {
-  if (rowIndex >= row) return arr
 
-  else if (columnIndex >= col) {
-    if (row - 1 === rowIndex) {
-      return solution(row, col, arr, rowIndex + 1, 0)
-    }
-    arr.push([])
-    return solution(row, col, arr, rowIndex + 1, 0)
-  }
-  (columnIndex === 0 && rowIndex === 0) ? arr.push([0]) : arr[rowIndex].push(0)
-  return solution(row, col, arr, rowIndex, columnIndex + 1)
 }
 
 module.exports = {
