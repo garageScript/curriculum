@@ -6,7 +6,12 @@
  * @param {number} t
  */
 
-const solution = (a, t) => {
+const solution = (a, t, i = 0) => {
+  if (i === a.length) return
+  setTimeout(() => {
+    a[i]()
+    return solution(a, t, i + 1)
+  }, t)
 }
 
 module.exports = {
