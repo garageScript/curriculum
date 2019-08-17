@@ -9,7 +9,7 @@ const solution = () => {
     if (i === this.length) {
       return
     }
-    setTimeout(cb(this[i]), 10)
+    cb(this[i], i, this)
     return this.cForEach(cb, i + 1)
   }
 }
