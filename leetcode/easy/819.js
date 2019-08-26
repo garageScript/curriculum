@@ -109,11 +109,8 @@ console.log("banned = ", banned)
 
 /*var mostCommonWord = function(paragraph, banned) {
   // make the paragraph is lowercase
-
   // split the paragraph into an new array
-
   // hash the elements from the new array
-
   // return the element with the largest number
 };*/
 

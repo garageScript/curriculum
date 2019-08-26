@@ -5,15 +5,16 @@
 
 const express = require('express')
 const app = express()
+const port = process.env.PORT || 8787
 
-app.get('/hello', function (req, res) {
+app.get('/hello', (req, res) => {
   res.send(`
-    <h1 style="color:red">Welcome to c0d3.garagescript.org!</h1><br>
-  <input placeholder="Enter Name"></input><br>
-  <button onclick=alert("Checking to see if this work!")>Submit</button>
+  <h1 style="color:green">Green Express Server</h1>
+  <input placeholder="Enter Name"></input>
+  <button>Submit</button>
   `)
 })
 
-app.listen(6666, function () {
-  console.log('server started on port 6666...')
+app.listen(port, () => {
+  console.log('server started on port', port) 
 })
