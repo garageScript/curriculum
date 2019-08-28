@@ -1,0 +1,17 @@
+.box-container {
+	display: grid;
+	padding: 5px solid;
+	grid-template-columns: 50px 50px ;
+	grid-template-rows: 50px 50px;
+	height: 100px;
+	width: 100px;
+}
+
+.box {
+	background-color: grey;
+	color: white;
+	text-align: center;
+	border: 1px solid black;
+	height: 50px;
+	width: 50px;
+}
