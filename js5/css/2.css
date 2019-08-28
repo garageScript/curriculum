@@ -1,0 +1,6 @@
+.star {
+	 -webkit-text-stroke-width: 3px;
+   -webkit-text-stroke-color: black;
+	font-size: 600%;
+	color: green;
+}
