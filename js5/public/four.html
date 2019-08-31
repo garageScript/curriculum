@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+		<link rel="stylesheet" type="text/css" href="css/4.css">
+
+    <title>greenc lights off</title>
+
+		<style>
+.box-container {
+	display: grid;
+	padding: 5px solid;
+	grid-template-columns: 50px 50px ;
+	grid-template-rows: 50px 50px;
+	height: 100px;
+	width: 100px;
+}
+
+.box {
+	background-color: grey;
+	color: white;
+	text-align: center;
+	border: 1px solid black;
+	height: 50px;
+	width: 50px;
+}
+		</style>
+
+  </head>
+  <body>
+
+		<div class="box-container">
+			<div id="one" class="box">1</div>
+			<div id="two" class="box">2</div>
+			<div id="three" class="box">3</div>
+			<div id="four" class="box">4</div>
+		</div>
+
+	<script>
+const one = document.getElementById("one")
+const two = document.getElementById("two")
+const three = document.getElementById("three")
+const four = document.getElementById("four")
+
+three.style.backgroundColor = "lightgreen"
+
+one.onclick = () => {
+  console.log("one was clicked")
+  one.style.backgroundColor = "grey"
+  two.style.backgroundColor = "lightgreen"
+  three.style.backgroundColor = "grey"
+}
+
+two.onclick = () => {
+  console.log("two was clicked")
+  one.style.backgroundColor = "grey"
+  two.style.backgroundColor = "grey"
+  three.style.backgroundColor = "grey"
+  four.style.backgroundColor = "grey"
+}
+
+three.onclick = () => {
+  console.log("three was clicked")
+  one.style.backgroundColor = "lightgreen"
+	three.style.backgroundColor = "grey"
+}
+
+four.onclick = () => {
+  console.log("four was clicked")
+	four.style.backgroundColor = "grey"
+  three.style.backgroundColor = "lightgreen"
+	two.style.backgroundColor = "lightgreen"
+}
+
+if (four.style.backgroundColor == "grey" &&
+  three.style.backgroundColor == "grey" &&
+  two.style.backgroundColor == "grey" &&
+  one.style.backgroundColor == "grey") {
+  alert("You've won!")
+}
+	</script>
+ </body>
+</html>

@@ -1,3 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+		<link rel="stylesheet" type="text/css" href="css/2.css">
+
+    <title>greenc Stars UI</title>
+
+		<style>
+.star {
+	 -webkit-text-stroke-width: 3px;
+   -webkit-text-stroke-color: black;
+	font-size: 600%;
+	color: green;
+}
+		</style>
+
+  </head>
+  <body>
+
+		<span id="star1" 
+			onmouseover="hover1(this);" 
+			class="star">&starf;</span>
+
+		<span id="star2" 
+			onmouseover="hover2(this);"
+			onmouseout="nothover2(this);" 
+			class="star">&star;</span>
+		
+		<span id="star3" 
+			onmouseover="hover3(this);"
+			onmouseout="nothover3(this);"
+			class="star">&star;</span>
+
+		<span id="star4"
+			onmouseover="hover4(this);"
+			onmouseout="nothover4(this);"
+			class="star">&star;</span>
+
+		<span id="star5" 
+			onmouseover="hover5(this);"
+			onmouseout="nothover5(this);"
+			class="star">&star;</span>
+
+		<h1>You are giving <a id="num">1</a> stars!</h1>
+
+  <script>
 const num = document.getElementById('num');
 const star1 = document.getElementById('star1')
 const star2 = document.getElementById('star2')
@@ -88,4 +135,6 @@ const nothover5 = (star) => {
   star4.innerHTML = "&starf;";
   return;
 }
-
+	</script>
+ </body>
+</html>
