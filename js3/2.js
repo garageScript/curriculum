@@ -4,9 +4,16 @@
  * @return {number}
  */
 
-const solution = (arr)=>{
-  return 0;
-};
+const solution = (arr) => {
+  freqDist = arr.reduce((dict, e) => {
+    dict[e] = (dict[e] || 0) + 1
+    return dict
+  }, {})
+  let res = Object.keys(freqDist).reduce((acc, cur) => {
+    return freqDist[acc] > freqDist[cur] ? acc : cur
+  })
+  return Number(res)
+}
 
 module.exports = {
   solution
