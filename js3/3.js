@@ -5,11 +5,11 @@
  */
 
 const solution = (a) => {
-  freqDist = a.reduce((dict, e) => {
+  const freqDist = a.reduce((dict, e) => {
     dict[e] = (dict[e] || 0) + 1
     return dict
   }, {})
-  filter_arr = Object.keys(freqDist).filter((cur) => {
+  const filter_arr = Object.keys(freqDist).filter((cur) => {
     return freqDist[cur] > 1
   })
   return filter_arr.map((e) => { return Number(e) })
