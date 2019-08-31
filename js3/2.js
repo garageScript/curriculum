@@ -5,13 +5,15 @@
  */
 
 const solution = (arr) => {
-  freqDist = arr.reduce((dict, e) => {
+  const freqDist = arr.reduce((dict, e) => {
     dict[e] = (dict[e] || 0) + 1
     return dict
   }, {})
-  let res = Object.keys(freqDist).reduce((acc, cur) => {
+
+  const res = Object.keys(freqDist).reduce((acc, cur) => {
     return freqDist[acc] > freqDist[cur] ? acc : cur
   })
+
   return Number(res)
 }
 
