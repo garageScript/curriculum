@@ -5,8 +5,12 @@
  * @return {nothing}
  **/
 
-const solution = (a,b)=>{
-  return;
+const solution = (a, b) => {
+  pairs = Object.entries(a)
+  for (var i = 0; i < pairs.length; i++) {
+    var [key, val] = pairs[i]
+    b(key, val)
+  }
 }
 module.exports = {
   solution
