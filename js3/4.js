@@ -6,10 +6,17 @@
  * @returns {boolean}
  */
 
-const solution = (a, b)=>{
-  return true;
-};
+const solution = (a, b) => {
+  const lookup = {}
+  for (var i = 0; i < a.length; i++) {
+    if (a[i] in lookup) {
+      return true
+    }
+    lookup[b - a[i]] = a[i]
+  }
+  return false
+}
 
 module.exports = {
-  solution,
-};
+  solution
+}
