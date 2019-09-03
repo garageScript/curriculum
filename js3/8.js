@@ -16,11 +16,17 @@
  * @returns {boolean}
 */
 
-const solution = (a)=>{
-  return true;
-};
+const solution = (a) => {
+  table = {}
+  fun = (a) => {
+    if (a === undefined) return false
+    if (a.v in table) return true
+    table[a.v] = true
+    return fun(a.next)
+  }
+  return fun(a)
+}
 
 module.exports = {
-  solution,
-};
-
+  solution
+}
