@@ -6,11 +6,12 @@
  **/
 
 const solution = (a, b) => {
-  pairs = Object.entries(a)
-  for (var i = 0; i < pairs.length; i++) {
-    var [key, val] = pairs[i]
-    b(key, val)
+  Object.prototype.dictForEach = function (b, i = 0, arr = Object.entries(this)) {
+    if (i === arr.length) return
+    b(arr[i][0], arr[i][1])
+    return this.dictForEach(b, i + 1)
   }
+  return a.dictForEach(b)
 }
 module.exports = {
   solution
