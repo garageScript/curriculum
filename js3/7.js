@@ -14,10 +14,15 @@
  * @returns {number}
 */
 
-const solution = (a)=>{
-  return 0;
-};
+const solution = (a) => {
+  fun = (a, acc = a.v) => {
+    if (a === undefined) return acc
+    if (a.v > acc) acc = a.v
+    return fun(a.next, acc)
+  }
+  return fun(a)
+}
 
 module.exports = {
-  solution,
-};
+  solution
+}
