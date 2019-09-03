@@ -8,13 +8,13 @@
 
 const solution = (a, b) => {
   const lookup = {}
-  for (var i = 0; i < a.length; i++) {
-    if (a[i] in lookup) {
+  return a.reduce((acc, e) => {
+    if (e in lookup) {
       return true
     }
-    lookup[b - a[i]] = a[i]
-  }
-  return false
+    lookup[b - e] = e
+    return acc
+  }, false)
 }
 
 module.exports = {
