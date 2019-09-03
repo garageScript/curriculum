@@ -9,10 +9,18 @@
  * @returns {object} c
 */
 
-const solution = (a, b)=>{
-  return c;
-};
+const solution = (a, b) => {
+  newObj = {}
+  Object.prototype.objFilter = function (cb, i = 0, arr = Object.entries(this)) {
+    if (i === arr.length) return newObj
+    if (cb(arr[i][0], arr[i][1])) {
+      newObj[arr[i][0]] = arr[i][1]
+    }
+    return this.objFilter(cb, i + 1)
+  }
+  return a.objFilter(b)
+}
 
 module.exports = {
-  solution,
-};
+  solution
+}
