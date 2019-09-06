@@ -20,22 +20,20 @@
 // This problem is pretty hard, you just have
 // to understand whats going on and look at it over
 // and over again until you can write it out yourself
-const bft = (cur=[], next=[], result=[]) => {
-  if (!cur.length && !next.length) return result;
-  if (!cur.length) {
-    result.push([]);
-    return bft(next, [], result);
+const solution = (n) => {
+  const bft = (level, que, res = []) => {
+    if (!level.length && !que.length) return res
+    if (!level.length) {
+      res.push([])
+      return bft(que, [], res)
+    }
+    var cur = level.shift()
+    res[res.length - 1].push(cur.v)
+    return bft(level, que.concat(cur.children), res)
   }
-  const n = cur.shift();
-  result[result.length-1].push(n.v);
-  return bft(cur, next.concat(n.children), result);
-};
-
-const solution = (n)=>{
-  return bft([], [n]);
-};
+  return bft([], [n])
+}
 
 module.exports = {
-  solution,
-};
-
+  solution
+}
