@@ -17,14 +17,15 @@
 */
 
 const solution = (a) => {
-  table = {}
-  fun = (a) => {
-    if (a === undefined) return false
-    if (a.v in table) return true
-    table[a.v] = true
-    return fun(a.next)
+  if (a === null || a.next === null) return false
+
+  r2runner = (slow, fast) => {
+    if (fast === undefined || fast.next === undefined) return false
+    if (slow === fast) return true
+    return r2runner(slow.next, fast.next.next)
   }
-  return fun(a)
+
+  return r2runner(a, a.next)
 }
 
 module.exports = {
