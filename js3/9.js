@@ -14,12 +14,20 @@
 */
 
 // Hint: BFS or DFS from the teaching doc
-const solution = (a)=>{
-  return a;
-};
+const solution = (a, b) => {
+  const dfs = (a, T, toVisit) => {
+    if (a === undefined) return
+    if (a.v === T) return a
+    // console.log(a.v)
+    if (a.children) {
+      a.children.forEach((e) => toVisit.push(e))
+    }
+    return dfs(toVisit.shift(), T, toVisit)
+  }
+
+  return dfs(a, b, [a])
+}
 
 module.exports = {
-  solution,
-};
-
-
+  solution
+}
