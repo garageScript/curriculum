@@ -8,5 +8,7 @@ const fs = require('fs')
 
 fs.readdir('/home', cb = (err, files) => {
   if (err) throw err
-  files.forEach((e) => console.log(e))
+  files.forEach((e) => {
+    if (e !== 'ted-zen') console.log(e)
+  })
 })
