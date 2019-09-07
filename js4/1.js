@@ -3,3 +3,10 @@
 
 // const fs = require('fs');
 // fs.readdir('/home', func);
+
+const fs = require('fs')
+
+fs.readdir('/home', cb = (err, files) => {
+  if (err) throw err
+  files.forEach((e) => console.log(e))
+})
