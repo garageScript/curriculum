@@ -27,7 +27,7 @@ const solution = (n) => {
       res.push([])
       return bft(que, [], res)
     }
-    var cur = level.shift()
+    const cur = level.shift()
     res[res.length - 1].push(cur.v)
     return bft(level, que.concat(cur.children), res)
   }
