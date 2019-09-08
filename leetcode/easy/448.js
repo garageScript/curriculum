@@ -43,46 +43,24 @@ const output2 = [2]
 const output3 = []
 const output4 = [1]
 
-const removeDups = (nums) => {
-  nums = nums.sort()
-  const removed = []
-
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] != nums[i + 1]) {
-      removed.push(nums[i])
-    }
-  }
-  return removed
-}
-
 var findDisappearedNumbers = function(nums) { 
-  const missing = []
-  const newArr = removeDups(nums).sort()
+  var actual;
+  var i;
+  var res = [];
 
-  if (newArr.length < 1) { return []}
-  if (newArr.length < 2) { return [2]}
-
-  if (newArr[0] > 1) {
-    for (let i = newArr.length; i > 0; i--) {
-      missing.push(newArr[i] - 2)
-      }
-    return missing
+  for (i = 0; i < nums.length; i++) {
+    actual = Math.abs(nums[i]) - 1;
+    if (nums[actual] > 0) 
+      nums[actual] *= -1
   }
 
-  for (let i = 0; i < newArr.length; i++) {
-    if (newArr[i] !== i + 1) {
-      missing.push(i + 1)
-    }
+  for (i = 0; i < nums.length; i++) {
+    if (nums[i] > 0)
+      res.push(i + 1)
   }
-  return missing
+
+  return res;
 };
-
-console.log(removeDups(arr1))
-console.log(removeDups(arr2))
-console.log(removeDups(arr3))
-console.log(removeDups(arr4))
-
-console.log(" ")
 
 console.log(findDisappearedNumbers(arr1), output1)
 console.log(findDisappearedNumbers(arr2), output2)

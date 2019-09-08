@@ -56,7 +56,40 @@ All strings in wordlist and queries consist only of english letters.
 **/
 
 var spellchecker = function(wordlist, queries) {
-    
+  let ans=[]
+  let caplist={}
+  let vowlist={}
+  let samelist={}
+
+  for (let i = 0; i < wordlist.length; i++) {
+    let key = wordlist[i].toUpperCase();
+    if (caplist[key]==undefined) {
+      caplist[key]=wordlist[i]
+    }
+    samelist[wordlist[i]] = wordlist[i]
+
+    key = wordlist[i].toLowerCase().replace(/[aeiou]/gi, '@');
+    if (vowlist[key]==undefined){
+      vowlist[key]=wordlist[i]
+    }
+  }
+
+  for (let i = 0; i < queries.length; i++) {
+
+    if (samelist[queries[i]]) {
+      ans[i] = queries[i]
+    }
+    else if (caplist[queries[i].toUpperCase()]) {
+      ans[i] = caplist[queries[i].toUpperCase()]
+    }
+    else if (vowlist[queries[i].toLowerCase().replace(/[aeiou]/gi,'@')]) {
+      ans[i] = vowlist[queries[i].toLowerCase().replace(/[aeiou]/gi, '@')];
+    }
+    else {
+      ans[i] = ''
+    }
+  }
+  return ans
 };
 
 
