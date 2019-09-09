@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>lessons.html/title>
+
+  </head>
+  <body>
+
+    <h1>c0d3 lessons.html!</h1>
+
+		<script>
+
+// console.log all the title
+  for (let i = 0; i < 10; i++) {
+  fetch("https://c0d3.com/api/lessons")
+  .then(r => r.json())
+  .then(r => console.log(r[i].title))
+	}
+
+
+// write the files
+		</script>
+
+ </body>
+</html>
