@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "chai": "^4.2.0",
+    "cookie-parser": "^1.4.4",
     "debug": "~2.6.0",
     "ejs": "~2.5.5",
     "eslint-plugin-react": "^7.0.1",
