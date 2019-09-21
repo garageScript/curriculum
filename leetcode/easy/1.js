@@ -43,18 +43,22 @@ Memory Usage: 34.4 MB, less than 91.94% of JavaScript online submissions for Two
 
 // UTILIZING A HASH TABLE
 const twoSum = (nums, target) => {
-const map = {};
-const len = nums.length;
-map[target - nums[0]] = 0;
-for (let i = 1; i < len; i++) {
+  const map = {};
+  const len = nums.length;
+  map[target - nums[0]] = 0;
+  for (let i = 1; i < len; i++) {
     const n = nums[i];
     if (n in map) return [map[n], i];
      map[target-n] = i;
  }
 }
 
+
+
 const input1 = [-2,1,-3,4,-1,2,1,-5,4]
 const input2 = [2,7,11,15]
 
 console.log(twoSum(input1, 6), [3, 5])
 console.log(twoSum(input2, 9), [0, 1])
+
+
