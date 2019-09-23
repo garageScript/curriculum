@@ -31,5 +31,6 @@ const output1 = "1[.]1[.]1[.]1"
 const input2 = "255.100.50.0"
 const output2 = "255[.]100[.]50[.]0"
 
-console.log(defangIPaddr(input1), output1)
-console.log(defangIPaddr(input2), output2)
+console.log(defangIPaddr(input1), ' | ', output1)
+console.log(defangIPaddr(input2), ' | ', output2)
+
