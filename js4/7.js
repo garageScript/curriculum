@@ -1,32 +1,39 @@
-/* inital attempt */
-const express = require('express')
-const cookieParser = require('cookie-parser')
-const port = Process.env.PORT || 3005
-const bodyParser = require('body-parser')
-const app = app()
+const express = require('express');
+const cookieParser = require('cookie-parser');
 
-app.use(cookieParser())
-app.use(bodyParser.urlencoded())
+const app = express();
+const port = process.env.PORT || 3005;
+const path = require('path');
 
-app.get('/users/new', (req, res) => {
-  res.cookie('fullname', 'song' || 'username')
-  console.log(res.cookie.fullname)
-  console.log(res.cookie.username)
+// View engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'hbs');
 
-  fetch('/message', { credentials: 'include' })
-    .then((req) => res.json())
-
-  window.location = '/users'
-
-  res.redirect('/users')
-
-  res.send(`${req.body}`)
-})
+// Middleware
+app.use(cookieParser());
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
 
 app.get('/', (req, res) => {
-  res.send(`<h1>Welcome to UserPage</h1>`)
-})
+  res.render('index.hbs', {title: 'My Chat room'});
+});
+
+app.get('/users/new', (req, res) => {
+  res.render('chatForm.hbs', {title: 'New Users'});
+});
+
+app.post('/users', (req, res) => {
+  console.log(req.body)
+  const user = req.body.username
+  res.cookie('user', user)
+  res.redirect('/chat')
+});
+
+app.get('/chat', (req, res) => {
+  const user = req.cookies.user
+  res.render('chat.hbs', {title: 'chatroom', user: user})
+});
 
 app.listen(port, () => {
-  console.log('Listening on port:', port)
-})
+  console.log(`Listening on port: ${port}`);
+});

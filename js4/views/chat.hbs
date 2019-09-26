@@ -1,0 +1,26 @@
+<div>
+<h1>Username: {{user}} </h1>
+<div id="output"></div>
+<form id="chatForm">
+<input id="chatbox" type="text">
+<input type="submit">
+</form>
+</div>
+
+<script>
+const user = "{{user}}"
+const chatForm = document.getElementById("chatForm")
+const output = document.getElementById("output")
+
+chatForm.addEventListener("submit", (e) => {
+	e.preventDefault()
+	const text = document.getElementById("chatbox").value
+  console.log('text', text)
+
+  const para = document.createElement("p")
+	para.innerHTML = `<b>${user}</b> : ${text}`
+	
+	output.appendChild(para)
+})
+
+</script>
