@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="chat.css" />
+    <title>Chat</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">MemeChat</a>
+      <form class="form-inline my-2 my-lg-0">
+        <button type="button" class="btn btn-outline-light">
+          Logout
+        </button>
+      </form>
+    </nav>
+    <div class="container-fluid">
+      <div class="row ml-2 mt-2">
+        <video height="360" width="480"></video>
+      </div>
+      <div class="row ml-2 mt-2">
+        <input type="text" name="message" placeholder="Message" />
+        <button id="send">Send</button>
+      </div>
+      <section>
+        <div class="row">
+          <div class="ml-2 mt-2" id="messages"></div>
+        </div>
+      </section>
+    </div>
+    <script src="chat.js"></script>
+  </body>
+</html>

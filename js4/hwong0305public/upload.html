@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Upload Files</title>
+  </head>
+  <body>
+    <div>
+      <h1>Upload Files</h1>
+      <form action="/files" method="POST" enctype="multipart/form-data">
+        <input type="file" name="userFiles" multiple />
+        <button>Submit</button>
+      </form>
+      <h1>Files List</h1>
+      <ul></ul>
+    </div>
+    <script>
+      const fileList = document.querySelector('ul');
+
+      fetch('https://hwong0305.garagescript.org/files')
+        .then(response => response.json())
+        .then(response => {
+          response.forEach(file => {
+            const fileLine = document.createElement('li');
+            fileLine.innerHTML = file.filename;
+            fileList.appendChild(fileLine);
+          });
+        });
+    </script>
+  </body>
+</html>

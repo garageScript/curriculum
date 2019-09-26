@@ -31,6 +31,7 @@ app.post('/users', (req, res) => {
 
 app.get('/chat', (req, res) => {
   const user = req.cookies.user
+  if (!user) res.redirect('/users/new')
   res.render('chat.hbs', {title: 'chatroom', user: user})
 });
 

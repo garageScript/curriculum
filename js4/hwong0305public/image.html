@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Image</title>
+  </head>
+  <body>
+    <div>
+      <h1>
+        Your Picture!
+      </h1>
+      <video></video>
+      <button>Submit</button>
+      <h1>Pictures</h1>
+      <div id="images"></div>
+    </div>
+    <script>
+      const submit = document.querySelector('button');
+      const video = document.querySelector('video');
+      const imageList = document.getElementById('images');
+      navigator.mediaDevices
+        .getUserMedia({ audio: true, video: { width: 480, height: 360 } })
+        .then(response => {
+          video.srcObject = response;
+          video.onloadedmetadata = e => video.play();
+        });
+      submit.onclick = () => {
+        const canvas = document.createElement('canvas');
+        canvas.height = 360;
+        canvas.width = 480;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(video, 0, 0);
+        const imageData = canvas.toDataURL().split(',')[1];
+        fetch('https://hwong0305.garagescript.org/image', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ imageData }),
+        }).then(() => {
+          fetch('https://hwong0305.garagescript.org/files')
+            .then(response => response.json())
+            .then(response => {
+              imageList.innerHTML = '';
+              response.forEach(file => {
+                const newImage = document.createElement('img');
+                newImage.src = file;
+                imageList.appendChild(newImage);
+              });
+            });
+        });
+      };
+      fetch('https://hwong0305.garagescript.org/files')
+        .then(response => response.json())
+        .then(response => {
+          imageList.innerHTML = '';
+          response.forEach(file => {
+            const newImage = document.createElement('img');
+            newImage.src = file;
+            imageList.appendChild(newImage);
+          });
+        });
+    </script>
+  </body>
+</html>
+
