@@ -8,3 +8,5 @@ https://github.com/garageScript/curriculum
 Gitlab:
 https://git.c0d3.com/song/curriculum
 
+Hacktoberfest!!!
+https://hacktoberfest.digitalocean.com/profile
