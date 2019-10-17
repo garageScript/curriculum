@@ -12,12 +12,12 @@
  *  When the returned function is called with the last letter of the string,
  *    calling it again will call the input function with the first letter
  *    of the string and start over.
- * @param {string} a
+ * @param {string} str
  * @param {function} fun
  * @returns {function}
  */
 
-const solution = (a, fun) => {
+const solution = (str, fun) => {
   return () => { }
 }
 
