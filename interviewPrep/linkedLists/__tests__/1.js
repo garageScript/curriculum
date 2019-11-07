@@ -1,6 +1,5 @@
 /* global describe, it */
 
-const expect = require('chai').expect
 let solution = require('../1').solution
 
 const a = { v: 5 }
@@ -18,16 +17,16 @@ e.next = f
 describe('clone a linked list', () => {
   it('should have the same value as all nodes', () => {
     const result = solution(a)
-    expect(result).to.deep.equal(a)
+    expect(result).toEqual(a)
   })
   it('should have different nodes as original linked list', () => {
     const result = solution(a)
-    expect(result === a).to.equal(false)
-    expect(result.next === b).to.equal(false)
-    expect(result.next.next === c).to.equal(false)
-    expect(result.next.next.next === d).to.equal(false)
-    expect(result.next.next.next.next === e).to.equal(false)
-    expect(result.next.next.next.next.next === f).to.equal(false)
-    expect(result.next.next.next.next.next.next === undefined).to.equal(true)
+    expect(result === a).toEqual(false)
+    expect(result.next === b).toEqual(false)
+    expect(result.next.next === c).toEqual(false)
+    expect(result.next.next.next === d).toEqual(false)
+    expect(result.next.next.next.next === e).toEqual(false)
+    expect(result.next.next.next.next.next === f).toEqual(false)
+    expect(result.next.next.next.next.next.next === undefined).toEqual(true)
   })
 })
