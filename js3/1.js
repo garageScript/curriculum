@@ -1,11 +1,11 @@
 /**
- * biggestValue - takes in object, returns largest value
- * @param {object} obj
- * @returns {number} max
+ * given arr of strings (keys) and an object, return an array of values.
+ * @param {array} arr {object} obj
+ * @returns {array} arr
  */
 
-const solution = (obj)=>{
-  return 0;
+const solution = (arr, obj)=>{
+  return;
 }
 
 module.exports = {

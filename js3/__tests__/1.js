@@ -1,21 +1,20 @@
-const expect = require('chai').expect;
 let solution = require('../1').solution;
 
-describe('given object of values, return largest value', () => {
-  it('should return the largest value 5', () => {
-    const result = solution({a:1,b:2,c:3,d:4,e:5});
-    expect(result).to.equal(5);
+describe('given array of strings(keys) and object, return an array of values', () => {
+  it('should return ["arrogant", "naive"]', () => {
+    const result = solution(['ironman', 'spiderman'], {ironman: 'arrogant', blackpanther: 'brave', spiderman: 'naive'});
+    expect(result).toEqual(['arrogant', 'naive']);
   });
-  it('should return the largest value 10', () => {
-    const result = solution({a:10,b:5,c:3,d:6});
-    expect(result).to.equal(10);
+  it('should return ["goat", "mamba"]', () => {
+    const result = solution(['jordan', 'kobe'], {jordan: 'goat', kobe: 'mamba', lebron: 'pretender'});
+    expect(result).toEqual(['goat', 'mamba']);
   });
-  it('should return the largest value -10', () => {
-    const result = solution({a:-10,b:-20,c:-30,d:-40});
-    expect(result).to.equal(-10);
+  it('should return ["greatest shooter of all time", "Greek freak"]', () => {
+    const result = solution(['curry', 'giannis'], {curry: 'greatest shooter of all time', harden: 'flopper', giannis: 'Greek freak'});
+    expect(result).toEqual(['greatest shooter of all time', 'Greek freak']);
   });
-  it('should return the largest value 0', () => {
-    const result = solution({a:0,b:0,c:0});
-    expect(result).to.equal(0);
+  it('should return ["pancakes", "steak"]', () => {
+    const result = solution(['breakfast', 'dinner'], {breakfast: 'pancakes', lunch: 'sandwhich', dinner: 'steak'});
+    expect(result).toEqual(['pancakes', 'steak']);
   });
 });
