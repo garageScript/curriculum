@@ -6,13 +6,11 @@
     "test": "node ./node_modules/jest/bin/jest.js -o --watch"
   },
   "dependencies": {
-    "chai": "^3.5.0",
     "debug": "~2.6.0",
     "ejs": "~2.5.5",
     "eslint-plugin-react": "^7.0.1",
     "express": "^4.16.4",
     "jest": "^24.9.0",
-    "mocha": "^3.2.0",
     "morgan": "^1.9.1",
     "serve-favicon": "^2.5.0",
     "stylus": "0.54.5",
