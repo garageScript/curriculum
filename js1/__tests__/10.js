@@ -1,6 +1,6 @@
-/* global describe it */
-const expect = require('chai').expect
-let solution = require('../10').solution
+/* global describe it expect */
+
+const solution = require('../10').solution
 
 describe('every letter', function () {
   it('function should be called for every letter', function () {
@@ -19,6 +19,6 @@ describe('every letter', function () {
     fun()
     fun()
 
-    expect(callTrack).to.deep.equal('hellohell')
+    expect(callTrack).toEqual('hellohell')
   })
 })

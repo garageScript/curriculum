@@ -1,4 +1,5 @@
 /* global describe it */
+
 const solution = require('../11').solution
 
 describe('call twice', function () {
