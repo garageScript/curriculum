@@ -1,6 +1,5 @@
-/* global describe it */
+/* global describe it expect */
 
-const expect = require('chai').expect
 const solution = require('../8').solution
 solution()
 
@@ -13,24 +12,24 @@ describe('test gsMap', () => {
     [9].cMap((e, i, arr) => {
       callbacks = [e, i, arr]
     })
-    expect(callbacks).to.deep.equal([9, 0, [9]])
+    expect(callbacks).toEqual([9, 0, [9]])
   })
   it('should not change original array', () => {
     const a = [1, 2, 3]
     a.cMap(cb)
-    expect(a).to.deep.equal([1, 2, 3])
+    expect(a).toEqual([1, 2, 3])
   })
   it('should return [] for []', () => {
-    expect([].cMap()).to.deep.equal([])
+    expect([].cMap()).toEqual([])
   })
   it('should return new array of 3 elements increased by the value of its index', () => {
     const a = [1, 2, 3]
     const c = a.cMap(cb)
-    expect(c).to.deep.equal([2, 4, 6])
+    expect(c).toEqual([2, 4, 6])
   })
   it('should return new array of 3 elements increased by the value of its index twice', () => {
     const a = [1, 2, 3]
     const c = a.cMap(cb).cMap(cb)
-    expect(c).to.deep.equal([3, 6, 9])
+    expect(c).toEqual([3, 6, 9])
   })
 })

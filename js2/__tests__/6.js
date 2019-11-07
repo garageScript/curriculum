@@ -1,4 +1,5 @@
 /* global describe it */
+
 const solution = require('../6').solution
 
 describe('Sequenced Call', function () {

@@ -1,6 +1,5 @@
-/* globals describe it */
+/* global describe it expect */
 
-const expect = require('chai').expect
 const solution = require('../10').solution
 solution()
 
@@ -13,29 +12,29 @@ describe('test cFilter', () => {
     [9].cFilter((e, i, arr) => {
       callbacks = [e, i, arr]
     })
-    expect(callbacks).to.deep.equal([9, 0, [9]])
+    expect(callbacks).toEqual([9, 0, [9]])
   })
   it('should not change original array', () => {
     const a = [1, 2, 3]
     a.cFilter(cb)
-    expect(a).to.deep.equal([1, 2, 3])
+    expect(a).toEqual([1, 2, 3])
   })
   it('should return [] for []', () => {
-    expect([].cFilter()).to.deep.equal([])
+    expect([].cFilter()).toEqual([])
   })
   it('should return every element if filter is always true', () => {
     const a = [1, 2, 3]
     const c = a.cFilter(cb)
-    expect(c).to.deep.equal([1, 2, 3])
+    expect(c).toEqual([1, 2, 3])
   })
   it('should return no elements if filter is always false', () => {
     const a = [9, 9, 9]
     const c = a.cFilter(cb).cFilter(cb)
-    expect(c).to.deep.equal([])
+    expect(c).toEqual([])
   })
   it('should return some elements based on filter', () => {
     const a = [9, 2, 3, 9, 9, 3]
     const c = a.cFilter(cb).cFilter(cb)
-    expect(c).to.deep.equal([2, 3, 3])
+    expect(c).toEqual([2, 3, 3])
   })
 })
