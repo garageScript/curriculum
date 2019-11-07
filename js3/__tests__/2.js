@@ -1,6 +1,14 @@
 const solution = require('../2').solution;
 
 describe('given 2 integers, create 2d array of objects.', () => {
+  it('should create 5x0 array', () => {
+    const result = solution(5, 0);
+    expect(result).toEqual([[], [], [], [], []]);
+  });
+  it('should create 0x0 array', () => {
+    const result = solution(0, 0);
+    expect(result).toEqual([]);
+  });
   it('should create 3x3 array ', () => {
     const result = solution(3, 3);
     expect(result).toEqual([
