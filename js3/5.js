@@ -1,7 +1,7 @@
 /*
- * map - takes in an object and a function and calls the function with each key, value.
+ * Given object of key: string values and an object of key: function values, call the functions in 2nd object, using the values in 1st object as function params
  * @param {object} a
- * @param {function} b
+ * @param {object} b
  * @return {nothing}
  **/
 

@@ -1,16 +1,17 @@
-const expect = require('chai').expect;
 const solution = require('../5').solution;
 
-describe('takes in object, function and calls function until there is no more key/value', () => {
-  it('should return base case', () => {
-    let count = '';
-    const result = solution({},(key, value)=>{count+=`Key/Value Pair = ${key}:${value}\n`;});
-    expect(count).to.equal('')
+describe('using the same keys, call functions in 2nd object using values from 1st object as params', () => {
+  it('should return ""', () => {
+    const result = solution({}, {});
+    expect(result).toEqual("");
+  })
+  it('should return "johnnyboy"', () => {
+    const result = solution({'name': 'johnny'}, {'name': (e) => {console.log(e + 'boy')}, 'lastname': (e) => {console.log(e + 'girl')}});
+    expect(result).toEqual('johnnyboy');
   });
-  it('should return Key/Value Pair = 1:1,2:2,3:3 for input {1:1,2:2,3:3},funct', () => {
-    let count = '';
-    const result = solution({1:1,2:2,3:3},(key, value)=>{count+=`Key/Value Pair = ${key}:${value}\n`;});
-    expect(count).to.equal(`Key/Value Pair = 1:1\nKey/Value Pair = 2:2\nKey/Value Pair = 3:3\n`)
+  it('should return ', () => {
+    const result = solution({'shoes': 'new balances'}, {'pants': (e) => {console.log(e + 'khakis')}, 'shoes': (e) => {console.log(e + ' are comfy')}});
+    expect(result).toEqual('new balances are comfy');
   });
 });
 
