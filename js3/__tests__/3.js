@@ -1,22 +1,21 @@
-const expect = require('chai').expect;
 const solution = require('../3').solution;
 
-describe('takes in an array of numbers, returns an array of duplicates', () => {
-  it('should return array of all duplicates [2,4]', () => {
-    const result = solution([1, 2, 2, 3, 4, 4, 4]);
-    expect(result).to.have.all.members([2, 4]);
+describe('given an array of strings, invoking the returned function returns an object of key/value pairs with keys from the input array', () => {
+  it('should return an empty object {}', () => {
+    const result = solution([], {});
+    expect(result).toEqual({});
   });
-  it('should return array of all duplicates [2,5,-1]', () => {
-    const result = solution([-1, -1, -1, 2, 2, 5, 5]);
-    expect(result).to.have.all.members([2, 5, -1]);
+  it('should return object with keys from input array and its paired values', () => {
+    const result = solution(['breakfast', 'lunch'], {'breakfast': 'french toast', 'lunch': 'sandwhich', 'dinner': 'pasta'});
+    expect(result).toEqual({'breakfast': 'french toast', 'lunch': 'sandwhich'});
   });
-  it('should return array of all duplicates [0]', () => {
-    const result = solution([0, 0, 1, 2, 4, 0]);
-    expect(result).to.have.all.members([0]);
+  it('should return object with keys from input array and its paired values', () => {
+    const result = solution(['sports', 'work'], {'sports': 'basketball', 'work': 'software engineering', 'hobbies': 'knitting'});
+    expect(result).toEqual({'sports': 'basketball', 'work': 'software engineering'});
   });
-  it('should return array of all duplicates [0,10,20,100]', () => {
-    const result = solution([0, 10, 10, 10, 20, 20, 20, 20, 0, 100, 100]);
-    expect(result).to.have.all.members([0, 10, 20, 100]);
+  it('should return object with keys from input array and its paired values', () => {
+    const result = solution(['friends', 'family'], {'friends': 'close', 'family': 'closer', 'enemies': 'far away'});
+    expect(result).toEqual({'friends': 'close', 'family': 'closer'});
   });
 });
 
