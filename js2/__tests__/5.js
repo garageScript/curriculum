@@ -1,4 +1,5 @@
 /* global describe it */
+
 const solution = require('../5').solution
 
 describe('Delayed Call', function () {
