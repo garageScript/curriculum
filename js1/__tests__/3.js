@@ -1,23 +1,22 @@
-/* global describe it */
+/* global describe it expect */
 
-const expect = require('chai').expect
-let solution = require('../3').solution
+const solution = require('../3').solution
 
 describe('print string x number of times', () => {
   it('should repeat empty string 2 times', () => {
     const result = solution(2, '')
-    expect(result).to.equal('')
+    expect(result).toEqual('')
   })
   it('should repeat string 3 times', () => {
     const result = solution(3, 'joe')
-    expect(result).to.equal('joejoejoe')
+    expect(result).toEqual('joejoejoe')
   })
   it('should repeat string 4 times', () => {
     const result = solution(4, 'julie')
-    expect(result).to.equal('juliejuliejuliejulie')
+    expect(result).toEqual('juliejuliejuliejulie')
   })
   it('should repeat string 5 times', () => {
     const result = solution(5, 'olaf')
-    expect(result).to.equal('olafolafolafolafolaf')
+    expect(result).toEqual('olafolafolafolafolaf')
   })
 })
