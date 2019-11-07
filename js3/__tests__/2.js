@@ -1,7 +1,7 @@
 const solution = require('../2').solution;
 
 describe('given 2 integers, create 2d array of objects.', () => {
-  it('should return ', () => {
+  it('should create 3x3 array ', () => {
     const result = solution(3, 3);
     expect(result).toEqual([
       [{x: 0, y: 0}, {x: 1, col: 0}, {x: 2, col: 0}],
@@ -9,20 +9,20 @@ describe('given 2 integers, create 2d array of objects.', () => {
       [{x: 0, y: 2}, {x: 1, col: 2}, {x: 2, col: 2}],
     ]);
   });
-  it('should return ', () => {
+  it('should create 1x2 array', () => {
     const result = solution(1, 2);
     expect(result).toEqual([
       [{x: 0, y: 0}, {x: 1, col: 0}],
     ]);
   });
-  it('should return ', () => {
+  it('should create 2x4 array', () => {
     const result = solution(2, 4);
     expect(result).toEqual([
       [{x: 0, y: 0}, {x: 1, col: 0}, {x: 2, col: 0}, {x: 3, col: 0}],
       [{x: 0, y: 1}, {x: 1, col: 1}, {x: 2, col: 1}, {x: 3, col: 1}],
     ]);
   });
-  it('should return', () => {
+  it('should create 4x4 array', () => {
     const result = solution(4, 4);
     expect(result).toEqual([
       [{x: 0, y: 0}, {x: 1, col: 0}, {x: 2, col: 0}, {x: 3, col: 0}],
