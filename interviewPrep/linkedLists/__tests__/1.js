@@ -1,4 +1,4 @@
-/* global describe, it */
+/* global expect, describe, it */
 
 let solution = require('../1').solution
 
