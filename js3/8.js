@@ -1,23 +1,14 @@
 /*
- * isCircular - Takes in the first node of a
- *     linked list, return if the linked-list
- *     loops into itself
- * Example:
- * input:
- *    a = {v: 2};
- *    b = {v: 3};
- *    c = {v: 1};
- *    a.next = b;
- *    b.next = c;
- *    c.next = a;
- *    solution(a);
- * output: true
- * @param {object} node
- * @returns {boolean}
+ * Write a function that takes in an object and a number (millieseconds).
+ * - You must call each function value of the object {"nVal": (k) => {...}}
+ * - {"nVal": (k) => {...When this function runs, k is "nVal"...}}
+ * @param {object} obj
+ * @param {number} num (millieseconds)
+ * @call each function value of the object, millieseconds after each other
 */
 
-const solution = (a)=>{
-  return true;
+const solution = (obj, num)=>{
+  return ;
 };
 
 module.exports = {
