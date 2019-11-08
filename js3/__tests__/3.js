@@ -5,6 +5,10 @@ describe('given an array of strings, invoking the returned function returns an o
     const result = solution([], {});
     expect(result).toEqual({});
   });
+  it('should return empty object if nothing matches between object keys and array', () => {
+    const result = solution(['morning', 'noon', 'suppertime'], {'brunch': 'mimosas', 'afternoon': 'mid-day snack', 'dinner': 'roast beef'});
+    expect(result).toEqual({});
+  })
   it('should return object with keys from input array and its paired values', () => {
     const result = solution(['breakfast', 'lunch'], {'breakfast': 'french toast', 'lunch': 'sandwhich', 'dinner': 'pasta'});
     expect(result).toEqual({'breakfast': 'french toast', 'lunch': 'sandwhich'});
