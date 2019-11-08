@@ -5,7 +5,7 @@
 */
 
 const solution = (a)=>{
-  return b;
+  return [];
 };
 
 module.exports = {
