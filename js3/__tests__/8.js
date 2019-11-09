@@ -20,11 +20,11 @@ describe('It should call each function value of the object millieseconds after o
     }, 50);
 
     setTimeout(() => {
-      expect(sum).toEqual('one');
+      expect(sum).toEqual('0one');
     }, 150);
 
     setTimeout(() => {
-      expect(sum).toEqual('onetwo');
+      expect(sum).toEqual('0onetwo');
       done();
     }, 250);
   });
