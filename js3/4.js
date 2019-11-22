@@ -5,10 +5,10 @@
  * @returns {boolean}
  */
 
-const solution = (a, b)=>{
-  return true;
-};
+const solution = (a, b) => {
+  return true
+}
 
 module.exports = {
-  solution,
-};
+  solution
+}

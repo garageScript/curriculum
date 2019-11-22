@@ -4,10 +4,10 @@
  * @returns {array} b
 */
 
-const solution = (a)=>{
-  return [];
-};
+const solution = (a) => {
+  return []
+}
 
 module.exports = {
-  solution,
-};
+  solution
+}

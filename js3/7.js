@@ -4,12 +4,12 @@
  * @returns {number}
 */
 
-const solution = ()=>{
-  Object.prototype.map = function(cb){
-    return;
+const solution = () => {
+  Object.prototype.map = function (cb) {
+    return []
   }
-};
+}
 
 module.exports = {
-  solution,
-};
+  solution
+}
