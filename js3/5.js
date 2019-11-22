@@ -5,8 +5,8 @@
  * @return {object} c
  **/
 
-const solution = (a,b)=>{
-  return c;
+const solution = (a, b) => {
+  return {}
 }
 module.exports = {
   solution

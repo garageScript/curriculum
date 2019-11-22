@@ -7,11 +7,10 @@
  * @call each function value of the object, millieseconds after each other
 */
 
-const solution = (obj, num)=>{
-  return ;
-};
+const solution = (obj, num) => {
+
+}
 
 module.exports = {
-  solution,
-};
-
+  solution
+}

@@ -31,8 +31,7 @@ describe('given an array of strings, invoking the returned function returns an o
     const result = fn({ 'sports': 'basketball', 'work': 'software engineering', 'hobbies': 'knitting' })
     expect(result).toEqual({ 'sports': 'basketball', 'work': 'software engineering' })
 
-    const result2 = fn({ 'sports': 'basketball', 'work2': 'software engineering'})
-    expect(result2).toEqual({ 'sports': 'basketball'})
+    const result2 = fn({ 'sports': 'basketball', 'work2': 'software engineering' })
+    expect(result2).toEqual({ 'sports': 'basketball' })
   })
-
 })
