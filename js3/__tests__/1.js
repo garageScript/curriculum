@@ -1,6 +1,10 @@
 let solution = require('../1').solution;
 
 describe('given array of strings(keys) and object, return an array of values', () => {
+  it('should return []', () => {
+    const result = solution([], {a: 1, b: 2, c: 3});
+    expect(result).toEqual([]);
+  });
   it('should return ["arrogant", "naive"]', () => {
     const result = solution(['ironman', 'spiderman'], {ironman: 'arrogant', blackpanther: 'brave', spiderman: 'naive'});
     expect(result).toEqual(['arrogant', 'naive']);
