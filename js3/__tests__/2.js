@@ -2,6 +2,18 @@
 const solution = require('../2').solution
 
 describe('given 2 integers, create 2d array of objects.', () => {
+  it('should equal "undefined"', () => {
+    const result = solution(4, 2)
+    const dup = result.find((row, i) => {
+      return result.find((row2, i2) => {
+        if(i2 === i) {
+          return false
+        }
+        return row2 === row
+      })
+    })
+    expect(dup).toEqual(undefined)
+  })
   it('should create 5x0 array', () => {
     const result = solution(5, 0)
     expect(result).toEqual([[], [], [], [], []])
