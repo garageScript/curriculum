@@ -1,7 +1,5 @@
-
 module.exports = {
-  "parserOptions": {
-    "ecmaVersion": 6
-    },
-    "extends": "google"
-};
+  'parserOptions': {
+    'ecmaVersion': 6
+  }
+}

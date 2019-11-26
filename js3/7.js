@@ -1,23 +1,15 @@
 /*
- * findGreatest - Takes in the first node of a
- *     linked list, return the greatest number
- * Example:
- * input:
- *    a = {v: 2};
- *    b = {v: 3};
- *    c = {v: 1};
- *    a.next = b;
- *    b.next = c;
- *    solution(a);
- * output: 3
- * @param {object} node
+ * write a map function for objects
+ * @param {callback} cb
  * @returns {number}
 */
 
-const solution = (a)=>{
-  return 0;
-};
+const solution = () => {
+  Object.prototype.map = function (cb) {
+    return []
+  }
+}
 
 module.exports = {
-  solution,
-};
+  solution
+}

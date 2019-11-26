@@ -4,11 +4,10 @@
  * @returns {array} arr
  */
 
-const solution = (arr, obj)=>{
-  return;
+const solution = (arr, obj) => {
+  return []
 }
 
 module.exports = {
   solution
 }
-

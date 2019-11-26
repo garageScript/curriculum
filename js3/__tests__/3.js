@@ -1,22 +1,37 @@
-const expect = require('chai').expect;
-const solution = require('../3').solution;
+/* global describe it expect */
+const solution = require('../3').solution
 
-describe('takes in an array of numbers, returns an array of duplicates', () => {
-  it('should return array of all duplicates [2,4]', () => {
-    const result = solution([1, 2, 2, 3, 4, 4, 4]);
-    expect(result).to.have.all.members([2, 4]);
-  });
-  it('should return array of all duplicates [2,5,-1]', () => {
-    const result = solution([-1, -1, -1, 2, 2, 5, 5]);
-    expect(result).to.have.all.members([2, 5, -1]);
-  });
-  it('should return array of all duplicates [0]', () => {
-    const result = solution([0, 0, 1, 2, 4, 0]);
-    expect(result).to.have.all.members([0]);
-  });
-  it('should return array of all duplicates [0,10,20,100]', () => {
-    const result = solution([0, 10, 10, 10, 20, 20, 20, 20, 0, 100, 100]);
-    expect(result).to.have.all.members([0, 10, 20, 100]);
-  });
-});
+describe('given an array of strings, invoking the returned function returns an object of key/value pairs with keys from the input array', () => {
+  it('should return an empty object {}', () => {
+    const fn = solution([])
+    const result = fn({})
+    expect(result).toEqual({})
+  })
 
+  it('should return empty object if nothing matches between object keys and array', () => {
+    const fn = solution(['morning', 'noon', 'suppertime'])
+    const result = fn({ 'brunch': 'mimosas', 'afternoon': 'mid-day snack', 'dinner': 'roast beef' })
+    expect(result).toEqual({})
+
+    const result2 = fn({ 'brunch': 'mimosas', 'morning': 'mid-day snack', 'dinner': 'roast beef' })
+    expect(result2).toEqual({ morning: 'mid-day snack' })
+  })
+
+  it('should return object with keys from input array and its paired values', () => {
+    const fn = solution(['breakfast', 'lunch'])
+    const result = fn({ 'breakfast': 'french toast', 'lunch': 'sandwhich', 'dinner': 'pasta' })
+    expect(result).toEqual({ 'breakfast': 'french toast', 'lunch': 'sandwhich' })
+
+    const result2 = fn({ 'breakfast2': 'french toast', 'lunch2': 'sandwhich', 'dinner': 'pasta' })
+    expect(result2).toEqual({})
+  })
+
+  it('should return object with keys from input array and its paired values', () => {
+    const fn = solution(['sports', 'work'])
+    const result = fn({ 'sports': 'basketball', 'work': 'software engineering', 'hobbies': 'knitting' })
+    expect(result).toEqual({ 'sports': 'basketball', 'work': 'software engineering' })
+
+    const result2 = fn({ 'sports': 'basketball', 'work2': 'software engineering' })
+    expect(result2).toEqual({ 'sports': 'basketball' })
+  })
+})
