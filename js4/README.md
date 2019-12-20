@@ -1,0 +1,1 @@
+Create each HTML file for the JS4 challenges. Place each file into the 'Submit' folder.
