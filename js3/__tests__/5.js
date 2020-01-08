@@ -14,12 +14,12 @@ describe('call function in 2nd object (if possible) using the corresponding valu
   })
 
   it('should return new object', () => {
-    const result = solution({ 'name': 'pikachu', 'age': '59', 'power': 10, 'color': 'red' }, { 'name': (e) => { return 'Raichu' }, 'power': (num) => 1000 })
-    expect(result).toEqual({ 'name': 'Raichu', 'age': '59', 'power': 1000, 'color': 'red' })
+    const result = solution({ 'name': 'pikachu', 'age': '59', 'power': 10, 'color': 'red' }, { 'name': (e) => { return e + 'Raichu' }, 'power': (num) => num * num })
+    expect(result).toEqual({ 'name': 'pikachuRaichu', 'age': '59', 'power': 100, 'color': 'red' })
   })
 
   it('should return ', () => {
-    const result = solution({ 'name': 'khaleesi', 'age': 25, 'power': 'mother of dragons', 'weakness': 'john snow' }, { 'weakness': (e) => { return 'she has none' }, 'power': (e) => { return 'fire proof' } })
-    expect(result).toEqual({ 'name': 'khaleesi', 'age': 25, 'power': 'fire proof', 'weakness': 'she has none' })
+    const result = solution({ 'name': 'khaleesi', 'age': 25, 'power': 'mother of dragons', 'weakness': 'john snow' }, { 'weakness': (e) => { return e + ' knows nothing' }, 'power': (e) => { return e + ' is fire proof' } })
+    expect(result).toEqual({ 'name': 'khaleesi', 'age': 25, 'power': 'mother of dragons is fire proof', 'weakness': 'john snow knows nothing' })
   })
 })
