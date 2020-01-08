@@ -3,11 +3,11 @@
  *   takes in a number and returns a function.
  * When the returned function is called, the next incremental number
  *   is returned
- * @param {number} a
+ * @param {number} num
  * @returns {function}
  */
 
-const solution = (a) => {
+const solution = (num) => {
   return () => {}
 }
 
