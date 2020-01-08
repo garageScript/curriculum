@@ -2,11 +2,11 @@
  * Write a function called solution that
  *   Takes in an array of functions and a number,
  *   and calls every function input milliseconds later
- * @param {array} a
- * @param {number} t
+ * @param {array} arr
+ * @param {number} time
  */
 
-const solution = (a, t) => {
+const solution = (arr, time) => {
 }
 
 module.exports = {
