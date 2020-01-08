@@ -1,12 +1,12 @@
 /**
  * Write a function called solution that
  *   takes in 2 numbers and returns the sum of the 2 input parameters
- * @param {number} a
- * @param {number} b
+ * @param {number} num1
+ * @param {number} num2
  * @returns {number}
  */
 
-const solution = (a, b) => {
+const solution = (num1, num2) => {
   return 0
 }
 
