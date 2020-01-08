@@ -5,7 +5,7 @@
  *
  * Every element in the array must numbered with the correct index:
  *   0,1,2,3,4...
- * @param {number} a
+ * @param {number} str
  * @returns {array}
  */
 
