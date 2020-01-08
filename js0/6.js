@@ -3,12 +3,12 @@
  * Takes in 2 numbers, return true if the
  *    first number is greater than the second
  *    and false otherwise
- * @param {number} a
- * @param {number} b
+ * @param {number} num1
+ * @param {number} num2
  * @returns {boolean}
  */
 
-const solution = (a, b) => {
+const solution = (num1, num2) => {
   return true
 }
 
