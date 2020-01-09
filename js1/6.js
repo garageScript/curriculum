@@ -3,11 +3,11 @@
  *   takes in a number
  *   and returns true if the number is a prime number
  *   false otherwise
- * @param {number} a
+ * @param {number} num
  * @returns {boolean}
  */
 
-const solution = (a, i = 2) => {
+const solution = (num, i = 2) => {
   return true
 }
 
