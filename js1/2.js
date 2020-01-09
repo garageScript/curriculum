@@ -6,12 +6,12 @@
  *   it will return whatever the input function returns
  * When the returned function is called input number of times,
  *   it will return null
- * @param {number} a
+ * @param {number} num
  * @param {function} fun
  * @returns {function}
  */
 
-const solution = (a, fun) => {
+const solution = (num, fun) => {
   return () => { }
 }
 
