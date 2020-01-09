@@ -12,7 +12,7 @@ describe('It should call each function value of the object millieseconds after o
       done()
     }, 55)
   })
-  it('Sum will be 0, "one", "onetwo" after  ', (done) => {
+  it('Sum will be "0", then "0one" and finally "0onetwo" after 15 seconds', (done) => {
     let sum = 0
     const a = {
       'one': (d) => sum += d,
