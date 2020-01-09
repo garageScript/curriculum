@@ -1,11 +1,12 @@
 /**
  * Write a function called solution that
  * Takes in 2 numbers, returns the larger number
- * @param {number} a
+ * @param {number} num1
+ * @param {number} num2
  * @returns {number}
  */
 
-const solution = (a, b) => {
+const solution = (num1, num2) => {
   return 0
 }
 
