@@ -1,33 +1,42 @@
-/* global describe it */
+const solution = require('../6').solution;
 
-const solution = require('../6').solution
+describe('Sequential delayed function calls', () => {
+  describe('each function is called once, in order, after given delay', () => {
+    const delay = 5;
+    const mockCount = 5;
+    let mocks = [];
 
-describe('Sequenced Call', function () {
-  it('should call 4 functions, 30ms after each run', function (done) {
-    let counter = 0
-    const fun = () => {
-      counter += 1
-    }
-    const arr = [fun, fun]
+    const getMocks = () =>
+      Array(mockCount)
+        .fill(null)
+        .map((_) => jest.fn());
 
-    const time = 50
-    solution(arr, time)
+    beforeEach(() => {
+      jest.useFakeTimers();
+      mocks = getMocks();
+      solution(mocks, delay);
+    });
 
-    let errorMessage = ''
-    arr.forEach((_, i) => {
-      const value = i + 1
-      // Correct
-      setTimeout(() => {
-        if (counter !== value) {
-          errorMessage = `Input function is called too early. expected ${value} calls but receieived ${counter}`
-        }
-        if (value === arr.length) {
-          if (errorMessage) {
-            return done(new Error(errorMessage))
-          }
-          return done()
-        }
-      }, (i + 1) * time + time / 2)
-    })
-  })
-})
+    test('each function is called exactly once', () => {
+      jest.advanceTimersByTime(mocks.length * delay);
+      mocks.forEach((mock) => expect(mock).toHaveBeenCalledTimes(1));
+    });
+
+    test('functions are not called too early', () => {
+      expect(mocks[0]).not.toBeCalled();
+      mocks.forEach((_, i) => {
+        jest.advanceTimersByTime(delay);
+        mocks.slice(i + 1).forEach((mock) => expect(mock).not.toBeCalled());
+      });
+    });
+
+    test('function are not called too late', () => {
+      mocks.forEach((_, i) => {
+        jest.advanceTimersByTime(delay);
+        mocks.slice(0, i + 1).forEach((mock) => {
+          expect(mock).toBeCalled();
+        });
+      });
+    });
+  });
+});
