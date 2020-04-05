@@ -23,4 +23,9 @@ describe('call function x times', () => {
     solution(5, () => { counter += 1 })
     expect(counter).toEqual(5)
   })
+  it('should call function 0 times (handle negative input)', () => {
+    let counter = 0
+    solution(-1, () => { counter += 1 })
+    expect(counter).toEqual(0)
+  })
 })
