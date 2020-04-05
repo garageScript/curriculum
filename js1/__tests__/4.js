@@ -19,4 +19,12 @@ describe('call with increasing numbers', () => {
     })
     expect(calls).toEqual([0, 1, 2, 3, 4, 5])
   })
+  it('should call function 4 times (handle non-Boolean return values)', () => {
+    let calls = []
+    solution((e) => {
+      calls.push(e)
+      return e < 3 ? 0 : false
+    })
+    expect(calls).toEqual([0, 1, 2, 3])
+  })
 })
