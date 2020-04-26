@@ -7,6 +7,14 @@ describe('given array of strings(keys) and object, return an array of values', (
     const result = solution([], { a: 1, b: 2, c: 3 })
     expect(result).toEqual([])
   })
+  it('should return [false]', () => {
+    const result = solution(['d'], { a: 1, b: 2, c: 3, d: false })
+    expect(result).toEqual([false])
+  })
+  it('should return []', () => {
+    const result = solution(['toString'], { a: 1, b: 2, c: 3 })
+    expect(result).toEqual([])
+  })
   it('should return ["hi", "world"] ', () => {
     const result = solution(['123', 'abc', 'master'], { 123: 'hi', 345: 'world', abc: 'world' })
     expect(result).toEqual(['hi', 'world'])
