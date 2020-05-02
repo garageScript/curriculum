@@ -41,14 +41,11 @@ describe('test cReduce', () => {
     const b = { bob: true, obo: false, boo: true }
     expect(a.cReduce(cb, {})).toEqual(b)
   })
-
-  it('should reduce the elements of [1,2,3,4] to 10', () => {
+  it('should reduce the elements of [1,2,3,4] to 10 (no initial accumulator)', () => {
     const cb = (ac, cv) => {
       return ac + cv
     }
     const test = [1, 2, 3, 4]
     expect(test.cReduce(cb)).toEqual(10)
-
   })
-
 })
