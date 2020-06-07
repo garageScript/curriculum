@@ -17,7 +17,7 @@ describe('should find mininum time to run tasks', () => {
     const result = solution(a);
     expect(result).to.equal(5);
   });
-  it.only('should handle non-greedy case', () => {
+  it('should handle non-greedy case', () => {
     const a = [5,4,3,3,3,3,3,3];
     const result = solution(a);
     expect(result).to.equal(9);
