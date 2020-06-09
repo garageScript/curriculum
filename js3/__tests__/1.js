@@ -27,4 +27,8 @@ describe('given array of strings(keys) and object, return an array of values', (
     const result = solution(['breakfast', 'dinner'], { breakfast: 'pancakes', lunch: 'sandwhich', dinner: 'steak' })
     expect(result.sort()).toEqual(['pancakes', 'steak'].sort())
   })
+  it('should return [undefined, 1]', () => {
+    const result = solution(['coal', 'nuclear'], {coal: undefined, gas: 2, nuclear: 1})
+    expect(result.sort()).toEqual([undefined, 1].sort())
+  })
 })
