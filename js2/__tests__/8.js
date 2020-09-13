@@ -20,7 +20,7 @@ describe('test gsMap', () => {
     expect(a).toEqual([1, 2, 3])
   })
   it('should return [] for []', () => {
-    expect([].cMap()).toEqual([])
+    expect([].cMap(cb)).toEqual([])
   })
   it('should return new array of 3 elements increased by the value of its index', () => {
     const a = [1, 2, 3]
