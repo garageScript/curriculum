@@ -34,4 +34,20 @@ describe('given an array of strings, invoking the returned function returns an o
     const result2 = fn({ 'sports': 'basketball', 'work2': 'software engineering' })
     expect(result2).toEqual({ 'sports': 'basketball' })
   })
+
+  it('should not consider properties from the object\'s prototype chain', () => {
+    const obj = { a: 1, b: 2 };
+    const arr = ['hasOwnProperty'];
+    const expected = {};
+    const returnedFunc = solution(arr);
+    expect(returnedFunc(obj)).toEqual({});
+  });
+
+  it('should not exclude properties with falsy values', () => {
+    const obj = { a: 0, b: 2 };
+    const arr = ['a'];
+    const expected = { a: 0 };
+    const returnedFunc = solution(arr);
+    expect(returnedFunc(obj)).toEqual(expected);
+  });
 })
