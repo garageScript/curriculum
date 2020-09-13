@@ -51,4 +51,12 @@ describe('test cReduce', () => {
 
   })
 
+  it('should reduce ["1", "2", "3"] to "123"', () => {
+    const cb = (ac, cv) => {
+      return ac + cv
+    }
+    const a = ['1', '2', '3']
+    const b = '123'
+    expect(a.cReduce(cb)).toEqual(b)
+  })
 })
