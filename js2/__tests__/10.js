@@ -20,7 +20,7 @@ describe('test cFilter', () => {
     expect(a).toEqual([1, 2, 3])
   })
   it('should return [] for []', () => {
-    expect([].cFilter()).toEqual([])
+    expect([].cFilter(cb)).toEqual([])
   })
   it('should return every element if filter is always true', () => {
     const a = [1, 2, 3]
