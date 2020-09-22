@@ -1,40 +1,34 @@
 /* global describe it */
 
-const solution = require('../12').solution
+const solution = require("../12").solution;
 
-describe('call twice', function () {
-  it('should set 2 timeouts of different value', function (done) {
-    let errorMessage = ''
-    let counter = 0
-    solution(50, () => {
-      counter += 1
-      return 80
-    })
-    // counter should be 1 after 50, then 2 after 80
-    if (counter) {
-      errorMessage = 'input function is called too early'
-    }
+const mockFn = jest.fn();
 
-    setTimeout(() => {
-      if (counter) {
-        errorMessage = 'Input function is called too early'
-      }
-    }, 40)
+jest.useFakeTimers();
+mockFn.mockReturnValue(100);
 
-    setTimeout(() => {
-      if (counter !== 1) {
-        errorMessage = `Input function is either not called the first time, or called too many times. Count: ${counter}`
-      }
-    }, 120)
+describe("call functions", function () {
+  it("Function should only run twice", () => {
+    solution(50, mockFn);
 
-    setTimeout(() => {
-      if (counter !== 2) {
-        errorMessage = `Input function is either not called the first time, or called too many times. Count: ${counter}`
-      }
-      if (errorMessage) {
-        return done(new Error(errorMessage))
-      }
-      return done()
-    }, 140)
-  })
-})
+    expect(mockFn).not.toBeCalled();
+
+    // runtime 50ms
+    jest.advanceTimersByTime(50);
+    expect(mockFn).toHaveBeenCalledTimes(1);
+
+    // runtime 100ms
+    jest.advanceTimersByTime(100);
+    expect(mockFn).toHaveBeenCalledTimes(2);
+
+    // runtime 200ms
+    jest.advanceTimersByTime(200);
+    expect(mockFn).toHaveBeenCalledTimes(2);
+
+    // run  time 500ms
+    jest.advanceTimersByTime(500);
+    expect(mockFn).toHaveBeenCalledTimes(2);
+
+    jest.clearAllTimers();
+  });
+});
