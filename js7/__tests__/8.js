@@ -1,4 +1,3 @@
-const expect = require('chai').expect;
 const sleepSort = require('../8');
 
 describe('Promised sleep sort', function() {
@@ -14,19 +13,19 @@ describe('Promised sleep sort', function() {
 
   it('should sort an array of positive numbers', () => {
     return sleepSort([3, 4, 5, 6, 7, 1, 2]).then((sorted) => {
-      expect(sorted).to.deep.equal([1, 2, 3, 4, 5, 6, 7]);
+      expect(sorted).toEqual([1, 2, 3, 4, 5, 6, 7]);
     });
   });
 
   it('should sort an array of negative numbers', () => {
     return sleepSort([-3, -4, -5, -7]).then((sorted) => {
-      expect(sorted).to.deep.equal([-7, -5, -4, -3]);
+      expect(sorted).toEqual([-7, -5, -4, -3]);
     });
   });
 
   it('should sort an array of negative and non-negative numbers', () => {
     return sleepSort([0, -3, -4, -5, 6, -7, 1, 2]).then((sorted) => {
-      expect(sorted).to.deep.equal([-7, -5, -4, -3, 0, 1, 2, 6]);
+      expect(sorted).toEqual([-7, -5, -4, -3, 0, 1, 2, 6]);
     });
   });
 });

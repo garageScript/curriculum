@@ -1,4 +1,3 @@
-const expect = require('chai').expect;
 const throttle = require('../3');
 
 describe('Throttle', function() {
@@ -7,7 +6,7 @@ describe('Throttle', function() {
     const throttled = throttle(() => (counter += 1), 10);
 
     throttled();
-    expect(counter).to.equal(1);
+    expect(counter).toBe(1);
   });
 
   it('should be called only once in one interval', (done) => {

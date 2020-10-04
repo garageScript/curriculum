@@ -1,4 +1,3 @@
-const expect = require('chai').expect;
 const solution = require('../13').solution;
 
 describe('distance between 2 nodes', () => {
@@ -9,7 +8,7 @@ describe('distance between 2 nodes', () => {
     a.left = b;
     a.right = c;
     const result = solution(a, b, c);
-    expect(result).to.equal(2);
+    expect(result).toBe(2);
   });
   it('should return distance 1 for tree with 3 nodes, root and right', () => {
     const a = {val: 3};
@@ -18,7 +17,7 @@ describe('distance between 2 nodes', () => {
     a.left = b;
     a.right = c;
     let result = solution(a, a, c);
-    expect(result).to.equal(1);
+    expect(result).toBe(1);
   });
   it('should return distance 1 for tree with 3 nodes, root and left', () => {
     const a = {val: 3};
@@ -27,7 +26,7 @@ describe('distance between 2 nodes', () => {
     a.left = b;
     a.right = c;
     const result = solution(a, a, b);
-    expect(result).to.equal(1);
+    expect(result).toBe(1);
   });
   it('should return distance for nodes on left side', () => {
     const a = {val: 'a'};
@@ -40,7 +39,7 @@ describe('distance between 2 nodes', () => {
     b.left = d;
     b.right = e;
     const result = solution(a, d, e);
-    expect(result).to.equal(2);
+    expect(result).toBe(2);
   });
   it('should return distance for nodes on left plus right side', () => {
     const a = {val: 'a'};
@@ -53,7 +52,7 @@ describe('distance between 2 nodes', () => {
     b.left = d;
     b.right = e;
     const result = solution(a, d, c);
-    expect(result).to.equal(3);
+    expect(result).toBe(3);
   });
   it('should return distance for deep tree left and right', () => {
     const a = {val: 3};
@@ -70,7 +69,7 @@ describe('distance between 2 nodes', () => {
     c.right = f;
     c.left = g;
     const result = solution(a, e, g);
-    expect(result).to.equal(4);
+    expect(result).toBe(4);
   });
   it('should return distance for deep tree left and right', () => {
     const a = {val: 3};
@@ -87,7 +86,7 @@ describe('distance between 2 nodes', () => {
     c.right = f;
     c.left = g;
     const result = solution(a, b, f);
-    expect(result).to.equal(3);
+    expect(result).toBe(3);
   });
   it('should return distance for deep tree root and right', () => {
     const a = {val: 3};
@@ -104,6 +103,6 @@ describe('distance between 2 nodes', () => {
     c.right = f;
     c.left = g;
     const result = solution(a, a, g);
-    expect(result).to.equal(2);
+    expect(result).toBe(2);
   });
 });

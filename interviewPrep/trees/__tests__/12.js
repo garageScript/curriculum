@@ -1,7 +1,6 @@
 /* global describe, it */
 
-const expect = require('chai').expect
-let solution = require('../12').solution
+let solution = require('../12').solution;
 
 const a = { v: 5 }
 const b = { v: 6 }
@@ -36,10 +35,10 @@ x.left = u
 describe('Matching all nodes in trees', () => {
   it('should return true', () => {
     const result = solution(a, z)
-    expect(result).to.equal(true)
+    expect(result).toBe(true)
   })
   it('should return false', () => {
     const result = solution(a, g)
-    expect(result).to.equal(false)
+    expect(result).toBe(false)
   })
 })

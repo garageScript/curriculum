@@ -1,7 +1,6 @@
 /* global describe, it */
 
-const expect = require('chai').expect
-let solution = require('../7').solution
+let solution = require('../7').solution;
 
 const a = { v: 5 }
 const b = { v: 6 }
@@ -24,14 +23,14 @@ h.right = j
 describe('clone a linked list', () => {
   it('should return 3', () => {
     const result = solution(a)
-    expect(result).to.equal(3)
+    expect(result).toBe(3)
   })
   it('should return 1', () => {
     const result = solution(g)
-    expect(result).to.equal(1)
+    expect(result).toBe(1)
   })
   it('should return 2', () => {
     const result = solution(h)
-    expect(result).to.equal(2)
+    expect(result).toBe(2)
   })
 })

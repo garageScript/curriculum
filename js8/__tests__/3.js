@@ -1,4 +1,3 @@
-const expect = require('chai').expect;
 const solution = require('../3').solution;
 
 describe('max distance between 2 nodes', () => {
@@ -9,7 +8,7 @@ describe('max distance between 2 nodes', () => {
     a.left = b;
     a.right = c;
     const result = solution(a);
-    expect(result).to.equal(2);
+    expect(result).toBe(2);
   });
   it('should return distance 3 for tree with 5 nodes', () => {
     const a = {val: 'a'};
@@ -22,7 +21,7 @@ describe('max distance between 2 nodes', () => {
     b.left = d;
     b.right = e;
     const result = solution(a);
-    expect(result).to.equal(3);
+    expect(result).toBe(3);
   });
   it('should return distance 4 using right child nodes', () => {
     const a = {val: 'a'};
@@ -43,7 +42,7 @@ describe('max distance between 2 nodes', () => {
     f.left = h;
     g.right = i;
     const result = solution(a);
-    expect(result).to.equal(6);
+    expect(result).toBe(6);
   });
   it('should return distance 4 using left child nodes', () => {
     const a = {val: 'a'};
@@ -64,6 +63,6 @@ describe('max distance between 2 nodes', () => {
     f.left = h;
     g.right = i;
     const result = solution(a);
-    expect(result).to.equal(6);
+    expect(result).toBe(6);
   });
 });

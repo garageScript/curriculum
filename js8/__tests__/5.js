@@ -1,4 +1,3 @@
-const expect = require('chai').expect;
 const solution = require('../5').solution;
 
 describe('Distance to a node', () => {
@@ -7,14 +6,14 @@ describe('Distance to a node', () => {
     const b = {val: 'b'};
     a.left = b;
     const result = solution(a, b);
-    expect(result).to.equal(1);
+    expect(result).toBe(1);
   });
   it('should return distance 1 for tree with right node', () => {
     const a = {val: 'a'};
     const b = {val: 'b'};
     a.right = b;
     const result = solution(a, b);
-    expect(result).to.equal(1);
+    expect(result).toBe(1);
   });
   it('should return distance 0 for finding itself', () => {
     const a = {val: 'a'};
@@ -27,7 +26,7 @@ describe('Distance to a node', () => {
     b.left = d;
     b.right = e;
     const result = solution(a, a);
-    expect(result).to.equal(0);
+    expect(result).toBe(0);
   });
   it('should return distance 2 using right child nodes', () => {
     const a = {val: 'a'};
@@ -48,7 +47,7 @@ describe('Distance to a node', () => {
     f.left = h;
     g.right = i;
     const result = solution(a, e);
-    expect(result).to.equal(2);
+    expect(result).toBe(2);
   });
   it('should return distance 4 using long left child distraction', () => {
     const a = {val: 'a'};
@@ -79,6 +78,6 @@ describe('Distance to a node', () => {
     l.left = m;
     m.left = n;
     const result = solution(a, i);
-    expect(result).to.equal(4);
+    expect(result).toBe(4);
   });
 });

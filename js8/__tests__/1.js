@@ -1,4 +1,3 @@
-const expect = require('chai').expect;
 const solution = require('../1').solution;
 
 describe('max value', () => {
@@ -15,7 +14,7 @@ describe('max value', () => {
     b.right = e;
     c.right = f;
     const result = solution(a);
-    expect(result).to.equal(30);
+    expect(result).toBe(30);
   });
   it('should return deepest node', () => {
     const a = {val: -5};
@@ -28,7 +27,7 @@ describe('max value', () => {
     b.left = d;
     b.right = e;
     const result = solution(a);
-    expect(result).to.equal(6);
+    expect(result).toBe(6);
   });
   it('should return mid node with all negative numbers', () => {
     const a = {val: -5};
@@ -43,7 +42,7 @@ describe('max value', () => {
     b.right = e;
     c.right = f;
     const result = solution(a);
-    expect(result).to.equal(-1);
+    expect(result).toBe(-1);
   });
   it('should return deepest right node value', () => {
     const a = {val: -50};
@@ -58,6 +57,6 @@ describe('max value', () => {
     b.right = e;
     c.right = f;
     const result = solution(a);
-    expect(result).to.equal(600);
+    expect(result).toBe(600);
   });
 });
