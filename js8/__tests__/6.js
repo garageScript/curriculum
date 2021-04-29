@@ -1,4 +1,3 @@
-const expect = require('chai').expect;
 const solution = require('../6').solution;
 
 describe('max fun', () => {
@@ -8,7 +7,7 @@ describe('max fun', () => {
     const c = {val: 4};
     a.children = [b, c];
     const result = solution(a);
-    expect(result).to.equal(30);
+    expect(result).toBe(30);
   });
   it('should return children nodes in a 3 node tree', () => {
     const a = {val: 5};
@@ -16,7 +15,7 @@ describe('max fun', () => {
     const c = {val: 3};
     a.children = [b, c];
     const result = solution(a);
-    expect(result).to.equal(7);
+    expect(result).toBe(7);
   });
   it('should skip top and ending nodes', () => {
     const a = {val: 5};
@@ -28,7 +27,7 @@ describe('max fun', () => {
     b.children = [d];
     c.children = [e];
     const result = solution(a);
-    expect(result).to.equal(10);
+    expect(result).toBe(10);
   });
   it('should skip middle nodes', () => {
     const a = {val: 500};
@@ -40,7 +39,7 @@ describe('max fun', () => {
     b.children = [d];
     c.children = [e];
     const result = solution(a);
-    expect(result).to.equal(503);
+    expect(result).toBe(503);
   });
   it('should skip 2 levels', () => {
     const a = {val: 5};
@@ -51,7 +50,7 @@ describe('max fun', () => {
     b.children = [c];
     c.children = [d];
     const result = solution(a);
-    expect(result).to.equal(13);
+    expect(result).toBe(13);
   });
   it('should skip some nodes in middle level', () => {
     const a = {val: 100};
@@ -65,6 +64,6 @@ describe('max fun', () => {
     b.children = [e, f];
     e.children = [g];
     const result = solution(a);
-    expect(result).to.equal(504);
+    expect(result).toBe(504);
   });
 });

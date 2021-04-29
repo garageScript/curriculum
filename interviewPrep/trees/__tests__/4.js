@@ -1,7 +1,6 @@
 /* global describe, it */
 
-const expect = require('chai').expect
-let solution = require('../4').solution
+let solution = require('../4').solution;
 
 const a = { v: 5 }
 const b = { v: 6 }
@@ -18,14 +17,14 @@ c.left = f
 describe('All nodes at given level', () => {
   it('should return no level []', () => {
     const result = solution(a, 0)
-    expect(result).to.equal([])
+    expect(result).toBe([])
   })
   it('should return 1st level [5]', () => {
     const result = solution(a, 1)
-    expect(result).to.deep.equal([5])
+    expect(result).toEqual([5])
   })
   it('should return 3rd level [8, 8, 9]', () => {
     const result = solution(a, 3)
-    expect(result).to.deep.equal([8, 8, 9])
+    expect(result).toEqual([8, 8, 9])
   })
 })

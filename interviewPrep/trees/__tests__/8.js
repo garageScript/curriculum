@@ -1,7 +1,6 @@
 /* global describe, it */
 
-const expect = require('chai').expect
-let solution = require('../8').solution
+let solution = require('../8').solution;
 
 const a = { v: 5 }
 const b = { v: -6 }
@@ -26,14 +25,14 @@ const w = { val: 10 }
 describe('Sum of all nodes', () => {
   it('should return 15', () => {
     const result = solution(a)
-    expect(result).to.equal(15)
+    expect(result).toBe(15)
   })
   it('should return -22', () => {
     const result = solution(z)
-    expect(result).to.equal(-22)
+    expect(result).toBe(-22)
   })
   it('should return 10', () => {
     const result = solution(w)
-    expect(result).to.equal(10)
+    expect(result).toBe(10)
   })
 })

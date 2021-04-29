@@ -1,4 +1,3 @@
-const expect = require('chai').expect;
 const resolveAll = require('../9');
 
 describe('resolveAll', () => {
@@ -10,7 +9,7 @@ describe('resolveAll', () => {
         new Promise((res, rej) => res('b')),
       ])
         .then((result) => {
-          expect(result).to.deep.equal(['a', 'b']);
+          expect(result).toEqual(['a', 'b']);
         });
     }
   );
@@ -22,7 +21,7 @@ describe('resolveAll', () => {
         new Promise((res, rej) => res('b')),
         new Promise((res, rej) => rej('This reason shall fall on deaf ears')),
       ])
-        .catch((err) => expect(err).to.equal('I hereby reject thee!'));
+        .catch((err) => expect(err).toBe('I hereby reject thee!'));
     }
   );
 });

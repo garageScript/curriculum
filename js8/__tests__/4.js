@@ -1,4 +1,3 @@
-const expect = require('chai').expect;
 const solution = require('../4').solution;
 
 describe('max subtree', () => {
@@ -15,7 +14,7 @@ describe('max subtree', () => {
     b.right = e;
     c.right = f;
     const result = solution(a);
-    expect(result).to.equal(21);
+    expect(result).toBe(21);
   });
   it('should return 1st level left node value', () => {
     const a = {val: -5};
@@ -28,7 +27,7 @@ describe('max subtree', () => {
     b.left = d;
     b.right = e;
     const result = solution(a);
-    expect(result).to.equal(11);
+    expect(result).toBe(11);
   });
   it('should return top level right node value', () => {
     const a = {val: -5};
@@ -43,7 +42,7 @@ describe('max subtree', () => {
     b.right = e;
     c.right = f;
     const result = solution(a);
-    expect(result).to.equal(607);
+    expect(result).toBe(607);
   });
   it('should return mid level right node value', () => {
     const a = {val: -50};
@@ -58,6 +57,6 @@ describe('max subtree', () => {
     b.right = e;
     c.right = f;
     const result = solution(a);
-    expect(result).to.equal(601);
+    expect(result).toBe(601);
   });
 });

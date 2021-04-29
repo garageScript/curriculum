@@ -1,7 +1,6 @@
 /* global describe it */
 
-const expect = require('chai').expect
-const solution = require('../11').solution
+const solution = require('../11').solution;
 
 describe('write a function that normalizes an array of nested objects by returning an array of objects of each value property', () => {
   it('should return all key value pairs from an array of objects', () => {
@@ -15,7 +14,7 @@ describe('write a function that normalizes an array of nested objects by returni
 
     const expected = [ { 'value': 'value3' } ]
     const result = solution(input)
-    expect(result).to.deep.equal(expected)
+    expect(result).toEqual(expected)
   })
 
   it('should return an array of all key value pairs from the array of objects in the correct order', () => {
@@ -41,7 +40,7 @@ describe('write a function that normalizes an array of nested objects by returni
       { 'value': 'value6' }
     ]
     const result = solution(input)
-    expect(result).to.deep.equal(expected)
+    expect(result).toEqual(expected)
   })
 
   it('should return an array of all key value pairs in double layer objects in the correct order', () => {
@@ -73,7 +72,7 @@ describe('write a function that normalizes an array of nested objects by returni
       { 'value': 'value6' }
     ]
     const result = solution(input)
-    expect(result).to.deep.equal(expected)
+    expect(result).toEqual(expected)
   })
 
   it('should return an array of all key value pairs in multi-layer objects in the correct order', () => {
@@ -110,6 +109,6 @@ describe('write a function that normalizes an array of nested objects by returni
       { 'value': 'value5' }
     ]
     const result = solution(input)
-    expect(result).to.deep.equal(expected)
+    expect(result).toEqual(expected)
   })
 })

@@ -1,7 +1,6 @@
 /* global describe, it */
 
-const expect = require('chai').expect
-let solution = require('../5').solution
+let solution = require('../5').solution;
 
 const a = { v: 5 }
 const b = { v: 6 }
@@ -24,14 +23,14 @@ h.right = j
 describe('clone a linked list', () => {
   it('should return an array with 8,8,9', () => {
     const result = solution(a)
-    expect(result).to.deep.equal([{ v: 8 }, { v: 8 }, { v: 9 }])
+    expect(result).toEqual([{ v: 8 }, { v: 8 }, { v: 9 }])
   })
   it('should return an array with 10', () => {
     const result = solution(g)
-    expect(result).to.deep.equal([{ v: 10 }])
+    expect(result).toEqual([{ v: 10 }])
   })
   it('should return an array with 3 and 11', () => {
     const result = solution(h)
-    expect(result).to.deep.equal([{ v: 3 }, { v: 11 }])
+    expect(result).toEqual([{ v: 3 }, { v: 11 }])
   })
 })

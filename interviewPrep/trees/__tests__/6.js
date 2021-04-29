@@ -1,7 +1,6 @@
 /* global describe, it */
 
-const expect = require('chai').expect
-let solution = require('../6').solution
+let solution = require('../6').solution;
 
 const a = { v: 5 }
 const b = { v: 6 }
@@ -18,6 +17,8 @@ c.left = f
 describe('Change all left-most nodes to number', () => {
   it('should return {val: 5, left: {val:1, left: {val:1}, right: {val:8}}, right: {val: 7, left: {val:9}}}', () => {
     const result = solution(a, 1)
-    expect(a).to.deep.equal({ val: 5, left: { val: 1, left: { val: 1 }, right: { val: 8 } }, right: { val: 7, left: { val: 9 } } })
+    expect(a).toEqual(
+      { val: 5, left: { val: 1, left: { val: 1 }, right: { val: 8 } }, right: { val: 7, left: { val: 9 } } }
+    )
   })
 })

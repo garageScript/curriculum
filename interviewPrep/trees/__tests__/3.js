@@ -1,7 +1,6 @@
 /* global describe, it */
 
-const expect = require('chai').expect
-let solution = require('../3').solution
+let solution = require('../3').solution;
 
 const a = { val: 5 }
 const b = { val: 6 }
@@ -20,7 +19,7 @@ describe('Takes in a root node and function', () => {
     const result = solution(a, (val) => {
       return 5
     })
-    expect(a).to.deep.equal({
+    expect(a).toEqual({
       val: 5,
       left: {
         val: 5,
