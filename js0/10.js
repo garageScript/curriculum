@@ -8,7 +8,7 @@
  */
 
 const solution = (func1, func2) => {
-  return 0
+  return func1() + func2();
 }
 
 module.exports = {
