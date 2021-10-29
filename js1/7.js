@@ -8,8 +8,14 @@
  * @returns {boolean}
  */
 
-const solution = (inp, letter, i = 0) => {
-  return true
+ const solution = (inp, letter, i = 0, isFound = false) => {
+
+  if(i === inp.length || isFound) return isFound
+
+  if(inp[i] === letter) isFound = true
+
+  return solution(inp, letter, i + 1, isFound)
+
 }
 
 module.exports = {
