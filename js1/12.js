@@ -9,7 +9,12 @@
  * @returns null
  */
 
-const solution = (a, fun) => {
+ const solution = (a, fun) => {
+  setTimeout( () => { 
+    const b = fun()
+    setTimeout( () => {fun()
+   },b)
+  }, a)
 }
 
 module.exports = {
