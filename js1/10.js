@@ -17,8 +17,12 @@
  * @returns {function}
  */
 
-const solution = (str, fun) => {
-  return () => { }
+ const solution = (str, fun) => {
+  let i = 0
+  return () => {
+    if(i === str.length) i = 0
+    return fun(str[i++])
+  }
 }
 
 module.exports = {
