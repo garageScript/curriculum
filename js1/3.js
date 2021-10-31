@@ -7,8 +7,9 @@
  * @returns {string}
  */
 
-const solution = (num, str, result = '') => {
-  return ''
+ const solution = (num, str, counter = 0, result = '') => {
+  if(counter >= num) return result
+  return solution(num, str, counter + 1, result + str)
 }
 
 module.exports = {
