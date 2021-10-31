@@ -7,7 +7,12 @@
  * @returns null
  */
 
-const solution = (num, fun) => {
+const solution = (num, fun, counter = 0) => {
+
+  if(counter >= num) return null
+  fun()
+  return solution(num, fun, counter + 1)
+  
 }
 
 module.exports = {
