@@ -1,4 +1,17 @@
 /**
+ * This helper function adds 0 to the array
+ * @param {array} col 
+ * @param {number} y 
+ * @param {array} colResult 
+ * @returns {array}
+ */
+const addColElems = (col, y=0, colResult = []) =>{
+  if(y >= col) return colResult
+  colResult.push(0)
+  return addColElems(col,y+1,colResult)
+}
+
+/**
  * Write a function called solution that
  *   Takes in 2 numbers and
  *   returns an array with the length equal to the first input number.
@@ -11,12 +24,6 @@
  * @param {array} result 
  * @returns {array}
  */
-const addColElems = (col, y=0, colResult = []) =>{
-  if(y >= col) return colResult
-  colResult.push(0)
-  return addColElems(col,y+1,colResult)
-}
-
 const solution = (row, col, i = 0, result = []) => {
   if(i >= row) return result
   result.push(addColElems(col))
