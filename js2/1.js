@@ -9,8 +9,10 @@
  * @returns {array}
  */
 
-const solution = (num) => {
-  return []
+const solution = (num, i = 0, result = []) => {
+  if(i >= num) return result
+  result.push(i)
+  return solution(num, i+1, result)
 }
 
 module.exports = {
