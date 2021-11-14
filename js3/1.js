@@ -5,7 +5,11 @@
  */
 
 const solution = (arr, obj) => {
-  return []
+  return arr.map(e => {
+    if(obj.hasOwnProperty(e)) return obj[e]
+  }).filter((e)=> {
+    return (e || typeof(e) === 'boolean')
+  })
 }
 
 module.exports = {
