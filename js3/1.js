@@ -6,7 +6,7 @@
 
 const solution = (arr, obj) => {
   return arr.reduce((values, e) => {
-    if((obj[e] && obj.hasOwnProperty(e)) || typeof(obj[e]) === 'boolean'){
+    if((obj.hasOwnProperty(e))){
       values.push(obj[e])
     }
     return values
