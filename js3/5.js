@@ -7,9 +7,7 @@
 
 const solution = (obj1, obj2) => {
 
-  const obj1Entries = Object.entries(obj1)
-  
-  return obj1Entries.reduce((result, e) => {
+  return Object.entries(obj1).reduce((result, e) => {
     if(obj2.hasOwnProperty(e[0])) result[e[0]] = obj2[e[0]](e[1])
     else{ result[e[0]] = e[1] }
     return result
