@@ -9,6 +9,13 @@
 
 const solution = (obj, num) => {
 
+  const objArr = Object.entries(obj)
+  objArr.forEach((e, i)=>{
+    setTimeout(()=>{
+      e[1](e[0])
+    },num * i)
+  })
+
 }
 
 module.exports = {
