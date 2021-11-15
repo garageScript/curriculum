@@ -6,7 +6,11 @@
 
 const solution = () => {
   Object.prototype.map = function (cb) {
-    return []
+    const arr = Object.entries(this)
+    if(arr === []) return arr
+    return arr.map((e,i)=>{
+        return cb(e[0], e[1], i)
+    })
   }
 }
 
