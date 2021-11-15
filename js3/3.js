@@ -6,6 +6,10 @@
 
 const solution = (arr) => {
   return (obj) => {
+    return arr.reduce((result, e)=>{
+      if(obj.hasOwnProperty(e)) result[e] = obj[e]
+      return result
+    }, {})
   }
 }
 
