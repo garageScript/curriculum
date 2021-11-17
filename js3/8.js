@@ -10,11 +10,12 @@
 const solution = (obj, num) => {
 
   const objArr = Object.entries(obj)
-  objArr.forEach((e, i)=>{
-    setTimeout(()=>{
-      e[1](e[0])
-    },num * i)
-  })
+  const callEach = (i = 0) => {
+    if(i === objArr.length) return
+    objArr[i][1](objArr[i][0])
+    setTimeout(()=>{callEach(i+1)}, num)
+  }
+  callEach()
 
 }
 
