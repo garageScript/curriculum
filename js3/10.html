@@ -14,14 +14,20 @@
 
   
 <script>
+
   const btnPrevious = document.querySelector('.btn--previous')
   const btnNext = document.querySelector('.btn--next')
   const pokeList = document.querySelector('.container--pokeList')
   let currentURL = 'https://pokeapi.co/api/v2/pokemon/'
-  btnPrevious.onclick = () =>{
-    fetch(currentURL).then(res=>{
+
+  const fetchPokemon = () => {
+    return fetch(currentURL).then(res=>{
       return res.json()
     })
+  }
+
+  btnPrevious.onclick = () =>{
+    fetchPokemon()
     .then(data => {
       if(data.previous !=null){
         currentURL = data.previous
@@ -29,30 +35,26 @@
       }
     })
   }
+
   btnNext.onclick = () =>{
-    fetch(currentURL).then(res=>{
-      return res.json()
-    })
+    fetchPokemon()
     .then(data => {
       if(data.next != null){
       currentURL = data.next
       app()
       }
-      
     })
   }
+  
   const app = () =>{
-    console.log(currentURL)
-    fetch(currentURL).then(res=>{
-      return res.json()
-    })
+    fetchPokemon()
     .then(data => {
       const fetchPromises = data.results.map(pokemon => {
-      return fetch(pokemon.url).then(pokeRes => {
-        return pokeRes.json()
+        return fetch(pokemon.url).then(pokeRes => {
+          return pokeRes.json()
+        })
       })
-    })
-    return Promise.all(fetchPromises)
+      return Promise.all(fetchPromises)
     })
     .then(dataList =>{
       return dataList.reduce((acc,pokemon) => {
@@ -65,6 +67,8 @@
   }
 
   app()
+
+
 </script>
 </body>
 </html>
