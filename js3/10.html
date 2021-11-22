@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<button class = 'btn--previous'>Previous</button>
+<button class = 'btn--next'>Next</button>
+<div class = 'container--pokeList'>
+</div>
+
+  
+<script>
+
+  const btnPrevious = document.querySelector('.btn--previous')
+  const btnNext = document.querySelector('.btn--next')
+  const pokeList = document.querySelector('.container--pokeList')
+  let currentData = null
+  let currentURL = null
+  const baseURL = 'https://pokeapi.co/api/v2/pokemon/'
+
+  const fetchPokemon = (url = baseURL) => {
+    currentURL = url
+    return fetch(url).then(res=>{
+      return res.json()
+    })
+  }
+
+  btnPrevious.onclick = () =>{
+    currentData
+    .then(data => {
+      if(data.previous != null){
+        render(fetchPokemon(data.previous))
+      }
+    })
+  }
+
+  btnNext.onclick = () => {
+    currentData
+    .then(data => {
+      if(data.next != null){
+        render(fetchPokemon(data.next))
+      }
+    })
+  }
+  
+  const render = (pokePromise) =>{
+    currentData = pokePromise
+    pokePromise
+    .then(data => {
+      const fetchPromises = data.results.map(pokemon => {
+        return fetch(pokemon.url).then(pokeRes => {
+          return pokeRes.json()
+        })
+      })
+      return Promise.all(fetchPromises)
+    })
+    .then(dataList =>{
+      return dataList.reduce((acc,pokemon) => {
+        return acc + `<div><p>${pokemon.name}</p><img src="${pokemon.sprites.front_default}"/></div>`
+      },'')
+    })
+    .then(pokeString =>{
+      pokeList.innerHTML=`${pokeString}`
+    })
+  }
+
+  render(fetchPokemon())
+
+
+</script>
+</body>
+</html>
