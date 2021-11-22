@@ -6,8 +6,15 @@
  * @returns {boolean}
  */
 
-const solution = (arr, num) => {
-  return true
+const solution = (arr, num) =>{
+  const answer = arr.reduce((result,e)=>{
+    if(result[0][num - e]) result[1] = true
+    result[0][e] = true
+    return result
+  },[{}, false])
+
+  return answer[1]
+
 }
 
 module.exports = {
