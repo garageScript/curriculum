@@ -12,10 +12,26 @@
  * @return {array} arr
  */
 
-const solution = (num1, num2) => {
-  return []
-}
-
+  const solution = (num1, num2) => {
+    function Object(j,i){
+      this.x = j
+      this.y = i
+    }
+  
+    const createCols = (i, j = 0, result = []) =>{
+      if(j === num2) return result
+      result.push(new Object(j, i))
+      return createCols(i, j + 1, result)
+    }
+  
+    const createGrid = (i=0, result = []) => {
+      if(i === num1) return result
+      result.push(createCols(i))
+      return createGrid(i + 1, result)
+    }
+   
+    return createGrid()
+  }
 module.exports = {
   solution
 }
