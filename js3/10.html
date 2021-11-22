@@ -18,6 +18,7 @@
   const btnPrevious = document.querySelector('.btn--previous')
   const btnNext = document.querySelector('.btn--next')
   const pokeList = document.querySelector('.container--pokeList')
+  let currentData = null
   let currentURL = null
   const baseURL = 'https://pokeapi.co/api/v2/pokemon/'
 
@@ -29,7 +30,7 @@
   }
 
   btnPrevious.onclick = () =>{
-    fetchPokemon(currentURL)
+    currentData
     .then(data => {
       if(data.previous != null){
         render(fetchPokemon(data.previous))
@@ -38,7 +39,7 @@
   }
 
   btnNext.onclick = () => {
-    fetchPokemon(currentURL)
+    currentData
     .then(data => {
       if(data.next != null){
         render(fetchPokemon(data.next))
@@ -47,6 +48,7 @@
   }
   
   const render = (pokePromise) =>{
+    currentData = pokePromise
     pokePromise
     .then(data => {
       const fetchPromises = data.results.map(pokemon => {
