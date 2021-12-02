@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container--smart-watch">
+      <div class="container--watch-face">
+        <iframe
+          class="map"
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6630.858279741426!2d-117.999307!3d33.801237!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dd2926c2e00ff9%3A0x313272fdbeae2cac!2sJack%20in%20the%20Box!5e0!3m2!1sen!2sus!4v1638421086545!5m2!1sen!2sus"
+          width="800"
+          height="600"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+        <div class="container--date-display unclicked">
+          <div class="container--time">
+            <p class="time"></p>
+          </div>
+          <div class="container--date">
+            <h2 class="day"></h2>
+            <h2 class="date"></h2>
+          </div>
+        </div>
+      </div>
+      <img
+        class="watch"
+        src="https://c0d3.com/challenges/assets/watch.jpg"
+        alt="A picture of a watch"
+      />
+    </div>
+  </body>
+  <style>
+    .container--smart-watch {
+      bottom: 0;
+      left: 0;
+      position: fixed;
+    }
+
+    .watch {
+      position: relative;
+      z-index: 0;
+    }
+    .container--watch-face {
+      border-radius: 50%;
+      bottom: 25.5%;
+      height: 400px;
+      left: 18.3%;
+      overflow: hidden;
+      position: absolute;
+      text-align: center;
+      width: 400px;
+      z-index: 3;
+    }
+
+    .map {
+      bottom: 120px;
+      position: relative;
+      right: 200px;
+    }
+
+    .container--date-display {
+      background: white;
+      bottom: 0px;
+      display: flex;
+      height: 200px;
+      justify-content: center;
+      position: absolute;
+      right: 0px;
+      width: 400px;
+      z-index: 10;
+      transition-timing-function: linear;
+      transition: linear 0.3s;
+    }
+
+    .time {
+      font-size: 5em;
+      font-weight: 600;
+      margin-top: 30px;
+      margin-bottom: 0px;
+    }
+
+    .clicked {
+      position: absolute;
+      height: 400px;
+      width: 400px;
+      left: 0px;
+      bottom: 0px;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .clicked .container--time {
+      width: 400px;
+    }
+    .clicked .container--date {
+      border-top: 1px solid black;
+      width: 400px;
+    }
+    .clicked .time {
+      margin-bottom: 30px;
+    }
+    .unclicked .container--time {
+      border-bottom: 1px solid black;
+      height: 190px;
+    }
+
+    .unclicked .container--date {
+      display: none;
+    }
+  </style>
+  <script>
+    const dateDisplay = document.querySelector(".container--date-display");
+    const time = document.querySelector(".time");
+    const date = document.querySelector(".date");
+    const day = document.querySelector(".day");
+    const optionsDate = {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    };
+    const optionsWeekday = {
+      weekday: "long",
+    };
+    const optionsTime = {
+      hour12: false,
+    };
+    let thisSecond = 0;
+    let clicked = false;
+
+    /**
+     * Add event listener to the watch. If the watch time window is clicked it will take
+     * the full screen of the watch
+     */
+    dateDisplay.addEventListener("click", () => {
+      if (!clicked) {
+        dateDisplay.classList.remove("unclicked");
+        dateDisplay.classList.add("clicked");
+        clicked = true;
+      } else {
+        dateDisplay.classList.remove("clicked");
+        dateDisplay.classList.add("unclicked");
+        clicked = false;
+      }
+    });
+
+    /**
+     * This function gets the time
+     */
+    const getTime = () => {
+      const thisDate = new Date();
+      let thisTime = `${thisDate.getHours() % 12}:`;
+      if (parseInt(thisDate.getMinutes()) < 10) thisTime += `0`;
+      time.innerText = thisTime + `${thisDate.getMinutes()}`;
+
+      day.innerText = thisDate.toLocaleString("en-US", optionsWeekday);
+      date.innerText = thisDate.toLocaleString("en-US", optionsDate);
+      thisSecond = thisDate.getSeconds();
+    };
+
+    //getTime when the program is run
+    getTime();
+
+    //update the time every minute
+    setInterval(getTime, 1000 * (60 - thisSecond));
+  </script>
+</html>
