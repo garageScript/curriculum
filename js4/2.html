@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container-star"></div>
+    <p class="text">You are giving 0 Stars!</p>
+  </body>
+  <style>
+    .fa {
+      color: yellow;
+      -webkit-text-stroke-width: 4px;
+      -webkit-text-stroke-color: black;
+    }
+    .fa-star {
+      font-size: 40px;
+    }
+  </style>
+  <script>
+    const maxStars = 5;
+    const starContainer = document.querySelector(".container-star");
+    const starArray = [];
+    const starMap = {};
+    let clicked = false;
+    let leftDiv = false;
+    starContainer.addEventListener("mouseleave", () => {
+      if (clicked) {
+        leftDiv = true;
+      }
+    });
+    /**
+     * This function creates a mapping with the star's class as the key and the number as the value
+     * Ex: Star1: 1,
+     *     Star2: 2,
+     *     Star3: 3,
+     *     Star4: 4,
+     *     Star5: 5
+     * @param {number} num
+     * @param {number} i
+     * */
+    const createStarMap = (num, i = 1) => {
+      if (i > num) return;
+      starMap[`star${i}`] = i;
+      createStarMap(num, i + 1);
+    };
+    /**
+     * This function creates the array of stars
+     * @param {number} i
+     * */
+    const createStarArray = (i = 1) => {
+      if (i > maxStars) return;
+      starArray.push({
+        class: `star${i}`,
+      });
+      createStarArray(i + 1);
+    };
+    /**
+     * This function changes the color of the star. If the user enters a star with the mouse it will
+     * change the color of the stars up until the one hovered. The other stars will be white
+     * @param {number} num
+     * @param {number} i
+     * */
+    const changeColors = (num, i = 1, defaultColor = "") => {
+      const thisStar = document.querySelector(`.star${i}`);
+      if (i > maxStars) return;
+      if (i <= num) {
+        thisStar.classList.add("fa");
+      } else if (thisStar.classList.contains("fa"))
+        thisStar.classList.remove("fa");
+
+      changeColors(num, i + 1);
+    };
+    /**
+     * This function creates the stars on the HTML page
+     *
+     * */
+    const renderStars = () => {
+      const text = document.querySelector(".text");
+      starContainer.innerHTML = starArray.reduce((acc, e) => {
+        return acc + `<i class="far fa-star ${e.class}"></i>`;
+      }, "");
+      starArray.forEach((e) => {
+        let thisStarClicked = false;
+        const thisStar = document.querySelector(`.${e.class}`);
+        thisStar.addEventListener("mouseenter", () => {
+          if (!clicked || leftDiv) {
+            changeColors(parseInt(starMap[e.class]));
+            text.innerText = `You are giving ${starMap[e.class]} Stars!`;
+          }
+        });
+        thisStar.addEventListener("click", () => {
+          thisStarClicked = !thisStarClicked;
+          if (thisStarClicked) {
+            changeColors(parseInt(starMap[e.class]));
+          }
+          clickedStar = e;
+          clicked = !clicked;
+          leftDiv = false;
+          text.innerText = `You have given ${starMap[e.class]} Stars!`;
+        });
+      });
+    };
+    /**
+     * This function starts the app
+     * */
+    const app = () => {
+      createStarMap(maxStars);
+      createStarArray();
+      renderStars();
+    };
+
+    //run the app
+    app();
+  </script>
+</html>
