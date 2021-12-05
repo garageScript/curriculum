@@ -33,18 +33,18 @@
     const starArray = [];
     let clicked = false;
     let leftDiv = false;
-
-    function Star(starClass, num) {
-      this.class = starClass;
-      this.num = num;
-
-      this.color = (color = "white") => {
+    class Star {
+      constructor(starClass, num) {
+        this.class = starClass;
+        this.num = num;
+      }
+      color(color = "white") {
         const thisStar = document.querySelector(`.${this.class}`);
         if (color === "yellow") {
           thisStar.classList.add("fa");
         } else if (thisStar.classList.contains("fa"))
           thisStar.classList.remove("fa");
-      };
+      }
     }
     const addStarContainerListener = () => {
       starContainer.addEventListener("mouseleave", () => {
