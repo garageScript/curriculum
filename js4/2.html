@@ -28,30 +28,30 @@
   </style>
   <script>
     const maxStars = 5;
+    const text = document.querySelector(".text");
     const starContainer = document.querySelector(".container-star");
     const starArray = [];
-    const starMap = {};
     let clicked = false;
     let leftDiv = false;
-    starContainer.addEventListener("mouseleave", () => {
-      if (clicked) {
-        leftDiv = true;
-      }
-    });
-    /**
-     * This function creates a mapping with the star's class as the key and the number as the value
-     * Ex: Star1: 1,
-     *     Star2: 2,
-     *     Star3: 3,
-     *     Star4: 4,
-     *     Star5: 5
-     * @param {number} num
-     * @param {number} i
-     * */
-    const createStarMap = (num, i = 1) => {
-      if (i > num) return;
-      starMap[`star${i}`] = i;
-      createStarMap(num, i + 1);
+
+    function Star(starClass, num) {
+      this.class = starClass;
+      this.num = num;
+
+      this.color = (color = "white") => {
+        const thisStar = document.querySelector(`.${this.class}`);
+        if (color === "yellow") {
+          thisStar.classList.add("fa");
+        } else if (thisStar.classList.contains("fa"))
+          thisStar.classList.remove("fa");
+      };
+    }
+    const addStarContainerListener = () => {
+      starContainer.addEventListener("mouseleave", () => {
+        if (clicked) {
+          leftDiv = true;
+        }
+      });
     };
     /**
      * This function creates the array of stars
@@ -59,26 +59,8 @@
      * */
     const createStarArray = (i = 1) => {
       if (i > maxStars) return;
-      starArray.push({
-        class: `star${i}`,
-      });
+      starArray.push(new Star(`star${i}`, i));
       createStarArray(i + 1);
-    };
-    /**
-     * This function changes the color of the star. If the user enters a star with the mouse it will
-     * change the color of the stars up until the one hovered. The other stars will be white
-     * @param {number} num
-     * @param {number} i
-     * */
-    const changeColors = (num, i = 1, defaultColor = "") => {
-      const thisStar = document.querySelector(`.star${i}`);
-      if (i > maxStars) return;
-      if (i <= num) {
-        thisStar.classList.add("fa");
-      } else if (thisStar.classList.contains("fa"))
-        thisStar.classList.remove("fa");
-
-      changeColors(num, i + 1);
     };
     /**
      * This function creates the stars on the HTML page
@@ -89,24 +71,41 @@
       starContainer.innerHTML = starArray.reduce((acc, e) => {
         return acc + `<i class="far fa-star ${e.class}"></i>`;
       }, "");
+    };
+    /**
+     * This function changes the colors of the stars
+     * */
+    const changeColors = (color, num) => {
+      starArray.forEach((e) => {
+        if (parseInt(e.num) > parseInt(num)) {
+          e.color("white");
+        } else {
+          e.color(color);
+        }
+      });
+    };
+    /**
+     * This function adds the mouseenter and click listeners to each star
+     * */
+    const addStarListeners = () => {
       starArray.forEach((e) => {
         let thisStarClicked = false;
         const thisStar = document.querySelector(`.${e.class}`);
         thisStar.addEventListener("mouseenter", () => {
           if (!clicked || leftDiv) {
-            changeColors(parseInt(starMap[e.class]));
-            text.innerText = `You are giving ${starMap[e.class]} Stars!`;
+            changeColors("yellow", e.num);
+            text.innerText = `You are giving ${e.num} Stars!`;
           }
         });
         thisStar.addEventListener("click", () => {
           thisStarClicked = !thisStarClicked;
           if (thisStarClicked) {
-            changeColors(parseInt(starMap[e.class]));
+            changeColors("yellow", e.num);
           }
           clickedStar = e;
           clicked = !clicked;
           leftDiv = false;
-          text.innerText = `You have given ${starMap[e.class]} Stars!`;
+          text.innerText = `You have given ${e.num} Stars!`;
         });
       });
     };
@@ -114,11 +113,11 @@
      * This function starts the app
      * */
     const app = () => {
-      createStarMap(maxStars);
+      addStarContainerListener();
       createStarArray();
       renderStars();
+      addStarListeners();
     };
-
     //run the app
     app();
   </script>
