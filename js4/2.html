@@ -37,6 +37,29 @@
       constructor(starClass, num) {
         this.class = starClass;
         this.num = num;
+        this.isClicked = false;
+        //append the star to Star container
+        const starObject = document.createElement("i");
+        starObject.classList.add("far", "fa-star", `${this.class}`);
+        starContainer.append(starObject);
+        //add mouse enter listener
+        const thisStar = document.querySelector(`.${this.class}`);
+        thisStar.addEventListener("mouseenter", () => {
+          if (!clicked || leftDiv) {
+            changeColors("yellow", this.num);
+            text.innerText = `You are giving ${this.num} Stars!`;
+          }
+        });
+        //add click listener
+        thisStar.addEventListener("click", () => {
+          this.isClicked = !this.isClicked;
+          if (this.isClicked) {
+            changeColors("yellow", this.num);
+          }
+          clicked = !clicked;
+          leftDiv = false;
+          text.innerText = `You have given ${this.num} Stars!`;
+        });
       }
       color(color = "white") {
         const thisStar = document.querySelector(`.${this.class}`);
@@ -62,16 +85,7 @@
       starArray.push(new Star(`star${i}`, i));
       createStarArray(i + 1);
     };
-    /**
-     * This function creates the stars on the HTML page
-     *
-     * */
-    const renderStars = () => {
-      const text = document.querySelector(".text");
-      starContainer.innerHTML = starArray.reduce((acc, e) => {
-        return acc + `<i class="far fa-star ${e.class}"></i>`;
-      }, "");
-    };
+
     /**
      * This function changes the colors of the stars
      * */
@@ -84,39 +98,13 @@
         }
       });
     };
-    /**
-     * This function adds the mouseenter and click listeners to each star
-     * */
-    const addStarListeners = () => {
-      starArray.forEach((e) => {
-        let thisStarClicked = false;
-        const thisStar = document.querySelector(`.${e.class}`);
-        thisStar.addEventListener("mouseenter", () => {
-          if (!clicked || leftDiv) {
-            changeColors("yellow", e.num);
-            text.innerText = `You are giving ${e.num} Stars!`;
-          }
-        });
-        thisStar.addEventListener("click", () => {
-          thisStarClicked = !thisStarClicked;
-          if (thisStarClicked) {
-            changeColors("yellow", e.num);
-          }
-          clickedStar = e;
-          clicked = !clicked;
-          leftDiv = false;
-          text.innerText = `You have given ${e.num} Stars!`;
-        });
-      });
-    };
+
     /**
      * This function starts the app
      * */
     const app = () => {
       addStarContainerListener();
       createStarArray();
-      renderStars();
-      addStarListeners();
     };
     //run the app
     app();
