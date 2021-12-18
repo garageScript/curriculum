@@ -5,9 +5,79 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      body {
+        margin: 0px;
+      }
+      .container--kanban {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        margin: 30px;
+      }
+      .container--elements {
+        display: flex;
+        flex-direction: column;
+      }
+      .module {
+        flex: 1;
+      }
+      .module__title {
+        text-align: center;
+        color: white;
+        padding: 15px;
+      }
+      .container--submit {
+        display: flex;
+        width: 100%;
+        height: 100px;
+      }
+      .submit__input {
+        flex: 1;
+      }
+      .module__title--toDo {
+        background-color: #35235d;
+      }
+      .module__title--doing {
+        background-color: #cb2402;
+      }
+      .module__title--done {
+        background-color: #4c49a2;
+      }
+      .module__title--approved {
+        background-color: #a31a48;
+      }
+      .module__element {
+        background-color: lightgrey;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+        width: 100%;
+        margin-bottom: 5px;
+      }
+      .element__btn {
+        background-color: lightgrey;
+        border-style: none;
+      }
+      .element__btn:hover{
+        background-color: rgb(194, 193, 193);   
+      }
+      .element__text {
+        padding: 10px;
+        margin: 0;
+        flex: 1;
+      }
+      .container--undo{
+        display: flex;
+        justify-content: center;
+      }
+      .btn--undo{
+        padding: 20px;
+      }
+    </style>
   </head>
   <body>
-   
     <div class="container--kanban">
       <div class="module">
         <div class="module__title module__title--toDo">To-Do</div>
@@ -46,72 +116,8 @@
         </div>
       </div>
     </div>
+    <div class="container--undo"><button class = "btn--undo">Undo</button></div>
   </body>
-  <style>
-    body {
-      margin: 0px;
-    }
-    .container--kanban {
-      display: flex;
-      justify-content: space-between;
-      gap: 30px;
-      margin: 30px;
-    }
-    .container--elements {
-      display: flex;
-      flex-direction: column;
-    }
-    .module {
-      flex: 1;
-    }
-    .module__title {
-      text-align: center;
-      color: white;
-      padding: 15px;
-    }
-    .container--submit {
-      display: flex;
-      width: 100%;
-      height: 100px;
-    }
-    .submit__input {
-      flex: 1;
-    }
-    .module__title--toDo {
-      background-color: #35235d;
-    }
-    .module__title--doing {
-      background-color: #cb2402;
-    }
-    .module__title--done {
-      background-color: #4c49a2;
-    }
-    .module__title--approved {
-      background-color: #a31a48;
-    }
-    .module__element {
-      background-color: lightgrey;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-content: center;
-      width: 100%;
-      margin-bottom: 5px;
-    }
-    .element__btn {
-      background-color: lightgrey;
-      border-style: none;
-    }
-    .element__btn:hover{
-      background-color: rgb(194, 193, 193);   
-    }
-    .element__text {
-      padding: 10px;
-      margin: 0;
-      flex: 1;
-    }
-  </style>
-
   <script>
     const submitInputToDo = document.querySelector(".submit__input--toDo");
     const submitInputDoing = document.querySelector(".submit__input--doing");
@@ -124,7 +130,9 @@
     const submitBtnDone = document.querySelector(".submit__btn--done");
     const submitBtnApproved = document.querySelector(".submit__btn--approved");
     const containerElements = document.querySelector(".container--elements");
-    let kanbanData = [[],[],[],[]]
+    const btnUndo = document.querySelector(".btn--undo")
+    const kanbanData = [[],[],[],[]]
+    let kanbanStateArray = []
     class Element {
       constructor(type, text, index) {
         this.text = text;
@@ -146,12 +154,12 @@
         const thisElement = document.createElement("div");
         thisElement.classList.add("module__element");
         thisElement.classList.add(`${this.text}`);
-        //create undo button for non toDo Elements
-        const thisBtnUndo = document.createElement("button");
+        //create left button for non toDo Elements
+        const thisBtnLeft = document.createElement("button");
         if(this.type != "toDo"){
-          thisBtnUndo.classList.add("element__btn");
-          thisBtnUndo.append("<");
-          thisElement.append(thisBtnUndo)
+          thisBtnLeft.classList.add("element__btn");
+          thisBtnLeft.append("<");
+          thisElement.append(thisBtnLeft)
         }
         thisElement.append(thisP, thisBtn);
         //append the Element to the container of elements
@@ -181,6 +189,7 @@
              break;
           }
           localStorage.setItem("kanbanData", JSON.stringify(kanbanData))
+          kanbanStateArray.push(JSON.stringify(kanbanData))
         })
         //add event listener to remove module elements
         thisP.addEventListener("click",()=>{
@@ -202,9 +211,10 @@
             }
           }
           localStorage.setItem("kanbanData", JSON.stringify(kanbanData))
+          kanbanStateArray.push(JSON.stringify(kanbanData))
         })
-        //Add event Listener to Undo module elements
-        thisBtnUndo.addEventListener("click",()=>{
+        //Add event Listener to move module elements left
+        thisBtnLeft.addEventListener("click",()=>{
           thisSpecifier.remove();
           switch (this.type){
            case "doing":
@@ -221,31 +231,10 @@
              break;
           }
           localStorage.setItem("kanbanData", JSON.stringify(kanbanData))
+          kanbanStateArray.push(JSON.stringify(kanbanData))
         })
       }
     }
-
-    submitBtnToDo.addEventListener("click", () => {
-      kanbanData[0].push(new Element("toDo", submitInputToDo.value,kanbanData[0].length));
-      localStorage.setItem("kanbanData", JSON.stringify(kanbanData))
-      submitInputToDo.value = ""
-    });
-    submitBtnDoing.addEventListener("click", () => {
-      kanbanData[1].push(new Element("doing", submitInputDoing.value,kanbanData[1].length));
-      localStorage.setItem("kanbanData", JSON.stringify(kanbanData));
-      submitInputDoing.value = ""
-    });
-    submitBtnDone.addEventListener("click", () => {
-      kanbanData[2].push(new Element("done", submitInputDone.value,kanbanData[2].length))
-      localStorage.setItem("kanbanData", JSON.stringify(kanbanData));
-      submitInputDone.value = ""
-    });
-    submitBtnApproved.addEventListener("click", () => {
-      kanbanData[3].push(new Element("approved", submitInputApproved.value,kanbanData[3].length));
-      localStorage.setItem("kanbanData", JSON.stringify(kanbanData));
-      submitInputApproved.value = ""
-    });
-
     renderData = (data) =>{
       data.forEach((thisModule,i)=>{
         if(thisModule){ 
@@ -256,8 +245,53 @@
       })
     }
 
+    submitBtnToDo.addEventListener("click", () => {
+      kanbanData[0].push(new Element("toDo", submitInputToDo.value,kanbanData[0].length));
+      localStorage.setItem("kanbanData", JSON.stringify(kanbanData))
+      kanbanStateArray.push(JSON.stringify(kanbanData))
+      submitInputToDo.value = ""
+    });
+    submitBtnDoing.addEventListener("click", () => {
+      kanbanData[1].push(new Element("doing", submitInputDoing.value,kanbanData[1].length));
+      localStorage.setItem("kanbanData", JSON.stringify(kanbanData));
+      kanbanStateArray.push(JSON.stringify(kanbanData))
+      submitInputDoing.value = ""
+    });
+    submitBtnDone.addEventListener("click", () => {
+      kanbanData[2].push(new Element("done", submitInputDone.value,kanbanData[2].length))
+      localStorage.setItem("kanbanData", JSON.stringify(kanbanData));
+      kanbanStateArray.push(JSON.stringify(kanbanData))
+      submitInputDone.value = ""
+    });
+    submitBtnApproved.addEventListener("click", () => {
+      kanbanData[3].push(new Element("approved", submitInputApproved.value,kanbanData[3].length));
+      localStorage.setItem("kanbanData", JSON.stringify(kanbanData));
+      kanbanStateArray.push(JSON.stringify(kanbanData))
+      submitInputApproved.value = ""
+    });
+    btnUndo.addEventListener("click", ()=>{
+      //the kanbanStateArray[0] will always be the state when of the kanban when refreshed
+      if(kanbanStateArray.length > 1){
+        //remove all moduleElements from the HTML object
+        const moduleElements = document.querySelectorAll(".module__element")
+        moduleElements.forEach(thisElement => thisElement.remove());
+        //remove the last update stored in the state array
+        kanbanStateArray.pop();
+        //access the last element of the stateArray(after popping)
+        const temp = kanbanStateArray[kanbanStateArray.length - 1]
+        //store the last element of the stateArray in local storage
+        localStorage.setItem("kanbanData", temp);
+        //render the last element of the stateArray
+        renderData(JSON.parse(temp))
+      }
+    })
+
+
+
     const startApp = () => {
+      kanbanStateArray = []
       const data = (localStorage.getItem('kanbanData') || '[[],[],[],[]]')
+      kanbanStateArray.push(data)
       renderData(JSON.parse(data))  
     }
 
