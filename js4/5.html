@@ -131,12 +131,13 @@
     const submitBtnApproved = document.querySelector(".submit__btn--approved");
     const containerElements = document.querySelector(".container--elements");
     const btnUndo = document.querySelector(".btn--undo")
-    const kanbanData = [[],[],[],[]]
-    let kanbanStateArray = []
+    let kanbanData = [[],[],[],[]]
+    const kanbanStateArray = []
     class Element {
       constructor(type, text, index) {
         this.text = text;
-        this.type = type; 
+        this.type = type;
+        this.reference = type + index;
         this.container = `.container--elements-${type}`;
         this.index = index;
         this.render()
@@ -153,7 +154,7 @@
         //create an Element container and add thisP and thisBtn
         const thisElement = document.createElement("div");
         thisElement.classList.add("module__element");
-        thisElement.classList.add(`${this.text}`);
+        thisElement.classList.add(`${this.reference}`);
         //create left button for non toDo Elements
         const thisBtnLeft = document.createElement("button");
         if(this.type != "toDo"){
@@ -166,7 +167,7 @@
         const thisContainer = document.querySelector(this.container);
         thisContainer.append(thisElement);
         //create a variable to specify this element for the eventListeners
-        const thisSpecifier = document.querySelector(`.${this.text}`)
+        const thisSpecifier = document.querySelector(`.${this.reference}`)
 
         //add event listener if the Element forwards button is clicked
         thisBtn.addEventListener("click",()=>{
@@ -175,21 +176,25 @@
            case "toDo":
              kanbanData[1].push(new Element("doing",this.text,kanbanData[1].length))
              kanbanData[0].splice(this.index,1)
+             console.log(kanbanData)
              break;
            case "doing":
              kanbanData[2].push(new Element("done",this.text,kanbanData[2].length))
              kanbanData[1].splice(this.index,1)
+             console.log(kanbanData)
              break;
            case "done":
              kanbanData[3].push(new Element("approved",this.text,kanbanData[3].length))
              kanbanData[2].splice(this.index,1)
+             console.log(kanbanData)
              break;
            case "approved":
              kanbanData[3].splice(this.index,1)
+             console.log(kanbanData)
              break;
           }
           localStorage.setItem("kanbanData", JSON.stringify(kanbanData))
-          kanbanStateArray.push(JSON.stringify(kanbanData))
+          kanbanStateArray.push(localStorage.getItem("kanbanData"))
         })
         //add event listener to remove module elements
         thisP.addEventListener("click",()=>{
@@ -211,7 +216,7 @@
             }
           }
           localStorage.setItem("kanbanData", JSON.stringify(kanbanData))
-          kanbanStateArray.push(JSON.stringify(kanbanData))
+          kanbanStateArray.push(localStorage.getItem("kanbanData"))
         })
         //Add event Listener to move module elements left
         thisBtnLeft.addEventListener("click",()=>{
@@ -220,18 +225,21 @@
            case "doing":
              kanbanData[0].push(new Element("toDo",this.text,kanbanData[0].length))
              kanbanData[1].splice(this.index,1)
+             console.log(kanbanData)
              break;
            case "done":
              kanbanData[1].push(new Element("doing",this.text,kanbanData[1].length))
              kanbanData[2].splice(this.index,1)
+             console.log(kanbanData)
              break;
            case "approved":
              kanbanData[2].push(new Element("done",this.text,kanbanData[2].length))
              kanbanData[3].splice(this.index,1)
+             console.log(kanbanData)
              break;
           }
           localStorage.setItem("kanbanData", JSON.stringify(kanbanData))
-          kanbanStateArray.push(JSON.stringify(kanbanData))
+          kanbanStateArray.push(localStorage.getItem("kanbanData"))
         })
       }
     }
@@ -248,25 +256,25 @@
     submitBtnToDo.addEventListener("click", () => {
       kanbanData[0].push(new Element("toDo", submitInputToDo.value,kanbanData[0].length));
       localStorage.setItem("kanbanData", JSON.stringify(kanbanData))
-      kanbanStateArray.push(JSON.stringify(kanbanData))
+      kanbanStateArray.push(localStorage.getItem("kanbanData"))
       submitInputToDo.value = ""
     });
     submitBtnDoing.addEventListener("click", () => {
       kanbanData[1].push(new Element("doing", submitInputDoing.value,kanbanData[1].length));
       localStorage.setItem("kanbanData", JSON.stringify(kanbanData));
-      kanbanStateArray.push(JSON.stringify(kanbanData))
+      kanbanStateArray.push(localStorage.getItem("kanbanData"))
       submitInputDoing.value = ""
     });
     submitBtnDone.addEventListener("click", () => {
       kanbanData[2].push(new Element("done", submitInputDone.value,kanbanData[2].length))
       localStorage.setItem("kanbanData", JSON.stringify(kanbanData));
-      kanbanStateArray.push(JSON.stringify(kanbanData))
+      kanbanStateArray.push(localStorage.getItem("kanbanData"))
       submitInputDone.value = ""
     });
     submitBtnApproved.addEventListener("click", () => {
       kanbanData[3].push(new Element("approved", submitInputApproved.value,kanbanData[3].length));
       localStorage.setItem("kanbanData", JSON.stringify(kanbanData));
-      kanbanStateArray.push(JSON.stringify(kanbanData))
+      kanbanStateArray.push(localStorage.getItem("kanbanData"))
       submitInputApproved.value = ""
     });
     btnUndo.addEventListener("click", ()=>{
@@ -280,16 +288,14 @@
         //access the last element of the stateArray(after popping)
         const temp = kanbanStateArray[kanbanStateArray.length - 1]
         //store the last element of the stateArray in local storage
-        localStorage.setItem("kanbanData", temp);
+        localStorage.setItem("kanbanData", temp)
+        //update the current kanBanData to undo state
+        kanbanData = JSON.parse(temp)
         //render the last element of the stateArray
         renderData(JSON.parse(temp))
       }
     })
-
-
-
     const startApp = () => {
-      kanbanStateArray = []
       const data = (localStorage.getItem('kanbanData') || '[[],[],[],[]]')
       kanbanStateArray.push(data)
       renderData(JSON.parse(data))  
