@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .block {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        border: 1px solid black;
+      }
+      .block--border {
+        background-color: grey;
+      }
+      .block--snake {
+        background-color: orange;
+      }
+      .block--apple {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container--snake-game"></div>
+  </body>
+  <script>
+    const container = document.querySelector(".container--snake-game");
+    const gridSize = 10;
+    let userDirection = "";
+    let lastDirection = "";
+    let grid = [];
+    let snakeHead;
+    let apple;
+    let thisInterval = null;
+    const buildRows = (num, i, j = 0, row = []) => {
+      if (j === num) return row;
+      let id = 0;
+      if (i === 0 || j === 0 || i === gridSize - 1 || j === gridSize - 1)
+        id = 1;
+      row.push(new Block(id));
+      return buildRows(num, i, j + 1, row);
+    };
+    const createGrid = (num, i = 0, result = []) => {
+      if (i === num) return result;
+      result.push(buildRows(num, i));
+      return createGrid(num, i + 1, result);
+    };
+
+    class Block {
+      constructor(id) {
+        this.id = id;
+      }
+    }
+    class Snake {
+      constructor(locX, locY, lastLocX, lastLocY) {
+        this.locX = locX;
+        this.locY = locY;
+        this.lastLocX = lastLocX;
+        this.lastLocY = lastLocY;
+        this.next = null;
+      }
+    }
+    const renderGrid = () => {
+      container.innerHTML = "";
+      grid.forEach((thisRow) => {
+        const thisHTMLRow = document.createElement("div");
+        thisHTMLRow.classList.add("row");
+        thisRow.forEach((thisBlock) => {
+          const thisHTMLBlock = document.createElement("div");
+          thisHTMLBlock.classList.add("block");
+          if (thisBlock.id === 1) thisHTMLBlock.classList.add("block--border");
+          else if (thisBlock.id === 2)
+            thisHTMLBlock.classList.add("block--snake");
+          else if (thisBlock.id === 4)
+            thisHTMLBlock.classList.add("block--apple");
+          thisHTMLRow.append(thisHTMLBlock);
+        });
+        container.append(thisHTMLRow);
+      });
+    };
+    const checkSnakePosition = (snake) => {
+      if (snake === null) return false;
+      if (snake === snakeHead) return checkSnakePosition(snake.next);
+      if (snakeHead.locX === snake.locX && snakeHead.locY === snake.locY)
+        return true;
+      return checkSnakePosition(snake.next);
+    };
+    const checkLossCondition = () => {
+      //if the snake hits the border or itself, game Over
+      if (
+        snakeHead.locX === 0 ||
+        snakeHead.locY === 0 ||
+        snakeHead.locX === gridSize - 1 ||
+        snakeHead.locY === gridSize - 1 ||
+        checkSnakePosition(snakeHead)
+      ) {
+        alert("Game Over");
+        snakeGame();
+      }
+    };
+    const createApple = (validApple = false, i = 0) => {
+      const lastApple = apple || "null";
+      apple = new Snake();
+      const max = gridSize - 1;
+      const min = 1;
+      const x = Math.floor(Math.random() * (max - min) + min);
+      const y = Math.floor(Math.random() * (max - min) + min);
+      if (grid[x][y].id === 2) {
+        console.log("bad apple. remaking");
+      } else if (x === lastApple.locX && y === lastApple.locY) {
+        console.log("bad apple. remaking");
+      } else {
+        validApple = true;
+      }
+      if (validApple) {
+        apple.locX = x;
+        apple.locY = y;
+        grid[x][y].id = 4;
+        return;
+      }
+      createApple(validApple, i + 1);
+    };
+    const updateSnake = (snake, i = 0) => {
+      if (snake === null) return;
+      //if the iteration of the snake is the snakeHead then move it
+      if (snake === snakeHead) {
+        snake.lastLocX = snake.locX;
+        snake.lastLocY = snake.locY;
+        if (userDirection === "ArrowDown" && lastDirection != "ArrowUp") {
+          snake.locX += 1;
+          lastDirection = "ArrowDown";
+        } else if (
+          userDirection === "ArrowUp" &&
+          lastDirection != "ArrowDown"
+        ) {
+          snake.locX -= 1;
+          lastDirection = "ArrowUp";
+        } else if (
+          userDirection === "ArrowRight" &&
+          lastDirection != "ArrowLeft"
+        ) {
+          snake.locY += 1;
+          lastDirection = "ArrowRight";
+        } else if (
+          userDirection === "ArrowLeft" &&
+          lastDirection != "ArrowRight"
+        ) {
+          snake.locY -= 1;
+          lastDirection = "ArrowLeft";
+        } else if (lastDirection === "ArrowDown") snake.locX += 1;
+        else if (lastDirection === "ArrowUp") snake.locX -= 1;
+        else if (lastDirection === "ArrowRight") snake.locY += 1;
+        else if (lastDirection === "ArrowLeft") snake.locY -= 1;
+      }
+      grid[snake.locX][snake.locY].id = 2;
+      if (snake.next != null) {
+        snake.next.lastLocX = snake.next.locX;
+        snake.next.lastLocY = snake.next.locY;
+        snake.next.locX = snake.lastLocX;
+        snake.next.locY = snake.lastLocY;
+      } else {
+        if (snakeHead.locX === apple.locX && snakeHead.locY === apple.locY) {
+          snake.next = new Snake(snake.lastLocX, snake.lastLocY);
+          createApple();
+          return;
+        } else {
+          grid[snake.lastLocX][snake.lastLocY].id = 0;
+        }
+      }
+      updateSnake(snake.next, i + 1);
+    };
+    const snakeMove = () => {
+      updateSnake(snakeHead);
+      checkLossCondition();
+      grid[snakeHead.locX][snakeHead.locY].id = 2;
+      renderGrid();
+    };
+
+    const snakeGame = () => {
+      userDirection = "none";
+      lastDirection = "none";
+      if (thisInterval) clearInterval(thisInterval);
+      grid = createGrid(10);
+      snakeHead = new Snake(5, 5, 5, 5);
+      grid[snakeHead.locX][snakeHead.locY].id = 2;
+      createApple();
+      renderGrid();
+      thisInterval = setInterval(snakeMove, 250);
+    };
+
+    document.addEventListener("keyup", (e) => {
+      if (e.key === "ArrowUp" || "ArrowRight" || "ArrowLeft" || "ArrowDown")
+        userDirection = e.key;
+    });
+    snakeGame();
+  </script>
+</html>
