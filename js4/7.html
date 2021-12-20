@@ -40,7 +40,18 @@
   </head>
   <body>
     <div class="container--window">
-      <div class="container--mine-sweeper"></div>
+      <div class="container--mine-sweeper">
+        <div class="row0"></div>
+        <div class="row1"></div>
+        <div class="row2"></div>
+        <div class="row3"></div>
+        <div class="row4"></div>
+        <div class="row5"></div>
+        <div class="row6"></div>
+        <div class="row7"></div>
+        <div class="row8"></div>
+        <div class="row9"></div>
+      </div>
       <button class="btn--cheat">Cheat?</button>
     </div>
   </body>
@@ -50,23 +61,60 @@
     const numberofBombs = 10;
     const emptyiD = 0;
     const bombiD = 1;
+    let toggle = 1;
     const btnCheat = document.querySelector(".btn--cheat");
-    let gameReset = false;
     let numRevealed = 0;
-    let userDirection = "";
-    let lastDirection = "";
     let grid = [];
-    let snakeHead;
-    let apple;
-    let thisInterval = null;
+    let bombsArray = [];
     class Block {
       constructor(x, y) {
         this.id = 0;
         this.x = x;
         this.y = y;
         this.coordinates = `position${x}${y}`;
+        this.row = `row${x}`;
         this.revealed = false;
         this.count = 0;
+        if (bombsArray.length === 0) {
+          bombsArray = createBombs(numberofBombs);
+        }
+
+        const thisRow = document.querySelector(`.${this.row}`);
+        const thisHTMLBlock = document.createElement("div");
+        thisHTMLBlock.innerHTML = `${this.count}`;
+        thisHTMLBlock.classList.add("block");
+        thisHTMLBlock.classList.add("block--hidden");
+        thisHTMLBlock.classList.add(`${this.coordinates}`);
+        thisRow.append(thisHTMLBlock);
+        const thisBlock = document.querySelector(`.${this.coordinates}`);
+        //if the block is a bomb, give bomb styling
+        bombsArray.forEach((e) => {
+          if (e[0] === this.x && e[1] === this.y) {
+            this.id = bombiD;
+            thisBlock.innerHTML = "B";
+            thisHTMLBlock.classList.add("block--bomb");
+          }
+        });
+        //add event listener for click
+        thisBlock.addEventListener("click", () => {
+          //if the user clicks a block with bombID, game over
+          if (this.id === bombiD) {
+            if (confirm("GAME OVER! Play Again?")) {
+              resetHTMLGameBoard();
+              mineSweeper();
+            }
+          }
+          //if the block has not been revealed already, reveal it
+          if (this.revealed === false) {
+            this.revealed = true;
+            //if the block clicked has a count of 0 and is not a bomb, reveal its neighbors
+            if (this.count === 0 && this.id != bombiD) {
+              revealNeighbors(getNeighbors(this));
+            }
+          }
+          //update the grid after a click
+          updateGrid();
+        });
       }
     }
     /**
@@ -206,91 +254,48 @@
       //keep iterating
       return revealNeighbors(arr, i + 1);
     };
-    /**
-     * This function adds the listener to each Block
-     * @param {Block} thisBlock
-     * @param {HTML Object} thisHTMLBlock
-     * */
-    const addTheListener = (thisBlock, thisHTMLBlock) => {
-      thisHTMLBlock.addEventListener("click", () => {
-        //if the user clicks a block with bombID, game over
-        if (thisBlock.id === bombiD) {
-          if (confirm("GAME OVER! Play Again?")) {
-            mineSweeper();
-          }
-        }
-        //if the block has not been revealed already, reveal it
-        if (thisBlock.revealed === false) {
-          thisBlock.revealed = true;
-          //if the block clicked has a count of 0 and is not a bomb, reveal its neighbors
-          if (thisBlock.count === 0 && thisBlock.id != bombiD) {
-            revealNeighbors(getNeighbors(thisBlock));
-          }
-        }
-        //render the grid
-        renderGrid();
-      });
-    };
 
     /**
-     * This function renders the grid based off the data of the array grid
+     * This function updates the grid based off the data of the 2d array grid
      * */
-    const renderGrid = () => {
-      const container = document.querySelector(".container--mine-sweeper");
+    const updateGrid = () => {
       //reset win condition
       numRevealed = 0;
-      //clear the contents of the container
-      container.innerHTML = "";
       //iterate through the 2d grid array
       grid.forEach((thisRow) => {
-        //create a div for each row
-        const thisHTMLRow = document.createElement("div");
         thisRow.forEach((thisBlock) => {
-          //create a div for each block
-          const thisHTMLBlock = document.createElement("div");
-          //add "block" to the classList
-          thisHTMLBlock.classList.add("block");
-          //if the block.id is a bomb, give it bomb styling
-          if (thisBlock.id === bombiD) {
-            thisHTMLBlock.innerText = "B";
-            thisHTMLBlock.classList.add("block--bomb");
-          } else {
-            //if not show the count
-            thisHTMLBlock.innerText = `${thisBlock.count}`;
-          }
-          //give each block a uniqueIdentifier
-          thisHTMLBlock.classList.add(`${thisBlock.coordinates}`);
-          //add an EventListener for clicks on each block
-          addTheListener(thisBlock, thisHTMLBlock);
-          //if the block is revealed, add "revealed styling", increment win condition
-          //if the block is not revealed, add "hidden" styling
-          if (thisBlock.revealed === true) {
-            thisHTMLBlock.classList.add("block--revealed");
+          //grab the HTML block
+          const thisHTMLBlock = document.querySelector(
+            `.${thisBlock.coordinates}`
+          );
+          //if the Block data shows revealed, add the class revealed
+          if (thisBlock.revealed) {
             numRevealed++;
-          } else {
-            if (thisHTMLBlock.classList.contains("block--revealed"))
-              thisHTMLBlock.classList.remove("block--revealed");
-            thisHTMLBlock.classList.add("block--hidden");
+            thisHTMLBlock.classList.add("block--revealed");
+            thisHTMLBlock.classList.remove("block--hidden");
           }
+          //if the number reavealed is equal to the number of blocks minus the bombs, the user wins
+          //ask to play again and reset the board if so
           if (numRevealed === gridSize * gridSize - numberofBombs) {
             if (confirm("You Win! Play Again?")) {
-              container.remove();
-              const newContainer = document.createElement("div");
-              newContainer.classList.add("container--mine-sweeper");
-              gameWindow.prepend(newContainer);
-              grid = [];
+              resetHTMLGameBoard();
               mineSweeper();
             }
           }
-          //append the block to the row
-          thisHTMLRow.append(thisHTMLBlock);
         });
-        //append the row to the container
-        container.append(thisHTMLRow);
       });
     };
 
-    const resetHTMLGameBoard = () => {};
+    /**
+     * This function resets the HTML dom and the bombsArray after a win or a loss
+     * */
+    const resetHTMLGameBoard = () => {
+      bombsArray = [];
+      grid.forEach((thisRow) => {
+        const thisHTMLRow = document.querySelector(`.row${thisRow[0].x}`);
+        thisHTMLRow.innerHTML = "";
+      });
+    };
 
     /***
      * This function creates an array of random bomb coordinates
@@ -326,33 +331,43 @@
       return createBombs(num, i + 1, result);
     };
 
+    /**
+     *
+     *
+     * */
     const mineSweeper = () => {
       //create the grid
       grid = createGrid(gridSize);
       //create bombs
       const result = createBombs(numberofBombs);
-      //give the grid the bombiD
-      result.forEach((thisBomb) => {
-        grid[thisBomb[0]][thisBomb[1]].id = bombiD;
-      });
-      //get the count for each square
+      //get the count for each square and update the innerHTML to show the count
       grid.forEach((thisRow) => {
         thisRow.forEach((thisBlock) => {
           if (thisBlock.id != bombiD) {
             checkForBombs(thisBlock);
+            const thisHTMLBlock = document.querySelector(
+              `.${thisBlock.coordinates}`
+            );
+            thisHTMLBlock.innerHTML = `${thisBlock.count}`;
           }
         });
       });
-      //render the Grid
-      renderGrid();
     };
-
+    /**
+     * This function highlights the board to see each count and bomb positions if wanted
+     * */
     btnCheat.addEventListener("click", (e) => {
       const allBlocks = document.querySelectorAll(".block");
-      console.log(allBlocks);
-      allBlocks.forEach((e) => {
-        e.classList.add("block--cheat");
-      });
+      if (toggle > 0) {
+        allBlocks.forEach((e) => {
+          e.classList.add("block--cheat");
+        });
+      } else {
+        allBlocks.forEach((e) => {
+          e.classList.remove("block--cheat");
+        });
+      }
+      toggle *= -1;
     });
 
     //start the app
