@@ -176,21 +176,30 @@
            case "toDo":
              kanbanData[1].push(new Element("doing",this.text,kanbanData[1].length))
              kanbanData[0].splice(this.index,1)
-             console.log(kanbanData)
+             kanbanData[0].forEach((thisElement, i)=>{
+               thisElement.index = i
+             })
+
              break;
            case "doing":
              kanbanData[2].push(new Element("done",this.text,kanbanData[2].length))
              kanbanData[1].splice(this.index,1)
-             console.log(kanbanData)
+             kanbanData[1].forEach((thisElement, i)=>{
+               thisElement.index = i
+             })
              break;
            case "done":
              kanbanData[3].push(new Element("approved",this.text,kanbanData[3].length))
              kanbanData[2].splice(this.index,1)
-             console.log(kanbanData)
+             kanbanData[2].forEach((thisElement, i)=>{
+               thisElement.index = i
+             })
              break;
            case "approved":
              kanbanData[3].splice(this.index,1)
-             console.log(kanbanData)
+             kanbanData[3].forEach((thisElement, i)=>{
+               thisElement.index = i
+             })
              break;
           }
           localStorage.setItem("kanbanData", JSON.stringify(kanbanData))
@@ -225,17 +234,23 @@
            case "doing":
              kanbanData[0].push(new Element("toDo",this.text,kanbanData[0].length))
              kanbanData[1].splice(this.index,1)
-             console.log(kanbanData)
+             kanbanData[1].forEach((thisElement, i)=>{
+               thisElement.index = i
+             })
              break;
            case "done":
              kanbanData[1].push(new Element("doing",this.text,kanbanData[1].length))
              kanbanData[2].splice(this.index,1)
-             console.log(kanbanData)
+             kanbanData[2].forEach((thisElement, i)=>{
+               thisElement.index = i
+             })
              break;
            case "approved":
              kanbanData[2].push(new Element("done",this.text,kanbanData[2].length))
              kanbanData[3].splice(this.index,1)
-             console.log(kanbanData)
+             kanbanData[3].forEach((thisElement, i)=>{
+               thisElement.index = i
+             })
              break;
           }
           localStorage.setItem("kanbanData", JSON.stringify(kanbanData))
