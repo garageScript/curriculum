@@ -19,4 +19,8 @@ describe('Generate 2D array', () => {
     const result = solution(1, 5)
     expect(result).toEqual([[0, 0, 0, 0, 0]])
   })
+  it('should generate 3x0 array', () => {
+    const result = solution(3, 0)
+    expect(result).toEqual([0],[0],[0])
+  })
 })
