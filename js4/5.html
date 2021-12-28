@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0px;
+      }
+      .container--kanban {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        margin: 30px;
+      }
+      .container--elements {
+        display: flex;
+        flex-direction: column;
+      }
+      .module {
+        flex: 1;
+      }
+      .module__title {
+        text-align: center;
+        color: white;
+        padding: 15px;
+      }
+      .container--submit {
+        display: flex;
+        width: 100%;
+        height: 100px;
+      }
+      .submit__input {
+        flex: 1;
+      }
+      .module__title--toDo {
+        background-color: #35235d;
+      }
+      .module__title--doing {
+        background-color: #cb2402;
+      }
+      .module__title--done {
+        background-color: #4c49a2;
+      }
+      .module__title--approved {
+        background-color: #a31a48;
+      }
+      .module__element {
+        background-color: lightgrey;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+        width: 100%;
+        margin-bottom: 5px;
+      }
+      .element__btn {
+        background-color: lightgrey;
+        border-style: none;
+      }
+      .element__btn:hover{
+        background-color: rgb(194, 193, 193);   
+      }
+      .element__text {
+        padding: 10px;
+        margin: 0;
+        flex: 1;
+      }
+      .container--undo{
+        display: flex;
+        justify-content: center;
+      }
+      .btn--undo{
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container--kanban">
+      <div class="module">
+        <div class="module__title module__title--toDo">To-Do</div>
+        <div class="container--elements container--elements-toDo">
+        </div>
+        <div class="container--submit">
+          <textarea class="submit__input submit__input--toDo name="" id="" cols="30" rows="10"></textarea>
+          <button class="submit__btn submit__btn--toDo">Submit</button>
+        </div>
+      </div>
+      <div class="module">
+        <div class="module__title module__title--doing">Doing</div>
+        <div class="container--elements container--elements-doing">
+        </div>
+        <div class="container--submit">
+          <textarea class="submit__input submit__input--doing" name="" id="" cols="30" rows="10"></textarea>
+          <button class="submit__btn submit__btn--doing">Submit</button>
+        </div>
+      </div>
+      <div class="module">
+        <div class="module__title module__title--done">Done</div>
+        <div class="container--elements container--elements-done">
+        </div>
+        <div class="container--submit">
+          <textarea class="submit__input submit__input--done" name="" id="" cols="30" rows="10"></textarea>
+          <button class="submit__btn submit__btn--done">Submit</button>
+        </div>
+      </div>
+      <div class="module">
+        <div class="module__title module__title--approved">Approved</div>
+        <div class="container--elements container--elements-approved">
+        </div>
+        <div class="container--submit">
+          <textarea class="submit__input submit__input--approved" name="" id="" cols="30" rows="10"></textarea>
+          <button class="submit__btn submit__btn--approved">Submit</button>
+        </div>
+      </div>
+    </div>
+    <div class="container--undo"><button class = "btn--undo">Undo</button></div>
+  </body>
+  <script>
+    const submitInputToDo = document.querySelector(".submit__input--toDo");
+    const submitInputDoing = document.querySelector(".submit__input--doing");
+    const submitInputDone = document.querySelector(".submit__input--done");
+    const submitInputApproved = document.querySelector(
+      ".submit__input--approved"
+    );
+    const submitBtnToDo = document.querySelector(".submit__btn--toDo");
+    const submitBtnDoing = document.querySelector(".submit__btn--doing");
+    const submitBtnDone = document.querySelector(".submit__btn--done");
+    const submitBtnApproved = document.querySelector(".submit__btn--approved");
+    const containerElements = document.querySelector(".container--elements");
+    const btnUndo = document.querySelector(".btn--undo")
+    let kanbanData = [[],[],[],[]]
+    const kanbanStateArray = []
+    class Element {
+      constructor(type, text, index) {
+        this.text = text;
+        this.type = type;
+        this.reference = type + index;
+        this.container = `.container--elements-${type}`;
+        this.index = index;
+        this.render()
+      }
+      render(){
+        //create the <p> element
+        const thisP = document.createElement("p");
+        thisP.innerText = this.text;
+        thisP.classList.add("element__text");
+        //create the <btn>
+        const thisBtn = document.createElement("button");
+        thisBtn.classList.add("element__btn");
+        thisBtn.append(">");
+        //create an Element container and add thisP and thisBtn
+        const thisElement = document.createElement("div");
+        thisElement.classList.add("module__element");
+        thisElement.classList.add(`${this.reference}`);
+        //create left button for non toDo Elements
+        const thisBtnLeft = document.createElement("button");
+        if(this.type != "toDo"){
+          thisBtnLeft.classList.add("element__btn");
+          thisBtnLeft.append("<");
+          thisElement.append(thisBtnLeft)
+        }
+        thisElement.append(thisP, thisBtn);
+        //append the Element to the container of elements
+        const thisContainer = document.querySelector(this.container);
+        thisContainer.append(thisElement);
+        //create a variable to specify this element for the eventListeners
+        const thisSpecifier = document.querySelector(`.${this.reference}`)
+
+        //add event listener if the Element forwards button is clicked
+        thisBtn.addEventListener("click",()=>{
+          thisSpecifier.remove();
+          switch (this.type){
+           case "toDo":
+             kanbanData[1].push(new Element("doing",this.text,kanbanData[1].length))
+             kanbanData[0].splice(this.index,1)
+             kanbanData[0].forEach((thisElement, i)=>{
+               thisElement.index = i
+             })
+
+             break;
+           case "doing":
+             kanbanData[2].push(new Element("done",this.text,kanbanData[2].length))
+             kanbanData[1].splice(this.index,1)
+             kanbanData[1].forEach((thisElement, i)=>{
+               thisElement.index = i
+             })
+             break;
+           case "done":
+             kanbanData[3].push(new Element("approved",this.text,kanbanData[3].length))
+             kanbanData[2].splice(this.index,1)
+             kanbanData[2].forEach((thisElement, i)=>{
+               thisElement.index = i
+             })
+             break;
+           case "approved":
+             kanbanData[3].splice(this.index,1)
+             kanbanData[3].forEach((thisElement, i)=>{
+               thisElement.index = i
+             })
+             break;
+          }
+          localStorage.setItem("kanbanData", JSON.stringify(kanbanData))
+          kanbanStateArray.push(localStorage.getItem("kanbanData"))
+        })
+        //add event listener to remove module elements
+        thisP.addEventListener("click",()=>{
+          if(confirm(`Are you sure you want to delete "${this.text}"?`)){
+            thisSpecifier.remove();
+            switch (this.type){
+              case "toDo":
+                kanbanData[0].splice(this.index,1)
+                break;
+              case "doing":
+                kanbanData[1].splice(this.index,1)
+                break;
+              case "done":
+                kanbanData[2].splice(this.index,1)
+                break;
+              case "approved":
+                kanbanData[3].splice(this.index,1)
+                break;
+            }
+          }
+          localStorage.setItem("kanbanData", JSON.stringify(kanbanData))
+          kanbanStateArray.push(localStorage.getItem("kanbanData"))
+        })
+        //Add event Listener to move module elements left
+        thisBtnLeft.addEventListener("click",()=>{
+          thisSpecifier.remove();
+          switch (this.type){
+           case "doing":
+             kanbanData[0].push(new Element("toDo",this.text,kanbanData[0].length))
+             kanbanData[1].splice(this.index,1)
+             kanbanData[1].forEach((thisElement, i)=>{
+               thisElement.index = i
+             })
+             break;
+           case "done":
+             kanbanData[1].push(new Element("doing",this.text,kanbanData[1].length))
+             kanbanData[2].splice(this.index,1)
+             kanbanData[2].forEach((thisElement, i)=>{
+               thisElement.index = i
+             })
+             break;
+           case "approved":
+             kanbanData[2].push(new Element("done",this.text,kanbanData[2].length))
+             kanbanData[3].splice(this.index,1)
+             kanbanData[3].forEach((thisElement, i)=>{
+               thisElement.index = i
+             })
+             break;
+          }
+          localStorage.setItem("kanbanData", JSON.stringify(kanbanData))
+          kanbanStateArray.push(localStorage.getItem("kanbanData"))
+        })
+      }
+    }
+    renderData = (data) =>{
+      data.forEach((thisModule,i)=>{
+        if(thisModule){ 
+          thisModule.forEach((thisElement,index)=>{
+            kanbanData[i].push(new Element(thisElement.type, thisElement.text,index))
+         })
+        }
+      })
+    }
+
+    submitBtnToDo.addEventListener("click", () => {
+      kanbanData[0].push(new Element("toDo", submitInputToDo.value,kanbanData[0].length));
+      localStorage.setItem("kanbanData", JSON.stringify(kanbanData))
+      kanbanStateArray.push(localStorage.getItem("kanbanData"))
+      submitInputToDo.value = ""
+    });
+    submitBtnDoing.addEventListener("click", () => {
+      kanbanData[1].push(new Element("doing", submitInputDoing.value,kanbanData[1].length));
+      localStorage.setItem("kanbanData", JSON.stringify(kanbanData));
+      kanbanStateArray.push(localStorage.getItem("kanbanData"))
+      submitInputDoing.value = ""
+    });
+    submitBtnDone.addEventListener("click", () => {
+      kanbanData[2].push(new Element("done", submitInputDone.value,kanbanData[2].length))
+      localStorage.setItem("kanbanData", JSON.stringify(kanbanData));
+      kanbanStateArray.push(localStorage.getItem("kanbanData"))
+      submitInputDone.value = ""
+    });
+    submitBtnApproved.addEventListener("click", () => {
+      kanbanData[3].push(new Element("approved", submitInputApproved.value,kanbanData[3].length));
+      localStorage.setItem("kanbanData", JSON.stringify(kanbanData));
+      kanbanStateArray.push(localStorage.getItem("kanbanData"))
+      submitInputApproved.value = ""
+    });
+    btnUndo.addEventListener("click", ()=>{
+      //the kanbanStateArray[0] will always be the state when of the kanban when refreshed
+      if(kanbanStateArray.length > 1){
+        //remove all moduleElements from the HTML object
+        const moduleElements = document.querySelectorAll(".module__element")
+        moduleElements.forEach(thisElement => thisElement.remove());
+        //remove the last update stored in the state array
+        kanbanStateArray.pop();
+        //access the last element of the stateArray(after popping)
+        const temp = kanbanStateArray[kanbanStateArray.length - 1]
+        //store the last element of the stateArray in local storage
+        localStorage.setItem("kanbanData", temp)
+        //update the current kanBanData to undo state
+        kanbanData = JSON.parse(temp)
+        //render the last element of the stateArray
+        renderData(JSON.parse(temp))
+      }
+    })
+    const startApp = () => {
+      const data = (localStorage.getItem('kanbanData') || '[[],[],[],[]]')
+      kanbanStateArray.push(data)
+      renderData(JSON.parse(data))  
+    }
+
+    startApp();
+
+
+  </script>
+</html>
