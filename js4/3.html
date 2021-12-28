@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container--google-fair">
+      <img
+        class="img"
+        src="https://www.c0d3.com/challenges/assets/fair/small.jpg"
+        alt=""
+      />
+      <div class="container">
+        <div class="container--magnifying-glass">
+          <img
+            class="magnifying-glass"
+            src="https://www.c0d3.com/challenges/assets/fair/scope.png"
+            alt=""
+          />
+          <div class="container--img-zoomed">
+            <img
+              class="img-zoomed"
+              src="https://www.c0d3.com/challenges/assets/fair/big.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <style>
+    body {
+      margin: 0;
+    }
+    .container--google-fair {
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      display: none;
+      position: fixed;
+      pointer-events: none;
+    }
+    .container--magnifying-glass {
+      position: relative;
+      height: 200px;
+      width: 200px;
+    }
+    .magnifying-glass {
+      position: absolute;
+      border-radius: 50%;
+    }
+    .container--img-zoomed {
+      position: absolute;
+      display: inline-block;
+      width: 160px;
+      height: 160px;
+      overflow: hidden;
+      top: 10%;
+      left: 10%;
+      border-radius: 50%;
+    }
+    .img-zoomed {
+      position: absolute;
+    }
+  </style>
+  <script>
+    const img = document.querySelector(".img");
+    const container = document.querySelector(".container");
+    const imgZoomed = document.querySelector(".img-zoomed");
+    const body = document.querySelector("body");
+    const magnifyingGlassRadius = 100;
+    const insideMagnifyingGlassRadius = 81.5;
+    const smallImageWidth = 421;
+    const smallImageHeight = 168;
+    const bigImageWidth = 1263;
+    const bigImageHeight = 503;
+    const imageRatioX = bigImageWidth / smallImageWidth;
+    const imageRatioY = bigImageHeight / smallImageHeight;
+    img.addEventListener("mouseleave", (e) => {
+      container.style.display = "none";
+    });
+
+    img.addEventListener("mousemove", (e) => {
+      body.style.cursor = "none";
+      container.style.display = "inline-block";
+      const domRect = img.getBoundingClientRect();
+      container.style.left = `${e.clientX - magnifyingGlassRadius}px`;
+      container.style.top = `${e.clientY - magnifyingGlassRadius}px`;
+      imgZoomed.style.bottom = `${
+        (e.clientY - smallImageHeight) * imageRatioY +
+        insideMagnifyingGlassRadius
+      }px`;
+      imgZoomed.style.right = `${
+        (e.clientX - domRect.x - smallImageWidth) * imageRatioX +
+        insideMagnifyingGlassRadius
+      }px`;
+    });
+  </script>
+</html>
