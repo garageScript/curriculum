@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .block {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        border: 1px solid rgb(204, 200, 200);
+        text-align: center;
+      }
+      .block--bomb {
+        background-color: red;
+      }
+      .block--revealed {
+        background-color: rgb(68, 117, 190);
+      }
+      .block--hidden {
+        background-color: rgb(40, 86, 156);
+        color: rgb(40, 86, 156);
+      }
+      .block--cheat {
+        background-color: rgb(68, 117, 190);
+      }
+      .container--window {
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+      }
+      .btn--cheat {
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container--window">
+      <div class="container--mine-sweeper">
+        <div class="row0"></div>
+        <div class="row1"></div>
+        <div class="row2"></div>
+        <div class="row3"></div>
+        <div class="row4"></div>
+        <div class="row5"></div>
+        <div class="row6"></div>
+        <div class="row7"></div>
+        <div class="row8"></div>
+        <div class="row9"></div>
+      </div>
+      <button class="btn--cheat">Cheat?</button>
+    </div>
+  </body>
+  <script>
+    const gameWindow = document.querySelector(".container--window");
+    const gridSize = 10;
+    const numberofBombs = 10;
+    const emptyiD = 0;
+    const bombiD = 1;
+    let toggle = 1;
+    const btnCheat = document.querySelector(".btn--cheat");
+    let numRevealed = 0;
+    let grid = [];
+    let bombsArray = [];
+    class Block {
+      constructor(x, y) {
+        this.id = 0;
+        this.x = x;
+        this.y = y;
+        this.coordinates = `position${x}${y}`;
+        this.row = `row${x}`;
+        this.revealed = false;
+        this.count = 0;
+        if (bombsArray.length === 0) {
+          bombsArray = createBombs(numberofBombs);
+        }
+
+        const thisRow = document.querySelector(`.${this.row}`);
+        const thisHTMLBlock = document.createElement("div");
+        thisHTMLBlock.innerHTML = `${this.count}`;
+        thisHTMLBlock.classList.add("block");
+        thisHTMLBlock.classList.add("block--hidden");
+        thisHTMLBlock.classList.add(`${this.coordinates}`);
+        thisRow.append(thisHTMLBlock);
+        const thisBlock = document.querySelector(`.${this.coordinates}`);
+        //if the block is a bomb, give bomb styling
+        bombsArray.forEach((e) => {
+          if (e[0] === this.x && e[1] === this.y) {
+            this.id = bombiD;
+            thisBlock.innerHTML = "B";
+            thisHTMLBlock.classList.add("block--bomb");
+          }
+        });
+        //add event listener for click
+        thisBlock.addEventListener("click", () => {
+          //if the user clicks a block with bombID, game over
+          if (this.id === bombiD) {
+            if (confirm("GAME OVER! Play Again?")) {
+              resetHTMLGameBoard();
+              mineSweeper();
+            }
+          }
+          //if the block has not been revealed already, reveal it
+          if (this.revealed === false) {
+            this.revealed = true;
+            //if the block clicked has a count of 0 and is not a bomb, reveal its neighbors
+            if (this.count === 0 && this.id != bombiD) {
+              revealNeighbors(getNeighbors(this));
+            }
+          }
+          //update the grid after a click
+          updateGrid();
+        });
+      }
+    }
+    /**
+     * This function gets the blocks surrounding it
+     * @param {Block} currentBlock
+     * @returns {array} neighbors (array of Blocks)
+     * */
+    const getNeighbors = (currentBlock) => {
+      const neighbors = [];
+      //if a space to the top exists, store top
+      if (currentBlock.x - 1 >= 0) {
+        neighbors.push(grid[currentBlock.x - 1][currentBlock.y]);
+      }
+      //if a space to the to right exists, store top right
+      if (currentBlock.x - 1 >= 0 && currentBlock.y + 1 < gridSize)
+        neighbors.push(grid[currentBlock.x - 1][currentBlock.y + 1]);
+      //if a space to the top left exists, store top left
+      if (currentBlock.x - 1 >= 0 && currentBlock.y - 1 >= 0)
+        neighbors.push(grid[currentBlock.x - 1][currentBlock.y - 1]);
+      //if a space down exists, store bottom
+      if (currentBlock.x + 1 < gridSize) {
+        neighbors.push(grid[currentBlock.x + 1][currentBlock.y]);
+      }
+      //if a space bottom left exists, store bottom left
+      if (currentBlock.x + 1 < gridSize && currentBlock.y - 1 >= 0)
+        neighbors.push(grid[currentBlock.x + 1][currentBlock.y - 1]);
+      //if a space bottom right exists, store bottom right
+      if (currentBlock.x + 1 < gridSize && currentBlock.y + 1 < gridSize)
+        neighbors.push(grid[currentBlock.x + 1][currentBlock.y + 1]);
+      //if a space to the left exists store left
+      if (currentBlock.y - 1 >= 0)
+        neighbors.push(grid[currentBlock.x][currentBlock.y - 1]);
+      //if a space to right exists, store right
+      if (currentBlock.y + 1 < gridSize) {
+        neighbors.push(grid[currentBlock.x][currentBlock.y + 1]);
+      }
+      return neighbors;
+    };
+    /**
+     * This function gets the count of an individual square
+     * @param {Block} currentBlock
+     * */
+    const checkForBombs = (currentBlock) => {
+      //if a space to the top exists, check top
+      if (currentBlock.x - 1 >= 0) {
+        //check top
+        if (grid[currentBlock.x - 1][currentBlock.y].id === bombiD)
+          currentBlock.count++;
+      }
+      //if a space to the to right exists, check top right
+      if (currentBlock.x - 1 >= 0 && currentBlock.y + 1 < gridSize) {
+        //check top right
+        if (grid[currentBlock.x - 1][currentBlock.y + 1].id === bombiD)
+          currentBlock.count++;
+      }
+      //if a space to the top left exists, check top left
+      if (currentBlock.x - 1 >= 0 && currentBlock.y - 1 >= 0) {
+        //check top left
+        if (grid[currentBlock.x - 1][currentBlock.y - 1].id === bombiD)
+          currentBlock.count++;
+      }
+      //if a space down exists, check the bottom
+      if (currentBlock.x + 1 < gridSize) {
+        //check bottom
+        if (grid[currentBlock.x + 1][currentBlock.y].id === bombiD)
+          currentBlock.count++;
+      }
+      //if a space bottom left exists, check bottom left
+      if (currentBlock.x + 1 < gridSize && currentBlock.y - 1 >= 0) {
+        //check bottom left
+        if (grid[currentBlock.x + 1][currentBlock.y - 1].id === bombiD)
+          currentBlock.count++;
+      }
+      //if a space bottom right exists, check bottom right
+      if (currentBlock.x + 1 < gridSize && currentBlock.y + 1 < gridSize) {
+        //check bottom right
+        if (grid[currentBlock.x + 1][currentBlock.y + 1].id === bombiD)
+          currentBlock.count++;
+      }
+      if (currentBlock.y - 1 >= 0) {
+        //if a space to the left exists check left
+        //check left
+        if (grid[currentBlock.x][currentBlock.y - 1].id === bombiD)
+          currentBlock.count++;
+      }
+      //if a space to right exists, check right
+      if (currentBlock.y + 1 < gridSize) {
+        //check right
+        if (grid[currentBlock.x][currentBlock.y + 1].id === bombiD)
+          currentBlock.count++;
+      }
+    };
+    /**
+     * This helper function builds the rows of the grid
+     * @param {num} num
+     * @param {num} i
+     * @param {num} j
+     * @param {array} result
+     * @return {array}
+     * */
+    const buildRows = (num, i, j = 0, row = []) => {
+      if (j === num) return row;
+      row.push(new Block(i, j));
+      return buildRows(num, i, j + 1, row);
+    };
+    /**
+     * This function recursivley creates the grid using helper function build Rows
+     * @param {num} num
+     * @param {num} i
+     * @param {array} result
+     * @returns {array}
+     * */
+    const createGrid = (num, i = 0, result = []) => {
+      if (i === num) return result;
+      result.push(buildRows(num, i));
+      return createGrid(num, i + 1, result);
+    };
+    /**
+     * This function recursively reveals its neighbors
+     * @param {array} arr
+     * @param {num} i
+     */
+    const revealNeighbors = (arr, i = 0) => {
+      //basecase if arr === i
+      if (i === arr.length) return;
+      //if the count of the current block is 0, start a new instance. set revealed to true
+      if (arr[i].count === 0 && arr[i].revealed === false) {
+        arr[i].revealed = true;
+        revealNeighbors(getNeighbors(arr[i]));
+      }
+      //if this block is already revealed skip
+      if (arr[i].revealed) {
+        revealNeighbors(arr, i + 1);
+      }
+      //if count is not equal to 0 reveal the block
+      arr[i].revealed = true;
+      //keep iterating
+      return revealNeighbors(arr, i + 1);
+    };
+
+    /**
+     * This function updates the grid based off the data of the 2d array grid
+     * */
+    const updateGrid = () => {
+      //reset win condition
+      numRevealed = 0;
+      //iterate through the 2d grid array
+      grid.forEach((thisRow) => {
+        thisRow.forEach((thisBlock) => {
+          //grab the HTML block
+          const thisHTMLBlock = document.querySelector(
+            `.${thisBlock.coordinates}`
+          );
+          //if the Block data shows revealed, add the class revealed
+          if (thisBlock.revealed) {
+            numRevealed++;
+            thisHTMLBlock.classList.add("block--revealed");
+            thisHTMLBlock.classList.remove("block--hidden");
+          }
+          //if the number reavealed is equal to the number of blocks minus the bombs, the user wins
+          //ask to play again and reset the board if so
+          if (numRevealed === gridSize * gridSize - numberofBombs) {
+            if (confirm("You Win! Play Again?")) {
+              resetHTMLGameBoard();
+              mineSweeper();
+            }
+          }
+        });
+      });
+    };
+
+    /**
+     * This function resets the HTML dom and the bombsArray after a win or a loss
+     * */
+    const resetHTMLGameBoard = () => {
+      bombsArray = [];
+      grid.forEach((thisRow) => {
+        const thisHTMLRow = document.querySelector(`.row${thisRow[0].x}`);
+        thisHTMLRow.innerHTML = "";
+      });
+    };
+
+    /***
+     * This function creates an array of random bomb coordinates
+     * @param {num} num
+     * @param {num} i
+     * @param (array) result
+     * @returns array result
+     * */
+    const createBombs = (num, i = 0, result = []) => {
+      //create an x and y coordinate within the grid
+      const max = gridSize;
+      const min = 0;
+      if (i === num) return result;
+      const x = Math.floor(Math.random() * (max - min) + min);
+      const y = Math.floor(Math.random() * (max - min) + min);
+      //on the first iteration push the number into the grid and iterate again
+      if (i === 0) {
+        result.push([x, y]);
+        return createBombs(num, i + 1, result);
+      }
+      //if the cooordinates generated already exists, iterate again
+      if (
+        result.reduce((acc, e) => {
+          if (e[0] === x && e[1] === y) acc = true;
+          return acc;
+        }, false)
+      ) {
+        return createBombs(num, i, result);
+      }
+      //if the coordinates do not exist, store in array
+      result.push([x, y]);
+      //iterate again
+      return createBombs(num, i + 1, result);
+    };
+
+    /**
+     *
+     *
+     * */
+    const mineSweeper = () => {
+      //create the grid
+      grid = createGrid(gridSize);
+      //create bombs
+      const result = createBombs(numberofBombs);
+      //get the count for each square and update the innerHTML to show the count
+      grid.forEach((thisRow) => {
+        thisRow.forEach((thisBlock) => {
+          if (thisBlock.id != bombiD) {
+            checkForBombs(thisBlock);
+            const thisHTMLBlock = document.querySelector(
+              `.${thisBlock.coordinates}`
+            );
+            thisHTMLBlock.innerHTML = `${thisBlock.count}`;
+          }
+        });
+      });
+    };
+    /**
+     * This function highlights the board to see each count and bomb positions if wanted
+     * */
+    btnCheat.addEventListener("click", (e) => {
+      const allBlocks = document.querySelectorAll(".block");
+      if (toggle > 0) {
+        allBlocks.forEach((e) => {
+          e.classList.add("block--cheat");
+        });
+      } else {
+        allBlocks.forEach((e) => {
+          e.classList.remove("block--cheat");
+        });
+      }
+      toggle *= -1;
+    });
+
+    //start the app
+    mineSweeper();
+  </script>
+</html>
