@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container-star"></div>
+    <p class="text">You are giving 0 Stars!</p>
+  </body>
+  <style>
+    .fa {
+      color: yellow;
+      -webkit-text-stroke-width: 4px;
+      -webkit-text-stroke-color: black;
+    }
+    .fa-star {
+      font-size: 40px;
+    }
+  </style>
+  <script>
+    const maxStars = 5;
+    const text = document.querySelector(".text");
+    const starContainer = document.querySelector(".container-star");
+    const starArray = [];
+    let clicked = false;
+    let leftDiv = false;
+    class Star {
+      constructor(starClass, num) {
+        this.class = starClass;
+        this.num = num;
+        this.isClicked = false;
+        //append the star to Star container
+        const starObject = document.createElement("i");
+        starObject.classList.add("far", "fa-star", `${this.class}`);
+        starContainer.append(starObject);
+        //add mouse enter listener
+        const thisStar = document.querySelector(`.${this.class}`);
+        thisStar.addEventListener("mouseenter", () => {
+          if (!clicked || leftDiv) {
+            changeColors("yellow", this.num);
+            text.innerText = `You are giving ${this.num} Stars!`;
+          }
+        });
+        //add click listener
+        thisStar.addEventListener("click", () => {
+          this.isClicked = !this.isClicked;
+          if (this.isClicked) {
+            changeColors("yellow", this.num);
+          }
+          clicked = !clicked;
+          leftDiv = false;
+          text.innerText = `You have given ${this.num} Stars!`;
+        });
+      }
+      color(color = "white") {
+        const thisStar = document.querySelector(`.${this.class}`);
+        if (color === "yellow") {
+          thisStar.classList.add("fa");
+        } else if (thisStar.classList.contains("fa"))
+          thisStar.classList.remove("fa");
+      }
+    }
+    const addStarContainerListener = () => {
+      starContainer.addEventListener("mouseleave", () => {
+        if (clicked) {
+          leftDiv = true;
+        }
+      });
+    };
+    /**
+     * This function creates the array of stars
+     * @param {number} i
+     * */
+    const createStarArray = (i = 1) => {
+      if (i > maxStars) return;
+      starArray.push(new Star(`star${i}`, i));
+      createStarArray(i + 1);
+    };
+
+    /**
+     * This function changes the colors of the stars
+     * */
+    const changeColors = (color, num) => {
+      starArray.forEach((e) => {
+        if (parseInt(e.num) > parseInt(num)) {
+          e.color("white");
+        } else {
+          e.color(color);
+        }
+      });
+    };
+
+    /**
+     * This function starts the app
+     * */
+    const app = () => {
+      addStarContainerListener();
+      createStarArray();
+    };
+    //run the app
+    app();
+  </script>
+</html>
