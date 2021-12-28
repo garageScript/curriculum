@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container--lights-off {
+        display: inline;
+      }
+      .block {
+        display: inline-block;
+        width: 60px;
+        height: 60px;
+        border: 1px solid black;
+      }
+      .lights-on {
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container--lights-off"></div>
+  </body>
+  <script>
+    const body = document.querySelector("body");
+    let defaultGridNumber = 2;
+    let winCondition = 0;
+    let grid = [];
+    class Block {
+      constructor(x, y, color) {
+        this.color = color;
+        this.x = x;
+        this.y = y;
+      }
+    }
+
+    //create 2D array
+    const createGridColumn = (num, x, result = [], y = 0) => {
+      if (y === num) return result;
+      let color = -1;
+      if (x === 0 && y === 0) color = 1;
+      result.push(new Block(x, y, color));
+      return createGridColumn(num, x, result, y + 1);
+    };
+    const createGrid = (num, result = [], x = 0) => {
+      if (x === num) return result;
+      result.push(createGridColumn(num, x));
+      return createGrid(num, result, x + 1);
+    };
+
+    const renderGrid = () => {
+      const container = document.querySelector(".container--lights-off");
+      //clear the game Container
+      container.innerHTML = "";
+      //reset winCondition counter
+      winCondition = 0;
+      //iterate through the 2d array
+      grid.forEach((thisRow, i) => {
+        console.log(`row:${i}`);
+        //create a div for the row
+        const thisHTMLRow = document.createElement("div");
+        thisHTMLRow.classList.add(`row${i}`);
+        thisRow.forEach((thisBlock) => {
+          if (thisBlock.color < 0) winCondition++;
+          //create a div for the block
+          const thisHTMLBlock = document.createElement("div");
+          //add event listener. If a lit block is
+          //clicked it will turn its existing
+          //neighbors the opposite color
+          thisHTMLBlock.addEventListener("click", () => {
+            if (thisBlock.color > 0) {
+              thisBlock.color *= -1;
+              if (thisBlock.x + 1 < grid.length) {
+                //console.log("checking down");
+                grid[thisBlock.x + 1][thisBlock.y].color *= -1;
+              }
+              if (thisBlock.x - 1 >= 0) {
+                //console.log("checking up");
+                grid[thisBlock.x - 1][thisBlock.y].color *= -1;
+              }
+              if (thisBlock.y + 1 < grid.length) {
+                //console.log("checking right");
+                grid[thisBlock.x][thisBlock.y + 1].color *= -1;
+              }
+              if (thisBlock.y - 1 >= 0) {
+                //console.log("checking left");
+                grid[thisBlock.x][thisBlock.y - 1].color *= -1;
+              }
+              renderGrid();
+            }
+          });
+          //check win condition
+          if (winCondition === defaultGridNumber * defaultGridNumber) {
+            const temp = parseInt(
+              prompt("You won! Play again with different size?")
+            );
+            if (temp) {
+              container.remove();
+              const newContainer = document.createElement("div");
+              newContainer.classList.add("container--lights-off");
+              body.append(newContainer);
+              startGame(temp);
+            }
+          }
+
+          //if color is > 0 the block will render green, if not it will render white
+          if (thisBlock.color > 0) thisHTMLBlock.classList.add("lights-on");
+          else if (
+            thisBlock.color < 0 &&
+            thisHTMLBlock.classList.contains("lights-on")
+          ) {
+            thisHTMLBlock.classList.remove("lights-on");
+          }
+          //add the block class for styling
+          thisHTMLBlock.classList.add("block");
+          //append the block to the row
+          thisHTMLRow.append(thisHTMLBlock);
+        });
+        //append the row to the container
+        container.append(thisHTMLRow);
+      });
+    };
+
+    const startGame = (size) => {
+      defaultGridNumber = size;
+      grid = createGrid(size);
+      console.log(grid);
+      renderGrid();
+    };
+
+    startGame(defaultGridNumber);
+  </script>
+</html>
