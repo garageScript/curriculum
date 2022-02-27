@@ -19,4 +19,8 @@ describe('print string x number of times', () => {
     const result = solution(5, 'olaf')
     expect(result).toEqual('olafolafolafolafolaf')
   })
+  it('should return empty string when 0 times', () => {
+  const result = solution(0, 'hello')
+  expect(result).toEqual('')
+})
 })
