@@ -22,5 +22,9 @@ describe('print string x number of times', () => {
   it('should return empty string when 0 times', () => {
   const result = solution(0, 'hello')
   expect(result).toEqual('')
-})
+  })
+   it('should return empty string when number is negative', () => {
+    const result = solution(-1, 'cool')
+    expect(result).toEqual('')
+  })
 })
