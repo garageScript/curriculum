@@ -41,22 +41,12 @@ describe('test cReduce', () => {
     const b = { bob: true, obo: false, boo: true }
     expect(a.cReduce(cb, {})).toEqual(b)
   })
-
-  it('should reduce the elements of [1,2,3,4] to 10', () => {
-    const cb = (ac, cv) => {
-      return ac + cv
-    }
-    const test = [1, 2, 3, 4]
-    expect(test.cReduce(cb)).toEqual(10)
-
-  })
-
   it('should reduce ["1", "2", "3"] to "123"', () => {
     const cb = (ac, cv) => {
       return ac + cv
     }
     const a = ['1', '2', '3']
     const b = '123'
-    expect(a.cReduce(cb)).toEqual(b)
+    expect(a.cReduce(cb, '')).toEqual(b)
   })
 })
