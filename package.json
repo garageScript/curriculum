@@ -6,7 +6,7 @@
     "test": "node ./node_modules/jest/bin/jest.js -o --watch"
   },
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "jest": "^26.0.1",
     "webpack": "^4.43.0"
   },
