@@ -3,7 +3,8 @@
   "description": "algorithm practice",
   "version": "0.0.0",
   "scripts": {
-    "test": "node ./node_modules/jest/bin/jest.js -o --watch"
+    "test": "node ./node_modules/jest/bin/jest.js -o --watch",
+    "prepare": "husky install"
   },
   "dependencies": {
     "express": "^4.17.1",
@@ -12,6 +13,7 @@
   },
   "devDependencies": {
     "eslint": "^7.2.0",
-    "eslint-plugin-react": "^7.20.0"
+    "eslint-plugin-react": "^7.20.0",
+    "husky": "^8.0.0"
   }
 }
