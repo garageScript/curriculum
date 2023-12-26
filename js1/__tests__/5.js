@@ -29,3 +29,9 @@ describe('call function x times', () => {
     expect(counter).toEqual(0)
   })
 })
+describe('return value', () => {
+  it('should return null', () => {
+    const result = solution(2, () => {})
+    expect(result).toEqual(null)
+  })
+})
