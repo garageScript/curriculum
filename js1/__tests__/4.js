@@ -28,3 +28,9 @@ describe('call with increasing numbers', () => {
     expect(calls).toEqual([0, 1, 2, 3])
   })
 })
+describe('return value', () => {
+  it('should return null', () => {
+    const result = solution((e) => {return false})
+    expect(result).toEqual(null)
+  })
+})
