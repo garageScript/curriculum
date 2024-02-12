@@ -6,7 +6,12 @@
  */
 
 const solution = (num) => {
-  return true
+  if (num > 5) {
+    return true
+  }
+  else {
+    return false
+  }
 }
 
 module.exports = {
