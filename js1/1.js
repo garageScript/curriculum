@@ -8,7 +8,10 @@
  */
 
 const solution = (num) => {
-  return () => {}
+  return () => {
+    num += 1
+    return num
+  }
 }
 
 module.exports = {
