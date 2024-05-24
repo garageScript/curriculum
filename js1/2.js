@@ -12,7 +12,19 @@
  */
 
 const solution = (num, fun) => {
-  return () => { }
+  temp = 0
+
+  return () => {
+    if(temp >= num){
+      return null
+    }
+    else{
+        temp += 1 
+        return fun()
+    }
+    
+  }
+
 }
 
 module.exports = {
