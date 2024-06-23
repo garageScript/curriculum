@@ -7,10 +7,8 @@
  * @returns {boolean}
  */
 
-const solution = (num1, num2) => {
-  return true
-}
+const solution = (num1, num2) => num1 + num2 > 10;
 
 module.exports = {
-  solution
-}
+  solution,
+};
