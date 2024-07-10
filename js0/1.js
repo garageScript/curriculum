@@ -6,7 +6,7 @@
  * @returns {number}
  */
 
-const solution = (num1, num2) => {
+export const solution = (num1, num2) => {
   return num1 + num2
 }
 
