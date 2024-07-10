@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Exercises</title>
+    <!-- <script src="1.js"></script> -->
+</head>
+<body>
+    <H3>Enter your values to sum:</H3>
+    <input class="input1" type="number" />
+    <input class="input2" type="number" />
+
+    <button class="sum">Add Values</button>
+    <script type="module">
+        import { solution } from '../js0/1.js';
+
+        const button = document.querySelector('.sum')
+        button.onclick = () => {
+            const val1 = document.querySelector(".input1").value
+            const val2 = document.querySelector('.input2').value
+            const sum = solution(Number(val1), Number(val2))
+            alert('Sum = '+ sum )
+        }
+    </script>
+</body>
+</html>
+
