@@ -12,7 +12,14 @@
  */
 
 const solution = (num, fun) => {
-  return () => { }
+  let count = 0
+  return () =>  {
+    if (count < num){
+      count++
+      return fun ()
+    } 
+    return null
+  }
 }
 
 module.exports = {
