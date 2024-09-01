@@ -13,6 +13,7 @@
 
 const solution = (num, fun) => {
   let count = 0
+
   return () =>  {
     if (count < num){
       count++
