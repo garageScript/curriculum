@@ -7,9 +7,12 @@
  * @returns {string}
  */
 
-const solution = (num, str, result = '') => {
-  return ''
+const solution = (num, str, val = "") => {
+  if (num <= 0) return val
+
+  return solution(num - 1, str, val + str)
 }
+
 
 module.exports = {
   solution
