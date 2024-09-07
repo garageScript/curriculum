@@ -7,8 +7,14 @@
  * @returns {number}
  */
 
-const solution = (inp, letter, counter = 0, i = 0) => {
-  return 0
+const solution = (inp, letter, i = 0, counter = 0 ) => {
+  if (i >= inp.length) return counter
+
+  if (inp[i] === letter){
+    counter++
+  }
+
+  return solution(inp, letter, i + 1, counter)
 }
 
 module.exports = {
