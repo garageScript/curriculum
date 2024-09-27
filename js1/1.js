@@ -9,7 +9,7 @@
 
 const solution = (num) => {
   return () => {
-      return num ++
+      return ++num
   }
 }
 
