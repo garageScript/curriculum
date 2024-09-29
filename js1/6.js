@@ -7,8 +7,12 @@
  * @returns {boolean}
  */
 
-const solution = (num, i = 2) => {
-  return true
+const solution = (num, i = 2) =>{
+  if (num <= 1) return false
+  if (i * i > num) return true
+  if (num % i === 0) return false
+
+  return solution(num, i + 1)
 }
 
 module.exports = {
