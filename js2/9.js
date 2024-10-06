@@ -5,8 +5,11 @@
  */
 
 const solution = () => {
-  Array.prototype.cReduce = function () {
-    return 0
+  Array.prototype.cReduce = function (cb, acc = this[0], i = 0) {
+    if (i >= this.length) return acc
+
+    acc = cb(acc, this[i], i, this);
+    return this.cReduce(cb, acc, i + 1)
   }
 }
 
