@@ -7,9 +7,19 @@
  */
 
 const solution = (arr, num) => {
-  return true
+  const map = {}
+
+  return (
+    arr.find((el) => {
+      const difference = num - el
+
+      if (map[difference]) return true
+
+      map[el] = true
+    }) !== undefined
+  )
 }
 
 module.exports = {
-  solution
+  solution,
 }
