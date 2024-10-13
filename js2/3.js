@@ -10,8 +10,21 @@
  * @returns {array}
  */
 
-const solution = (row, col) => {
-  return []
+
+const populateColumns = (num, res = []) => {
+  if (num === 0) return res
+
+  res.push(0)
+
+  return populateColumns(num - 1, res)
+}
+
+const solution = (row, col, res = []) => {
+  if (res.length === row) return res
+
+  res.push(populateColumns(col))
+
+  return solution(row, col, res)
 }
 
 module.exports = {

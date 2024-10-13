@@ -18,7 +18,14 @@
  */
 
 const solution = (str, fun) => {
-  return () => { }
+  let i = 0
+  return () => {
+    if (i === str.length) {
+      i = 0
+    }
+    fun(str[i])
+    ++i
+  }
 }
 
 module.exports = {

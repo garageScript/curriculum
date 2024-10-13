@@ -9,8 +9,10 @@
  * @returns {function}
  */
 
-const solution = (a, fun) => {
-  return () => { }
+const solution = (num, fun) => {
+  return () => {
+    setTimeout(fun, num)
+  }
 }
 
 module.exports = {
