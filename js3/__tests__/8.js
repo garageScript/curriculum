@@ -1,7 +1,7 @@
 /* global describe it expect */
 const solution = require('../8').solution
 
-describe('It should call each function value of the object millieseconds after one another', () => {
+describe('It should call each function value of the object milliseconds after one another', () => {
   it('It should not call the function if the object is empty', (done) => {
     let sum = 0
     const a = {}
@@ -12,7 +12,7 @@ describe('It should call each function value of the object millieseconds after o
       done()
     }, 55)
   })
-  it('Sum will be "0", then "0one" and finally "0onetwo" after 15 seconds', (done) => {
+  it('Sum will be "0", then "0one" and finally "0onetwo" after 150 milliseconds', (done) => {
     let sum = 0
     const a = {
       'one': (d) => sum += d,
